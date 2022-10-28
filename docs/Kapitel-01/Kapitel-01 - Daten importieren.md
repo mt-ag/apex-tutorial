@@ -22,19 +22,33 @@ Verwenden Sie das beigefügte SQL-Skript (**Skript.sql**), um die Daten wie im F
 ## 1.2. Import des Skripts
 
 - Navigieren Sie zum **SQL-Workshop**, indem Sie eine der zwei rot markierten Möglichkeiten wählen.
+
 ![](../../assets/Kapitel-01/Open_SQL_Workshop.jpg)
+
 - Wenn Sie sich im **SQL Workshop** befinden, klicken Sie dort auf **SQL Scripts**.
+
 ![](../../assets/Kapitel-01/Open_SQL_Skripts.jpg)
+
 - Klicken Sie nun auf **Upload**.
+
 ![](../../assets/Kapitel-01/SQL_Workshop_open_upload.jpg)
-- Wählen Sie das Skript **Skript.sql** aus, <span style="color:red">welches sich in dem Ordner **MTAG_APEX_Tutorial.zip**</span> befindet. Laden Sie das Skript durch Klicken auf den Upload-Button hoch bzw. ziehen Sie es in das vorgesehene Feld.
+
+- Wählen Sie das Skript **Skript.sql** aus, welches sich in dem Ordner **Kapitel-01** befindet. Laden Sie das Skript durch Klicken auf den Upload-Button hoch bzw. ziehen Sie es in das vorgesehene Feld.
+
 ![](../../assets/Kapitel-01/SQL_Workshop_upload_Skript.jpg)
+
 - Starten Sie das Skript, indem Sie auf den **Run**-Button drücken.
+
 ![](../../assets/Kapitel-01/SQL_Workshop_run_Skript_1.jpg)
+
 - Klicken Sie auf **Run Now**.
+
 ![](../../assets/Kapitel-01/SQL_Workshop_run_Skript_2.jpg)
+
 - Nach dem erfolgreichen Import sollten Sie folgendes Ergebnis sehen:
+
 ![](../../assets/Kapitel-01/SQL_Workshop_result.jpg)
+
 Es sollten jetzt alle Tabellen und Daten, welche für dieses Tutorial benötigt werden, in Ihrem Workspace vorhanden sein.  
 
 ## 1.3. Datenmodellierung mittels Quick SQL
