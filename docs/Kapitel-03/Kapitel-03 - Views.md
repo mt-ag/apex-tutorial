@@ -26,11 +26,11 @@ Der Object Browser ist in zwei Bereiche unterteilt. Auf der linken Seite wird de
 
 - Navigieren Sie über das Dropdown-Menü **SQL Workshop** zu dem Eintrag **Object Browser**. 
 
-![](../../assets/Kapitel-03/Object_browser_1.jpg)
+![](../../assets/Kapitel-03/Object_Browser_1.jpg)
 
 - Starten Sie den Assistenten zum Erstellen einer View. Öffnen Sie dazu das Dropdown-Menü über das + und klicken auf den Eintrag View.
 
-![](../../assets/Kapitel-03/Object_browser_Add_View.jpg)
+![](../../assets/Kapitel-03/Object_Browser_Add_View.jpg)
 
 Es öffnet sich ein Assistent zur Erstellung der View.  
 Nun müssen Sie den entsprechenden Code sowie einen Namen für die View hinterlegen. Um eine einheitliche Benennung über verschiedene Anwendungen hinweg zu erzielen, empfiehlt sich die Verwendung von Namenskonventionen.
@@ -53,16 +53,16 @@ In diesem Fall setzt sich die Bezeichnung der View wie folgt zusammen:
 
 - Achten Sie beim Einfügen auf die Formatierung der Abfrage. Sollte Ihre Formatierung nicht wie gezeigt aussehen, formatieren Sie sie entsprechend.
 
-![](../../assets/Kapitel-03/Object_browser_Create_View_1.jpg)
+![](../../assets/Kapitel-03/Object_Browser_Create_View_1.jpg)
 
 - Klicken Sie dann auf den Button **Next**.
 - Abschließend klicken Sie auf den Button **Create View**.
 
-![](../../assets/Kapitel-03/Object_browser_Create_View_2.jpg)
+![](../../assets/Kapitel-03/Object_Browser_Create_View_2.jpg)
 
 - So sollte Ihre fertige View aussehen:
 
-![](../../assets/Kapitel-03/Object_browser_Create_View_3.jpg)
+![](../../assets/Kapitel-03/Object_Browser_Create_View_3.jpg)
 
  
 ## 3.2. Page Processes
