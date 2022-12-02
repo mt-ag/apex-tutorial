@@ -223,7 +223,7 @@ Die Felder der Spalte **State** im Interactive Grid können bislang über eine T
 - Öffnen Sie den **Page Designer** für die Seite ***31 Customer Orders***. Wählen Sie dort in der Region **Customers** unter **Columns** die Spalte **State** aus und ändern sie den **Type** zu ***Popup LOV***. Setzen Sie unter **List of Values** den **Type** auf ***SQL Query*** und geben Sie als **Query** folgendes SQL Statement ein:
     ```sql
     select STATE as r,
-      STATE as d
+           STATE as d
     from TUTO_P0031_5_VW
     ```
 
