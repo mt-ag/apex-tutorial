@@ -86,7 +86,7 @@ Die Anwendung kann nun auch über das Startmenü gefunden und gestartet werden.
 
 Es können auch bestehende Anwendungen, die ab der APEX Version 21.2 erstellt wurden, in progressive Web Apps umgewandelt bzw. als solche genutzt werden. Hierzu müssen die folgenden Einstellungen angepasst werden:
 
-- Öffnen Sie die Seitenübersicht Ihrer Anwendung und klicken Sie auf **Edit Application Properties**.
+- Öffnen Sie die Seitenübersicht Ihrer Anwendung und klicken Sie auf **Edit Application Definition**.
 
 ![](../../assets/Kapitel-07/Features_11.jpg)
 
