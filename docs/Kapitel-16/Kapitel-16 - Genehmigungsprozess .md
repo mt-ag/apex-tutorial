@@ -172,7 +172,7 @@ update salaries
   - Label: New Salary
   - Minimum Value: 500
   - Maximum Value: 4000
-  - Number Alignment: Left
+  - Number Alignment: Start
 
 ![](../../assets/Kapitel-16/Process_22.jpg)
 
