@@ -276,10 +276,3 @@ Wichtig ist, dass Sie als Administrator in Ihrem Workspace angemeldet sind, so d
 ![](../../assets/Kapitel-16/Process_36.jpg)
 
 - Der Antrag wurde genehmigt und das Gehalt vom Mitarbeiter **FISCHER** entsprechend angepasst.
-
- 
-Herzlichen Glückwunsch!
-Sie haben das Tutorial erfolgreich beendet.
-Falls Sie noch mehr über APEX lernen wollen, schauen Sie doch mal auf unserem APEX Portal vorbei:
-
-https://apex.mt-ag.com/from-zero-to-hero
