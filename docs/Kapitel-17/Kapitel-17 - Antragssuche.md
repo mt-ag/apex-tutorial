@@ -1,6 +1,6 @@
 # 17. Antragssuche: Suchregionen und Suchkonfigurationen erstellen
 
-In dieser Aufgabe werden Sie eine Suchregion und Suchkonfigurationen erstellen, die in mehreren Datenquellen nach Ergebnissen sucht. Dazu benötigen Sie die in Kapitel 13 beschriebenen Kenntnisse..
+In dieser Aufgabe werden Sie eine Suchregion und Suchkonfigurationen erstellen, die in mehreren Datenquellen nach Ergebnissen sucht. Dazu benötigen Sie die in Kapitel 13 beschriebenen Kenntnisse.
 Das Ziel ist es, Ihren Benutzern eine leistungsstarke Funktion im Stil einer Suchmaschine zur Verfügung stellen, die in Minutenschnelle mehrere Datenquellen nach Ergebnissen sucht und diese in einem einzigen einheitlichen Suchergebnisregion anzeigt.
 
 ## 17.1. Erstellen eine Suchkonfiguration 
@@ -247,11 +247,3 @@ Ein Suchkonfigurationsliste ist bereits verfügbar. Wählen Sie die Suchkonfigur
 Das Suchfeld taucht auf jeder Seite in der Navigationsleiste und leitet auf die Suchergebnissenseite weiter, wenn ein Suchwert eingegeben und die Eingabetaste gedrückt ist.
 
   ![](../../assets/Kapitel-17/search_config_26.jpg)
-
-  
- 
-Herzlichen Glückwunsch!
-Sie haben das Tutorial erfolgreich beendet.
-Falls Sie noch mehr über APEX lernen wollen, schauen Sie doch mal auf unserem APEX Portal vorbei:
-
-https://apex.mt-ag.com/from-zero-to-hero

@@ -16,9 +16,14 @@ Vorläufige neue Struktur
 4. Suchfunktionen  
     - Faceted Search (9)  
     - Smart Filters (10)  
+    - Antragssuche: Suchregionen und Suchkonfigurationen erstellen (17)
+    - Suchfeld in globalen Seite einbauen (17)
+    - Aktionen benennen in dynamischen Aktionen (17)
 5. Plug-Ins (12)  
 6. REST Data Sources (13)  
     - Karten estellen (15)  
 7. Quick SQL (14)  
 8. Genehmigungsprozess erstellen (16)  
     - Approval Apps
+9. API-Aufrufprozesse (18)
+
