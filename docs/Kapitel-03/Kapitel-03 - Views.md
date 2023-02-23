@@ -88,14 +88,14 @@ Im Folgenden wird die erstellte View dem DML-Prozess zugeordnet und einige klein
 
 ![](../../assets/Kapitel-03/Page_Process_4.jpg)
 
-- Ändern Sie den **Target Type** auf ***Table/View***.
-- Klicken Sie anschließend auf das Dropdown-Menü bei **Table Name**. Wählen Sie dort die eben erstellte **View** aus. 
+- Ändern Sie den **Target Type** auf ***Region Source***.
 
-![](../../assets/Kapitel-03/Page_Process_5.jpg) ![](../../assets/Kapitel-03/Page_Process_6.jpg)
+![](../../assets/Kapitel-03/Page_Process_5.jpg)
 
-Dies sorgt nun dafür, dass für das Processing die neu erstellte View verwendet wird. Wenn man in APEX Reports und Forms über den Wizard erstellt, werden die benötigten Standard-Processings (z.B. zum Einfügen oder Updaten von Daten) automatisiert erstellt.
+Dies sorgt nunu dafür, dass für das Processing die gleiche Quelle verwendet wird, wie für die Region. In unserem Fall ist das die eben erstellte View. 
+Wird in der Zukunft die Datenquelle der Region geändert, muss das Processing nicht mehr angepasst werden. 
 
-Wird, wie in unserem Fall, die Datenquelle, auf der die Region aufbaut, geändert (bei uns von der States-Tabelle auf die seitenspezifische View), muss das Processing angepasst werden. Dies haben wir durch die oben aufgeführten Schritte erledigt.
+Wenn man in APEX Reports und Forms über den Wizard erstellt, werden die benötigten Standard-Processings (z.B. zum Einfügen oder Updaten von Daten) automatisiert erstellt.
 
 - Gehen Sie danach wieder in den ersten Reiter **Rendering** mit der Übersicht der Elemente auf der Seite und klicken Sie unter State – Items auf **P3_STTS_ID**. Prüfen Sie, ob der **Type** ***Hidden*** ist. Wenn nicht, ändern Sie ihn entsprechend ab. 
 

@@ -1,11 +1,11 @@
-# 17. Antragssuche: Suchregionen und Suchkonfigurationen erstellen
+# 17. Application Search: Suchregionen und Suchkonfigurationen erstellen
 
 In dieser Aufgabe werden Sie eine Suchregion und Suchkonfigurationen erstellen, die in mehreren Datenquellen nach Ergebnissen sucht. Dazu benötigen Sie die in Kapitel 13 beschriebenen Kenntnisse.
-Das Ziel ist es, Ihren Benutzern eine leistungsstarke Funktion im Stil einer Suchmaschine zur Verfügung stellen, die in Minutenschnelle mehrere Datenquellen nach Ergebnissen sucht und diese in einem einzigen einheitlichen Suchergebnisregion anzeigt.
+Ziel ist es, Ihren Benutzern eine leistungsstarke Funktion im Stil einer Suchmaschine zur Verfügung stellen, die in Minutenschnelle mehrere Datenquellen nach Ergebnissen durchsucht und diese in einer einzigen einheitlichen Suchergebnisregion anzeigt.
 
 ## 17.1. Erstellen eine Suchkonfiguration 
 
-Diese neue gemeinsame Komponente definiert die zu durchsuchenden Datenquellen und die Anzeige der Ergebnisse. Die Suche kann auf lokalen Daten, APEX-Listen, REST-fähigen SQL-Services oder REST-Services basieren. In den folgenden 2 Beispielen wird die Suche einmal in den lokalen Daten und einmal in den REST-Datenquelle durchgeführt.
+Diese neue gemeinsame Komponente definiert die zu durchsuchenden Datenquellen und die Anzeige der Ergebnisse. Die Suche kann auf lokalen Daten, APEX-Listen, REST-fähigen SQL-Services oder REST-Services basieren. In den folgenden zwei Beispielen wird die Suche einmal in den lokalen Daten und einmal mit einer REST-Datenquelle durchgeführt.
 
 ### 17.1.1. Lokalen Daten Datenquelle
 
@@ -38,7 +38,7 @@ Diese neue gemeinsame Komponente definiert die zu durchsuchenden Datenquellen un
 
   ![](../../assets/Kapitel-17/search_config_02.jpg)
 
-  - Geben Sie hier folgende Werte ein dann klicken Sie auf **Next**:
+  - Geben Sie hier folgende Werte ein und klicken Sie auf **Next**:
 
   | | |  
   |--|--|
@@ -47,7 +47,7 @@ Diese neue gemeinsame Komponente definiert die zu durchsuchenden Datenquellen un
 
   ![](../../assets/Kapitel-17/search_config_03.jpg)
 
-  - Wählen Sie hier folgende Werte aus dann klicken Sie auf **Next**:
+  - Wählen Sie hier folgende Werte aus klicken Sie dann auf **Next**:
 
   | | |  
   |--|--|
@@ -57,7 +57,7 @@ Diese neue gemeinsame Komponente definiert die zu durchsuchenden Datenquellen un
 
   ![](../../assets/Kapitel-17/search_config_04.jpg)
 
-  - Wählen Sie hier folgende Werte aus anschließend klicken Sie auf **Create Search Configuration**:
+  - Wählen Sie hier folgende Werte aus, klicken Sie anschließend auf **Create Search Configuration**:
 
   | | |  
   |--|--|
@@ -72,11 +72,11 @@ Diese neue gemeinsame Komponente definiert die zu durchsuchenden Datenquellen un
 
   ![](../../assets/Kapitel-17/search_config_06.jpg)
   
-  Beachten Sie, dass die durchsuchbare(n) Spalte(n) Varchar-Spalten sind.
+  Beachten Sie, dass die durchsuchbare(n) Spalte(n) varchar-Spalten sein müssen.
 
   ![](../../assets/Kapitel-17/search_config_07.jpg)
 
-  **Column Mapping** stellt die Spalten dar, die in der Benutzeroberfläche angezeigt werden:
+  Das **Column Mapping** stellt die Spalten dar, die in der Benutzeroberfläche angezeigt werden:
   Eine Zahlenspalte (z.B. Spalte **PRDT_INFO_LIST_PRICE**) kann für die **Score Column** verwendet werden, die zur Bewertung des Suchergebnisses dient.
 
   ![](../../assets/Kapitel-17/search_config_08.jpg)
@@ -100,7 +100,7 @@ Diese neue gemeinsame Komponente definiert die zu durchsuchenden Datenquellen un
 
 ### 17.1.2. REST-Datenquelle
 
-Über das in Kapitel 13 erstellten RESTful Service und REST-Datenquelle erstellen wir eine Suchkonfiguration basiert auf REST-Datenquelle **Departments**.
+Über den in Kapitel 13 erstellten RESTful Service und die REST-Datenquelle erstellen wir eine Suchkonfiguration, die auf der REST-Datenquelle **Departments** basiert.
 
 - Klicken Sie auf **Shared Components**
 
@@ -108,7 +108,7 @@ Diese neue gemeinsame Komponente definiert die zu durchsuchenden Datenquellen un
 
 - Klicken Sie auf **Create**.
 
-- Geben Sie hier folgende Werte ein dann klicken Sie auf **Next**:
+- Geben Sie hier folgende Werte ein und klicken Sie auf **Next**:
 
 | | |  
 |--|--|
@@ -117,7 +117,7 @@ Diese neue gemeinsame Komponente definiert die zu durchsuchenden Datenquellen un
 
   ![](../../assets/Kapitel-17/search_config_11.jpg)
 
-  - Wählen Sie hier folgende Werte aus dann klicken Sie auf **Next**:
+  - Wählen Sie hier folgende Werte aus, dann klicken Sie auf **Next**:
 
   | | |  
   |--|--|
@@ -126,7 +126,7 @@ Diese neue gemeinsame Komponente definiert die zu durchsuchenden Datenquellen un
 
   ![](../../assets/Kapitel-17/search_config_12.jpg)
 
-  - Wählen Sie hier folgende Werte aus anschließend klicken Sie auf **Create Search Configuration**:
+  - Wählen Sie hier folgende Werte aus. Anschließend klicken Sie auf **Create Search Configuration**:
 
   | | |  
   |--|--|
@@ -140,39 +140,38 @@ Diese neue gemeinsame Komponente definiert die zu durchsuchenden Datenquellen un
 
 ## 17.2. Suchkonfigurationen in der Anwendung verwenden
 
-Um die Suchkonfigurationen zu verwenden, erstellen Sie eine Seite, auf der die Suchergebnisse angezeigt werden, und ein Suchfeld, in das Sie die Suche eingeben können.
+Um die Suchkonfigurationen zu verwenden, erstellen Sie eine Seite, auf der die Suchergebnisse angezeigt werden und ein Suchfeld, in das Sie den Suchbegriff eingeben können.
 
 ### 17.2.1. Suchseite erstellen 
 
-- In der **App Builder** klicken Sie auf **Create Page** .
+- Im **App Builder** klicken Sie auf **Create Page** .
 - Wählen Sie den Seitentypen **Component** aus.
 - Wählen Sie den Bereichstypen **Search Page** aus.
 
   ![](../../assets/Kapitel-17/search_config_14.jpg)
 
-- Geben Sie als **Page Number 81** ein und als **Page Name**: **My Search Results**. 
-Ein Suchkonfigurationsliste ist bereits verfügbar. Wählen Sie die Suchkonfigurationen **Department_Search** und **Product_Search** aus. Die Seite kann mehrere Konfigurationen durchsuchen. 
+- Geben Sie als **Page Number**: **81** ein und als **Page Name**: **My Search Results**. 
+Eine Suchkonfigurationsliste ist bereits verfügbar. Wählen Sie die Suchkonfigurationen **Department_Search** und **Product_Search** aus. Die Seite kann mehrere Konfigurationen durchsuchen. 
 
-- Unter **Navigation** schalten Sie **Use Breadcrumb** und **Use Navigation** aus und anschließend klicken Sie auf **Create Page**.
+- Unter **Navigation** schalten Sie **Use Breadcrumb** und **Use Navigation** aus und klicken Sie anschließend auf **Create Page**. Die Seite wird erstellt.
 
   ![](../../assets/Kapitel-17/search_config_15.jpg)
 
 
-- Die Seite wird erstellt. 
 - Unter **Body** klicken Sie auf **Search Results** Region, und dann auf **Attributes**.
-- Geben Sie **No Results Found** Meldung ein.
+- Geben Sie als **No Results Found Message** *No Results found* ein.
 - Klicken Sie auf **Save und Run Page**.
 
   ![](../../assets/Kapitel-17/search_config_16.jpg)
 
-- Geben Sie **shoe** in der Suchfeld ein. Das Suchergebnis wird direkt in der **My Search Results** Seite angezeigt.
+- Geben Sie **shoe** in das Suchfeld ein. Das Suchergebnis wird direkt auf der **My Search Results** Seite angezeigt.
 
   ![](../../assets/Kapitel-17/search_config_17.jpg)
 
 
 ## 17.3. Suchfeld in die Navigationsleiste einbauen
 
-- Erstellen Sie auf der globalen Seite einen Item mit den folgenden Einstellungen:
+- Erstellen Sie auf der globalen Seite ein Item mit den folgenden Einstellungen:
 
   | | |  
   |--|--|
@@ -187,7 +186,7 @@ Ein Suchkonfigurationsliste ist bereits verfügbar. Wählen Sie die Suchkonfigur
 
   ![](../../assets/Kapitel-17/search_config_18.jpg)
 
-- Erstellen Sie ein **Dynamic Action** auf das **P0_SEARCH** Item mit den folgenden Einstellungen:
+- Erstellen Sie eine **Dynamic Action** auf dem **P0_SEARCH** Item mit den folgenden Einstellungen:
 
   | | |  
   |--|--|
@@ -198,11 +197,11 @@ Ein Suchkonfigurationsliste ist bereits verfügbar. Wählen Sie die Suchkonfigur
 
   ![](../../assets/Kapitel-17/search_config_19.jpg)
 
-  Die **Dynamic Action** umfasst 3 **True Actions**:
+  Die **Dynamic Action** umfasst drei **True Actions**:
 
   ![](../../assets/Kapitel-17/search_config_20.jpg)
 
-  - Erste Aktion ist ein **Execute JavaScript Code** mit den folgenden Einstellungen:
+  - Die erste Aktion ist vom Type *Execute JavaScript Code* mit den folgenden Einstellungen:
 
   | | |  
   |--|--|
@@ -212,7 +211,7 @@ Ein Suchkonfigurationsliste ist bereits verfügbar. Wählen Sie die Suchkonfigur
 
   ![](../../assets/Kapitel-17/search_config_21.jpg)
 
-  - Zweite Aktion ist ein **Execute Server-side Code** mit den folgenden Einstellungen:
+  - Die zweite Aktion ist vom Type *Execute Server-side Code* mit den folgenden Einstellungen:
 
   | | |  
   |--|--|
@@ -223,7 +222,7 @@ Ein Suchkonfigurationsliste ist bereits verfügbar. Wählen Sie die Suchkonfigur
 
   ![](../../assets/Kapitel-17/search_config_22.jpg)
 
-  - Dritte Aktion ist ein **Execute JavaScript Code** mit den folgenden Einstellungen:
+  - Und die dritte Aktion ist wieder vom Type *Execute JavaScript Code* mit den folgenden Einstellungen:
 
   | | |  
   |--|--|
@@ -234,16 +233,16 @@ Ein Suchkonfigurationsliste ist bereits verfügbar. Wählen Sie die Suchkonfigur
   ![](../../assets/Kapitel-17/search_config_23.jpg)
 
 
-- Auf Seite 81 löschen Sie das Searchfeld **P81_SEARCH**
+- Löschen Sie das Searchfeld **P81_SEARCH** auf der Seite 81.
 
   ![](../../assets/Kapitel-17/search_config_24.jpg)
 
 - Unter **Body** klicken Sie auf **Search Results** Region, und dann auf **Attributes**.
 
-- Geben Sie als **Search Page Item**: **P0_SEARCH** ein und anschließend klichen Sie auf **Save**.
+- Geben Sie als **Search Page Item**: **P0_SEARCH** ein und klichen Sie anschließend auf **Save**.
 
   ![](../../assets/Kapitel-17/search_config_25.jpg)
 
-Das Suchfeld taucht auf jeder Seite in der Navigationsleiste und leitet auf die Suchergebnissenseite weiter, wenn ein Suchwert eingegeben und die Eingabetaste gedrückt ist.
+Das Suchfeld taucht nun in der Navigationsleiste auf, ist auf jeder Seite verfügbar und leitet Sie auf die Suchergebnisseite weiter, wenn ein Suchwert eingegeben und die Eingabetaste gedrückt wird.
 
   ![](../../assets/Kapitel-17/search_config_26.jpg)

@@ -50,7 +50,6 @@ Das Ziel ist es, dass jeder Mitarbeiter sein Gehalt entsprechend anpassen kann, 
 - Nachdem der Task erstellt wurde, erhalten Sie eine Übersicht. 
 - Ändern Sie hier die Action Source auf **SQL Query** und geben das folgende **Action SQL Query** ein.
 
-
  ```sql
 select initcap(sary_employee_name) as employee_name,
        sary_salary as salary 
