@@ -43,7 +43,7 @@ Für diese Aufgabe muss zuerst eine **Prozedur** und eine **View** erstellt werd
   
 ### 18.1.2. Erstellung der Prozedur 
 
-  - Analog zur Erstellung einer **View** starten Sie den Assistenten zum Erstellen einer **Prozedur**. Öffnen Sie dazu das Dropdown-Menü über das + und klicken auf den Eintrag **Procedure**.
+  - Analog zur Erstellung einer **View** starten Sie den Assistenten zum Erstellen einer **Prozedur**. Öffnen Sie dazu das Dropdown-Menü über das + und klicken auf den Eintrag **Procedure**. Für weitere Informationen zur einer Prozedur finden Sie unter den folgenden Link: [https://docs.oracle.com/en/database/oracle/oracle-database/21/lnpls/CREATE-PROCEDURE-statement.html#GUID-5F84DB47-B5BE-4292-848F-756BF365EC54] (https://docs.oracle.com/en/database/oracle/oracle-database/21/lnpls/CREATE-PROCEDURE-statement.html#GUID-5F84DB47-B5BE-4292-848F-756BF365EC54)
 
   ![](../../assets/Kapitel-18/invoke_api_02.jpg)
 
