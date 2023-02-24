@@ -174,7 +174,7 @@ Für dieses Kapitel muss zuerst eine **Prozedur** und eine **View** erstellt wer
   | **p_prdt_info_avail** | *P102_PRODUCT_AVAIL*| 
   | **p_prdt_info_list_price** | *P102_LIST_PRICE*| 
 
-    ![](../../assets/Kapitel-18/invoke_api_14.jpg)
+  ![](../../assets/Kapitel-18/invoke_api_14.jpg)
   
   - Erstellen Sie einen Prozess mit den folgenden Einstellungen:
 
@@ -186,7 +186,7 @@ Für dieses Kapitel muss zuerst eine **Prozedur** und eine **View** erstellt wer
   |--|--|
   | **p_ordr_item_id** | *P102_ORDER_ITEM_ID*| 
 
-    ![](../../assets/Kapitel-18/invoke_api_16.jpg)
+  ![](../../assets/Kapitel-18/invoke_api_16.jpg)
 
   - Klicken Sie auf **Save** und führen Sie die Anwendung aus.
 
@@ -201,8 +201,8 @@ Für dieses Kapitel muss zuerst eine **Prozedur** und eine **View** erstellt wer
 
 
 
-Herzlichen Glückwunsch!
-Sie haben das Tutorial erfolgreich beendet.
+Herzlichen Glückwunsch!  
+Sie haben das Tutorial erfolgreich beendet.  
 Falls Sie noch mehr über APEX lernen wollen, schauen Sie doch mal auf unserem APEX Portal vorbei:
 
-https://apex.mt-ag.com/from-zero-to-hero
+[apex.mt-itsolutions.com/from-zero-to-hero](https://apex.mt-itsolutions.com/from-zero-to-hero)
