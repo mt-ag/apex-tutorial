@@ -29,21 +29,21 @@ Das Ziel ist es, dass jeder Mitarbeiter sein Gehalt entsprechend anpassen kann, 
 
 ![](../../assets/Kapitel-16/Process_05.jpg) 
 
-- Klicken Sie unter **Workflows and Automations** auf **Task Definitions**.
-- Klicken Sie hier auf **Create**.
+- Klicken Sie unter **Workflows and Automations** auf **Task Definitions**.  
+- Klicken Sie hier auf **Create**.  
 
-![](../../assets/Kapitel-16/Process_06.jpg)
+![](../../assets/Kapitel-16/Process_06.jpg)  
 
-- Geben Sie hier folgende Werte ein:
+- Geben Sie hier folgende Werte ein:  
 
   | | |  
   |--|--|
   | **Name** | *Salary Request* | 
   | **Subject** | *Salary Request for &EMPLOYEE_NAME. from &SALARY. to &P_NEW_SALARY.*| 
   | **Priority** | *2-High*  | 
+  | | |  
 
-
-- Klicken Sie anschließend auf **Create**.
+- Klicken Sie anschließend auf **Create**.  
 
 ![](../../assets/Kapitel-16/Process_07.jpg)
 
@@ -55,33 +55,33 @@ select initcap(sary_employee_name) as employee_name,
        sary_salary as salary 
   from salaries
  where sary_id = :APEX$TASK_PK
- ```
+ ```  
 
 ![](../../assets/Kapitel-16/Process_08.jpg) 
  
-- Als nächstes wird die **Task Details Page** erstellt. Klicken Sie dafür den Button **Create Task Detail Page**.
+- Als nächstes wird die **Task Details Page** erstellt. Klicken Sie dafür den Button **Create Task Detail Page**.  
 
-![](../../assets/Kapitel-16/Process_09.jpg)
+![](../../assets/Kapitel-16/Process_09.jpg)  
 
-- Der aufkommende Dialog kann mit **OK** bestätigt werden.
-- Sie gelangen jetzt wieder zur Übersicht Ihrer Tasks. Klicken Sie auf den zuvor angelegten Task **Salary Request** um im nächsten Schritt Teilnehmer hinzuzufügen.
+- Der aufkommende Dialog kann mit **OK** bestätigt werden.  
+- Sie gelangen jetzt wieder zur Übersicht Ihrer Tasks. Klicken Sie auf den zuvor angelegten Task **Salary Request** um im nächsten Schritt Teilnehmer hinzuzufügen.  
 
-![](../../assets/Kapitel-16/Process_10.jpg)
+![](../../assets/Kapitel-16/Process_10.jpg)  
 
-- Im Bereich Participants wählen Sie für den **Potential Owner** den Value Type **Static** und geben den Value **SCHNEIDER** ein.
+- Im Bereich Participants wählen Sie für den **Potential Owner** den Value Type **Static** und geben den Value **SCHNEIDER** ein.  
 
-![](../../assets/Kapitel-16/Process_11.jpg)
+![](../../assets/Kapitel-16/Process_11.jpg)  
 
-- Als Parameter geben Sie **P_NEW_SALARY** mit dem Label **Salary Proposal** und den Data Type **String** ein.
+- Als Parameter geben Sie **P_NEW_SALARY** mit dem Label **Salary Proposal** und den Data Type **String** ein.  
 
 ![](../../assets/Kapitel-16/Process_12.jpg) 
  
-- Klicken Sie jetzt **Apply Changes** um alle Eingaben zu speichern und wechseln Sie anschließend erneut in den Task um eine Action hinzuzufügen. Klicken Sie dafür im unteren Bereich auf **Add Action**.
+- Klicken Sie jetzt **Apply Changes** um alle Eingaben zu speichern und wechseln Sie anschließend erneut in den Task um eine Action hinzuzufügen. Klicken Sie dafür im unteren Bereich auf **Add Action**.  
  
-![](../../assets/Kapitel-16/Process_13.jpg)
+![](../../assets/Kapitel-16/Process_13.jpg)  
 
-- Ein neuer Dialog für die Action wird geöffnet.
-- Geben Sie hier folgende Eingaben ein:
+- Ein neuer Dialog für die Action wird geöffnet.  
+- Geben Sie hier folgende Eingaben ein:  
 
   | | |  
   |--|--|
@@ -91,66 +91,68 @@ select initcap(sary_employee_name) as employee_name,
   | **On Event** | *Complete*  | 
   | **Outcome** | *Approved*  | 
   | **Success Message** | *Salary change approved*  | 
+  | | |  
 
 
-![](../../assets/Kapitel-16/Process_14.jpg) 
+![](../../assets/Kapitel-16/Process_14.jpg)  
 
-- Zuletzt noch das folgende SQL Query eingeben.
+- Zuletzt noch das folgende SQL Query eingeben.  
 
  ```sql
 update salaries
    set sary_salary = :P_NEW_SALARY
  where sary_id = :APEX$TASK_PK;
- ```
-
+ ```  
  
-- Abschließend auf **Create** klicken.
+- Abschließend auf **Create** klicken.  
 
-![](../../assets/Kapitel-16/Process_15.jpg)
+![](../../assets/Kapitel-16/Process_15.jpg)  
 
-- Der Task ist nun fertiggestellt, so dass Sie als nächstes wieder zur Anwendungsübersicht wechseln können.
+- Der Task ist nun fertiggestellt, so dass Sie als nächstes wieder zur Anwendungsübersicht wechseln können.  
  
-![](../../assets/Kapitel-16/Process_16.jpg) 
+![](../../assets/Kapitel-16/Process_16.jpg)  
 
 # 16.3. Erstellen der „My Approvals“ und „My Request“ Seite
 
-- Klicken Sie auf **Create Page** und wählen **Unified Task List** aus. Anschließend klicken Sie **Next**.
+- Klicken Sie auf **Create Page** und wählen **Unified Task List** aus. Anschließend klicken Sie **Next**.  
 
-![](../../assets/Kapitel-16/Process_17.jpg)
+![](../../assets/Kapitel-16/Process_17.jpg)  
 
 - Geben Sie folgende Werte ein:
   - Page Number: 4
   - Page Name: My Approvals
   - Request Context: My Tasks
-- Klicken Sie dann auf **Create Page**.
+- Klicken Sie dann auf **Create Page**.  
 
 ![](../../assets/Kapitel-16/Process_18.jpg) 
 
-- Die Seite wird nun erstellt und angezeigt. Wechseln Sie wieder zur Seitenübersicht und klicken erneut auf **Create Page**.
+- Die Seite wird nun erstellt und angezeigt. Wechseln Sie wieder zur Seitenübersicht und klicken erneut auf **Create Page**.  
 
  
-- Wählen Sie auch hier wieder die Component **Unified Task List** aus.
+- Wählen Sie auch hier wieder die Component **Unified Task List** aus.  
+
 - Geben Sie dann folgende Werte ein:
   - Page Number: 5
   - Page Name: My Requests
-  - Request Context: Initiated by Me 
-- Klicken Sie dann auf **Create Page**.
+  - Request Context: Initiated by Me  
+
+- Klicken Sie dann auf **Create Page**.  
  
-![](../../assets/Kapitel-16/Process_19.jpg)
+![](../../assets/Kapitel-16/Process_19.jpg)  
  
 # 16.4.	Erstellen der „Salary Change“ Seite
 
-- Klicken Sie auf **Create Page** und wählen **Blank Page** aus. 
-- Anschließend klicken Sie **Next**.
+- Klicken Sie auf **Create Page** und wählen **Blank Page** aus.  
+- Anschließend klicken Sie **Next**.  
 
 ![](../../assets/Kapitel-16/Process_20.jpg)
 
-- Geben Sie die Page Number 6 ein und den Page Name **Salary Change**. 
-- Deaktivieren Sie hier die Breadcrumb und klicken Sie anschließend auf den Button **Create Page**.
+- Geben Sie die Page Number 6 ein und den Page Name **Salary Change**.   
+- Deaktivieren Sie hier die Breadcrumb und klicken Sie anschließend auf den Button **Create Page**.  
  
-![](../../assets/Kapitel-16/Process_21.jpg)
+![](../../assets/Kapitel-16/Process_21.jpg)  
  
-- Sie gelangen nun zum Page Editor.
+- Sie gelangen nun zum Page Editor.  
 - Fügen Sie eine Region Form zum Bereich **Body** hinzu.
 - Den Title ändern Sie auf **Salary Change**.
 - Unter Source wählen Sie den Table **Salaries** aus.
@@ -175,10 +177,10 @@ update salaries
 
 ![](../../assets/Kapitel-16/Process_22.jpg)
 
-- Ändern Sie im Bereich **Pre-Rendering** den Process **Initialize form Salary Request**. 
-- Den Namen ändern Sie bitte auf **Fetch Employee Details for User**.
-- Den Type ändern Sie auf **Execute Code**.
-- Im PL/SQL Code Editor geben Sie bitte folgendes SQL-Query ein:
+- Ändern Sie im Bereich **Pre-Rendering** den Process **Initialize form Salary Request**.  
+- Den Namen ändern Sie bitte auf **Fetch Employee Details for User**.  
+- Den Type ändern Sie auf **Execute Code**.  
+- Im PL/SQL Code Editor geben Sie bitte folgendes SQL-Query ein:  
 
  ```sql
 select sary_id, sary_employee_name, sary_department, sary_salary
@@ -187,21 +189,21 @@ select sary_id, sary_employee_name, sary_department, sary_salary
  where initcap(sary_employee_name) = initcap(:APP_USER);
  ```
 
-![](../../assets/Kapitel-16/Process_23.jpg)
+![](../../assets/Kapitel-16/Process_23.jpg)  
 
-- Fügen Sie dann der Seite einen Button hinzu und nennen diesen **Submit**.
-- Den Button platzieren Sie zur Position **Create** und aktivieren **Hot**.
+- Fügen Sie dann der Seite einen Button hinzu und nennen diesen **Submit**.  
+- Den Button platzieren Sie zur Position **Create** und aktivieren **Hot**.  
 
-![](../../assets/Kapitel-16/Process_24.jpg)
+![](../../assets/Kapitel-16/Process_24.jpg)  
 
-- Wechseln Sie dann zu **Processes** und fügen Sie dort einen neue Process hinzu.
-- Den Process nennen Sie **Submit Task** und ändern folgende Werte:
-  - Type: Human Task - Create
-  - Definition: Salary Request
-  - Details Primary Key Item: P6_SARY_ID
-  - When Button pressed: Submit
+- Wechseln Sie dann zu **Processes** und fügen Sie dort einen neue Process hinzu.  
+- Den Process nennen Sie **Submit Task** und ändern folgende Werte:  
+  - Type: Human Task - Create  
+  - Definition: Salary Request  
+  - Details Primary Key Item: P6_SARY_ID  
+  - When Button pressed: Submit  
 
-![](../../assets/Kapitel-16/Process_25.jpg)
+![](../../assets/Kapitel-16/Process_25.jpg)  
 
 - Der zum Process angelegte Parameter **Salary Proposal** entsprechend anpassen:
   - Type: Item
@@ -248,30 +250,30 @@ Wichtig ist, dass Sie als Administrator in Ihrem Workspace angemeldet sind, so d
 
 ![](../../assets/Kapitel-16/Process_31.jpg)
 
-- Wechseln Sie hier zur Seite **Salary Change** und geben dort den Wert **3900** bei **New Salary** ein.
-- Anschließend klicken Sie **Submit**.
+- Wechseln Sie hier zur Seite **Salary Change** und geben dort den Wert **3900** bei **New Salary** ein.  
+- Anschließend klicken Sie **Submit**.  
 
-![](../../assets/Kapitel-16/Process_32.jpg)
+![](../../assets/Kapitel-16/Process_32.jpg)  
 
-- Sie gelangen von dort aus zur Seite **My Requests** und sehen dort die soeben angeforderte Gehaltsanpassung. 
+- Sie gelangen von dort aus zur Seite **My Requests** und sehen dort die soeben angeforderte Gehaltsanpassung.   
  
-- Klicken Sie jetzt auf den Titel der Anfrage. Es erscheint dann ein Slider mit allen Task Details.
+- Klicken Sie jetzt auf den Titel der Anfrage. Es erscheint dann ein Slider mit allen Task Details.  
 
-![](../../assets/Kapitel-16/Process_33.jpg)
+![](../../assets/Kapitel-16/Process_33.jpg)  
 
-- Als nächstes melden Sie sich von der Anwendung ab.
+- Als nächstes melden Sie sich von der Anwendung ab.  
 
-- Melden Sie sich jetzt mit dem User SCHNEIDER an.
+- Melden Sie sich jetzt mit dem User SCHNEIDER an.  
+ 
+![](../../assets/Kapitel-16/Process_34.jpg)  
 
-![](../../assets/Kapitel-16/Process_34.jpg)
+- Wechseln Sie hier zur Seite **My Approvals**. Sie sehen dort alle Anfragen.  
 
-- Wechseln Sie hier zur Seite **My Approvals**. Sie sehen dort alle Anfragen.
+![](../../assets/Kapitel-16/Process_35.jpg)  
 
-![](../../assets/Kapitel-16/Process_35.jpg)
+- Klicken Sie jetzt auf den Titel der Anfrage. Es erscheint ein Slider mit allen Task Details.  
+- Wenn Sie jetzt auf **Approve** klicken wird der Antrag genehmigt. Ein Klick auf **Reject** würden die Anfrage ablehnen. Klicken Sie auf **Approve**.  
 
-- Klicken Sie jetzt auf den Titel der Anfrage. Es erscheint ein Slider mit allen Task Details.
-- Wenn Sie jetzt auf **Approve** klicken wird der Antrag genehmigt. Ein Klick auf **Reject** würden die Anfrage ablehnen. Klicken Sie auf **Approve**.
+![](../../assets/Kapitel-16/Process_36.jpg)  
 
-![](../../assets/Kapitel-16/Process_36.jpg)
-
-- Der Antrag wurde genehmigt und das Gehalt vom Mitarbeiter **FISCHER** entsprechend angepasst.
+- Der Antrag wurde genehmigt und das Gehalt vom Mitarbeiter **FISCHER** entsprechend angepasst.  

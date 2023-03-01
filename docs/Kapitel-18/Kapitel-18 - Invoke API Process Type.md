@@ -6,7 +6,7 @@ Der Process Type **Invoke API** ermöglicht die komplett deklarative Ausführung
 
 - Klicken Sie auf die Registerkarte **Processing**, um die Prozesse mit dem Typ **Invoke API** anzusehen.
 
-  ![](../../assets/Kapitel-18/invoke_api_01.jpg)
+![](../../assets/Kapitel-18/invoke_api_01.jpg)
 
 In diesem Kapitel wird eine Prozedur angelegt, um die oben genannten Funktionen nutzen zu können.
 
@@ -45,52 +45,53 @@ Für dieses Kapitel muss zuerst eine **Prozedur** und eine **View** erstellt wer
 
   - Analog zur Erstellung einer **View** starten Sie den Assistenten zum Erstellen einer **Prozedur**. Öffnen Sie dazu das Dropdown-Menü über das **+** und klicken auf den Eintrag **Procedure**. Weitere Informationen zu einer Prozedur finden Sie unter dem folgenden Link: [Oracle Documentation CREATE PROCEDURE Statement](https://docs.oracle.com/en/database/oracle/oracle-database/21/lnpls/CREATE-PROCEDURE-statement.html#GUID-5F84DB47-B5BE-4292-848F-756BF365EC54)
 
-  ![](../../assets/Kapitel-18/invoke_api_02.jpg)
+![](../../assets/Kapitel-18/invoke_api_02.jpg)
 
-  Es öffnet sich ein Assistent zur Erstellung der Prozedur.  
-  Nun müssen Sie den entsprechenden Namen **PR_UPDATE_ORDER_ITEMS** sowie den **Return Data Type** als **VARCHAR2** für die Prozedur hinterlegen. Um eine einheitliche Benennung über verschiedene Anwendungen hinweg zu erzielen, empfiehlt sich die Verwendung von Namenskonventionen.
+    Es öffnet sich ein Assistent zur Erstellung der Prozedur.  
+    Nun müssen Sie den entsprechenden Namen **PR_UPDATE_ORDER_ITEMS** sowie den **Return Data Type** als **VARCHAR2** für die Prozedur hinterlegen. Um eine einheitliche Benennung über verschiedene Anwendungen hinweg zu erzielen, empfiehlt sich die Verwendung von Namenskonventionen.
 
-  In diesem Fall setzt sich die Bezeichnung der View wie folgt zusammen:  
-  **PR_<FACHL.NAME>**
+    In diesem Fall setzt sich die Bezeichnung der View wie folgt zusammen:  
+    **PR_<FACHL.NAME>**
 
-  ![](../../assets/Kapitel-18/invoke_api_03.jpg)
+![](../../assets/Kapitel-18/invoke_api_03.jpg)
 
   - Klicken Sie dann auf den Button **Next**.
 
   - Geben Sie die folgenden Parameter ein:
 
-  | | |  
-  |--|--|
-  | **Arugement Name** | **In/Out** |  **Argument Type** | 
-  | *p_ordr_item_id* | *IN* | *NUMBER*| 
-  | *p_ordr_item_unit_price* | *IN* | *NUMBER*| 
-  | *p_ordr_item_quantity* | *IN* | *NUMBER*| 
-  | *p_prdt_info_id* | *IN* | *NUMBER*| 
-  | *p_prdt_info_category* | *IN* | *VARCHAR2*| 
-  | *p_prdt_info_avail* | *IN* | *VARCHAR2*| 
-  | *p_prdt_info_list_price* | *IN* | *NUMBER*| 
+    | | | |
+    |--|--|--|
+    | **Argument Name** | **In/Out** |  **Argument Type** | 
+    | *p_ordr_item_id* | *IN* | *NUMBER*| 
+    | *p_ordr_item_unit_price* | *IN* | *NUMBER*| 
+    | *p_ordr_item_quantity* | *IN* | *NUMBER*| 
+    | *p_prdt_info_id* | *IN* | *NUMBER*| 
+    | *p_prdt_info_category* | *IN* | *VARCHAR2*| 
+    | *p_prdt_info_avail* | *IN* | *VARCHAR2*| 
+    | *p_prdt_info_list_price* | *IN* | *NUMBER*| 
+    | | |
 
-  ![](../../assets/Kapitel-18/invoke_api_04.jpg)
+![](../../assets/Kapitel-18/invoke_api_04.jpg)
 
   - Fügen Sie den entsprechenden Code ein.
-  ```sql
-  begin
+     ```sql
+     begin
+    
+       update order_items
+          set ordr_item_unit_price   = p_ordr_item_unit_price
+            , ordr_item_quantity     = p_ordr_item_quantity
+        where ordr_item_id           = p_ordr_item_id;
+    
+       update product_info
+          set prdt_info_category    = p_prdt_info_category
+            , prdt_info_avail       = p_prdt_info_avail
+            , prdt_info_list_price  = p_prdt_info_list_price
+        where prdt_info_id          = p_prdt_info_id;
+    
+     end;
+     ```
 
-    update order_items
-       set ordr_item_unit_price   = p_ordr_item_unit_price
-         , ordr_item_quantity     = p_ordr_item_quantity
-     where ordr_item_id           = p_ordr_item_id;
-
-    update product_info
-       set prdt_info_category    = p_prdt_info_category
-         , prdt_info_avail       = p_prdt_info_avail
-         , prdt_info_list_price  = p_prdt_info_list_price
-     where prdt_info_id          = p_prdt_info_id;
-
-  end;
-  ```
-
-  ![](../../assets/Kapitel-18/invoke_api_05.jpg)
+![](../../assets/Kapitel-18/invoke_api_05.jpg)
 
   - Klicken Sie dann auf den Button **Next** und anschließend auf **Create Procedure**.
 
@@ -98,10 +99,11 @@ Für dieses Kapitel muss zuerst eine **Prozedur** und eine **View** erstellt wer
   
   - Geben Sie die folgenden Parameter ein:
 
-  | | |  
-  |--|--|
-  | **Arugement Name** | **In/Out** |  **Argument Type** | 
-  | *p_ordr_item_id* | *IN* | *NUMBER*| 
+    | | | |
+    |--|--|--|
+    | **Argument Name** | **In/Out** |  **Argument Type** | 
+    | *p_ordr_item_id* | *IN* | *NUMBER*| 
+    | | |
 
   - Hinterlegen Sie den entsprechenden Code.
     ```sql
@@ -122,7 +124,7 @@ Für dieses Kapitel muss zuerst eine **Prozedur** und eine **View** erstellt wer
   - Wählen Sie den Seitentypen **Component** aus.
   - Wählen Sie den Bereichstypen **Interactive Report** aus.
 
-    ![](../../assets/Kapitel-18/invoke_api_06.jpg)
+![](../../assets/Kapitel-18/invoke_api_06.jpg)
 
   - Geben Sie als **Page Number**: *101* ein und als **Page Name**: *Orders and Products*. 
   - Schalten Sie **Include Form Page** ein.
@@ -132,15 +134,15 @@ Für dieses Kapitel muss zuerst eine **Prozedur** und eine **View** erstellt wer
 
   - Unter **Navigation** schalten Sie **Use Breadcrumb** aus und dann klicken Sie auf **Next**.
 
-    ![](../../assets/Kapitel-18/invoke_api_07.jpg)
+![](../../assets/Kapitel-18/invoke_api_07.jpg)
 
   - Wählen Sie **ORDER_ITEM_ID** als Primärschlüssel und anschließend klicken Sie auf **Create Page**.
 
-    ![](../../assets/Kapitel-18/invoke_api_08.jpg)
+![](../../assets/Kapitel-18/invoke_api_08.jpg)
   
   - Wenn die Seite erstellt ist, löschen Sie den Button **Create**
 
-    ![](../../assets/Kapitel-18/invoke_api_09.jpg)
+![](../../assets/Kapitel-18/invoke_api_09.jpg)
   
   - Klicken Sie auf **Save** und navigieren Sie dann zu **Seite 102**
 
@@ -148,59 +150,61 @@ Für dieses Kapitel muss zuerst eine **Prozedur** und eine **View** erstellt wer
 
   - Setzen Sie den Type der folgenden Elemente auf **Hidden**:
 
-    ![](../../assets/Kapitel-18/invoke_api_10.jpg)
+![](../../assets/Kapitel-18/invoke_api_10.jpg)
   
   - Setzen Sie den **Read Only** Type der folgenden Elemente auf **Always**: 
 
-    ![](../../assets/Kapitel-18/invoke_api_11.jpg)
+![](../../assets/Kapitel-18/invoke_api_11.jpg)
   
   - Entfernen Sie den Standardprozess und erstellen Sie zwei neue Prozesse unter **Proccesses**:
 
-    ![](../../assets/Kapitel-18/invoke_api_12.jpg)
+![](../../assets/Kapitel-18/invoke_api_12.jpg)
   
   - Ein Prozess mit den folgenden Einstellungen:
 
-    ![](../../assets/Kapitel-18/invoke_api_13.jpg)
+![](../../assets/Kapitel-18/invoke_api_13.jpg)
   
   - Der Page Designer legt die Parameter automatisch vorab fest. Ordnen Sie jeden Parameter dem entsprechenden Element/Wert zu.
 
-  | | |  
-  |--|--|
-  | **p_ordr_item_id** | *P102_ORDER_ITEM_ID*| 
-  | **p_ordr_item_unit_price** | *P102_UNIT_PRICE*| 
-  | **p_ordr_item_quantity** | *P102_QUANTITY*| 
-  | **p_prdt_info_id** | *P102_PRODUCT_ID*| 
-  | **p_prdt_info_category** | *P102_CATEGORY*| 
-  | **p_prdt_info_avail** | *P102_PRODUCT_AVAIL*| 
-  | **p_prdt_info_list_price** | *P102_LIST_PRICE*| 
+    | | |  
+    |--|--|
+    | **p_ordr_item_id** | *P102_ORDER_ITEM_ID*| 
+    | **p_ordr_item_unit_price** | *P102_UNIT_PRICE*| 
+    | **p_ordr_item_quantity** | *P102_QUANTITY*| 
+    | **p_prdt_info_id** | *P102_PRODUCT_ID*| 
+    | **p_prdt_info_category** | *P102_CATEGORY*| 
+    | **p_prdt_info_avail** | *P102_PRODUCT_AVAIL*| 
+    | **p_prdt_info_list_price** | *P102_LIST_PRICE*| 
+    | | |
 
-  ![](../../assets/Kapitel-18/invoke_api_14.jpg)
+![](../../assets/Kapitel-18/invoke_api_14.jpg)
   
   - Erstellen Sie einen Prozess mit den folgenden Einstellungen:
 
-    ![](../../assets/Kapitel-18/invoke_api_15.jpg)
+![](../../assets/Kapitel-18/invoke_api_15.jpg)
 
   - Ordnen Sie den Parameter dem entsprechenden Element/Wert zu.
 
-  | | |  
-  |--|--|
-  | **p_ordr_item_id** | *P102_ORDER_ITEM_ID*| 
+    | | |  
+    |--|--|
+    | **p_ordr_item_id** | *P102_ORDER_ITEM_ID*| 
+    | | |
 
-  ![](../../assets/Kapitel-18/invoke_api_16.jpg)
+![](../../assets/Kapitel-18/invoke_api_16.jpg)
 
   - Klicken Sie auf **Save** und führen Sie die Anwendung aus.
 
   - Navigieren Sie zur Seite **Orders and Products**. 
   - Wählen Sie ein **Order Item** aus.
 
-    ![](../../assets/Kapitel-18/invoke_api_17.jpg)
+![](../../assets/Kapitel-18/invoke_api_17.jpg)
   
-  - Bearbeiten Sie die markierten Felder oder löschen Sie das ausgewählte **Order Item**
+  - Bearbeiten Sie die markierten Felder oder löschen Sie das ausgewählte **Order Item**  
 
-    ![](../../assets/Kapitel-18/invoke_api_18.jpg)
+![](../../assets/Kapitel-18/invoke_api_18.jpg)  
 
-
-
+    
+<br/><br/>
 Herzlichen Glückwunsch!  
 Sie haben das Tutorial erfolgreich beendet.  
 Falls Sie noch mehr über APEX lernen wollen, schauen Sie doch mal auf unserem APEX Portal vorbei:
