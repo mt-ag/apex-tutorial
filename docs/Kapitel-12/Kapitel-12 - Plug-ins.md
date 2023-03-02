@@ -5,8 +5,9 @@
 Plug-Ins sind Erweiterungen und ermöglichen es, APEX um benutzerdefinierte Elementtypen, Regionstypen, Prozesse und dynamische Aktionen zu erweitern. Komponenten, die auf Plug-Ins basieren, werden ähnlich wie die Standard APEX-Komponenten erstellt und gepflegt. Mit Plug-Ins können Entwickler angepasste Komponenten erstellen, um die Funktionalität, das Erscheinungsbild und die Benutzerfreundlichkeit Ihrer Anwendungen zu verbessern.  
 
 Plug-Ins können dabei helfen, die Anwendung benutzerfreundlicher zu gestalten und Extras hinzuzufügen. Im Rahmen dieser Aufgabe werden zwei Plug-Ins eingebaut.  
-Im Folgenden werden Sie Plug-Ins in Ihre Anwendung einbinden. Weitere Plug-Ins außer die hier erwähnten finden Sie z.B. auf apex.world:  
+Im Folgenden werden Sie Plug-Ins in Ihre Anwendung einbinden.  
 
+>Weitere Plug-Ins außer die hier erwähnten finden Sie z.B. auf apex.world:  
 [https://apex.world/ords/f?p=100:700](https://apex.world/ords/f?p=100:700)
 
 ## 12.2.	Plug-Ins
@@ -88,9 +89,10 @@ Es gibt noch viele weitere Einstellungen bzw. **Plug-In Settings**, die Sie wie 
 ### 12.2.3.	Quality Assurance Plugin 
 
 - Gehen Sie wie in 12.2.1 beschrieben vor, um ein weiteres Plug-In zu installieren. 
-Das Plug-In ermöglicht es, Entwicklungsvorgaben zu definieren und zeigt anschließend Verstöße hiergegen automatisch auf der jeweiligen Seite an.
-Das Plug-In können Sie hier herunterladen: 
-https://github.com/mt-ag/apex-qa-plugin/archive/master.zip
+Das Plug-In ermöglicht es, Entwicklungsvorgaben zu definieren und zeigt anschließend Verstöße hiergegen automatisch auf der jeweiligen Seite an.  
+
+> Das Plug-In können Sie hier herunterladen: 
+[https://github.com/mt-ag/apex-qa-plugin/archive/master.zip](https://github.com/mt-ag/apex-qa-plugin/archive/master.zip)  
 
 - Importieren Sie das Plugin. Es sollte dann in dem Ordner liegen, in welchen Sie das Plug-In entpackt haben: 
 **…src\APEX\region_type_plugin_com_mtag_olemm_qa_region.sql**
