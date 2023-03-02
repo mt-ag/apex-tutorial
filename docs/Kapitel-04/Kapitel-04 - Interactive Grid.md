@@ -10,7 +10,7 @@ Dazu gehen Sie wie in Aufgabe #03 über den **SQL Workshop** in den **Object Bro
 Dort geben Sie folgende Daten ein:
 
 - **View Name**: ***TUTO_P0021_VW***  
-  **Query**:
+- **Query**:
   ```sql
   select PRDT_INFO_ID as PRODUCT_ID,
          PRDT_INFO_NAME AS PRODUCT_NAME,
