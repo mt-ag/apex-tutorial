@@ -60,7 +60,7 @@ Die Daten werden im rechten Seitenbereich als **Classic Report** dargestellt. Li
 | **Label** | *Category*| 
 | **List of Values**|  |
 | Type | *SQL Query* |
-| SQL Query | select distinct category as d, <br/> category as r <br/> from TUTO_P0051_VW| 
+| SQL Query | select distinct category as d, <br> category as r <br> from TUTO_P0051_VW| 
 | | |
 
 
