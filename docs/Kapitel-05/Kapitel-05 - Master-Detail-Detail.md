@@ -164,6 +164,7 @@ Eine Region ist ein Bereich auf einer Seite, der als Container für Inhalte dien
 ![](../../assets/Kapitel-05/Master_Detail_17.jpg)
 
 In der untersten Region werden alle Artikel aus der ausgewählten Bestellung angezeigt. Auch wenn hier, wie in den oberen Regionen, ein **Interactive Grid** verwendet wird, ist standardmäßig der Edit-Modus nicht verfügbar, wenn das **Interactive Grid** ohne den Assistenten erstellt wurde. Außerdem wird dem Nutzer zwar die ID der bestellten Artikel aber nicht deren Artikelname angezeigt.  
+
 Um dies zu ändern, wird das **Interactive Grid** in den nächsten Schritten entsprechend angepasst. 
 
 - Öffnen Sie erneut den **Page Designer**. Wählen Sie den **Eintrag** ***Attributes*** bei der **Region** ***Items in Order***. Setzen Sie anschließend den Wert von **Enabled** in dem Bereich **Edit** auf ***Yes***. Dies aktiviert den **Edit-Modus** für das **Interactive Grid**.
