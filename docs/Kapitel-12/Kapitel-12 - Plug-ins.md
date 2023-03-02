@@ -5,15 +5,15 @@
 Plug-Ins sind Erweiterungen und ermöglichen es, APEX um benutzerdefinierte Elementtypen, Regionstypen, Prozesse und dynamische Aktionen zu erweitern. Komponenten, die auf Plug-Ins basieren, werden ähnlich wie die Standard APEX-Komponenten erstellt und gepflegt. Mit Plug-Ins können Entwickler angepasste Komponenten erstellen, um die Funktionalität, das Erscheinungsbild und die Benutzerfreundlichkeit Ihrer Anwendungen zu verbessern.  
 
 Plug-Ins können dabei helfen, die Anwendung benutzerfreundlicher zu gestalten und Extras hinzuzufügen. Im Rahmen dieser Aufgabe werden zwei Plug-Ins eingebaut.  
-Im Folgenden werden Sie Plug-Ins in Ihre Anwendung einbinden. Weitere Plug-Ins außer die hier erwähnten finden Sie z.B. auf apex.world:
+Im Folgenden werden Sie Plug-Ins in Ihre Anwendung einbinden. Weitere Plug-Ins außer die hier erwähnten finden Sie z.B. auf apex.world:  
 
-https://apex.world/ords/f?p=100:700
+[https://apex.world/ords/f?p=100:700](https://apex.world/ords/f?p=100:700)
 
 ## 12.2.	Plug-Ins
 
 Für die Bearbeitung dieser Aufgaben werden wir ein Plug-In von folgender Seite verwenden: 
 
-https://api.github.com/repos/Dani3lSun/apex-plugin-apextooltip/zipball.  
+[https://api.github.com/repos/Dani3lSun/apex-plugin-apextooltip/zipball](https://api.github.com/repos/Dani3lSun/apex-plugin-apextooltip/zipball)  
 
 Dieses Plugin ermöglicht es dem Entwickler, Tooltips bei Buttons, Feldern, Regionen, Berichten und weiteren Komponenten einzubauen.  
 Das Plug-In muss zunächst heruntergeladen und entpackt werden.  
@@ -35,7 +35,7 @@ Das Plug-In muss zunächst heruntergeladen und entpackt werden.
 
   Ziehen Sie diese Datei per **Drag and Drop** in das entsprechend Feld. Wählen Sie **Plug-in** als **File Type** und klicken Sie anschließend auf **Next**.  
   
-![](../../assets/Kapitel-12/Plugins_03.jpg)
+![](../../assets/Kapitel-12/Plugins_03.jpg)  
 
 
 - Klicken Sie erneut auf **Next**.  
@@ -52,16 +52,16 @@ Das Plug-In muss zunächst heruntergeladen und entpackt werden.
 
 - Das Plug-In wurde nun installiert. Klicken Sie auf Ihre Applikation, um zurück zu gelangen. 
 
-![](../../assets/Kapitel-12/Plugins_06.jpg)
+![](../../assets/Kapitel-12/Plugins_06.jpg)  
 
-- Wählen Sie die Seite 2 - **STATES** aus. 
+- Wählen Sie die Seite 2 - **STATES** aus.  
 
-- Klicken Sie auf **Dynamic Actions** (Blitz-Symbol) und klicken Sie mit der **rechten Maustaste** unter **Page Load** auf **Create Dynamic Action**. 
+- Klicken Sie auf **Dynamic Actions** (Blitz-Symbol) und klicken Sie mit der **rechten Maustaste** unter **Page Load** auf **Create Dynamic Action**.  
 
 ![](../../assets/Kapitel-12/Plugins_07.jpg)
 
-Dynamic Actions ermöglichen es Entwicklern, clientseitiges Verhalten ohne JavaScript festzulegen. Mit dem Assistenten zum Erstellen kann festgelegt werden, wann bestimmte Aktionen ausgeführt werden sollen und welche Elemente von diesen Aktionen betroffen sind.
-- Ändern Sie den Namen der Dynamic Action zu **Tooltip** und klicken Sie anschließend auf **Show**.
+Dynamic Actions ermöglichen es Entwicklern, clientseitiges Verhalten ohne JavaScript festzulegen. Mit dem Assistenten zum Erstellen kann festgelegt werden, wann bestimmte Aktionen ausgeführt werden sollen und welche Elemente von diesen Aktionen betroffen sind.  
+- Ändern Sie den Namen der Dynamic Action zu **Tooltip** und klicken Sie anschließend auf **Show**.  
 
 - Ändern Sie nun die folgenden Felder:  
   | | |  
@@ -78,8 +78,8 @@ Dynamic Actions ermöglichen es Entwicklern, clientseitiges Verhalten ohne JavaS
 
 ![](../../assets/Kapitel-12/Plugins_08.jpg)
 
-- Starten Sie nun über den **Run** Button die Anwendung.
-- Wenn Sie nun mit der Maus über den Create Button fahren (hovern), wird der Tooltip eingeblendet.
+- Starten Sie nun über den **Run** Button die Anwendung.  
+- Wenn Sie nun mit der Maus über den Create Button fahren (hovern), wird der Tooltip eingeblendet.  
 
 ![](../../assets/Kapitel-12/Plugins_09.jpg)
 

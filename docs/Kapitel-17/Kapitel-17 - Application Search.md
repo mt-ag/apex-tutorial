@@ -153,7 +153,7 @@ Um die Suchkonfigurationen zu verwenden, erstellen Sie eine Seite, auf der die S
 
 ### 17.2.1. Suchseite erstellen 
 
-- Im **App Builder** klicken Sie auf **Create Page** .  
+- Im **App Builder** klicken Sie auf **Create Page**.  
 - Wählen Sie den Seitentypen **Component** aus.  
 - Wählen Sie den Bereichstypen **Search Page** aus.  
 
@@ -208,40 +208,41 @@ Eine Suchkonfigurationsliste ist bereits verfügbar. Wählen Sie die Suchkonfigu
 
 ![](../../assets/Kapitel-17/search_config_19.jpg)  
 
-  Die **Dynamic Action** umfasst drei **True Actions**:  
+Die **Dynamic Action** umfasst drei **True Actions**:  
 
 ![](../../assets/Kapitel-17/search_config_20.jpg)  
 
-  - Die erste Aktion ist vom Type *Execute JavaScript Code* mit den folgenden Einstellungen:  
+- Die erste Aktion ist vom Type *Execute JavaScript Code* mit den folgenden Einstellungen:  
 
-    | | |  
-    |--|--|
-    | **Name** | *Prevent Default Page Submit* | 
-    | **Action** | *Execute JavaScript Code*| 
-    | **Code** | *this.browserEvent.preventDefault();*| 
-    | | |  
+  | | |  
+  |--|--|
+  | **Name** | *Prevent Default Page Submit* | 
+  | **Action** | *Execute JavaScript Code*| 
+  | **Code** | *this.browserEvent.preventDefault();*| 
+  | | |  
 
 ![](../../assets/Kapitel-17/search_config_21.jpg)
 
-  - Die zweite Aktion ist vom Type *Execute Server-side Code* mit den folgenden Einstellungen:
+- Die zweite Aktion ist vom Type *Execute Server-side Code* mit den folgenden Einstellungen:
 
-    | | |  
-    |--|--|
-    | **Name** | *Submit Search Item* | 
-    | **Language** | *PL/SQL*| 
-    | **PL/SQL Code** | *null;*| 
-    | **Items to Submit** | *P0_SEARCH*| 
+  | | |  
+  |--|--|
+  | **Name** | *Submit Search Item* | 
+  | **Language** | *PL/SQL*| 
+  | **PL/SQL Code** | *null;*| 
+  | **Items to Submit** | *P0_SEARCH*| 
+  | | | 
 
 ![](../../assets/Kapitel-17/search_config_22.jpg)
 
-  - Und die dritte Aktion ist wieder vom Type *Execute JavaScript Code* mit den folgenden Einstellungen:
+- Und die dritte Aktion ist wieder vom Type *Execute JavaScript Code* mit den folgenden Einstellungen:
 
-    | | |  
-    |--|--|
-    | **Name** | *Redirect to Results Page* | 
-    | **Action** | *Execute JavaScript Code*| 
-    | **Code** | *apex.navigation.redirect ( "f?p=&APP_ID.:81:&APP_SESSION.::NO:RP::" );*| 
-    | | |  
+  | | |  
+  |--|--|
+  | **Name** | *Redirect to Results Page* | 
+  | **Action** | *Execute JavaScript Code*| 
+  | **Code** | *apex.navigation.redirect ( "f?p=&APP_ID.:81:&APP_SESSION.::NO:RP::" );*| 
+  | | |  
 
 ![](../../assets/Kapitel-17/search_config_23.jpg)  
 
@@ -252,12 +253,13 @@ Eine Suchkonfigurationsliste ist bereits verfügbar. Wählen Sie die Suchkonfigu
 
 - Unter **Body** klicken Sie auf **Search Results** Region, und dann auf **Attributes**.  
 
-- Geben Sie als **Search Page Item**: **P0_SEARCH** ein und klichen Sie anschließend auf **Save**.  
+- Geben Sie als **Search Page Item**: **P0_SEARCH** ein und klicken Sie anschließend auf **Save**.  
 
 ![](../../assets/Kapitel-17/search_config_25.jpg)  
     
 
-<br/>  
+<br>  
+
 Das Suchfeld taucht nun in der Navigationsleiste auf, ist auf jeder Seite verfügbar und leitet Sie auf die Suchergebnisseite weiter, wenn ein Suchwert eingegeben und die Eingabetaste gedrückt wird.  
 
 ![](../../assets/Kapitel-17/search_config_26.jpg)

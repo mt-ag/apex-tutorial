@@ -1,6 +1,6 @@
 # 9. Faceted Search
 
-Bei der Faceted Search handelt es sich um eine Funktion zur dynamischen Filterung der angezeigten Datensätze und der gezielten Suche darin. Sie findet häufig Anwendung in Onlineshops und zeichnet sich meist durch eine fixierte Leiste am Seitenrand aus, in welcher sich die unterschiedlichen Filter in Form von Checkboxen, Slidern und Eingabefeldern befinden.
+Bei der **Faceted Search** handelt es sich um eine Funktion zur dynamischen Filterung der angezeigten Datensätze und der gezielten Suche darin. Sie findet häufig Anwendung in Onlineshops und zeichnet sich meist durch eine fixierte Leiste am Seitenrand aus, in welcher sich die unterschiedlichen Filter in Form von Checkboxen, Slidern und Eingabefeldern befinden.
 
 ## 9.1.	Erstellung der View
 
@@ -30,7 +30,7 @@ from product_info
 
 - Geben Sie als **Page Number *51*** ein und als **Page Name *Product Search***. 
 - Wählen Sie die unter dem Punkt **Table/View Name** die zuvor erstellte View (TUTO_P0051_VW) aus.
-- Deaktivieren Sie im Bereich **Navigation** die Breadcrumb und klicken Sie auf **Next**.
+- Deaktivieren Sie im Bereich **Navigation** die *Breadcrumb* und klicken Sie auf **Next**.
 
 ![](../../assets/Kapitel-09/Faceted_02.jpg) 
   
@@ -46,7 +46,7 @@ Die Daten werden im rechten Seitenbereich als **Classic Report** dargestellt. Li
 
 ## 9.3.	Create Facets
 
-- Wechseln Sie zurück in den **Page Designer** und erstellen Sie ein neues Facet, indem Sie einen Rechtsklick auf den Eintrag **Facets** machen und anschließend **Create Facet** auswählen. 
+- Wechseln Sie zurück in den **Page Designer** und erstellen Sie ein neues **Facet**, indem Sie einen Rechtsklick auf den Eintrag **Facets** machen und anschließend **Create Facet** auswählen. 
 
 ![](../../assets/Kapitel-09/Faceted_05.jpg) 
 
@@ -68,7 +68,7 @@ Die Daten werden im rechten Seitenbereich als **Classic Report** dargestellt. Li
 
 - Starten Sie die **Seite**, indem Sie auf den **Run**-Button klicken.
 
-In der Faceted Search Region befindet sich jetzt ein neues Element mit drei Checkboxen. Durch diese können die angezeigten Daten rechts anhand der Werte in der Spalte Category dynamisch gefiltert werden.
+In der Faceted Search Region befindet sich jetzt ein neues Element mit drei Checkboxen. Durch diese können die angezeigten Daten rechts anhand der Werte in der Spalte *Category* dynamisch gefiltert werden.
 
 ![](../../assets/Kapitel-09/Faceted_07.jpg) 
 
@@ -89,16 +89,16 @@ In der Faceted Search Region befindet sich jetzt ein neues Element mit drei Chec
 
 ![](../../assets/Kapitel-09/Faceted_08.jpg) 
 
-- Zur Eingabe der List of Values – Werte klicken Sie auf die Schaltfläche neben **Static Values**. Daraufhin öffnet sich folgendes Fenster, in dem Sie die angegebenen Werte eintragen:
+- Zur Eingabe der **List of Values** – Werte klicken Sie auf die Schaltfläche neben **Static Values**. Daraufhin öffnet sich folgendes Fenster, in dem Sie die angegebenen Werte eintragen:
  
 ![](../../assets/Kapitel-09/Faceted_09.jpg) 
 
-- Setzen Sie den **Data Type** für die Spalte **LIST_PRICE** auf ****NUMBER****.
+- Setzen Sie den **Data Type** für die Spalte **LIST_PRICE** auf ****NUMBER****.  
 - Speichern Sie und rufen Sie erneut die Seite auf. 
 
 ![](../../assets/Kapitel-09/Faceted_10.jpg) 
 
-Das neu erstellte Facet enthält wie auch das Category-Facet diverse Checkboxen, um die angezeigten Daten zu filtern. Darunter befinden sich zwei Eingabefelder, in die manuell Werte als Ober- und Untergrenze eingetragen werden können.
+Das neu erstellte Facet enthält wie auch das *Category-Facet* diverse Checkboxen, um die angezeigten Daten zu filtern. Darunter befinden sich zwei Eingabefelder, in die manuell Werte als Ober- und Untergrenze eingetragen werden können.
 
 ![](../../assets/Kapitel-09/Faceted_11.jpg) 
  

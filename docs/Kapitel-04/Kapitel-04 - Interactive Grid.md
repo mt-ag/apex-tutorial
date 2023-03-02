@@ -1,8 +1,8 @@
 # 4. Interactive Grid
 
-Ein Interactive Grid zeigt dem Datenbankbenutzer eine Reihe von festgelegten Datensätzen in einem durchsuchbaren, anpassbaren Bericht an. In diesem Bericht können die Datensätze geändert und aktualisiert werden. Außerdem ist es möglich, neue Datensätze hinzuzufügen und alte zu löschen.
+Ein **Interactive Grid** zeigt dem Datenbankbenutzer eine Reihe von festgelegten Datensätzen in einem durchsuchbaren, anpassbaren Bericht an. In diesem Bericht können die Datensätze geändert und aktualisiert werden. Außerdem ist es möglich, neue Datensätze hinzuzufügen und alte zu löschen.
 
-In dieser Aufgabe wird ein Interactive Grid angelegt, um die oben genannten Funktionen nutzen zu können.
+In dieser Aufgabe wird ein **Interactive Grid** angelegt, um die oben genannten Funktionen nutzen zu können.
 
 ## 4.1.	Erstellung der View
 - Für diese Aufgabe muss zuerst eine **View** erstellt werden.
@@ -36,7 +36,7 @@ Wählen Sie den Seitentypen **Interactive Grid** aus. Der Wechsel zur nächsten 
 ![](../../assets/Kapitel-04/Interactive_Grid_03.jpg)
 
 - Geben Sie als **Page Number** ***21*** ein und als **Page Name** ***Product Info***.
-- Wählen Sie im Bereich Data Source die erstellte View zur Product Info als **Table / View** Name aus und aktivieren Sie nun die Bearbeitung im Interactive Grid, indem Sie **Editing Enabled** auf ***enabled*** stellen.  
+- Wählen Sie im Bereich Data Source die erstellte View zur *Product Info* als **Table / View** Name aus und aktivieren Sie nun die Bearbeitung im **Interactive Grid**, indem Sie **Editing Enabled** auf ***enabled*** stellen.  
 Dies ist besonders wichtig, damit die Spalte APEX$ROW_SELECTOR erstellt werden kann.
 - Öffnen Sie anschließend den Navigationsbereich.
 
@@ -56,7 +56,7 @@ Dies ist besonders wichtig, damit die Spalte APEX$ROW_SELECTOR erstellt werden k
 
 ![](../../assets/Kapitel-04/Interactive_Grid_07.jpg)
 
-- Sie sehen nun das Interactive Grid. Zunächst bietet Ihnen das Interactive Grid einen Bericht über die bestehenden Daten. Über den Button **Add Row** können Sie einen neuen Datensatz direkt in dieser Tabelle anlegen.
+- Sie sehen nun das **Interactive Grid**. Zunächst bietet Ihnen das **Interactive Grid** einen Bericht über die bestehenden Daten. Über den Button **Add Row** können Sie einen neuen Datensatz direkt in dieser Tabelle anlegen.
 
 - Außerdem können Sie bestehende Datensätze editieren. Hierzu können Sie mit einem **Doppelklick** einen Eintrag auswählen, woraufhin der Cursor in dem entsprechenden Feld angezeigt wird. Wenn der Edit-Modus aktiviert ist, reicht auch ein einfacher Klick aus. Über den Button **Edit** lässt sich dieser Modus aktivieren bzw. deaktivieren.
 
@@ -82,6 +82,6 @@ Dies ist besonders wichtig, damit die Spalte APEX$ROW_SELECTOR erstellt werden k
 
 ![](../../assets/Kapitel-04/Interactive_Grid_13.jpg)
  
-- Nun wird die Spalte Product Name fixiert dargestellt und es bleibt auch bei horizontalem Scrolling ersichtlich, auf welches Produkt sich die übrigen Spalten beziehen.
+- Nun wird die Spalte *Product Name* fixiert dargestellt und es bleibt auch bei horizontalem Scrolling ersichtlich, auf welches Produkt sich die übrigen Spalten beziehen.
 
 ![](../../assets/Kapitel-04/Interactive_Grid_14.jpg)

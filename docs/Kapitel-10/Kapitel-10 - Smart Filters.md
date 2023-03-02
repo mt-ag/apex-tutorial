@@ -1,5 +1,5 @@
 # 10. Smart Filters
-Die Smart Filters bieten die Möglichkeit, Daten mithilfe von Filtervorschlägen oder Suchbegriffen leicht einzugrenzen. Diese werden als Chips unter der Suchleiste oder als Vorschläge während des Tippens angezeigt.
+Die **Smart Filters** bieten die Möglichkeit, Daten mithilfe von Filtervorschlägen oder Suchbegriffen leicht einzugrenzen. Diese werden als Chips unter der Suchleiste oder als Vorschläge während des Tippens angezeigt.
 ## 10.1. Erstellung der View
 Für die Bearbeitung dieser Aufgabe wird eine **View** benötigt. 
 **View Name: TUTO_P0091_VW**
@@ -23,7 +23,7 @@ from product_info
 
 - Geben Sie als **Page Number 91** ein und als **Page Name Product Filter**. 
 - Wählen Sie die unter dem Punkt **Table/View Name** die zuvor erstellte View (TUTO_P0091_VW) aus.  
-- Deaktivieren Sie im Bereich **Navigation** die Breadcrumb und klicken Sie auf **Next**.  
+- Deaktivieren Sie im Bereich **Navigation** die *Breadcrumb* und klicken Sie auf **Next**.  
   
 ![](../../assets/Kapitel-10/Smart_02.jpg)  
 
@@ -31,7 +31,7 @@ from product_info
  
 ![](../../assets/Kapitel-10/Smart_03.jpg)  
 
-- Rufen Sie anschließend die Seite über den **Run**-Button auf.<br/>
+- Rufen Sie anschließend die Seite über den **Run**-Button auf.  
 Die Daten werden als **Classic Report** dargestellt. Darüber befindet sich eine Suchleiste, unter welcher die Chips angezeigt werden, die im Folgenden hinzugefügt werden.  
 
 ![](../../assets/Kapitel-10/Smart_04.jpg)  
@@ -57,7 +57,7 @@ Die Daten werden als **Classic Report** dargestellt. Darüber befindet sich eine
 
 ![](../../assets/Kapitel-10/Smart_06.jpg)  
 
-Beim Klicken in die Suchleiste, erscheint der Filter Product Name. Wenn Sie auf den Filter klicken, werden alle Filteroptionen basierend auf den Werten der Spalte angezeigt. Klicken Sie auf den angezeigten Vorschlag, wird dieser als Filter in die Suchleiste übernommen.  
+Beim Klicken in die Suchleiste, erscheint der Filter *Product Name*. Wenn Sie auf den Filter klicken, werden alle Filteroptionen basierend auf den Werten der Spalte angezeigt. Klicken Sie auf den angezeigten Vorschlag, wird dieser als Filter in die Suchleiste übernommen.  
 
 - Wechseln Sie wieder in den **Page Designer**, um einen weiteren Filter zu erstellen. Diesen modifizieren Sie nach den folgenden Vorgaben:  
 
@@ -73,7 +73,7 @@ Beim Klicken in die Suchleiste, erscheint der Filter Product Name. Wenn Sie auf 
 
 ![](../../assets/Kapitel-10/Smart_07.jpg)  
 
-- Speichern Sie und rufen Sie erneut die Seite auf.<br/>
-Die erstellten Filter für *Product* Name und *Category* werden nun beim Klick in die Suchleiste angezeigt.  
+- Speichern Sie und rufen Sie erneut die Seite auf.  
+Die erstellten Filter für *Product Name* und *Category* werden nun beim Klick in die Suchleiste angezeigt.  
 
 ![](../../assets/Kapitel-10/Smart_08.jpg)  

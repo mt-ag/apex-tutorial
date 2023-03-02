@@ -33,7 +33,7 @@ Jetzt sehen Sie die folgende Übersichtsseite:
 
 ![](../../assets/Kapitel-13/Rest_07.jpg)
 
-- Klicken Sie nun auf **Create Handler**, um die Resource Handler anzulegen. In diesem Tutorial werden Sie zwei Handler (für GET und POST) anlegen.
+- Klicken Sie nun auf **Create Handler**, um die *Resource Handler* anzulegen. In diesem Tutorial werden Sie zwei Handler (für GET und POST) anlegen.
 
 ![](../../assets/Kapitel-13/Rest_08.jpg)
 
@@ -45,7 +45,7 @@ select dept_id,
 	    dept_name,
         dept_location
 from departments
- ```
+ ```  
 - Jetzt haben Sie alle, für die GET-Abfrage notwendigen Informationen eingegeben. Sie können nun den Handler durch Klicken auf **Create Handler** erstellen. 
 
 ![](../../assets/Kapitel-13/Rest_09.jpg)
@@ -75,33 +75,31 @@ end;
 - Scrollen Sie nach unten zu **Parameters** und klicken Sie dort auf **Add Row**. 
 - Geben Sie die folgenden Informationen ein: 
 
-**Name: *dept_name***
+  |  |  |
+  |--|--|
+  | **Name** | dept_name |
+  | **Bind Variable** | dept_name |
+  | **Access Method** | IN |
+  | **Source Type** | HTTP HEADER | 
+  | **Data Type** | STRING | 
+  |  |  |
 
-**Bind Variable: *dept_name***
+- Fügen Sie anschließend auch für die Location einen Parameter ein, indem Sie wieder auf Add Row klicken. Geben Sie die folgenden Daten ein:  
 
-**Access Method: *IN***
+  |  |  |
+  |--|--|
+  | **Name** | dept_location |
+  | **Bind Variable** | dept_location |
+  | **Access Method** | IN |
+  | **Source Type** | HTTP HEADER | 
+  | **Data Type** | STRING | 
+  |  |  |
 
-**Source Type: *HTTP HEADER***
+- Wenn Sie dies erledigt haben, scrollen Sie wieder nach oben und klicken dort auf **Create Handler**. 
 
-**Data Type: *STRING***
+![](../../assets/Kapitel-13/Rest_13.jpg)  
 
-- Fügen Sie anschließend auch für die Location einen Parameter ein, indem Sie wieder auf Add Row klicken. Geben Sie die folgenden Daten ein:
-
-**Name: *dept_location***
-
-**Bind Variable: *dept_location***
-
-**Access Method: *IN***
-
-**Source Type: *HTTP HEADER***
-
-**Data Type: *STRING***
-
-- Wenn Sie dies erledigt haben, scrollen Sie wieder nach oben und klicken dort auf Create Handler. 
-
-![](../../assets/Kapitel-13/Rest_13.jpg)
-
-- Hiermit ist Ihr Module fertig definiert. Rufen Sie zur Kontrolle die URL, die Sie unter Full URL bei departments/ sehen mit Ihrem Browser auf. Sie sollten nun die Inhalte der GET-Abfrage und damit die ID, den Namen und die Location der Departments sehen.
+- Hiermit ist Ihr Module fertig definiert. Rufen Sie zur Kontrolle die URL, die Sie unter **Full URL** bei **departments/** sehen mit Ihrem Browser auf. Sie sollten nun die Inhalte der GET-Abfrage und damit die ID, den Namen und die Location der Departments sehen.  
 
  ```json
 "items": [
@@ -128,15 +126,15 @@ end;
   ]
  ```
   
-## 13.2.	REST Data Source erstellen
-Nachdem Sie im vorherigen Kapitel einen eigenen RESTful Service erstellt haben, werden wir diesen in APEX als REST Data Source nutzen. Die Vorgehensweise, die im Folgenden gezeigt wird, gilt ähnlich auch für REST Datenquellen, die Sie nicht selbst erstellt haben. 
-Um die REST Data Source anzulegen, gehen Sie in die Shared Components Ihrer Anwendung. 
+## 13.2. REST Data Source erstellen
+Nachdem Sie im vorherigen Kapitel einen eigenen RESTful Service erstellt haben, werden wir diesen in APEX als REST Data Source nutzen. Die Vorgehensweise, die im Folgenden gezeigt wird, gilt ähnlich auch für REST Datenquellen, die Sie nicht selbst erstellt haben.  
+Um die **REST Data Source** anzulegen, gehen Sie in die **Shared Components** Ihrer Anwendung. 
 
-- Die **REST Data Sources** befinden sich in den **Shared Components** unter dem Punkt **Data Sources**.
+- Die **REST Data Sources** befinden sich in den **Shared Components** unter dem Punkt **Data Sources**.  
 
-![](../../assets/Kapitel-13/Rest_14.jpg)
+![](../../assets/Kapitel-13/Rest_14.jpg)  
 
-- Über den **Create** Button können Sie eine neue REST Datenquelle anlegen
+- Über den **Create** Button können Sie eine neue REST Datenquelle anlegen.  
 
 ![](../../assets/Kapitel-13/Rest_15.jpg)
  
@@ -158,7 +156,7 @@ Geben Sie der REST Data Source den **Namen *Departments***. Zudem müssen Sie de
   
 ![](../../assets/Kapitel-13/Rest_19.jpg)
  
-Klicken Sie im anschließenden Fenster auf **Create REST Data Source**. 
+- Klicken Sie im anschließenden Fenster auf **Create REST Data Source**. 
  
 ![](../../assets/Kapitel-13/Rest_20.jpg)
 
@@ -173,7 +171,7 @@ Klicken Sie im anschließenden Fenster auf **Create REST Data Source**.
 
 - Kontrollieren Sie, dass Ihre Einstellungen im **Data Profile** wie im Bild gezeigt aussehen und, dass bei **Operations** die beiden Operations ***GET*** und ***POST*** angelegt wurden. 
  
-## 13.3.	Senden von Daten an eine REST-Datenquelle
+## 13.3. Senden von Daten an eine REST-Datenquelle
 In diesem Kapitel werden wir die zuvor erstellte REST Source nutzen, um eigene Daten senden. Konkret werden wir dabei neue Departments hinzufügen. Dafür wird die HTTP-POST-Methode verwendet, welche in der REST Data Source als Operation definiert wurde. 
 - Öffnen Sie den **App Builder** und Ihre Anwendung. Klicken Sie auf **Create Page** und erstellen Sie eine neue Seite, indem Sie auf **Create Page** klicken. 
 
@@ -181,9 +179,9 @@ In diesem Kapitel werden wir die zuvor erstellte REST Source nutzen, um eigene D
   
 ![](../../assets/Kapitel-13/Rest_23.jpg)
 
-- Geben Sie als **Page Number *61*** und als **Page Name *Departments*** an. 
-- Wählen Sie bei **Data Source *REST Data Source*** an und wählen Sie anschließend ***Departments*** als **REST Data Source** aus.
-- Deaktivieren Sie im Bereich **Navigation** die Breadcrumb und klicken Sie auf **Next**. 
+- Geben Sie als **Page Number *61*** und als **Page Name *Departments*** an.   
+- Wählen Sie bei **Data Source *REST Data Source*** an und wählen Sie anschließend ***Departments*** als **REST Data Source** aus.  
+- Deaktivieren Sie im Bereich **Navigation** die *Breadcrumb* und klicken Sie auf **Next**.   
 
 ![](../../assets/Kapitel-13/Rest_24.jpg)  
 
@@ -199,19 +197,19 @@ In diesem Kapitel werden wir die zuvor erstellte REST Source nutzen, um eigene D
 
 ![](../../assets/Kapitel-13/Rest_26.jpg)
 
-## 13.4.	Abrufen von Daten aus einer REST Data Source
-Nun möchten wir die REST Data Source nicht nur zum Hinzufügen von Daten nutzen, sondern auch, um Daten abzurufen und diese anzeigen zu lassen. Dafür wird die HTTP-GET-Methode verwendet, welche in der REST Data Source als Operation definiert wurde. 
-- Über das in Kapitel 13.3 erstellte Form ist es nun möglich, neue Departments anzulegen. Um direkt zu erkennen, ob das Hinzufügen erfolgreich war, werden Sie zusätzlich einen Report auf der Seite erstellen.
+## 13.4. Abrufen von Daten aus einer REST Data Source
+Nun möchten wir die REST Data Source nicht nur zum Hinzufügen von Daten nutzen, sondern auch, um Daten abzurufen und diese anzeigen zu lassen. Dafür wird die HTTP-GET-Methode verwendet, welche in der REST Data Source als Operation definiert wurde.  
+- Über das in Kapitel 13.3 erstellte Form ist es nun möglich, neue Departments anzulegen. Um direkt zu erkennen, ob das Hinzufügen erfolgreich war, werden Sie zusätzlich einen Report auf der Seite erstellen. 
 
-- Klicken Sie im Page Designer auf der linken Seite auf Departments und machen Sie dann einen Rechtsklick auf Departments. Wählen Sie hier **Create Region** aus. 
+- Klicken Sie im Page Designer auf der linken Seite auf Departments und machen Sie dann einen Rechtsklick auf Departments. Wählen Sie hier **Create Region** aus.  
 
-- Wählen Sie als **Type** Ihrer Region ***Classic Report*** aus und geben Sie ihr den **Title *Alle Departments***. Wählen Sie unter Source ***REST Source*** als **Location** aus und anschließend ***Departments*** als **REST Source**. 
+- Wählen Sie als **Type** Ihrer Region ***Classic Report*** aus und geben Sie ihr den **Title *Alle Departments***. Wählen Sie unter Source ***REST Source*** als **Location** aus und anschließend ***Departments*** als **REST Source**.  
 
 ![](../../assets/Kapitel-13/Rest_27.jpg)
  
-- Rufen Sie die Seite über den **Run**-Button auf. 
-- Der Report zeigt Ihnen jetzt alle Departments an. 
-
+- Rufen Sie die Seite über den **Run**-Button auf.  
+- Der Report zeigt Ihnen jetzt alle Departments an.  
+ 
 ![](../../assets/Kapitel-13/Rest_28.jpg)
 
-Eine weitere Demo-Anwendung der MT GmbH auf Basis von REST Data Sources finden Sie hier: https://apex.oracle.com/pls/apex/mt_apisearch/r/datasources
+Eine weitere Demo-Anwendung der MT GmbH auf Basis von REST Data Sources finden Sie hier: [https://apex.oracle.com/pls/apex/mt_apisearch/r/datasources](https://apex.oracle.com/pls/apex/mt_apisearch/r/datasources)

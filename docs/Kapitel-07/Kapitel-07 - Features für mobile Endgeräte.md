@@ -2,7 +2,7 @@
 ## 7.1. Reflow Report & Column Toggle Report
 Zwei Reporttypen, die dabei helfen, dass APEX Anwendungen auch auf mobilen Endgeräten angenehm genutzt werden können, sind der **Reflow Report** und der **Column Toggle** Report.
 
-Der Reflow Report zeigt Tabellenspalten vertikal an, wenn nicht genügend Platz vorhanden ist, um sie horizontal anzuzeigen. Der Column Toggle Report ermöglicht es, Spalten mit verschiedenen Prioritäten zu belegen. Dabei werden Spalten mit geringer Priorität schmaler angezeigt und früher ausgeblendet als Spalten mit einer hohen Priorität.
+Der Reflow Report zeigt Tabellenspalten vertikal an, wenn nicht genügend Platz vorhanden ist, um sie horizontal anzuzeigen. Der **Column Toggle** Report ermöglicht es, Spalten mit verschiedenen Prioritäten zu belegen. Dabei werden Spalten mit geringer Priorität schmaler angezeigt und früher ausgeblendet als Spalten mit einer hohen Priorität.
 
 ### 7.1.1. View erstellen
 - Für die Bearbeitung dieser Aufgabe wird eine **View** benötigt. 
@@ -38,7 +38,7 @@ Der Reflow Report zeigt Tabellenspalten vertikal an, wenn nicht genügend Platz 
 
 - Geben Sie als **Page Number** ***32*** ein und als **Page Name** ***Customer Orders for Mobile***.
 - Wählen Sie als **Data Source** ***Local Database*** aus sowie als **Table / View Name** die von Ihnen erstellte View ***TUTO_P0032_VW***. 
-- Deaktivieren Sie im Bereich Navigation die Breadcrumb und klicken Sie auf **Create Page**.
+- Deaktivieren Sie im Bereich Navigation die *Breadcrumb* und klicken Sie auf **Create Page**.
 
 ![](../../assets/Kapitel-07/Features_02.jpg)
 

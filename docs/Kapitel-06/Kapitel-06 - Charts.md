@@ -34,9 +34,9 @@ Ziel dieses Kapitels ist es, ein Chart zu erstellen, welches das Verhältnis der
 ## 6.2. Charts Region
 - Öffnen Sie zunächst den **App Builder** für Ihre **Anwendung**. Klicken Sie anschließend auf die **Seite 1 -** ***Home***.
 
-- Breadcrumbs können meist nach dem Anlegen gelöscht werden. Sie nehmen viel Platz ein und bringen i. d. R. keinen Mehrwert für den Endanwender. Breadcrumbs sind hierarchische Listen von Links und bieten eine hierarchische Navigation.
+- **Breadcrumbs** können meist nach dem Anlegen gelöscht werden. Sie nehmen viel Platz ein und bringen i. d. R. keinen Mehrwert für den Endanwender. **Breadcrumbs** sind hierarchische Listen von Links und bieten eine hierarchische Navigation.
 
-- Klicken Sie mit der rechten Maustaste auf die Breadcrumb **TUTORIAL 22** und wählen Sie **Delete** aus. 
+- Klicken Sie mit der rechten Maustaste auf die *Breadcrumb* **TUTORIAL 22** und wählen Sie **Delete** aus. 
 
 ![](../../assets/Kapitel-06/Charts_01.jpg)
 

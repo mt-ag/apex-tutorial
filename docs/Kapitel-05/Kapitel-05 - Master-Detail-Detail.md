@@ -80,7 +80,7 @@ Beim Auswählen eines Datensatzes ändern sich die Inhalte der Tabellen und man 
 
 ![](../../assets/Kapitel-05/Master_Detail_04.jpg)
 
-- Deaktivieren Sie hier die Breadcrumb und klicken Sie anschließend auf den Button **Next**. 
+- Deaktivieren Sie hier die **Breadcrumb** und klicken Sie anschließend auf den Button **Next**. 
 
 ![](../../assets/Kapitel-05/Master_Detail_05.jpg)
 
@@ -155,7 +155,7 @@ Eine Region ist ein Bereich auf einer Seite, der als Container für Inhalte dien
 
 - Speichern Sie die Änderungen, indem Sie den Button **Save** drücken. Alternativ können Sie direkt den Button **Run** klicken, um zu speichern und daraufhin die Seite aufzurufen.
 
-- Auf der von Ihnen erstellten Seite sind nun drei Interactive Grids zu sehen. Wählen Sie in der obersten Region einen beliebigen Eintrag (Kunden) aus.
+- Auf der von Ihnen erstellten Seite sind nun drei **Interactive Grids** zu sehen. Wählen Sie in der obersten Region einen beliebigen Eintrag (Kunden) aus.
 
 ![](../../assets/Kapitel-05/Master_Detail_16.jpg)
 
@@ -163,8 +163,8 @@ Eine Region ist ein Bereich auf einer Seite, der als Container für Inhalte dien
 
 ![](../../assets/Kapitel-05/Master_Detail_17.jpg)
 
-In der untersten Region werden alle Artikel aus der ausgewählten Bestellung angezeigt. Auch wenn hier, wie in den oberen Regionen, ein Interactive Grid verwendet wird, ist standardmäßig der Edit-Modus nicht verfügbar, wenn das Interactive Grid ohne den Assistenten erstellt wurde. Außerdem wird dem Nutzer zwar die ID der bestellten Artikel aber nicht deren Artikelname angezeigt.  
-Um dies zu ändern, wird das Interactive Grid in den nächsten Schritten entsprechend angepasst. 
+In der untersten Region werden alle Artikel aus der ausgewählten Bestellung angezeigt. Auch wenn hier, wie in den oberen Regionen, ein **Interactive Grid** verwendet wird, ist standardmäßig der Edit-Modus nicht verfügbar, wenn das **Interactive Grid** ohne den Assistenten erstellt wurde. Außerdem wird dem Nutzer zwar die ID der bestellten Artikel aber nicht deren Artikelname angezeigt.  
+Um dies zu ändern, wird das **Interactive Grid** in den nächsten Schritten entsprechend angepasst. 
 
 - Öffnen Sie erneut den **Page Designer**. Wählen Sie den **Eintrag** ***Attributes*** bei der **Region** ***Items in Order***. Setzen Sie anschließend den Wert von **Enabled** in dem Bereich **Edit** auf ***Yes***. Dies aktiviert den **Edit-Modus** für das **Interactive Grid**.
 
@@ -179,13 +179,13 @@ Eine Select List ist eine Auflistung von Daten, die es dem Benutzer ermöglicht,
 
 ![](../../assets/Kapitel-05/Master_Detail_20.jpg)
 
-- APEX meldet, dass eine List of Values hinterlegt werden muss. Wenn Sie oben auf das **Message Icon** klicken, erhalten Sie zusätzliche Informationen dazu. 
+- APEX meldet, dass eine *List of Values* hinterlegt werden muss. Wenn Sie oben auf das **Message Icon** klicken, erhalten Sie zusätzliche Informationen dazu. 
 
 ![](../../assets/Kapitel-05/Master_Detail_21.jpg)
 
-- Ändern Sie den **Type** der List of Values zu ***SQL Query***.
+- Ändern Sie den **Type** der *List of Values* zu ***SQL Query***.
 
-List of Values sind Abfragen bestehend aus zwei Werten: einem Anzeigewert, der dem Benutzer angezeigt wird und einem Rückgabewert, mit dem APEX in der Datenbank gearbeitet wird.
+*List of Values* sind Abfragen bestehend aus zwei Werten: einem Anzeigewert, der dem Benutzer angezeigt wird und einem Rückgabewert, mit dem APEX in der Datenbank gearbeitet wird.
 
 Nun müssen Sie eine SQL Query hinterlegen. Hinweise zur Erstellung der korrekten Query erhalten Sie über den Reiter **Help**. 
 
@@ -209,9 +209,9 @@ APEX hinterlegt weiterhin in der Datenbank die **ID**.
 
 
 ## 5.3. Popup List of Values
-List of Values können auch als Popup-Fenster angezeigt werden. In APEX 19.2 wurden hierfür einige Funktionen optimiert und erweitert. Diese sollen im Folgenden an einem Beispiel angewendet werden.
+**List of Values** können auch als Popup-Fenster angezeigt werden. In APEX 19.2 wurden hierfür einige Funktionen optimiert und erweitert. Diese sollen im Folgenden an einem Beispiel angewendet werden.
 
-Die Felder der Spalte **State** im Interactive Grid können bislang über eine Texteingabe geändert werden. Stattdessen soll nun dort eine Auswahlliste angezeigt werden, entsprechend der Einträge in der Datenbanktabelle **States**.
+Die Felder der Spalte **State** im **Interactive Grid** können bislang über eine Texteingabe geändert werden. Stattdessen soll nun dort eine Auswahlliste angezeigt werden, entsprechend der Einträge in der Datenbanktabelle **States**.
 
 - Für die Bearbeitung dieser Aufgabe wird eine weitere **View** benötigt. Erstellen Sie diese gemäß der folgenden Angaben:
   - TUTO_P0031_5_VW
@@ -251,13 +251,13 @@ Die Felder der Spalte **State** im Interactive Grid können bislang über eine T
 
 ![](../../assets/Kapitel-05/Master_Detail_28.jpg)
 
-- Weiterhin ist es möglich, Einträge als Tupel mit mehreren Attributen anzuzeigen. Hierfür muss die List of Values als **Shared Component** in der Anwendung hinterlegt sein.
+- Weiterhin ist es möglich, Einträge als Tupel mit mehreren Attributen anzuzeigen. Hierfür muss die List of Values als **Shared Components** in der Anwendung hinterlegt sein.
 
 - Öffnen Sie den **App Builder**, wählen Sie Ihre Anwendung und klicken Sie auf **Shared Components**. 
 
 ![](../../assets/Kapitel-05/Master_Detail_29.jpg)
 
-Shared Components sind allgemeine Elemente, die auf einer oder beliebig vielen Seiten einer Anwendung benutzt werden können.
+*Shared Components* sind allgemeine Elemente, die auf einer oder beliebig vielen Seiten einer Anwendung benutzt werden können.
 
 - Klicken Sie auf den Eintrag **List of Values**.
 

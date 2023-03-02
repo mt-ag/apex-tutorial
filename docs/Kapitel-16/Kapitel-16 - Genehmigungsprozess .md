@@ -29,7 +29,7 @@ Das Ziel ist es, dass jeder Mitarbeiter sein Gehalt entsprechend anpassen kann, 
 
 ![](../../assets/Kapitel-16/Process_05.jpg) 
 
-- Klicken Sie unter **Workflows and Automations** auf **Task Definitions**.  
+- Klicken Sie unter **Workflows and Automations** auf **Task Definitions**.   
 - Klicken Sie hier auf **Create**.  
 
 ![](../../assets/Kapitel-16/Process_06.jpg)  
@@ -112,16 +112,21 @@ update salaries
  
 ![](../../assets/Kapitel-16/Process_16.jpg)  
 
-# 16.3. Erstellen der „My Approvals“ und „My Request“ Seite
+## 16.3. Erstellen der „My Approvals“ und „My Request“ Seite
 
 - Klicken Sie auf **Create Page** und wählen **Unified Task List** aus. Anschließend klicken Sie **Next**.  
 
 ![](../../assets/Kapitel-16/Process_17.jpg)  
 
-- Geben Sie folgende Werte ein:
-  - Page Number: 4
-  - Page Name: My Approvals
-  - Request Context: My Tasks
+- Geben Sie folgende Werte ein:  
+
+|  |  |
+|--|--|
+| **Page Number** | 4 |
+| **Page Name** | My Approvals |
+| **Request Context** | My Tasks |
+|  |  |  
+
 - Klicken Sie dann auf **Create Page**.  
 
 ![](../../assets/Kapitel-16/Process_18.jpg) 
@@ -131,16 +136,20 @@ update salaries
  
 - Wählen Sie auch hier wieder die Component **Unified Task List** aus.  
 
-- Geben Sie dann folgende Werte ein:
-  - Page Number: 5
-  - Page Name: My Requests
-  - Request Context: Initiated by Me  
+- Geben Sie dann folgende Werte ein:  
+
+|  |  |
+|--|--|
+| **Page Number** | 5 |
+| **Page Name** | My Requests |
+| **Request Context** | Initiated by Me |
+|  |  |  
 
 - Klicken Sie dann auf **Create Page**.  
  
 ![](../../assets/Kapitel-16/Process_19.jpg)  
  
-# 16.4.	Erstellen der „Salary Change“ Seite
+## 16.4.	Erstellen der „Salary Change“ Seite
 
 - Klicken Sie auf **Create Page** und wählen **Blank Page** aus.  
 - Anschließend klicken Sie **Next**.  
@@ -148,7 +157,7 @@ update salaries
 ![](../../assets/Kapitel-16/Process_20.jpg)
 
 - Geben Sie die Page Number 6 ein und den Page Name **Salary Change**.   
-- Deaktivieren Sie hier die Breadcrumb und klicken Sie anschließend auf den Button **Create Page**.  
+- Deaktivieren Sie hier die *Breadcrumb* und klicken Sie anschließend auf den Button **Create Page**.  
  
 ![](../../assets/Kapitel-16/Process_21.jpg)  
  
@@ -197,7 +206,7 @@ select sary_id, sary_employee_name, sary_department, sary_salary
 ![](../../assets/Kapitel-16/Process_24.jpg)  
 
 - Wechseln Sie dann zu **Processes** und fügen Sie dort einen neue Process hinzu.  
-- Den Process nennen Sie **Submit Task** und ändern folgende Werte:  
+- Den *Process* nennen Sie **Submit Task** und ändern folgende Werte:  
   - Type: Human Task - Create  
   - Definition: Salary Request  
   - Details Primary Key Item: P6_SARY_ID  
@@ -219,9 +228,10 @@ select sary_id, sary_employee_name, sary_department, sary_salary
 
 Die Anwendung ist jetzt fertig erstellt.
 
-# 16.5.	User erstellen
+## 16.5.	User erstellen
 
-Bevor die Anwendung jetzt gestartet und simuliert werden kann, müssen im Workspace noch entsprechende User erstellt werden. In diesem Beispiel wird ein Mitarbeiter erstellt, der eine Gehaltsanpassung beantragen kann, sowie ein Admin User, der den Prozess bearbeiten kann.
+Bevor die Anwendung jetzt gestartet und simuliert werden kann, müssen im Workspace noch entsprechende User erstellt werden. In diesem Beispiel wird ein Mitarbeiter erstellt, der eine Gehaltsanpassung beantragen kann, sowie ein Admin User, der den Prozess bearbeiten kann.  
+
 Wichtig ist, dass Sie als Administrator in Ihrem Workspace angemeldet sind, so dass Ihnen die Berechtigung gegeben ist neue User zu erstellen.
 - Wechseln Sie dazu wieder in den **Application Builder** und klicken oben rechts auf das **Administration** Icon und wählen dort den Eintrag **Manage Users and Groups**.
 
@@ -233,7 +243,7 @@ Wichtig ist, dass Sie als Administrator in Ihrem Workspace angemeldet sind, so d
 
 - Geben Sie hier folgendes ein:
   - Name: FISCHER
-  - Email Adress: fischer@fischer.de
+  - Email Address: fischer@fischer.de
   - Password: 12345678
   - Confirm Password: 12345678
   - Require Change of Password on First Use: No
@@ -243,7 +253,7 @@ Wichtig ist, dass Sie als Administrator in Ihrem Workspace angemeldet sind, so d
 
 - Beenden Sie hier die Eingabe mit Klick auf **Create User**.
  
-# 16.6.	Anwendung ausführen
+## 16.6.	Anwendung ausführen
 
 - Wechseln Sie jetzt wieder zum Application Builder und starten von dort aus die zuvor erstellte Anwendung **Tutorial Approvals**. 
 - Melden Sie sich zunächst als Mitarbeiter **FISCHER** an.

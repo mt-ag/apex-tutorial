@@ -1,6 +1,6 @@
 # 14. Exkurs: Datenmodellierung mittels Quick SQL
 
-Mit Quick SQL können Datenmodelle schnell entworfen werden, indem eine **Markdown-artige Kurzschriftsyntax** verwendet wird. Hauptdetailbeziehungen können über ein **ERM** („Entity-Relationship-Modell“) dargestellt werden. Weitere Informationen erhalten Sie unter https://apex.oracle.com/en/quicksql/ (Login erforderlich).
+Mit Quick SQL können Datenmodelle schnell entworfen werden, indem eine **Markdown-artige Kurzschriftsyntax** verwendet wird. Hauptdetailbeziehungen können über ein **ERM** („Entity-Relationship-Modell“) dargestellt werden. Weitere Informationen erhalten Sie unter [https://apex.oracle.com/en/quicksql/](https://apex.oracle.com/en/quicksql/) (Login erforderlich).
 
 ## 14.1. Erstellung der Datenbank-Tabelle
 
@@ -20,8 +20,7 @@ SALARIES /insert 5
     SARY_SALARY num/between 500 and 4000
  ```
 
-
-! Achten Sie bitte bei der Eingabe auf die oben dargestellten Einzüge!
+>! Achten Sie bitte bei der Eingabe auf die oben dargestellten Einzüge!  
 
 - Klicken Sie anschließend auf **Generate SQL**, damit der Code in SQL-Code übersetzt wird. Im rechten Textbereich wird daraufhin der erzeugte SQL-Code angezeigt. 
 
@@ -40,7 +39,7 @@ SALARIES /insert 5
 
 ![](../../assets/Kapitel-14/Exkurs_05.jpg)
 
-- Klicken Sie auf **Run Now**.
+- Klicken Sie auf **Run Now**.  
 
 ![](../../assets/Kapitel-14/Exkurs_06.jpg) 
  
@@ -57,7 +56,7 @@ Zur Visualisierung der eben erstellten Daten legen Sie in dieser Aufgabe einen I
  
 - Im folgenden Fenster geben Sie als **Page Number *71*** und bei **Page Name *Salaries*** ein.
 - Als **Table / View Name** wählen Sie ***SALARIES*** aus.
-- Deaktivieren Sie im Bereich Navigation die Breadcrumb und klicken auf **Create Page**.
+- Deaktivieren Sie im Bereich Navigation die *Breadcrumb* und klicken auf **Create Page**.
 
 ![](../../assets/Kapitel-14/Exkurs_09.jpg) 
 
@@ -67,7 +66,7 @@ Zur Visualisierung der eben erstellten Daten legen Sie in dieser Aufgabe einen I
 
 ## 14.3. Beispieldaten mittels Data Generator generieren
 
-Verwenden Sie das Dienstprogramm Data Generator, um Blueprints zu erstellen und anschließend Beispieldaten zu generieren.
+Verwenden Sie das Dienstprogramm Data Generator, um **Blueprints** zu erstellen und anschließend Beispieldaten zu generieren.
 - Navigieren Sie auf **SQL Workshop** und klicken Sie anschließend auf **Utilities**.
 - Klicken Sie dann auf **Data Generator**.
 
@@ -81,7 +80,7 @@ Verwenden Sie das Dienstprogramm Data Generator, um Blueprints zu erstellen und 
 
 ![](../../assets/Kapitel-14/Exkurs_13.jpg)
 
-- Im nächsten Schritt wählen geben Sie dem Blueprint den Namen **Salaries Blueprint**, und wählen die zuvor erstellte Tabelle **Salaries** aus. Abschließend klicken Sie auf **Create Blueprint**.
+- Im nächsten Schritt wählen geben Sie dem *Blueprint* den Namen **Salaries Blueprint**, und wählen die zuvor erstellte Tabelle **Salaries** aus. Abschließend klicken Sie auf **Create Blueprint**.
 
 ![](../../assets/Kapitel-14/Exkurs_14.jpg) 
 
