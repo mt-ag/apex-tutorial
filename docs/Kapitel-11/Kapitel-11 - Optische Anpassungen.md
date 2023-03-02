@@ -1,29 +1,21 @@
 # 11. Optische Anpassungen
 Unterschiedliche Anwendungsfälle bringen unterschiedliche Anforderungen an das User Interface einer Anwendung mit. Im Standard ist das Interface von APEX eher schlicht gehalten, es lässt sich jedoch durch Kombination von Einstellungen der Komponenten und eigenem CSS-Code umfangreich anpassen.
 
-CSS-Code ermöglicht es Entwicklern, die gestalterischen Attribute von Seiten, Regionen und Items über den Standard hinaus anzupassen. CSS besteht aus einer Liste von Regeln, die dem Web-Browser beschreiben, wie bestimmte Elemente einer Webseite dargestellt werden sollen. Damit nicht für jedes Element eine eigene Liste an Regeln definiert werden muss, können identische Elemente in Klassen zusammengefasst werden.
+CSS-Code ermöglicht es Entwicklern, die gestalterischen Attribute von Seiten, Regionen und Items über den Standard hinaus anzupassen. CSS besteht aus einer Liste von Regeln, die dem Web-Browser beschreiben, wie bestimmte Elemente einer Webseite dargestellt werden sollen. Damit nicht für jedes Element eine eigene Liste an Regeln definiert werden muss, können identische Elemente in Klassen zusammengefasst werden.  
+
 ## 11.1. Dark-Mode
 Sowohl für die Entwicklungsumgebung als auch für die fertige Anwendung lässt sich ein Dark-Mode aktivieren. Für letztere wird dieser in den Theme-Einstellungen der Anwendung festgelegt.
-- Öffnen Sie zunächst Ihre **Anwendung**. Klicken Sie in der Leiste am unteren Bildschirmrand auf **Customize** und dann auf **Theme Roller**. Hierüber können Sie das Theme ändern sowie weitere CSS-Anpassungen durchführen. 
-
-<div style="text-align: center;">
+- Öffnen Sie zunächst Ihre **Anwendung**. Klicken Sie in der Leiste am unteren Bildschirmrand auf **Customize** und dann auf **Theme Roller**. Hierüber können Sie das Theme ändern sowie weitere CSS-Anpassungen durchführen.  
 
 ![](../../assets/Kapitel-11/Optisch_01.jpg) 
 
-</div>
-
-- Wählen Sie unter **Style** das Theme **Vita – Dark** und setzen Sie es als aktuelles Theme, indem sie auf den **Save** Button klicken.
-
-<div style="text-align: center;">
+- Wählen Sie unter **Style** das Theme **Vita – Dark** und setzen Sie es als aktuelles Theme, indem sie auf den **Save** Button klicken.  
 
 ![](../../assets/Kapitel-11/Optisch_02.jpg) 
 
-</div>
-
-Ihre erstellte Anwendung sollte nun wie folgt aussehen:
+Ihre erstellte Anwendung sollte nun wie folgt aussehen:  
 
 ![](../../assets/Kapitel-11/Optisch_03.jpg) 
-
  
 ## 11.2. Anpassung des Login-Screens
 Nach diesem Kapitel hat Ihr Login-Screen ein Hintergrundbild und sieht somit ansprechender aus.
@@ -37,7 +29,7 @@ Ein Template enthält alle Elemente, die Benutzer zum Erstellen eine Seite benö
 
 ![](../../assets/Kapitel-11/Optisch_05.jpg) 
 
-- Wählen Sie das **Item *P9999_USERNAME*** aus. Löschen Sie den Wert des Feldes **Label** und ändern Sie den Wert für **Icon** zu **fa-user**.
+- Wählen Sie das **Item *P9999_USERNAME*** aus. Löschen Sie den Wert des Feldes **Label** und ändern Sie den Wert für **Icon** zu **fa-user**.  
 - Wählen Sie das **Item *P9999_PASSWORD*** aus. Löschen Sie dort den Wert des Feldes **Label** und ändern Sie den Wert für **Icon** zu **fa-lock-password**. 
 
 ![](../../assets/Kapitel-11/Optisch_06.jpg) 
@@ -54,20 +46,15 @@ Ein Template enthält alle Elemente, die Benutzer zum Erstellen eine Seite benö
 
 ![](../../assets/Kapitel-11/Optisch_09.jpg) 
 
-- Hier können Sie ein eigenes Logo hochladen oder eins von den vorhanden auswählen. Ebenfalls können Sie hier die Farbe des Logos bestimme. Wählen Sie beispielsweise das ***APEX Icon in blau*** und klicken anschließend ***Save Icon***.
-
-<div style="text-align: center;">
+- Hier können Sie ein eigenes Logo hochladen oder eins von den vorhanden auswählen. Ebenfalls können Sie hier die Farbe des Logos bestimme. Wählen Sie beispielsweise das ***APEX Icon in blau*** und klicken anschließend ***Save Icon***.  
 
 ![](../../assets/Kapitel-11/Optisch_10.jpg)  
 
-</div>
+Sie können nun die getätigten Veränderungen auf Ihrer Seite sehen. Die Region wird mit einem anderen Template dargestellt und die Felder Username und Password werden mit einem Icon und einem Platzhalter dargestellt. 
 
-Sie können nun die getätigten Veränderungen auf Ihrer Seite sehen. Die Region wird mit einem anderen Template dargestellt und die Felder Username und Password werden mit einem Icon und einem Platzhalter dargestellt. Außerdem wird über dem Titel der Region ein Icon angezeigt, das die Identifikation der Anwendung unterstützen kann. 
-<div style="text-align: center;">
+Außerdem wird über dem Titel der Region ein Icon angezeigt, das die Identifikation der Anwendung unterstützen kann. 
 
 ![](../../assets/Kapitel-11/Optisch_11.jpg)  
-
-</div>
 
 - Das Hintergrundbild für die Login Seite muss als nächstes in der Anwendung hochgeladen werden. Klicken sie hierzu wieder auf ***Shared Components***.  
 - Klicken Sie dann unter **Files** auf den Eintrag ***Static Application Files***.
@@ -79,13 +66,9 @@ Unter den Static Application Files können Sie Ihre eigenen Dateien hochladen un
 
 ![](../../assets/Kapitel-11/Optisch_13.jpg)
 
-- **Directory** stellt in Textform den Ordnerpfad zu Ihrer Datei dar. Geben Sie hier ***img*** ein, damit Ihre Datei in den **Ordner *img*** geladen wird. Laden Sie die Datei background.jpg in dem Feld **Content** hoch. Klicken Sie anschließend auf **Create**. 
+- **Directory** stellt in Textform den Ordnerpfad zu Ihrer Datei dar. Geben Sie hier ***img*** ein, damit Ihre Datei in den **Ordner *img*** geladen wird. Laden Sie die Datei background.jpg in dem Feld **Content** hoch. Klicken Sie anschließend auf **Create**.  
 
-<div style="text-align: center;">
-
-![](../../assets/Kapitel-11/Optisch_14.jpg)
-
-</div>
+![](../../assets/Kapitel-11/Optisch_14.jpg)  
 
 - Ihre hochgeladene Datei wird nun angezeigt. 
 Klicken Sie anschließend auf den **Edit Page 9999** Button in der **Breadcrumb Leiste**, um direkt in den Page Designer zur Login Page zu kommen. 
@@ -111,13 +94,9 @@ Klicken Sie anschließend auf den **Edit Page 9999** Button in der **Breadcrumb 
 .t-Login-region {
     opacity: 0.9;
 }
- ```
+ ```  
 
-<div style="text-align: center;">
-
-![](../../assets/Kapitel-11/Optisch_19.jpg)
-
-</div>
+![](../../assets/Kapitel-11/Optisch_19.jpg)  
 
 - Klicken Sie auf den Button **Run**, um sich die überarbeitete Seite anzuschauen. 
 Sie sehen nun die von Ihnen getätigten Änderungen. 

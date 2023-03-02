@@ -97,6 +97,7 @@ Eine Region ist ein Bereich auf einer Seite, der als Container für Inhalte dien
   | Detail Region Title | Orders by Customer |  
   | Show Only Related Tables | No |  
   | Table / View Name | View zur Tabelle Orders (*TUTO_P0031_1_VW*) |
+  | | |
 
 ![](../../assets/Kapitel-05/Master_Detail_07.jpg)
  
@@ -109,6 +110,7 @@ Eine Region ist ein Bereich auf einer Seite, der als Container für Inhalte dien
   | Primary Key Column | ORDER_ID |
   | Master Column | CUSTOMER_ID |
   | Detail Column | CUSTOMER_ID |
+  | | |
 
 ![](../../assets/Kapitel-05/Master_Detail_08.jpg)
 

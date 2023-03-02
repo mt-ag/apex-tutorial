@@ -54,9 +54,14 @@ Die Daten werden im rechten Seitenbereich als **Classic Report** dargestellt. Li
 
 | | |  
 |--|--|
-| **Identification** <br/> Name <br/> Type| *P51_CATEGORY* <br/> *Checkbox Group*| 
+| **Identification**|  |
+| Name | *P51_CATEGORY* |
+| Type| *Checkbox Group*| 
 | **Label** | *Category*| 
-| **List of Values** <br/> Type  SQL Query| *SQL Query* <br/>  select distinct category as d, <br/> category as r <br/> from TUTO_P0051_VW| 
+| **List of Values**|  |
+| Type | *SQL Query* |
+| SQL Query | select distinct category as d, <br/> category as r <br/> from TUTO_P0051_VW| 
+| | |
 
 
 ![](../../assets/Kapitel-09/Faceted_06.jpg) 
@@ -69,12 +74,18 @@ In der Faceted Search Region befindet sich jetzt ein neues Element mit drei Chec
 
 - Wechseln Sie wieder in den **Page Designer**, um ein neues **Facet** zu erstellen. Dieses modifizieren Sie nach den folgenden Vorgaben:
 
-| | |  
+  | | |  
   |--|--|
-  | **Identification** <br/>Name <br/>Type| *P51_LIST_PRICE* <br/>*Range*| 
+  | **Identification** |  |
+  | Name | *P51_LIST_PRICE* |
+  | Type | *Range* | 
   | **Label** | *List Price*| 
-  | **Settings** <br/>Select Multiple <br/>Manual Entry| <br/>*Enabled* <br/>*Enabled* | 
-  | **List of Values** <br/>Type| *Static Values* | 
+  | **Settings** |  |
+  | Select Multiple | *Enabled* |
+  | Manual Entry | *Enabled* | 
+  | **List of Values** |  |
+  | Type | *Static Values* | 
+  | | |
 
 ![](../../assets/Kapitel-09/Faceted_08.jpg) 
 
