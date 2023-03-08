@@ -1,2 +1,2 @@
 # apex-tutorial
-Tutorials by MT AG for different APEX Versions.
+Tutorials by MT - IT solutions for different APEX Versions.
