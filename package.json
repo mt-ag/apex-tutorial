@@ -1,7 +1,7 @@
 {
   "name": "apex-tutorial",
   "version": "22.2.0",
-  "description": "APEX Tutorial by MT GmbH",
+  "description": "APEX Tutorial by MT - IT Solutions",
   "main": "builder/index.js",
   "directories": {
     "doc": "docs"
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/mt-ag/apex-tutorial.git"
   },
-  "author": "MT GmbH",
+  "author": "MT - IT Solutions",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mt-ag/apex-tutorial/issues"
