@@ -1,1 +1,1 @@
-# Tutorials by MT - IT Solutions for different APEX Versions #
+# APEX 22.2 Tutorial by MT - IT Solutions #
