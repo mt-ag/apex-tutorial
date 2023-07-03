@@ -1,6 +1,6 @@
 # Vorbereitung
 
-Herzlich Willkommen bei dem Workshop „Hands-On APEX 22.2“ der MT - IT Solutions.
+Herzlich Willkommen bei dem Workshop „Hands-On APEX 23.1“ der MT - IT Solutions.
 Bevor Sie mit der Bearbeitung dieses Tutorials beginnen können, müssen Sie einen Workspace auf den Servern von Oracle beantragen. Dies können Sie innerhalb weniger Minuten unter [apex.oracle.com](apex.oracle.com) erledigen.
 
 Falls Sie die Möglichkeit nutzen möchten, englischsprachige Tutorials zu bearbeiten, gibt es unter dem folgenden Link die Möglichkeit, dies zu tun. Klicken Sie einfach auf [https://apex.oracle.com/en/learn/tutorials/](https://apex.oracle.com/en/learn/tutorials/) und bearbeiten Sie die von APEX bereitgestellten Tutorials, wenn Sie noch einen größeren Einblick in die Welt von APEX erhalten möchten.  
