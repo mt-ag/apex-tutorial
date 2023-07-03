@@ -14,7 +14,7 @@ In diesem Kapitel wird das Grundgerüst der Anwendung und die erste Seite erstel
 
 ![](../../assets/Kapitel-02/Create_App_Wizard_1.jpg)
 
-- Geben Sie jetzt den Namen der Anwendung ein (z.B. Tutorial 22).
+- Geben Sie jetzt den Namen der Anwendung ein (z.B. Tutorial 23.1).
 
 ![](../../assets/Kapitel-02/Create_App_Wizard_2.jpg)
 
