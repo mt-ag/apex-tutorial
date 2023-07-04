@@ -55,7 +55,6 @@ In diesem Fall setzt sich die Bezeichnung der View wie folgt zusammen:
 
 ![](../../assets/Kapitel-03/Object_Browser_Create_View_1.jpg)
 
-- Klicken Sie dann auf den Button **Next**.  
 - Abschließend klicken Sie auf den Button **Create View**.  
 
 ![](../../assets/Kapitel-03/Object_Browser_Create_View_2.jpg)  
