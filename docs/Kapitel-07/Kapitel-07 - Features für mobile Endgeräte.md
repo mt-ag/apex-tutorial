@@ -100,7 +100,7 @@ Es öffnet sich ein Bereich mit weitern Einstellungen, die zum Anpassen des User
 
 
 ## 7.3. Persistent Authentication
-Für Progressive Web Apps gibt es mit der Version 22.1 eine neue Authentifizierungsmethode namens „Persistent Authentication“.
+Für Progressive Web Apps gibt es mit der Version 23.1 eine neue Authentifizierungsmethode namens „Persistent Authentication“.
 
 Im Gegensatz zu normalen APEX Anwendungen, erscheint hier auf dem Login Bildschirm eine „**Remember me**“-Checkbox, diese ist nicht zu verwechseln mit „**Remember Username**“.
 
