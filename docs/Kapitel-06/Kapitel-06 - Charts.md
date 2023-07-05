@@ -36,7 +36,7 @@ Ziel dieses Kapitels ist es, ein Chart zu erstellen, welches das Verhältnis der
 
 - **Breadcrumbs** können meist nach dem Anlegen gelöscht werden. Sie nehmen viel Platz ein und bringen i. d. R. keinen Mehrwert für den Endanwender. **Breadcrumbs** sind hierarchische Listen von Links und bieten eine hierarchische Navigation.
 
-- Klicken Sie mit der rechten Maustaste auf die *Breadcrumb* **TUTORIAL 22** und wählen Sie **Delete** aus. 
+- Klicken Sie mit der rechten Maustaste auf die *Breadcrumb* **TUTORIAL 23.1** und wählen Sie **Delete** aus. 
 
 ![](../../assets/Kapitel-06/Charts_01.jpg)
 
