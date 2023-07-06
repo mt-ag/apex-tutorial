@@ -25,7 +25,7 @@ Nach diesem Kapitel hat Ihr Login-Screen ein Hintergrundbild und sieht somit ans
 ![](../../assets/Kapitel-11/Optisch_04.jpg) 
 
 Ein Template enthält alle Elemente, die Benutzer zum Erstellen eine Seite benötigen, inklusive von Beispielen zu den Elementen, damit Entwickler sehen können, wie die einzelnen Elemente zu verwenden sind. Immer wenn eine neue Seite in APEX angelegt wird, muss für diese ein Template ausgewählt werden. Entwickler haben die Möglichkeit, vorhandene Templates zu bearbeiten oder neue anzulegen.  
-- Wählen Sie die **Region TUTORIAL22** aus. Ändern Sie dort den **Namen** zu ***Log In***. 
+- Wählen Sie die **Region TUTORIAL23** aus. Ändern Sie dort den **Namen** zu ***Log In***. 
 
 ![](../../assets/Kapitel-11/Optisch_05.jpg) 
 
