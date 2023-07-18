@@ -74,9 +74,7 @@ In den folgenden zwei Beispielen wird die Suche einmal in den lokalen Daten und 
 
 ![](../../assets/Kapitel-17/search_config_05.jpg)  
 
-- Klicken Sie auf die erstellte Suchkonfiguration **Product_Search** um die Einstellungen anzupassen.  
 
-![](../../assets/Kapitel-17/search_config_06.jpg)  
   
   Beachten Sie, dass die durchsuchbare(n) Spalte(n) varchar-Spalten sein müssen.  
 
