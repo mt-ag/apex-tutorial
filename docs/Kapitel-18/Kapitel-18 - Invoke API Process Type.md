@@ -8,7 +8,7 @@ Ein Beispiel für einen API-Aufrufprozess ist auf der **Login Page** in der Anwe
 
 - Klicken Sie auf die Registerkarte **Processing**, um die Prozesse mit dem Typ **Invoke API** anzusehen.
 
-![](../../assets/Kapitel-18/invoke_api_01.jpg)
+![](../../assets/Kapitel-18/invoke_api_01.JPG)
 
 In diesem Kapitel wird eine Prozedur angelegt, um die oben genannten Funktionen nutzen zu können.
 
