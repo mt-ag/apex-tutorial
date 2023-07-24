@@ -50,7 +50,7 @@ Für dieses Kapitel muss zuerst eine **Prozedur** und eine **View** erstellt wer
 > Weitere Informationen zu einer Prozedur finden Sie unter dem folgenden Link:   
 [Oracle Documentation CREATE PROCEDURE Statement](https://docs.oracle.com/en/database/oracle/oracle-database/21/lnpls/CREATE-PROCEDURE-statement.html#GUID-5F84DB47-B5BE-4292-848F-756BF365EC54)  
   
-![](../../assets/Kapitel-18/invoke_api_02.jpg)
+![](../../assets/Kapitel-18/invoke_api_03.jpg)
 
 Es öffnet sich ein Assistent zur Erstellung der Prozedur.  
 Nun müssen Sie den entsprechenden Namen **PR_UPDATE_ORDER_ITEMS** sowie den **Return Data Type** als **VARCHAR2** für die Prozedur hinterlegen. Um eine einheitliche Benennung über verschiedene Anwendungen hinweg zu erzielen, empfiehlt sich die Verwendung von Namenskonventionen.
