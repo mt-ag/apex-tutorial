@@ -1,4 +1,4 @@
-# 19. Template Compnents
+# 19. Template Components
 
 **Template Components** sind ein neuer Plug-In-Typ in APEX. Sie ermöglichen es Ihnen, eine HTML-Vorlage (mit oder ohne zusätzliches CSS und JavaScript) zu definieren und Platzhalter zu verwenden. Sie sind viel einfacher zu verwenden als ein vollständiges Regions-Plug-In, bei dem Sie keine tiefgreifenden Kenntnisse der Plug-In-APIs benötigen.
 
@@ -6,8 +6,32 @@ Auf jeder Seite können Sie dann einen Bereich dieses Plug-In-Typs erstellen, ei
 
 
 - Öffnen Sie den **Shared Components**, klicken sie auf **Plug-ins** und anschlißend auf **create**
+
 ![](../../assets/Kapitel-18/invoke_api_01.jpg)
 
+## 19.1. Erstellung eines Template Components (APEX Plugin) 
+
+- Klicken sie auf **Next**
+bild
+
+- Klicken sie auf **Single (Partial)** und **Multiple (Report)** checkboxen.
+- Zustäzlich fügen sie dien HTML-Code im **Partial** rein
+  ```sql
+{if APEX$IS_LAZY_LOADING/}
+<p>loading...</p>
+{else/}
+<div class="mb-1 flex justify-between">
+  <span class="text-base font-medium">#SKILL#</span>
+  <span class="text-sm font-medium">#PCT#%</span>
+</div>
+<div class="h-2.5 w-full rounded-full bg-gray-200 ">
+  <div
+    class="h-2.5 rounded-full bg-blue-600"
+    style="width: #PCT#%; background: {if COLOR_INDEX%assigned/}var(--u-color-#COLOR_INDEX#);{else/}var(--u-color-1);{endif/}"
+  ></div>
+</div>
+{endif/}
+  ```
 
 
 
@@ -23,14 +47,6 @@ Auf jeder Seite können Sie dann einen Bereich dieses Plug-In-Typs erstellen, ei
 
 
 
-
-
-
-
-
-In diesem Kapitel wird eine Prozedur angelegt, um die oben genannten Funktionen nutzen zu können.
-
-## 18.1. Erstellung der benötigten Objekte 
 
 Für dieses Kapitel muss zuerst eine **Prozedur** und eine **View** erstellt werden.
 
