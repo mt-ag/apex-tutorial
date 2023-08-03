@@ -15,25 +15,36 @@ Auf jeder Seite können Sie dann einen Bereich dieses Plug-In-Typs erstellen, ei
 bild
 
 - Klicken sie auf **Single (Partial)** und **Multiple (Report)** checkboxen.
-- Zustäzlich fügen sie dien HTML-Code im **Partial** rein
-  ```html
-{if APEX$IS_LAZY_LOADING/}
-<p>loading...</p>
-{else/}
-<div class="mb-1 flex justify-between">
-  <span class="text-base font-medium">#SKILL#</span>
-  <span class="text-sm font-medium">#PCT#%</span>
-</div>
-<div class="h-2.5 w-full rounded-full bg-gray-200 ">
-  <div
-    class="h-2.5 rounded-full bg-blue-600"
-    style="width: #PCT#%; background: {if COLOR_INDEX%assigned/}var(--u-color-#COLOR_INDEX#);{else/}var(--u-color-1);{endif/}"
-  ></div>
-</div>
-{endif/}
+- Fügen Sie den HTML-Code im **Partial** ein
+   ```html
+    {if APEX$IS_LAZY_LOADING/}
+       <p>loading...</p>
+    {else/}
+       <div class="mb-1 flex justify-between">
+         <span class="text-base font-medium">#SKILL#</span>
+         <span class="text-sm font-medium">#PCT#%</span>
+       </div>
+   
+       <div class="h-2.5 w-full rounded-full bg-gray-200 ">
+          <div class="h-2.5 rounded-full bg-blue-600" style="width: #PCT#%; background: {if COLOR_INDEX%assigned/}var(--u-color-#COLOR_INDEX#);{else/}var(--u-color-1);{endif/}">
+          </div>
+       </div>
+   {endif/}
+  ```
+-bild
+- Fügen Sie den HTML-Code im **Report Body** ein
+   ```html
+    <div class="progress-list">#APEX$ROWS#</div>
+  ```
+-bild
+- Fügen Sie den HTML-Code im **Report Row** ein
+   ```html
+    <div #APEX$ROW_IDENTIFICATION# style="margin-top: 1lh;">#APEX$PARTIAL#</div>
   ```
 
-
+Abschlißend drücken sie auf **Create Plug-in**.
+-bild
+Als nächstes werden wir eine **CSS Datei** erstellen.
 
 
 
