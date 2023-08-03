@@ -16,7 +16,7 @@ bild
 
 - Klicken sie auf **Single (Partial)** und **Multiple (Report)** checkboxen.
 - Zustäzlich fügen sie dien HTML-Code im **Partial** rein
-  ```sql
+  ```html
 {if APEX$IS_LAZY_LOADING/}
 <p>loading...</p>
 {else/}
