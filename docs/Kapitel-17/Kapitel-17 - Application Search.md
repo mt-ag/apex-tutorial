@@ -90,8 +90,8 @@ In den folgenden zwei Beispielen wird die Suche einmal in den lokalen Daten und 
   | | |  
   |--|--|
   | **Icon Source** | *Image BLOB Column* | 
-  | **Icon BLOB Column Name** | *PRDT_INFO_PRODUCT_IMAGE*| 
-  | **Icon Mime Type Column Name** | *PRDT_INFO_MIMETYPE*| 
+  | **Icon BLOB Column Name** | *PRODUCT_IMAGE*| 
+  | **Icon Mime Type Column Name** | *MIMETYPE*| 
   | | |  
 
   **No Results Found Message** kann hinzugefügt werden:  
