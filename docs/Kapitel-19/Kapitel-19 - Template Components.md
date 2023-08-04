@@ -4,6 +4,7 @@
 
 Auf jeder Seite können Sie dann einen Bereich dieses Plug-In-Typs erstellen, eine Abfrage platzieren und dann eine Instanz dieser Vorlage erhalten, die mit den Daten für jede zurückgegebene Zeile gefüllt wird. Sie können auch eine einzelne Instanz in einer Region rendern oder sie sogar in Spalten interaktiver Berichte verwenden.
 
+. neu
 
 - Öffnen Sie den **Shared Components**, klicken sie auf **Plug-ins** und anschlißend auf **create**
 
