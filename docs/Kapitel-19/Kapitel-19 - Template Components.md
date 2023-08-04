@@ -4,19 +4,36 @@
 
 Auf jeder Seite können Sie dann einen Bereich dieses Plug-In-Typs erstellen, eine Abfrage platzieren und dann eine Instanz dieser Vorlage erhalten, die mit den Daten für jede zurückgegebene Zeile gefüllt wird. Sie können auch eine einzelne Instanz in einer Region rendern oder sie sogar in Spalten interaktiver Berichte verwenden.
 
-. neu
+## 19.1. Erstellung eines "Template Components" (APEX Plugin) 
 
-- Öffnen Sie den **Shared Components**, klicken sie auf **Plug-ins** und anschlißend auf **create**
+1. Öffnen Sie den **Shared Components**, klicken sie auf **Plug-ins** und anschlißend auf **create**
 
-![](../../assets/Kapitel-18/invoke_api_01.jpg)
+![](../../assets/Kapitel-19/1.jpg)
 
-## 19.1. Erstellung eines Template Components (APEX Plugin) 
+2. Klicken sie auf **Next**
 
-- Klicken sie auf **Next**
-bild
+![](../../assets/Kapitel-19/2.jpg)
 
-- Klicken sie auf **Single (Partial)** und **Multiple (Report)** checkboxen.
-- Fügen Sie den HTML-Code im **Partial** ein
+3. Geben Sie die Werte wie folgt ein:
+
+| | | |
+|--|--|--|
+| **Field Name** | **Value** |
+| Name | Progress Bars | 
+| Internal Name | PROGRESS_BARS | 
+| Type | Template Components | 
+| Available as Single | Checkbox: YES | 
+| Available as Multiple | Checkbox: YES | 
+| | |
+
+Abschlißend drücken sie auf **Create Plug-in** Button
+![](../../assets/Kapitel-19/3.jpg)
+
+4. Im nächsten Schritt fügen sie folgenden code ein **Partial**, **Report Body** und **Report Row** an den entsprechenden stellen gemäß Bild ein. Abschlißend drücken sie auf **Create Plug-in** Button
+
+![](../../assets/Kapitel-19/4.jpg)
+
+Fügen Sie den HTML-Code im **Partial** ein
    ```html
     {if APEX$IS_LAZY_LOADING/}
        <p>loading...</p>
@@ -32,27 +49,79 @@ bild
        </div>
    {endif/}
   ```
--bild
-- Fügen Sie den HTML-Code im **Report Body** ein
+
+Fügen Sie den HTML-Code im **Report Body** ein
+
    ```html
     <div class="progress-list">#APEX$ROWS#</div>
   ```
--bild
-- Fügen Sie den HTML-Code im **Report Row** ein
+Fügen Sie den HTML-Code im **Report Row** ein
+
    ```html
     <div #APEX$ROW_IDENTIFICATION# style="margin-top: 1lh;">#APEX$PARTIAL#</div>
   ```
 
-Abschlißend drücken sie auf **Create Plug-in**.
--bild
-Als nächstes werden wir eine **CSS Datei** erstellen.
+5. Sie haben Erfolgreich **Progress Bars** Plugin erstellt. Klicken auf den Plugin-Namen **Progress Bars** um weiter zu bearbeiten.
+
+![](../../assets/Kapitel-19/5.jpg)
+
+6. Im nächsten Schritt scrollen runter zum punkt **Custom Attributes** und löschen sie alle vorhandenen attribute und klicken sie auf **Synchronize from Templates**. 
+
+![](../../assets/Kapitel-19/6.jpg)
+
+7. Nun sollten Sie nur 3 Attribute sehen können. Klicken sie auf dem ersten Attribute **Color Index**
+
+![](../../assets/Kapitel-19/7.jpg)
+
+8. Geben Sie die Werte für die 3 Attribute wie folgt ein und drücken auf **Apply Changes**.
+
+| | | |
+|--|--|--|
+| **Color Index** | **Value** |
+| Static ID | COLOR_INDEX | 
+| Required | YES | 
+| Data Types | Number |  
+| | |
+
+| | | |
+|--|--|--|
+| **Pct** | **Value** |
+| Static ID | PCT | 
+| Required | YES | 
+| Data Types | Number |  
+| | |
+
+| | | |
+|--|--|--|
+| **Skill** | **Value** |
+| Static ID | SKILL | 
+| Required | YES | 
+| Data Types | Varchar2 |  
+| | |
+
+9. Im nächsten Schrtt wird eine **CSS Datei** erstellt.
+
+![](../../assets/Kapitel-19/9.jpg)
 
 
+10. Im nächsten Schrtt wird eine **CSS Datei** erstellt.
+
+| | | |
+|--|--|--|
+| **Input-Field** | **Value** |
+| File Name | styles.css |   
+| | |
+
+![](../../assets/Kapitel-19/9.jpg)
 
 
+11. Kopieren sie den unten stehenden **CSS Code** und fügen sie den in APEX ein. Notieren sie am ende den **Reference** Link, den brauchen wie gleich.
 
+![](../../assets/Kapitel-19/11.jpg)
 
+12. Den kopierten **Reference** Link, wie folgt einfügen und speichern.
 
+![](../../assets/Kapitel-19/12.jpg)
 
 
 
