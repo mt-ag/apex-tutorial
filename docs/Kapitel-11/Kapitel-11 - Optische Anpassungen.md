@@ -30,7 +30,8 @@ Ein Template enthält alle Elemente, die Benutzer zum Erstellen eine Seite benö
 ![](../../assets/Kapitel-11/Optisch_05.jpg) 
 
 - Wählen Sie das **Item *P9999_USERNAME*** aus. Löschen Sie den Wert des Feldes **Label** und ändern Sie den Wert für **Icon** zu **fa-user**.  
-- Wählen Sie das **Item *P9999_PASSWORD*** aus. Löschen Sie dort den Wert des Feldes **Label** und ändern Sie den Wert für **Icon** zu **fa-lock-password**. 
+- Wählen Sie das **Item *P9999_PASSWORD*** aus. Löschen Sie dort den Wert des Feldes **Label** und ändern Sie den Wert für **Icon** zu **fa-lock-password**.
+- Abschließend speichern Sie die Seite.
 
 ![](../../assets/Kapitel-11/Optisch_06.jpg) 
 
