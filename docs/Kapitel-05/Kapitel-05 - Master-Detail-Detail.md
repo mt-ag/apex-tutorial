@@ -306,7 +306,7 @@ Die Felder der Spalte **State** im **Interactive Grid** können bislang über ei
 
 ![](../../assets/Kapitel-05/Master_Detail_40.jpg)
 
-- Ändern Sie dort für die Region Customers in der Spalte **Columns** den **Type** im Reiter List of Values in ***Shared Components*** und den Wert von **List of Values** in ***STATES***.
+- Ändern Sie dort für die Region Customers in der Spalte **State** den **Type** im Reiter List of Values in ***Shared Components*** und den Wert von **List of Values** in ***STATES***.
 
 ![](../../assets/Kapitel-05/Master_Detail_41.jpg)
 
