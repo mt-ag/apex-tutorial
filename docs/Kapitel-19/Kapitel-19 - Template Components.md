@@ -26,10 +26,10 @@ Auf jeder Seite können Sie dann einen Bereich dieses Plug-In-Typs erstellen, ei
 | Available as Multiple | Checkbox: YES | 
 | | |
 
-Abschlißend drücken sie auf **Create Plug-in** Button
+Abschlißend drücken Sie auf **Create Plug-in** Button
 ![](../../assets/Kapitel-19/3.jpg)
 
-4. Im nächsten Schritt fügen sie folgenden code ein **Partial**, **Report Body** und **Report Row** an den entsprechenden stellen gemäß Bild ein. Abschlißend drücken sie auf **Create Plug-in** Button
+4. Im nächsten Schritt fügen Sie folgenden code in **Partial**, **Report Body** und **Report Row** an den entsprechenden stellen gemäß Screenshot ein. Abschlißend drücken Sie auf **Create Plug-in** Button.
 
 ![](../../assets/Kapitel-19/4.jpg)
 
@@ -61,7 +61,7 @@ Fügen Sie den HTML-Code im **Report Row** ein
     <div #APEX$ROW_IDENTIFICATION# style="margin-top: 1lh;">#APEX$PARTIAL#</div>
   ```
 
-5. Sie haben Erfolgreich **Progress Bars** Plugin erstellt. Klicken auf den Plugin-Namen **Progress Bars** um weiter zu bearbeiten.
+5. Sie haben den **Progress Bars** Plugin Erfolgreich erstellt. Klicken auf den Plugin-Namen **Progress Bars** um weiter zu bearbeiten.
 
 ![](../../assets/Kapitel-19/5.jpg)
 
@@ -69,7 +69,7 @@ Fügen Sie den HTML-Code im **Report Row** ein
 
 ![](../../assets/Kapitel-19/6.jpg)
 
-7. Nun sollten Sie nur 3 Attribute sehen können. Klicken sie auf dem ersten Attribute **Color Index**
+7. Nun sollten nur 3 Attribute zu sehen sein. Klicken sie auf dem ersten Attribute **Color Index**
 
 ![](../../assets/Kapitel-19/7.jpg)
 
@@ -104,7 +104,7 @@ Fügen Sie den HTML-Code im **Report Row** ein
 ![](../../assets/Kapitel-19/9.jpg)
 
 
-10. Im nächsten Schrtt wird eine **CSS Datei** erstellt.
+10. Die **CSS Datei** wir mit folgendem Namen erstellt.
 
 | | | |
 |--|--|--|
@@ -115,7 +115,7 @@ Fügen Sie den HTML-Code im **Report Row** ein
 ![](../../assets/Kapitel-19/10.jpg)
 
 
-11. Kopieren sie den unten stehenden **CSS Code** und fügen sie den in APEX ein. Notieren sie am ende den **Reference** Link, den brauchen wie gleich.
+11. Kopieren Sie den unten stehenden **CSS Code** und fügen sie den in APEX ein. Notieren sie am ende den **Reference** Link, den brauchen wie gleich.
 
 ![](../../assets/Kapitel-19/11.jpg)
 
@@ -183,17 +183,17 @@ Fügen Sie den HTML-Code im **Report Row** ein
 
   ```
 
-12. Den kopierten **Reference** Link, wie folgt einfügen und speichern.
+12. Den kopierten **Reference** Link, wie im Screenshot an der passenden stelle einfügen und speichern.
 
 ![](../../assets/Kapitel-19/12.jpg)
 
-Bit hier hin wurde der Plug-in Erfolgreich erstellt.
+Bis zu diesem Schritt wurde der **Plug-in** Erfolgreich erstellt.
 
 13. Im nächsten schritt wird eine neue APEX-Seite mit dem Plugin erstellt.
 
 ![](../../assets/Kapitel-19/13.jpg)
 
-14. Die Neue Seite wie folgt erstellen und auf **create Page**:
+14. Die Neue Seite wie folgt erstellen und auf **create Page** klicken:
 
 | | | |
 |--|--|--|
@@ -206,11 +206,11 @@ Bit hier hin wurde der Plug-in Erfolgreich erstellt.
 
 ![](../../assets/Kapitel-19/14.jpg)
 
-15. Bitte erstellen Sie auf der Seite eine neue Region mit dem Title: **Progress Bars**. Anschließend wählen sie bei Type das zuvor erstellte Plug-in **Progress Bars**.
+15. Erstellen Sie auf der Seite eine neue Region mit dem Title: **Progress Bars**. Anschließend wählen sie bei Type das zuvor erstellte Plug-in: **Progress Bars**.
 
 ![](../../assets/Kapitel-19/15.jpg)
 
-16. Anschließend wählen Sie **SQL Query** bei Type aus und fügen sie den unteren SQL-Code im **SQL-Query** ein. Wechseln sie anschließend zum Reiter **Attributes**
+16. Anschließend wählen Sie **SQL Query** als Type aus und fügen sie den unten stehenden SQL-Code im **SQL-Query** ein. Wechseln sie anschließend zum Reiter **Attributes**
 
 ![](../../assets/Kapitel-19/16.jpg)
 
@@ -275,7 +275,7 @@ Erstellen Sie button mit folgenden Einstellungen:
 | Action | Submit Page |  
 | | |
 
-Klicken Sie auf **Template Options**,
+Klicken Sie auf **Template Options**
 
 | | | |
 |--|--|--|
