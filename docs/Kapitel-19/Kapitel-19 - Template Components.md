@@ -292,7 +292,7 @@ Klicken Sie auf **Template Options**
 ![](../../assets/Kapitel-19/19.jpg)
 
 <br><br>
-Herzlichen Glückwunsch! :)
+Herzlichen Glückwunsch!
 Sie haben das Tutorial erfolgreich beendet.  
 Falls Sie noch mehr über APEX lernen wollen, schauen Sie doch mal auf unserem APEX Portal vorbei:  
 [apex.mt-itsolutions.com/from-zero-to-hero](https://apex.mt-itsolutions.com/from-zero-to-hero)
