@@ -6,15 +6,15 @@ In diesem Kapitel wird das Grundgerüst der Anwendung und die erste Seite erstel
 
 ## 2.1. Erstellen einer Anwendung
 
-- Für die weiteren Aufgaben muss zunächst eine **Anwendung** erstellt werden. Öffnen Sie hierzu als erstes den **App Builder** und klicken Sie auf den Button **Create**. Der App Builder zeigt alle installierten Anwendungen an.
+- Für die weiteren Aufgaben muss zunächst eine **Anwendung** erstellt werden. Öffnen Sie hierzu als erstes den **App Builder**. Der App Builder zeigt alle installierten Anwendungen an. Klicken Sie nun auf den Button **Create**.
 
 ![](../../assets/Kapitel-02/Open_Create_App_Wizard.jpg)
 
-- Der Assistent zur Erstellung von Anwendungen wird gestartet. Klicken Sie auf New Application, um eine neue Anwendung zu erstellen.
+- Der Assistent zur Erstellung von Anwendungen wird gestartet. Klicken Sie auf Use Create App Wizard, um den Assistenten für eine neue Anwendung zu öffnen.
 
 ![](../../assets/Kapitel-02/Create_App_Wizard_1.jpg)
 
-- Geben Sie jetzt den Namen der Anwendung ein (z.B. Tutorial 23.1).
+- Geben Sie jetzt den Namen der Anwendung ein (z.B. Tutorial 23.2).
 
 ![](../../assets/Kapitel-02/Create_App_Wizard_2.jpg)
 
