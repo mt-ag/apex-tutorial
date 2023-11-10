@@ -1,6 +1,6 @@
 # Vorbereitung
 
-Herzlich Willkommen bei dem Workshop „Hands-On APEX 23.1“ der MT - IT Solutions.
+Herzlich Willkommen bei dem Workshop „Hands-On APEX 23.2“ der MT - IT Solutions.
 Bevor Sie mit der Bearbeitung dieses Tutorials beginnen können, müssen Sie einen Workspace auf den Servern von Oracle beantragen. Dies können Sie innerhalb weniger Minuten unter [apex.oracle.com](apex.oracle.com) erledigen.
 
 Falls Sie die Möglichkeit nutzen möchten, englischsprachige Tutorials zu bearbeiten, gibt es unter dem folgenden Link die Möglichkeit, dies zu tun. Klicken Sie einfach auf [https://apex.oracle.com/en/learn/tutorials/](https://apex.oracle.com/en/learn/tutorials/) und bearbeiten Sie die von APEX bereitgestellten Tutorials, wenn Sie noch einen größeren Einblick in die Welt von APEX erhalten möchten.  
@@ -23,31 +23,31 @@ Verwenden Sie das beigefügte SQL-Skript (**Skript.sql**), um die Daten wie im F
 
 - Navigieren Sie zum **SQL-Workshop**, indem Sie eine der zwei rot markierten Möglichkeiten wählen.
 
-![](../assets/Kapitel-01/Open_SQL_Workshop.jpg)
+![](../../assets/Kapitel-01/Open_SQL_Workshop.jpg)
 
 - Wenn Sie sich im **SQL Workshop** befinden, klicken Sie dort auf **SQL Scripts**.
 
-![](../assets/Kapitel-01/Open_SQL_Skripts.jpg)
+![](../../assets/Kapitel-01/Open_SQL_Skripts.jpg)
 
 - Klicken Sie nun auf **Upload**.
 
-![](../assets/Kapitel-01/SQL_Workshop_open_upload.jpg)
+![](../../assets/Kapitel-01/SQL_Workshop_open_upload.jpg)
 
 - Wählen Sie das Skript **Skript.sql** aus, welches sich in dem Ordner **Kapitel-01** befindet. Laden Sie das Skript durch Klicken auf den Upload-Button hoch bzw. ziehen Sie es in das vorgesehene Feld.
 
-![](../assets/Kapitel-01/SQL_Workshop_upload_Skript.jpg)
+![](../../assets/Kapitel-01/SQL_Workshop_upload_Skript.jpg)
 
 - Starten Sie das Skript, indem Sie auf den **Run**-Button drücken.
 
-![](../assets/Kapitel-01/SQL_Workshop_run_Skript_1.jpg)
+![](../../assets/Kapitel-01/SQL_Workshop_run_Skript_1.jpg)
 
 - Klicken Sie auf **Run Now**.
 
-![](../assets/Kapitel-01/SQL_Workshop_run_Skript_2.jpg)
+![](../../assets/Kapitel-01/SQL_Workshop_run_Skript_2.jpg)
 
 - Nach dem erfolgreichen Import sollten Sie folgendes Ergebnis sehen:
 
-![](../assets/Kapitel-01/SQL_Workshop_result.jpg)
+![](../../assets/Kapitel-01/SQL_Workshop_result.jpg)
 
 Es sollten jetzt alle Tabellen und Daten, welche für dieses Tutorial benötigt werden, in Ihrem Workspace vorhanden sein.  
 
@@ -55,7 +55,6 @@ Es sollten jetzt alle Tabellen und Daten, welche für dieses Tutorial benötigt 
 
 Eine weitere Möglichkeit, Datenmodelle ohne viel Aufwand anzulegen, bietet Quick SQL.  
 Wie das funktioniert, erfahren Sie in der <span style="color:red">**Aufgabe #14: Exkurs: Datenmodellierung mittels Quick SQL**</span>.
-
 
 # 2. Create App Wizard
 
@@ -65,23 +64,23 @@ In diesem Kapitel wird das Grundgerüst der Anwendung und die erste Seite erstel
 
 ## 2.1. Erstellen einer Anwendung
 
-- Für die weiteren Aufgaben muss zunächst eine **Anwendung** erstellt werden. Öffnen Sie hierzu als erstes den **App Builder** und klicken Sie auf den Button **Create**. Der App Builder zeigt alle installierten Anwendungen an.
+- Für die weiteren Aufgaben muss zunächst eine **Anwendung** erstellt werden. Öffnen Sie hierzu als erstes den **App Builder**. Der App Builder zeigt alle installierten Anwendungen an. Klicken Sie nun auf den Button **Create**.
 
-![](../assets/Kapitel-02/Open_Create_App_Wizard.jpg)
+![](../../assets/Kapitel-02/Open_Create_App_Wizard.jpg)
 
-- Der Assistent zur Erstellung von Anwendungen wird gestartet. Klicken Sie auf New Application, um eine neue Anwendung zu erstellen.
+- Der Assistent zur Erstellung von Anwendungen wird gestartet. Klicken Sie auf Use Create App Wizard, um den Assistenten für eine neue Anwendung zu öffnen.
 
-![](../assets/Kapitel-02/Create_App_Wizard_1.jpg)
+![](../../assets/Kapitel-02/Create_App_Wizard_1.jpg)
 
-- Geben Sie jetzt den Namen der Anwendung ein (z.B. Tutorial 23.1).
+- Geben Sie jetzt den Namen der Anwendung ein (z.B. Tutorial 23.2).
 
-![](../assets/Kapitel-02/Create_App_Wizard_2.jpg)
+![](../../assets/Kapitel-02/Create_App_Wizard_2.jpg)
 
 - Wenn gewünscht kann mit einem Klick auf den blauen Briefumschlag, links vom Namen, auch das Application Icon angepasst werden. Es öffnet sich ein Wizard, in dem ein Icon und eine Farbe ausgewählt oder ein eigenes Bild hochgeladen werden kann.
 
 - Im Assistenten können Sie direkt eine erste Seite in Ihrer Anwendung erstellen. Dazu klicken Sie auf das Plus oder auf Add Page.
 
-![](../assets/Kapitel-02/Create_App_Wizard_3.jpg)
+![](../../assets/Kapitel-02/Create_App_Wizard_3.jpg)
 
 ## 2.2. Report
 
@@ -91,35 +90,35 @@ APEX unterscheidet zwischen dem klassischen und dem interaktiven Report. Der Unt
 
 - Nachdem Sie auf den Button geklickt haben, um eine Seite hinzuzufügen, öffnet sich ein neues Fenster mit einem Assistenten zur Erstellung der Seite. Dort wählen Sie **Interactive Report** aus.
 
-![](../assets/Kapitel-02/Interactive_Report_1.jpg)
+![](../../assets/Kapitel-02/Interactive_Report_1.jpg)
 
 - Es folgen die Eigenschaften der Seite im nächsten Fenster. Als **Page Name** geben Sie ***STATES*** ein.
 -	Die Einstellungen **Table or View** und **Interactive Report** sind standardmäßig ausgewählt. Falls das nicht der Fall ist, wählen Sie diese bitte aus.
 -	Als nächstes klicken Sie auf das Dropdown-Menü rechts, um eine **Tabelle auszuwählen**, die im Interactive Report angezeigt werden soll. 
 
-![](../assets/Kapitel-02/Interactive_Report_2.jpg)
+![](../../assets/Kapitel-02/Interactive_Report_2.jpg)
 
 - Es öffnet sich der **Search Dialog**, wo Sie die Tabelle ***STATES*** auswählen.
 - Setzen Sie das Häkchen für **Include Form** und klicken Sie anschließend auf den Button **Add Page**.
 
-![](../assets/Kapitel-02/Interactive_Report_3.jpg)
+![](../../assets/Kapitel-02/Interactive_Report_3.jpg)
  
 ## 2.3. Create Application
 
 - So sollte Ihr Create App Wizard jetzt aussehen. 
 
-![](../assets/Kapitel-02/Create_App_Wizard_4.jpg)
+![](../../assets/Kapitel-02/Create_App_Wizard_4.jpg)
 
 - Setzen Sie nun das Häkchen für das Feature **„Install Progressive Web App“**. Mit diesem Feature können APEX Anwendungen auf mobilen Endgeräten installiert und als eigenständige Anwendung verwendet werden. Mehr dazu erfahren Sie in <span style="color:red">**Aufgabe #07: Features für mobile Endgeräte**</span>. 
 
-![](../assets/Kapitel-02/Create_App_Wizard_Features.jpg)
+![](../../assets/Kapitel-02/Create_App_Wizard_Features.jpg)
 
 - Wenn Sie herunterscrollen, sehen Sie unter **Settings** die **Application ID**. Da Sie diese im weiteren Verlauf noch brauchen werden, ist es ratsam, sich diese zu notieren.  
 Bei der Application ID handelt es sich um eine eindeutige Nummer, über welche die Anwendung im Browser aufgerufen werden kann.
 
 - Nachdem Sie alle anderen Schritte absolviert haben, klicken Sie auf den **Create Application**-Button, um die Anwendung zu erstellen.
 
-![](../assets/Kapitel-02/Create_App_Wizard_Settings.jpg)
+![](../../assets/Kapitel-02/Create_App_Wizard_Settings.jpg)
  
 ## 2.4. Run Page
 
@@ -128,30 +127,29 @@ Sie sehen fünf Seiten: **0 - Global Page - Desktop**, **1 - Home** und **9999 -
 Die Seiten **2 - STATES** und **3 - State** haben Sie eben über den Add Page – Assistenten erstellt.
 - Klicken Sie auf die markierte Schaltfläche, um die **Listenansicht** zu öffnen.
 
-![](../assets/Kapitel-02/App_Builder_Page_Overview.jpg)
+![](../../assets/Kapitel-02/App_Builder_Page_Overview.jpg)
 
 - Klicken Sie auf den **Run-Button** der ***STATES***-Seite, um die erstellte Seite anzusehen.
 
-![](../assets/Kapitel-02/App_Builder_Page_Overview_List.jpg)
+![](../../assets/Kapitel-02/App_Builder_Page_Overview_List.jpg)
 
 - Es erscheint ein Login-Bildschirm, wo Sie sich mit Ihrem Username und Ihrem Password (selbe Zugangsdaten wie für den Workspace) anmelden.
 
-![](../assets/Kapitel-02/Login_Screen.jpg)
+![](../../assets/Kapitel-02/Login_Screen.jpg)
 
 - Nach dem Login erscheint die Seite ***STATES*** mit einem Interactive Report.
 
-![](../assets/Kapitel-02/Page_2.jpg)
+![](../../assets/Kapitel-02/Page_2.jpg)
 
 - Wenn Sie auf das **Stiftsymbol** in der linken Spalte klicken, öffnet sich ein modaler Dialog, in dem Sie die Daten ändern können.
 
-![](../assets/Kapitel-02/Modal_Dialog.jpg)
+![](../../assets/Kapitel-02/Modal_Dialog.jpg)
 
 - Fürs Erste lassen wir die Inhalte so wie sie sind und schließen den modalen Dialog wieder (über den **Cancel**-Button oder das x oben in der Ecke).  
 
 - Wechseln Sie nun zurück in den Tab **App Builder**. 
 
-![](../assets/Kapitel-02/Navigationbar_Browser.jpg)
-
+![](../../assets/Kapitel-02/Navigationbar_Browser.jpg)
 
 # 3. Zugriff auf Views statt auf Tabellen vornehmen
 
