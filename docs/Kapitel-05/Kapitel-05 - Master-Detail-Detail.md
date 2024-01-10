@@ -10,53 +10,53 @@ Beim Auswählen eines Datensatzes ändern sich die Inhalte der Tabellen und man 
 
   - TUTO_P0031_1_VW
     ```sql
-    select ordr_id as order_id, 
-           ordr_ctmr_id as customer_id, 
-           ordr_total as order_total, 
-           ordr_dd as order_date, 
-           ordr_user_name as user_name, 
-           ordr_tags as tags 
+    select ordr_id, 
+           ordr_ctmr_id, 
+           ordr_total, 
+           ordr_dd, 
+           ordr_user_name, 
+           ordr_tags 
       from orders
     ```
   - TUTO_P0031_2_VW
     ```sql
-    select ordr_item_id as order_item_id,
-           ordr_item_ordr_id as order_id,
-           ordr_item_prdt_info_id as product_id,
-           ordr_item_unit_price as unit_price,
-           ordr_item_quantity as quantity
+    select ordr_item_id,
+           ordr_item_ordr_id,
+           ordr_item_prdt_info_id,
+           ordr_item_unit_price,
+           ordr_item_quantity
       from order_items
     ```
   - TUTO_P0031_3_VW
     ```sql
-    select prdt_info_id as product_id,
-           prdt_info_name as product_name,
-           prdt_info_descr as product_description,
-           prdt_info_category as category,
-           prdt_info_avail as product_avail,
-           prdt_info_list_price as list_price,
-           prdt_info_product_image as product_image,
-           prdt_info_mimetype as mimetype,
-           prdt_info_filename as filename,
-           prdt_info_image_last_update as image_last_update,
-           prdt_info_tags as tags
+    select prdt_info_id,
+           prdt_info_name,
+           prdt_info_descr,
+           prdt_info_category,
+           prdt_info_avail,
+           prdt_info_list_price,
+           prdt_info_product_image,
+           prdt_info_mimetype,
+           prdt_info_filename,
+           prdt_info_image_last_update,
+           prdt_info_tags
       from product_info
     ```
   - TUTO_P0031_4_VW
     ```sql
-    select ctmr_id as customer_id,
-           ctmr_frst_name as first_name,
-           ctmr_last_name as last_name,
-           ctmr_street_address1 as street_address1,
-           ctmr_street_address2 as street_address2,
-           ctmr_state as state,
-           ctmr_postal_code as postal_code,
-           ctmr_email as email,
-           ctmr_phone_number1 as phone_number1,
-           ctmr_phone_number2 as phone_number2,
-           ctmr_url as url,
-           ctmr_credit_limit as credit_limit,
-           ctmr_tags as tags
+    select ctmr_id,
+           ctmr_frst_name,
+           ctmr_last_name,
+           ctmr_street_address1,
+           ctmr_street_address2,
+           ctmr_state,
+           ctmr_postal_code,
+           ctmr_email,
+           ctmr_phone_number1,
+           ctmr_phone_number2,
+           ctmr_url,
+           ctmr_credit_limit,
+           ctmr_tags
       from customers
     ```
 

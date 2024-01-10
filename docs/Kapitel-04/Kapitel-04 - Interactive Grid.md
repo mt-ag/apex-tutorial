@@ -12,12 +12,12 @@ Dort geben Sie folgende Daten ein:
 - **View Name**: ***TUTO_P0021_VW***  
 - **Query**:
   ```sql
-  select PRDT_INFO_ID as PRODUCT_ID,
-         PRDT_INFO_NAME AS PRODUCT_NAME,
-         PRDT_INFO_DESCR AS PRODUCT_DESCRIPTION,
-         PRDT_INFO_CATEGORY AS CATEGORY,
-         PRDT_INFO_AVAIL AS PRODUCT_AVAIL,
-         PRDT_INFO_LIST_PRICE AS LIST_PRICE
+  select PRDT_INFO_ID,
+         PRDT_INFO_NAME,
+         PRDT_INFO_DESCR,
+         PRDT_INFO_CATEGORY,
+         PRDT_INFO_AVAIL,
+         PRDT_INFO_LIST_PRICE
   from PRODUCT_INFO
   ```
 
@@ -46,7 +46,7 @@ Dies ist besonders wichtig, damit die Spalte APEX$ROW_SELECTOR erstellt werden k
 
 ![](../../assets/Kapitel-04/Interactive_Grid_05.jpg)
 
-- Wählen Sie die Spalte ***Product ID (Number)*** als **Primary Key Column 1** aus.
+- Wählen Sie die Spalte ***PRDT_INFO_ID (Number)*** als **Primary Key Column 1** aus.
 
 ![](../../assets/Kapitel-04/Interactive_Grid_06.jpg)
 
