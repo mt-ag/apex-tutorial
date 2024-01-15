@@ -24,7 +24,7 @@ SALARIES /insert 5
 
 >! Achten Sie bitte bei der Eingabe auf die oben dargestellten Einzüge!  
 
-- Klicken Sie anschließend auf **Generate SQL**, damit der Code in SQL-Code übersetzt wird. Im rechten Textbereich wird daraufhin der erzeugte SQL-Code angezeigt. 
+- Der Code wird automatisch in SQL-Code übersetzt. Im rechten Textbereich wird der erzeugte SQL-Code angezeigt. 
 
 ![](../../assets/Kapitel-14/Exkurs_02.jpg)
 
