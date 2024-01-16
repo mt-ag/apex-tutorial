@@ -84,7 +84,7 @@ Beim Auswählen eines Datensatzes ändern sich die Inhalte der Tabellen und man 
 
 ![](../../assets/Kapitel-05/Master_Detail_05.jpg)
 
-- Wählen Sie als **Primary Key Column 1** die Spalte ***CUSTOMER_ID (Number)*** und klicken Sie auf den Button **Next**.
+- Wählen Sie als **Primary Key Column 1** die Spalte ***CTMR_ID (Number)*** und klicken Sie auf den Button **Next**.
 
 ![](../../assets/Kapitel-05/Master_Detail_06.jpg)
 
@@ -108,8 +108,8 @@ Eine Region ist ein Bereich auf einer Seite, der als Container für Inhalte dien
   | | | 
   |--|--|
   | Primary Key Column | ORDER_ID |
-  | Master Column | CUSTOMER_ID |
-  | Detail Column | CUSTOMER_ID |
+  | Master Column | CTMR_ID |
+  | Detail Column | ORDR__CTMR_ID |
   | | |
 
 ![](../../assets/Kapitel-05/Master_Detail_08.jpg)
@@ -132,12 +132,12 @@ Eine Region ist ein Bereich auf einer Seite, der als Container für Inhalte dien
 
 - Der Code Editor ermöglicht das komfortable Schreiben von SQL-Code und unterstützt den Entwickler mit Zusatzfunktionen wie z. B. Syntax Highlighting und der Validierung des Codes. Geben Sie folgenden Code in dem Code-Editor ein:
   ```sql
-  select order_item_id,
-         order_id,
-         product_id,
-         unit_price,
-         quantity
-  from TUTO_P0031_2_vw
+  select ordr_item_id,
+         ordr_item_ordr_id,
+         ordr_item_prdt_info_id,
+         ordr_item_unit_price,
+         ordr_item_quantity
+  from TUTO_P0031_2_VW
   ```
 - Anschließend können Sie auf das Häkchen im Code-Editor klicken und die Query von APEX validieren lassen. Sollte alles korrekt sein, wird APEX Ihnen eine entsprechende Rückmeldung geben. 
 
@@ -149,7 +149,7 @@ Eine Region ist ein Bereich auf einer Seite, der als Container für Inhalte dien
 
 ![](../../assets/Kapitel-05/Master_Detail_14.jpg)
 
-- Klicken Sie nun im linken Bereich des Page Designers in der Region Items in Order unter Columns auf die Spalte **ORDER_ID**. Wählen Sie anschließend im rechten Bereich die Spalte ORDER_ID als **Master Column** aus. Dadurch wird die Verknüpfung zwischen den zwei Regionen hergestellt. 
+- Klicken Sie nun im linken Bereich des Page Designers in der Region **Items in Order** unter Columns auf die Spalte **ORDR_ITEM_ORDR_ID**. Wählen Sie anschließend im rechten Bereich die Spalte **ORDR_ID** als **Master Column** aus. Dadurch wird die Verknüpfung zwischen den zwei Regionen hergestellt. 
 
 ![](../../assets/Kapitel-05/Master_Detail_15.jpg)
 
@@ -171,11 +171,11 @@ Um dies zu ändern, wird das **Interactive Grid** in den nächsten Schritten ent
 
 ![](../../assets/Kapitel-05/Master_Detail_18.jpg)
 
-- Anschließend muss noch ein Primary Key für das Interactive Grid **Items in Order** festgelegt werden. Dazu klicken Sie auf die Column **ORDER_ITEM_ID** und setzen unter Source den **Primary Key** auf ***Yes***.
+- Anschließend muss noch ein Primary Key für das Interactive Grid **Items in Order** festgelegt werden. Dazu klicken Sie auf die Column **ORDR_ITEM_ID** und setzen unter Source den **Primary Key** auf ***Yes***.
 
 ![](../../assets/Kapitel-05/Master_Detail_19.jpg)
  
-- Wählen Sie nun die Spalte **PRODUCT_ID** bei der Region **Items in Order** aus. Ändern Sie den **Type** zu ***Select List***.  
+- Wählen Sie nun die Spalte **ORDR_ITEM_PRDT_INFO_ID** bei der Region **Items in Order** aus. Ändern Sie den **Type** zu ***Select List***.  
 Eine Select List ist eine Auflistung von Daten, die es dem Benutzer ermöglicht, einen bestimmten Wert auszuwählen.
 
 ![](../../assets/Kapitel-05/Master_Detail_20.jpg)
@@ -194,8 +194,8 @@ Nun müssen Sie eine SQL Query hinterlegen. Hinweise zur Erstellung der korrekte
 
 Hinterlegen Sie folgenden Code in dem Feld **SQL Query**:
 ```sql
-select product_name as d,
-       product_id as r
+select prdt_info_name as d,
+       prdt_info_id as r
 from TUTO_P0031_3_VW
 ```
 
@@ -217,16 +217,16 @@ Die Felder der Spalte **State** im **Interactive Grid** können bislang über ei
 - Für die Bearbeitung dieser Aufgabe wird eine weitere **View** benötigt. Erstellen Sie diese gemäß der folgenden Angaben:
   - TUTO_P0031_5_VW
     ```sql
-    select STTS_ID as STATE_ID,
-           STTS_ST as STATE,
-           STTS_STATE_NAME as STATE_NAME
+    select STTS_ID,
+           STTS_ST
+           STTS_STATE_NAME
       from STATES
     ```
 
 - Öffnen Sie den **Page Designer** für die Seite ***31 Customer Orders***. Wählen Sie dort in der Region **Customer Orders** unter **Columns** die Spalte **State** aus und ändern sie den **Type** zu ***Popup LOV***. Setzen Sie unter **List of Values** den **Type** auf ***SQL Query*** und geben Sie als **Query** folgendes SQL Statement ein:
     ```sql
-    select STATE as r,
-           STATE as d
+    select STTS_ST as r,
+           STTS_ST as d
     from TUTO_P0031_5_VW
     ```
 
