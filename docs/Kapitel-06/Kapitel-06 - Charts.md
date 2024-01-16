@@ -29,14 +29,12 @@ Ziel dieses Kapitels ist es, ein Chart zu erstellen, welches das Verhältnis der
     join orders o
       on oi.ordr_item_ordr_id = o.ordr_id
   ```
-
-
 ## 6.2. Charts Region
 - Öffnen Sie zunächst den **App Builder** für Ihre **Anwendung**. Klicken Sie anschließend auf die **Seite 1 -** ***Home***.
 
 - **Breadcrumbs** können meist nach dem Anlegen gelöscht werden. Sie nehmen viel Platz ein und bringen i. d. R. keinen Mehrwert für den Endanwender. **Breadcrumbs** sind hierarchische Listen von Links und bieten eine hierarchische Navigation.
 
-- Klicken Sie mit der rechten Maustaste auf die *Breadcrumb* **TUTORIAL 23.1** und wählen Sie **Delete** aus. 
+- Klicken Sie mit der rechten Maustaste auf die *Breadcrumb* **TUTORIAL 23.2** und wählen Sie **Delete** aus. 
 
 ![](../../assets/Kapitel-06/Charts_01.jpg)
 
@@ -55,7 +53,7 @@ Ziel dieses Kapitels ist es, ein Chart zu erstellen, welches das Verhältnis der
 
 ![](../../assets/Kapitel-06/Charts_04.jpg)
 
-- Ändern Sie nun den Wert für **Label** zu der Spalte ***CATEGORY*** und den Wert für **Value** zu der Spalte ***ORDER_TOTAL***.
+- Ändern Sie nun den Wert für **Label** zu der Spalte ***PRDT_INFO_CATEGORY*** und den Wert für **Value** zu der Spalte ***ORDR_TOTAL***.
 
 ![](../../assets/Kapitel-06/Charts_05.jpg)
 
