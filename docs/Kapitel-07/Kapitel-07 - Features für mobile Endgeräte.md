@@ -9,20 +9,20 @@ Der Reflow Report zeigt Tabellenspalten vertikal an, wenn nicht genügend Platz 
 
 - Geben Sie Ihrer **View** den Namen ***TUTO_P0032_VW***:
   ```sql
-  select o.ordr_id as order_id,
-         o.ordr_ctmr_id as customer_id,
-         o.ordr_total as order_total,
-         o.ordr_dd as order_date,
-         o.ordr_user_name as user_name,
-         oi.ordr_item_id as order_item_id,
-         oi.ordr_item_prdt_info_id as product_id,
-         oi.ordr_item_unit_price as unit_price,
-         oi.ordr_item_quantity as quantity,
-         p.prdt_info_name as product_name,
-         p.prdt_info_descr as product_description,
-         p.prdt_info_category as category,
-         p.prdt_info_avail as product_avail,
-         p.prdt_info_list_price as list_price
+  select o.ordr_id,
+         o.ordr_ctmr_id,
+         o.ordr_total,
+         o.ordr_dd,
+         o.ordr_user_name,
+         oi.ordr_item_id,
+         oi.ordr_item_prdt_info_id,
+         oi.ordr_item_unit_price,
+         oi.ordr_item_quantity,
+         p.prdt_info_name,
+         p.prdt_info_descr,
+         p.prdt_info_category,
+         p.prdt_info_avail,
+         p.prdt_info_list_price
     from order_items oi
     join product_info p
       on oi.ordr_item_prdt_info_id = p.prdt_info_id
@@ -78,7 +78,7 @@ Wenn es sich um eine progressive Web App handelt, ist in der Navigationsleiste e
 
 ![](../../assets/Kapitel-07/Features_09.jpg)
 
-Nachdem Installation abgeschlossen ist, öffnet sich die Anwendung in einem eigenen Fenster, unabhängig vom Browser, in dem Sie sich befinden.
+Nachdem Installation abgeschlossen ist, öffnet sich die Anwendung in einem eigenen Fenster, unabhängig vom Browser, in dem Sie sich befinden. Unter Windows lassen sich - wie im nächsten Screenshot zu sehen - noch einige Anpassungen zur Installation vornehmen, z.B. eine Verknüpfung zur App auf dem Desktop.
 
 ![](../../assets/Kapitel-07/Features_10.jpg)
 
@@ -100,7 +100,7 @@ Es öffnet sich ein Bereich mit weitern Einstellungen, die zum Anpassen des User
 
 
 ## 7.3. Persistent Authentication
-Für Progressive Web Apps gibt es mit der Version 23.1 eine neue Authentifizierungsmethode namens „Persistent Authentication“.
+Für Progressive Web Apps gibt es seit Version 23.1 von APEX eine neue Authentifizierungsmethode namens „Persistent Authentication“.
 
 Im Gegensatz zu normalen APEX Anwendungen, erscheint hier auf dem Login Bildschirm eine „**Remember me**“-Checkbox, diese ist nicht zu verwechseln mit „**Remember Username**“.
 
