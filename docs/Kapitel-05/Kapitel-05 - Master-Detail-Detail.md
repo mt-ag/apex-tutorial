@@ -84,7 +84,7 @@ Beim Auswählen eines Datensatzes ändern sich die Inhalte der Tabellen und man 
 
 ![](../../assets/Kapitel-05/Master_Detail_05.jpg)
 
-- Wählen Sie als **Primary Key Column 1** die Spalte ***CUSTOMER_ID (Number)*** und klicken Sie auf den Button **Next**.
+- Wählen Sie als **Primary Key Column 1** die Spalte ***CTMR_ID (Number)*** und klicken Sie auf den Button **Next**.
 
 ![](../../assets/Kapitel-05/Master_Detail_06.jpg)
 
@@ -108,8 +108,8 @@ Eine Region ist ein Bereich auf einer Seite, der als Container für Inhalte dien
   | | | 
   |--|--|
   | Primary Key Column | ORDER_ID |
-  | Master Column | CUSTOMER_ID |
-  | Detail Column | CUSTOMER_ID |
+  | Master Column | CTMR_ID |
+  | Detail Column | ORDR__CTMR_ID |
   | | |
 
 ![](../../assets/Kapitel-05/Master_Detail_08.jpg)
@@ -118,50 +118,58 @@ Eine Region ist ein Bereich auf einer Seite, der als Container für Inhalte dien
 
 ![](../../assets/Kapitel-05/Master_Detail_09.jpg)
 
-- Da bisher jedoch lediglich eine **Master-Detail** Seite erstellt wurde, wird nun eine weitere **Detail-Region** benötigt. Klicken Sie mit der **rechten Maustaste** auf die **Region** ***Orders by Customer*** und wählen Sie den Eintrag **Create Region Below** aus. 
+- Zur besseren Lesbarkeit der Spalten empfiehlt es sich, die **Spaltenüberschriften** anzupassen. Klicken Sie dazu auf die jeweiligen Spalten in den Interactive Grids (z.B. CTMR_FRST_NAME im Grid Customer Orders) und ändern Sie die Spaltenüberschrift bei Heading rechts in den Spalteneigenschaften. 
 
 ![](../../assets/Kapitel-05/Master_Detail_10.jpg)
 
-- Ändern Sie anschließend den **Title** zu ***Items in Order*** und den **Type** zu ***Interactive Grid***. Ändern Sie anschließend unter Source den **Type** zu ***SQL Query***.
+- Wiederholen Sie den Vorgang für die weiteren Spalten. Über den **Run**-Button können Sie die veränderte Seite betrachten.
 
 ![](../../assets/Kapitel-05/Master_Detail_11.jpg)
 
-- APEX markiert nun unter Source das Feld für die **SQL Query** rot. Hier muss eine entsprechende Query hinterlegt werden, um die Seite lauffähig zu speichern. Sie können entweder direkt in dem Feld tippen oder den Code Editor als modalen Dialog anzeigen lassen. Klicken Sie auf den Button über dem Feld, um den Code Editor aufzurufen.
+- Da bisher jedoch lediglich eine **Master-Detail** Seite erstellt wurde, wird nun eine weitere **Detail-Region** benötigt. Klicken Sie mit der **rechten Maustaste** auf die **Region** ***Orders by Customer*** und wählen Sie den Eintrag **Create Region Below** aus. 
 
 ![](../../assets/Kapitel-05/Master_Detail_12.jpg)
 
+- Ändern Sie anschließend den **Title** zu ***Items in Order*** und den **Type** zu ***Interactive Grid***. Ändern Sie anschließend unter Source den **Type** zu ***SQL Query***.
+
+![](../../assets/Kapitel-05/Master_Detail_13.jpg)
+
+- APEX markiert nun unter Source das Feld für die **SQL Query** rot. Hier muss eine entsprechende Query hinterlegt werden, um die Seite lauffähig zu speichern. Sie können entweder direkt in dem Feld tippen oder den Code Editor als modalen Dialog anzeigen lassen. Klicken Sie auf den Button über dem Feld, um den Code Editor aufzurufen.
+
+![](../../assets/Kapitel-05/Master_Detail_14.jpg)
+
 - Der Code Editor ermöglicht das komfortable Schreiben von SQL-Code und unterstützt den Entwickler mit Zusatzfunktionen wie z. B. Syntax Highlighting und der Validierung des Codes. Geben Sie folgenden Code in dem Code-Editor ein:
   ```sql
-  select order_item_id,
-         order_id,
-         product_id,
-         unit_price,
-         quantity
-  from TUTO_P0031_2_vw
+  select ordr_item_id,
+         ordr_item_ordr_id,
+         ordr_item_prdt_info_id,
+         ordr_item_unit_price,
+         ordr_item_quantity
+  from TUTO_P0031_2_VW
   ```
 - Anschließend können Sie auf das Häkchen im Code-Editor klicken und die Query von APEX validieren lassen. Sollte alles korrekt sein, wird APEX Ihnen eine entsprechende Rückmeldung geben. 
 
 - Klicken Sie anschließend auf den Button **OK**.
 
-![](../../assets/Kapitel-05/Master_Detail_13.jpg)
+![](../../assets/Kapitel-05/Master_Detail_15.jpg)
 
 - Wählen Sie bei **Master Detail** die Region ***Orders by Customer*** als Master Region aus.
 
-![](../../assets/Kapitel-05/Master_Detail_14.jpg)
+![](../../assets/Kapitel-05/Master_Detail_16.jpg)
 
-- Klicken Sie nun im linken Bereich des Page Designers in der Region Items in Order unter Columns auf die Spalte **ORDER_ID**. Wählen Sie anschließend im rechten Bereich die Spalte ORDER_ID als **Master Column** aus. Dadurch wird die Verknüpfung zwischen den zwei Regionen hergestellt. 
+- Klicken Sie nun im linken Bereich des Page Designers in der Region **Items in Order** unter Columns auf die Spalte **ORDR_ITEM_ORDR_ID**. Wählen Sie anschließend im rechten Bereich die Spalte **ORDR_ID** als **Master Column** aus. Dadurch wird die Verknüpfung zwischen den zwei Regionen hergestellt. 
 
-![](../../assets/Kapitel-05/Master_Detail_15.jpg)
+![](../../assets/Kapitel-05/Master_Detail_17.jpg)
 
 - Speichern Sie die Änderungen, indem Sie den Button **Save** drücken. Alternativ können Sie direkt den Button **Run** klicken, um zu speichern und daraufhin die Seite aufzurufen.
 
 - Auf der von Ihnen erstellten Seite sind nun drei **Interactive Grids** zu sehen. Wählen Sie in der obersten Region einen beliebigen Eintrag (Kunden) aus.
 
-![](../../assets/Kapitel-05/Master_Detail_16.jpg)
+![](../../assets/Kapitel-05/Master_Detail_18.jpg)
 
 - In der mittleren Region werden nun alle Bestellungen dieses Kunden angezeigt. Wählen Sie auch hier einen beliebigen Eintrag (Bestellung) aus.
 
-![](../../assets/Kapitel-05/Master_Detail_17.jpg)
+![](../../assets/Kapitel-05/Master_Detail_19.jpg)
 
 In der untersten Region werden alle Artikel aus der ausgewählten Bestellung angezeigt. Auch wenn hier, wie in den oberen Regionen, ein **Interactive Grid** verwendet wird, ist standardmäßig der Edit-Modus nicht verfügbar, wenn das **Interactive Grid** ohne den Assistenten erstellt wurde. Außerdem wird dem Nutzer zwar die ID der bestellten Artikel aber nicht deren Artikelname angezeigt.  
 
@@ -169,20 +177,20 @@ Um dies zu ändern, wird das **Interactive Grid** in den nächsten Schritten ent
 
 - Öffnen Sie erneut den **Page Designer**. Wählen Sie den **Eintrag** ***Attributes*** bei der **Region** ***Items in Order***. Setzen Sie anschließend den Wert von **Enabled** in dem Bereich **Edit** auf ***Yes***. Dies aktiviert den **Edit-Modus** für das **Interactive Grid**.
 
-![](../../assets/Kapitel-05/Master_Detail_18.jpg)
+![](../../assets/Kapitel-05/Master_Detail_20.jpg)
 
-- Anschließend muss noch ein Primary Key für das Interactive Grid **Items in Order** festgelegt werden. Dazu klicken Sie auf die Column **ORDER_ITEM_ID** und setzen unter Source den **Primary Key** auf ***Yes***.
+- Anschließend muss noch ein Primary Key für das Interactive Grid **Items in Order** festgelegt werden. Dazu klicken Sie auf die Column **ORDR_ITEM_ID** und setzen unter Source den **Primary Key** auf ***Yes***.
 
-![](../../assets/Kapitel-05/Master_Detail_19.jpg)
+![](../../assets/Kapitel-05/Master_Detail_21.jpg)
  
-- Wählen Sie nun die Spalte **PRODUCT_ID** bei der Region **Items in Order** aus. Ändern Sie den **Type** zu ***Select List***.  
+- Wählen Sie nun die Spalte **ORDR_ITEM_PRDT_INFO_ID** bei der Region **Items in Order** aus. Ändern Sie den **Type** zu ***Select List***.  
 Eine Select List ist eine Auflistung von Daten, die es dem Benutzer ermöglicht, einen bestimmten Wert auszuwählen.
 
-![](../../assets/Kapitel-05/Master_Detail_20.jpg)
+![](../../assets/Kapitel-05/Master_Detail_22.jpg)
 
 - APEX meldet, dass eine *List of Values* hinterlegt werden muss. Wenn Sie oben auf das **Message Icon** klicken, erhalten Sie zusätzliche Informationen dazu. 
 
-![](../../assets/Kapitel-05/Master_Detail_21.jpg)
+![](../../assets/Kapitel-05/Master_Detail_23.jpg)
 
 - Ändern Sie den **Type** der *List of Values* zu ***SQL Query***.
 
@@ -190,20 +198,20 @@ Eine Select List ist eine Auflistung von Daten, die es dem Benutzer ermöglicht,
 
 Nun müssen Sie eine SQL Query hinterlegen. Hinweise zur Erstellung der korrekten Query erhalten Sie über den Reiter **Help**. 
 
-![](../../assets/Kapitel-05/Master_Detail_22.jpg)
+![](../../assets/Kapitel-05/Master_Detail_24.jpg)
 
 Hinterlegen Sie folgenden Code in dem Feld **SQL Query**:
 ```sql
-select product_name as d,
-       product_id as r
+select prdt_info_name as d,
+       prdt_info_id as r
 from TUTO_P0031_3_VW
 ```
 
-![](../../assets/Kapitel-05/Master_Detail_23.jpg)
+![](../../assets/Kapitel-05/Master_Detail_25.jpg)
 
 - Klicken Sie anschließend erst auf den Button **Save** und dann auf den Button **Run**, um die Seite zu speichern und auszuführen.
 
-![](../../assets/Kapitel-05/Master_Detail_24.jpg)
+![](../../assets/Kapitel-05/Master_Detail_26.jpg)
 
 Sie sehen nun, dass in der untersten **Region** statt der **ID** die zugehörigen **Namen** der Artikel angezeigt werden. Durch eine **Select List** lassen sich nun die entsprechenden Artikel auswählen und ändern. Geändert wurde lediglich das **angezeigte Element**.  
 APEX hinterlegt weiterhin in der Datenbank die **ID**. 
@@ -217,16 +225,16 @@ Die Felder der Spalte **State** im **Interactive Grid** können bislang über ei
 - Für die Bearbeitung dieser Aufgabe wird eine weitere **View** benötigt. Erstellen Sie diese gemäß der folgenden Angaben:
   - TUTO_P0031_5_VW
     ```sql
-    select STTS_ID as STATE_ID,
-           STTS_ST as STATE,
-           STTS_STATE_NAME as STATE_NAME
+    select STTS_ID,
+           STTS_ST
+           STTS_STATE_NAME
       from STATES
     ```
 
-- Öffnen Sie den **Page Designer** für die Seite ***31 Customer Orders***. Wählen Sie dort in der Region **Customer Orders** unter **Columns** die Spalte **State** aus und ändern sie den **Type** zu ***Popup LOV***. Setzen Sie unter **List of Values** den **Type** auf ***SQL Query*** und geben Sie als **Query** folgendes SQL Statement ein:
+- Öffnen Sie den **Page Designer** für die Seite ***31 Customer Orders***. Wählen Sie dort in der Region **Customer Orders** unter **Columns** die Spalte **CTMR_STATE** aus und ändern sie den **Type** zu ***Popup LOV***. Setzen Sie unter **List of Values** den **Type** auf ***SQL Query*** und geben Sie als **Query** folgendes SQL Statement ein:
     ```sql
-    select STATE as r,
-           STATE as d
+    select STTS_ST as r,
+           STTS_ST as d
     from TUTO_P0031_5_VW
     ```
 
@@ -236,80 +244,80 @@ Die Felder der Spalte **State** im **Interactive Grid** können bislang über ei
 
 - Wird nun ein Feld in der Spalte editiert, öffnet sich durch den **Pfeil**-Button rechts ein Auswahlmenü, das durch ein eigenes Eingabefeld nach Einträgen durchsucht werden kann.
 
-![](../../assets/Kapitel-05/Master_Detail_25.jpg)
+![](../../assets/Kapitel-05/Master_Detail_27.jpg)
 
-- APEX bietet weitere Optionen, um das Popupfenster anzupassen. Wechseln Sie zurück in den **Page Designer**, um einige von ihnen auszuprobieren. Ändern Sie von der **Column State** die Einstellung **Display as** auf ***Modal Dialog***. Aktivieren Sie außerdem die Option **Search as You Type**. 
+- APEX bietet weitere Optionen, um das Popupfenster anzupassen. Wechseln Sie zurück in den **Page Designer**, um einige von ihnen auszuprobieren. Ändern Sie von der Column **CTMR_STATE** die Einstellung **Display as** auf ***Modal Dialog***. Aktivieren Sie außerdem die Option **Search as You Type**. 
 
-![](../../assets/Kapitel-05/Master_Detail_26.jpg)
+![](../../assets/Kapitel-05/Master_Detail_28.jpg)
 
 - Speichern Sie und rufen Sie die Seite erneut auf.
 
 - Das Auswahlfenster öffnet sich nun in einem separaten, modalen Dialog, außerdem fällt der **Search**-Button weg. Stattdessen werden die Einträge direkt bei einer Eingabe in das Textfeld durchsucht.
 
-![](../../assets/Kapitel-05/Master_Detail_27.jpg)
+![](../../assets/Kapitel-05/Master_Detail_29.jpg)
 
 - Neben den gezeigten Anpassungen ist es außerdem möglich, die Auswahl mehrerer Einträge zu ermöglichen. Dies funktioniert über die Option **Multiple Values**. Die ausgewählten Werte werden dann wie unten gezeigt aneinandergereiht und können einzeln wieder gelöscht werden. Hierbei sollte jedoch immer beachtet werden, ob das Datenmodell mehrwertige Attribute unterstützt.
 
-![](../../assets/Kapitel-05/Master_Detail_28.jpg)
+![](../../assets/Kapitel-05/Master_Detail_30.jpg)
 
 - Weiterhin ist es möglich, Einträge als Tupel mit mehreren Attributen anzuzeigen. Hierfür muss die List of Values als **Shared Components** in der Anwendung hinterlegt sein.
 
 - Öffnen Sie den **App Builder**, wählen Sie Ihre Anwendung und klicken Sie auf **Shared Components**. 
 
-![](../../assets/Kapitel-05/Master_Detail_29.jpg)
+![](../../assets/Kapitel-05/Master_Detail_31.jpg)
 
 *Shared Components* sind allgemeine Elemente, die auf einer oder beliebig vielen Seiten einer Anwendung benutzt werden können.
 
 - Klicken Sie auf den Eintrag **List of Values**.
 
-![](../../assets/Kapitel-05/Master_Detail_30.jpg)
+![](../../assets/Kapitel-05/Master_Detail_32.jpg)
 
 - Sie sehen eine Auflistung der angelegten Listen. Klicken Sie **Create**, um eine neue List of Values anzulegen.
 
-![](../../assets/Kapitel-05/Master_Detail_31.jpg)
+![](../../assets/Kapitel-05/Master_Detail_33.jpg)
 
 - Wählen Sie die Option **From Scratch** und klicken Sie auf **Next**.
 
-![](../../assets/Kapitel-05/Master_Detail_32.jpg)
+![](../../assets/Kapitel-05/Master_Detail_34.jpg)
 
 - Geben Sie als Namen der Liste **States** ein und wählen Sie die Option **Dynamic**. Klicken Sie anschließend auf **Next**.
 
-![](../../assets/Kapitel-05/Master_Detail_33.jpg)
+![](../../assets/Kapitel-05/Master_Detail_35.jpg)
 
 - Wählen Sie die unter dem Punkt **Table/View Name** die zuvor erstellte View (*TUTO_P00031_5_VW*) aus und klicken Sie auf **Next**.
 
-![](../../assets/Kapitel-05/Master_Detail_34.jpg)
-
-- Wählen Sie sowohl als **Return Column** als auch als **Display Column** die Spalte ***State*** aus und klicken Sie auf **Create**.
-
-![](../../assets/Kapitel-05/Master_Detail_35.jpg)
-
-- Um mehrere Spalten als angezeigte Spalten zu hinterlegen, sind nachträgliche Anpassungen an der List of Value notwendig. Klicken Sie dafür auf den zugehörigen Eintrag.
-
 ![](../../assets/Kapitel-05/Master_Detail_36.jpg)
 
-- Klicken Sie auf den Button **Select Columns** im unteren Teil des Bildschirms.
+- Wählen Sie sowohl als **Return Column** als auch als **Display Column** die Spalte ***STTS_ST*** aus und klicken Sie auf **Create**.
 
 ![](../../assets/Kapitel-05/Master_Detail_37.jpg)
 
-- Verschieben Sie im sich öffnenden Fenster den Eintrag zur Spalte **State_Name** in das rechte Feld, indem Sie den Eintrag auswählen und auf die Pfeil-Schaltfläche in der Mitte klicken. Klicken Sie anschließend auf den Button **Update**.
+- Um mehrere Spalten als angezeigte Spalten zu hinterlegen, sind nachträgliche Anpassungen an der List of Value notwendig. Klicken Sie dafür auf den zugehörigen Eintrag.
 
 ![](../../assets/Kapitel-05/Master_Detail_38.jpg)
 
-- Damit auch die bislang dargestellte Spalte STATE weiterhin sichtbar ist, geben Sie in der zugehörigen Zeile unter **Heading** ***State*** ein und ändern Sie die Optionen **Visible** und **Searchable** auf ***On*** bzw. ***Enabled***. 
-
-- Klicken Sie abschließend den Button **Apply Changes** um die Änderungen zu speichern.
+- Klicken Sie auf den Button **Select Columns** im unteren Teil des Bildschirms.
 
 ![](../../assets/Kapitel-05/Master_Detail_39.jpg)
 
-- Klicken Sie auf die Schaltfläche mit dem **Stiftsymbol** und der Seitennummer **31**, um direkt in den **Page Designer** zurückzukehren.
+- Verschieben Sie im sich öffnenden Fenster den Eintrag zur Spalte **STTS_STATE_NAME** in das rechte Feld, indem Sie den Eintrag auswählen und auf die Pfeil-Schaltfläche in der Mitte klicken. Klicken Sie anschließend auf den Button **Update**.
 
 ![](../../assets/Kapitel-05/Master_Detail_40.jpg)
 
-- Ändern Sie dort für die Region Customers in der Spalte **State** den **Type** im Reiter List of Values in ***Shared Components*** und den Wert von **List of Values** in ***STATES***.
+- Damit auch die bislang dargestellte Spalte STATE weiterhin sichtbar ist, geben Sie in der zugehörigen Zeile unter **Heading** ***State*** ein und ändern Sie die Optionen **Visible** und **Searchable** auf ***On*** bzw. ***Enabled***. Ändern Sie das Heading in der Zeile darunter auf **State Name**.
+
+- Klicken Sie abschließend den Button **Apply Changes** um die Änderungen zu speichern.
 
 ![](../../assets/Kapitel-05/Master_Detail_41.jpg)
 
-- Speichern Sie die Seite und aktualisieren den Tab mit der geöffneten Anwendung. Im Dialogfenster werden nun zu jedem Eintrag die Attributwerte zu **State** und **State Name** angezeigt.
+- Klicken Sie auf die Schaltfläche mit dem **Stiftsymbol** und der Seitennummer **31**, um direkt in den **Page Designer** zurückzukehren.
 
 ![](../../assets/Kapitel-05/Master_Detail_42.jpg)
+
+- Ändern Sie dort für die Region Customers in der Spalte **CTMR_STATE** den **Type** im Reiter List of Values in ***Shared Components*** und den Wert von **List of Values** in ***STATES***.
+
+![](../../assets/Kapitel-05/Master_Detail_43.jpg)
+
+- Speichern Sie die Seite und aktualisieren den Tab mit der geöffneten Anwendung. Im Dialogfenster werden nun zu jedem Eintrag die Attributwerte zu **State** und **State Name** angezeigt.
+
+![](../../assets/Kapitel-05/Master_Detail_44.jpg)

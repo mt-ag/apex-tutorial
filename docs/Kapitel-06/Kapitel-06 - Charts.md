@@ -9,34 +9,32 @@ Ziel dieses Kapitels ist es, ein Chart zu erstellen, welches das Verhältnis der
 
 - Geben Sie Ihrer **View** den Namen ***TUTO_P0001_VW***
   ```sql
-  select o.ordr_id as order_id,
-         o.ordr_ctmr_id as customer_id,
-         o.ordr_total as order_total,
-         o.ordr_dd as order_date,
-         o.ordr_user_name as user_name,
-         oi.ordr_item_id as order_item_id,
-         oi.ordr_item_prdt_info_id as product_id,
-         oi.ordr_item_unit_price as unit_price,
-         oi.ordr_item_quantity as quantity,
-         p.prdt_info_name as product_name,
-         p.prdt_info_descr as product_description,
-         p.prdt_info_category as category,
-         p.prdt_info_avail as product_avail,
-         p.prdt_info_list_price as list_price
+  select o.ordr_id,
+         o.ordr_ctmr_id,
+         o.ordr_total,
+         o.ordr_dd,
+         o.ordr_user_name,
+         oi.ordr_item_id,
+         oi.ordr_item_prdt_info_id,
+         oi.ordr_item_unit_price,
+         oi.ordr_item_quantity,
+         p.prdt_info_name,
+         p.prdt_info_descr,
+         p.prdt_info_category,
+         p.prdt_info_avail,
+         p.prdt_info_list_price
     from order_items oi
     join product_info p
       on oi.ordr_item_prdt_info_id = p.prdt_info_id
     join orders o
       on oi.ordr_item_ordr_id = o.ordr_id
   ```
-
-
 ## 6.2. Charts Region
 - Öffnen Sie zunächst den **App Builder** für Ihre **Anwendung**. Klicken Sie anschließend auf die **Seite 1 -** ***Home***.
 
 - **Breadcrumbs** können meist nach dem Anlegen gelöscht werden. Sie nehmen viel Platz ein und bringen i. d. R. keinen Mehrwert für den Endanwender. **Breadcrumbs** sind hierarchische Listen von Links und bieten eine hierarchische Navigation.
 
-- Klicken Sie mit der rechten Maustaste auf die *Breadcrumb* **TUTORIAL 23.1** und wählen Sie **Delete** aus. 
+- Klicken Sie mit der rechten Maustaste auf die *Breadcrumb* **TUTORIAL 23.2** und wählen Sie **Delete** aus. 
 
 ![](../../assets/Kapitel-06/Charts_01.jpg)
 
@@ -55,7 +53,7 @@ Ziel dieses Kapitels ist es, ein Chart zu erstellen, welches das Verhältnis der
 
 ![](../../assets/Kapitel-06/Charts_04.jpg)
 
-- Ändern Sie nun den Wert für **Label** zu der Spalte ***CATEGORY*** und den Wert für **Value** zu der Spalte ***ORDER_TOTAL***.
+- Ändern Sie nun den Wert für **Label** zu der Spalte ***PRDT_INFO_CATEGORY*** und den Wert für **Value** zu der Spalte ***ORDR_TOTAL***.
 
 ![](../../assets/Kapitel-06/Charts_05.jpg)
 
