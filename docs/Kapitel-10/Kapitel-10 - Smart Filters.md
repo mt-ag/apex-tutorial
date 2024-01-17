@@ -5,12 +5,12 @@ Für die Bearbeitung dieser Aufgabe wird eine **View** benötigt.
 **View Name: TUTO_P0091_VW**
 Query:
  ```sql
-select prdt_info_id as product_id,
-       prdt_info_name as product_name,
-       prdt_info_descr as product_description,
-       prdt_info_category as category,
-       prdt_info_avail as product_avail,
-       prdt_info_list_price as list_price 
+select prdt_info_id,
+       prdt_info_name,
+       prdt_info_descr,
+       prdt_info_category,
+       prdt_info_avail,
+       prdt_info_list_price
 from product_info
 ```
 
@@ -32,7 +32,7 @@ from product_info
 ![](../../assets/Kapitel-10/Smart_03.jpg)  
 
 - Rufen Sie anschließend die Seite über den **Run**-Button auf.  
-Die Daten werden als **Classic Report** dargestellt. Darüber befindet sich eine Suchleiste, unter welcher die Chips angezeigt werden, die im Folgenden hinzugefügt werden.  
+Die Daten werden als **Classic Report** dargestellt. Darüber befindet sich eine Suchleiste, unter welcher die Filter als Chips angezeigt werden, die im Folgenden hinzugefügt werden.  
 
 ![](../../assets/Kapitel-10/Smart_04.jpg)  
  
@@ -46,7 +46,7 @@ Die Daten werden als **Classic Report** dargestellt. Darüber befindet sich eine
   | | |  
   |--|--|
   | **Identification** |  |
-  | Name | *P91_PRODUCT_NAME* |
+  | Name | *P91_PRDT_INFO_NAME* |
   | Type | *Checkbox Group* |  
   | **Label**| *Product Name* |
   | **List of Values** |  |
