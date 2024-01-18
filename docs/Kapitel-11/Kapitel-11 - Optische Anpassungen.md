@@ -5,7 +5,7 @@ CSS-Code ermöglicht es Entwicklern, die gestalterischen Attribute von Seiten, R
 
 ## 11.1. Dark-Mode
 Sowohl für die Entwicklungsumgebung als auch für die fertige Anwendung lässt sich ein Dark-Mode aktivieren. Für letztere wird dieser in den Theme-Einstellungen der Anwendung festgelegt.
-- Öffnen Sie zunächst Ihre **Anwendung**. Klicken Sie in der Leiste am unteren Bildschirmrand auf **Customize** und dann auf **Theme Roller**. Hierüber können Sie das Theme ändern sowie weitere CSS-Anpassungen durchführen.  
+- Öffnen Sie zunächst Ihre **Anwendung** aus dem APP Builder. Klicken Sie in der Leiste am unteren Bildschirmrand auf **Customize** und dann auf **Theme Roller**. Sollte die untere Leiste versteckt sein, bewegen Sie den Mauszeiger an den unteren Rand des Browsers. Über die Leiste können Sie das Theme ändern sowie weitere CSS-Anpassungen durchführen.  
 
 ![](../../assets/Kapitel-11/Optisch_01.jpg) 
 
@@ -25,7 +25,7 @@ Nach diesem Kapitel hat Ihr Login-Screen ein Hintergrundbild und sieht somit ans
 ![](../../assets/Kapitel-11/Optisch_04.jpg) 
 
 Ein Template enthält alle Elemente, die Benutzer zum Erstellen eine Seite benötigen, inklusive von Beispielen zu den Elementen, damit Entwickler sehen können, wie die einzelnen Elemente zu verwenden sind. Immer wenn eine neue Seite in APEX angelegt wird, muss für diese ein Template ausgewählt werden. Entwickler haben die Möglichkeit, vorhandene Templates zu bearbeiten oder neue anzulegen.  
-- Wählen Sie die **Region TUTORIAL23.1** aus. Ändern Sie dort den **Namen** zu ***Log In***. 
+- Wählen Sie die **Region TUTORIAL23.2** aus. Ändern Sie dort den **Namen** zu ***Log In***. 
 
 ![](../../assets/Kapitel-11/Optisch_05.jpg) 
 
@@ -82,7 +82,7 @@ Klicken Sie anschließend auf den **Edit Page 9999** Button in der **Breadcrumb 
 
 ![](../../assets/Kapitel-11/Optisch_16.jpg)
 
-- Ändern Sie das **Template** der Region zu **Image**. Zuletzt muss noch die **File URL** vom zuvor hochgeladen Image angegeben werden. Geben Sie hier bitte **„#APP_FILES#img/background.jpg“** ein.
+- Ändern Sie das **Template** der Region zu **Image**. Zuletzt muss noch die **File URL** vom zuvor hochgeladen Image angegeben werden. Geben Sie hier bitte **#APP_FILES#img/background.jpg** ein.
 
 ![](../../assets/Kapitel-11/Optisch_17.jpg)
 
@@ -99,7 +99,7 @@ Klicken Sie anschließend auf den **Edit Page 9999** Button in der **Breadcrumb 
 
 ![](../../assets/Kapitel-11/Optisch_19.jpg)  
 
-- Klicken Sie auf den Button **Run**, um sich die überarbeitete Seite anzuschauen. 
+- Klicken Sie auf den Button **Save and Run Page**, um sich die überarbeitete Seite anzuschauen. 
 Sie sehen nun die von Ihnen getätigten Änderungen. 
 
 ![](../../assets/Kapitel-11/Optisch_20.jpg) 
