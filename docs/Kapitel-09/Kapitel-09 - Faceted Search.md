@@ -11,12 +11,12 @@ Für die Bearbeitung dieser Aufgabe wird eine **View** benötigt.
 **Query**:
 
  ```sql
-select prdt_info_id as product_id,
-       prdt_info_name as product_name,
-       prdt_info_descr as product_description,
-       prdt_info_category as category,
-       prdt_info_avail as product_avail,
-       prdt_info_list_price as list_price 
+select prdt_info_id,
+       prdt_info_name,
+       prdt_info_descr,
+       prdt_info_category,
+       prdt_info_avail,
+       prdt_info_list_price 
 from product_info
  ```
  
@@ -60,11 +60,14 @@ Die Daten werden im rechten Seitenbereich als **Classic Report** dargestellt. Li
 | **Label** | *Category*| 
 | **List of Values**|  |
 | Type | *SQL Query* |
-| SQL Query | select distinct category as d, <br> category as r <br> from TUTO_P0051_VW| 
+| SQL Query | select distinct prdt_info_category as d, <br> prdt_info_category as r <br> from TUTO_P0051_VW| 
 | | |
 
-
 ![](../../assets/Kapitel-09/Faceted_06.jpg) 
+
+Scrollen Sie weiter bis zum Abschnitt **Source**. Ändern Sie die Database Column auf **PRDT_INFO_CATEGORY**.
+
+![](../../assets/Kapitel-09/Faceted_06a.jpg) 
 
 - Starten Sie die **Seite**, indem Sie auf den **Run**-Button klicken.
 
@@ -93,7 +96,8 @@ In der Faceted Search Region befindet sich jetzt ein neues Element mit drei Chec
  
 ![](../../assets/Kapitel-09/Faceted_09.jpg) 
 
-- Setzen Sie den **Data Type** für die Spalte **LIST_PRICE** auf ****NUMBER****.  
+- Setzen Sie unter **Source** die **Database Column** auf **PRDT_INFO_LIST_PRICE** und den **Data Type** für die Spalte **LIST_PRICE** auf ****NUMBER****.  
+
 - Speichern Sie und rufen Sie erneut die Seite auf. 
 
 ![](../../assets/Kapitel-09/Faceted_10.jpg) 
