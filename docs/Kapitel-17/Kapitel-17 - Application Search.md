@@ -17,17 +17,17 @@ In den folgenden zwei Beispielen wird die Suche einmal in den lokalen Daten und 
 - Geben Sie Ihrer **View** den Namen ***TUTO_P0081_VW***:  
   Query:  
   ```sql
-  select prdt_info_id as product_id,
-         prdt_info_name as product_name,
-         prdt_info_descr as product_description,
-         prdt_info_category as category,
-         prdt_info_avail as product_avail,
-         prdt_info_list_price as list_price,
-         prdt_info_product_image as product_image,
-         prdt_info_mimetype as mimetype,
-         prdt_info_filename as filename,
-         prdt_info_image_last_update as image_last_update,
-         prdt_info_tags as tags
+  select prdt_info_id,
+         prdt_info_name,
+         prdt_info_descr,
+         prdt_info_category,
+         prdt_info_avail,
+         prdt_info_list_price,
+         prdt_info_product_image,
+         prdt_info_mimetype,
+         prdt_info_filename,
+         prdt_info_image_last_update,
+         prdt_info_tags
     from product_info
   ```
 
@@ -66,16 +66,14 @@ In den folgenden zwei Beispielen wird die Suche einmal in den lokalen Daten und 
 
   | | |  
   |--|--|
-  | **Primary Key Column** | *PRODUCT_ID* | 
-  | **Title Column** | *PRODUCT_NAME*| 
-  | **Description Column** | *PRODUCT_DESCRIPTION*| 
+  | **Primary Key Column** | *PRDT_INFO_ID* | 
+  | **Title Column** | *PRDT_INFO_NAME*| 
+  | **Description Column** | *PRDT_INFO_DESCR*| 
   | **Icon Source** | *Initials*| 
   | | |  
 
 ![](../../assets/Kapitel-17/search_config_05.jpg)  
 
-
-  
   Beachten Sie, dass die durchsuchbare(n) Spalte(n) varchar-Spalten sein müssen.  
 
 ![](../../assets/Kapitel-17/search_config_07.jpg)
@@ -90,11 +88,11 @@ In den folgenden zwei Beispielen wird die Suche einmal in den lokalen Daten und 
   | | |  
   |--|--|
   | **Icon Source** | *Image BLOB Column* | 
-  | **Icon BLOB Column Name** | *PRODUCT_IMAGE*| 
-  | **Icon Mime Type Column Name** | *MIMETYPE*| 
+  | **Icon BLOB Column Name** | *PRDT_INFO_PRODUCT_IMAGE*| 
+  | **Icon Mime Type Column Name** | *PRDT_INFO_MIMETYPE*| 
   | | |  
 
-  **No Results Found Message** kann hinzugefügt werden:  
+  Weiter unten kann ebenfall eine **No Results Found Message** hinzugefügt werden.  
 
 ![](../../assets/Kapitel-17/search_config_09.jpg)  
 
@@ -164,7 +162,6 @@ Eine Suchkonfigurationsliste ist bereits verfügbar. Wählen Sie die Suchkonfigu
   
 ![](../../assets/Kapitel-17/search_config_15.jpg)  
 
-
 - Unter **Body** klicken Sie auf **Search Results** Region, und dann auf **Attributes**.  
 - Geben Sie als **No Results Found Message** *No Results found* ein.  
 - Klicken Sie auf **Save und Run Page**.  
@@ -187,12 +184,15 @@ Eine Suchkonfigurationsliste ist bereits verfügbar. Wählen Sie die Suchkonfigu
   | **Label** | *Search*| 
   | **Position** | *After Logo*| 
   | **Icon** | *fa-search*| 
-  | **Value Placeholder** | *Search*| 
   | | |  
   
 -  In **Template Options** wählen Sie **Stretch Form Item** und **Size Large** aus.  
   
 ![](../../assets/Kapitel-17/search_config_18.jpg)  
+
+- Unter **Advanced** verhindern Sie mit **Ignore** bei **Warn on unsaved changes** Meldungen zum Datenverlust beim verlassen von Seiten.
+
+![](../../assets/Kapitel-17/search_config_18b.jpg) 
 
 - Erstellen Sie eine **Dynamic Action** auf dem **P0_SEARCH** Item mit den folgenden Einstellungen:  
 
@@ -226,6 +226,7 @@ Die **Dynamic Action** umfasst drei **True Actions**:
   | | |  
   |--|--|
   | **Name** | *Submit Search Item* | 
+  | **Action** | *Execute Server-side Code*| 
   | **Language** | *PL/SQL*| 
   | **PL/SQL Code** | *null;*| 
   | **Items to Submit** | *P0_SEARCH*| 

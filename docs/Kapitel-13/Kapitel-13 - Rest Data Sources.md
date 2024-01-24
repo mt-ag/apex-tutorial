@@ -42,8 +42,8 @@ Jetzt sehen Sie die folgende Übersichtsseite:
 
  ```sql
 select dept_id,
-	    dept_name,
-        dept_location
+	     dept_name,
+       dept_location
 from departments
  ```  
 - Jetzt haben Sie alle, für die GET-Abfrage notwendigen Informationen eingegeben. Sie können nun den Handler durch Klicken auf **Create Handler** erstellen. 
@@ -201,7 +201,7 @@ In diesem Kapitel werden wir die zuvor erstellte REST Source nutzen, um eigene D
 Nun möchten wir die REST Data Source nicht nur zum Hinzufügen von Daten nutzen, sondern auch, um Daten abzurufen und diese anzeigen zu lassen. Dafür wird die HTTP-GET-Methode verwendet, welche in der REST Data Source als Operation definiert wurde.  
 - Über das in Kapitel 13.3 erstellte Form ist es nun möglich, neue Departments anzulegen. Um direkt zu erkennen, ob das Hinzufügen erfolgreich war, werden Sie zusätzlich einen Report auf der Seite erstellen. 
 
-- Klicken Sie im Page Designer auf der linken Seite auf Departments und machen Sie dann einen Rechtsklick auf Departments. Wählen Sie hier **Create Region** aus.  
+- Klicken Sie im Page Designer auf der linken Seite auf Departments und machen Sie dann einen Rechtsklick auf Body. Wählen Sie hier **Create Region** aus.  
 
 - Wählen Sie als **Type** Ihrer Region ***Classic Report*** aus und geben Sie ihr den **Title *Alle Departments***. Wählen Sie unter Source ***REST Source*** als **Location** aus und anschließend ***Departments*** als **REST Source**.  
 
