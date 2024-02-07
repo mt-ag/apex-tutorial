@@ -388,4 +388,20 @@ select to_char(systimestamp, 'DD.MM.YYYY HH24:MI') from dual
 
 ![](../../assets/Kapitel-21/APEX_Workflows_63.jpg)
 
-- 
+- Wechseln Sie auf der Seite in den Reiter Processing und legen einen neuen Process an. Nennen Sie den Process **Submit Reservation Workflow**, der **Type** ist **Workflow**, die **Definition** ist unser Workflow **Dinner Reservation**. Das **Details Primary Key Item** ist **P1_APPROVER** - hier wird der Task entsprechend an den Mitarbeidenten zugewiesen. Tragen Sie in der **Success Message** den folgenden Text ein: **Reservation request successfully submitted!**. Die Error Message ist **Something went wrong**. Die **Server-side Condition** ist **When Button Pressed** und der Button **Request_reservation**. 
+
+![](../../assets/Kapitel-21/APEX_Workflows_64.jpg)
+
+- Legen Sie die **Parameters** folgendermaßen fest, **Type** ist jeweils **Item**: 
+
+  | | |  
+  |Parameter|Item|
+  | **Guest Count** | *P1_GUEST_COUNT* |   
+  | **Guest Email** | *P1_GUEST_EMAIL* |
+  | **Guest Last Name** | *P1_GUEST_LAST_NAME* |
+  | **Guest Name**| *P1_GUEST_NAME* |
+  | **Request Start Date** | *P1_END_DATE* |
+  | **Request End Date** | *P1_START_DATE* |
+  | | |
+ 
+ 
