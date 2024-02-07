@@ -132,11 +132,11 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass ein Res
 
   | | | |  
   |--|--|--|
-  | **NAME_GUEST** | Name Guest | *Sting*|
-  | **LAST_NAME_GUEST** | Last Name Guest | *Sting*| 
-  | **COUNT_GUEST** | Count Guest | *Sting*|  
-  | **RESERVATION_DATE_START** | Reservation Date Start | *Sting*|
-  | **RESERVATION_DATE_END** | Reservation Date End | *Sting*|
+  | **NAME_GUEST** | Name Guest | *String* |
+  | **LAST_NAME_GUEST** | Last Name Guest | *String* | 
+  | **COUNT_GUEST** | Count Guest | *String*|  
+  | **RESERVATION_DATE_START** | Reservation Date Start | *String* |
+  | **RESERVATION_DATE_END** | Reservation Date End | *String* |
   | | | |
 
 ![](../../assets/Kapitel-21/APEX_Workflows_22.jpg)
@@ -146,3 +146,246 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass ein Res
 - Im nächsten Schritt geht es mit der Arbeit am Workflow weiter. Wechseln Sie dafür wieder in die **Workflows** in den **Shared Components** und klicken Sie auf **Dinner Reservation**. 
 
 ![](../../assets/Kapitel-21/APEX_Workflows_23.jpg)
+
+- Erstellen Sie im **Workflow 1.0** unter **Activities** mit einem Rechtsklick eine neue Aktivität.
+
+![](../../assets/Kapitel-21/APEX_Workflows_24.jpg)
+
+- Geben Sie der neuen Aktivität den Namen **Check Availability** und udn den Typ **Invoke API**. Wählen Sie das Package **DINNER_RESERVATION_DEMO** und daraus die Function **CHECK_AVAILABILITY**. 
+
+![](../../assets/Kapitel-21/APEX_Workflows_25.jpg)
+
+- Das Ergebnis der Funktion übergeben Sie im Parameter **Function Result**, und zwar in **Item** über die **Version Variable** **Availability**. 
+
+![](../../assets/Kapitel-21/APEX_Workflows_26.jpg)
+
+![](../../assets/Kapitel-21/APEX_Workflows_27.jpg)
+
+- Für die Paramater **pi_guest_count**, **pi_start_date** und **pi_end_date** legen Sie, unter **Value** auf Type **Item** und dann auf die folgenden **Workflow Parameters** und **Format Masks** fest:
+
+  | | | |  
+  |Parameter|Item|Format Mask|
+  | **pi_guest_count** | GUEST_COUNT | |
+  | **pi_start_date** | REQUEST_START_DATE | DD.MM.YYYY HH24:MI |
+  | **pi_end_date** | REQUEST_END_DATE | DD.MM.YYYY HH24:MI |
+  | | | |
+
+![](../../assets/Kapitel-21/APEX_Workflows_28a.jpg)
+
+![](../../assets/Kapitel-21/APEX_Workflows_28.jpg)
+
+![](../../assets/Kapitel-21/APEX_Workflows_29.jpg)
+
+- Verbinden Sie den Pfeil vom Start des Workflows mit der Aktivität.
+
+![](../../assets/Kapitel-21/APEX_Workflows_30.jpg)
+
+- Um mit dem Ergebnis der Abfrage-Aktivität umzugehen, benötigen Sie nun einen **Switch**. Legen Sie einen an, z.B. indem Sie ihn in den Diagram Builder ziehen.
+
+![](../../assets/Kapitel-21/APEX_Workflows_31.jpg)
+
+- Neuer **Name** des Switch wird **Decide availability**. Unter **Condition** wählen Sie den **Condition Type: Workflow Variable = Value** und die **Workflow Variable: AVAILABILTY** und den Wert **AVAIL**, den die Funktion ausgibt, wenn an dem gewünschten Datum ein Tisch für die gewünschte Anzahl von Personen frei ist.
+
+![](../../assets/Kapitel-21/APEX_Workflows_32.jpg)
+
+- Verbinden Sie nun die beiden Aktivitäten **Check availability** und **Decide availability** miteinander. Über das Plus-Zeichen können Sie einen neuen Pfeil einzeichnen und mit der Zielaktivität verbinden.
+
+![](../../assets/Kapitel-21/APEX_Workflows_33.jpg)
+
+- Es geht weiter mit dem ersten möglichen Ergebnis des Checks: Der Fall, der eintritt, wenn die ergeben hat, dass **kein Tisch** frei ist. In diesem Fall soll eine E-Mail verschickt werden, die dem Anfragenden mitteilt, dass kein Tisch frei ist. Legen Sie dazu eine **Send E-Mail Aktivität** an.
+
+![](../../assets/Kapitel-21/APEX_Workflows_34.jpg)
+
+- Name dieser Aktivität wird **Send Mail unavailable**. Im **To-Feld** tragen Sie mit **&GUEST_EMAIL.** den Paramter mit der E-Mail des Gastes ein. In das Feld **Subject** kommt der E-Mail-Betreff. Setzen Sie es auf **Your reservation: No table available**. Tragen Sie den folgenden Mail-Text im Feld **Body Plain Text** ein: 
+
+```
+Dear &GUEST_NAME. &GUEST_LAST_NAME., 
+
+unfortunately there is no table available at the requested time. Please try another time! 
+
+With kind regards
+The Restaurant Team
+```
+![](../../assets/Kapitel-21/APEX_Workflows_35.jpg)
+
+- Verbinden Sie den Switch per Pfeil mit der E-Mail-Aktivität. 
+
+![](../../assets/Kapitel-21/APEX_Workflows_36.jpg)
+
+- Wählen Sie den Pfeil und geben Sie der Verbindung unter **Name** den Titel **Unavailable**. Die **Condition** ist in diesem Fall **FALSE**, da die Mail dann geschickt werden soll, wenn die Prüfung ergibt, dass kein Tisch vorhanden ist.
+
+![](../../assets/Kapitel-21/APEX_Workflows_37.jpg)
+
+- Erstellen Sie ein weiteres **Workflow End** und verbinden es mit der Mail-Send-Activity. Danach können Sie den Workflow zwischenspeichern.
+
+![](../../assets/Kapitel-21/APEX_Workflows_38.jpg)
+
+- Jetzt geht es weiter mit dem Fall, dass die erste Prüfung ergibt, dass ein Tisch frei ist. Für diesen Fall soll ein Mitarbeitender entscheiden, ob die Reservierung angenommen wird. Dazu erstellen Sie zunächst eine **Human Task - Create** Aktivität. Geben Sie der Aktivität den Namen **Create Reservation Request**, in **Definition** wählen Sie den eben erstellten Task **Reservation Request**. Für Outcome wählen Sie die automatisch über die Task erstellte **Variable** **TASK_OUTCOME** und in **Owner** die -ebenfalls automatisch erstellte - **Variable** **APPROVER**. 
+
+![](../../assets/Kapitel-21/APEX_Workflows_39.jpg)
+
+- Als nächstes legen Sie die **Parameter** dieser Aktivität auf die folgenden Werte fest:
+
+  | | | |  
+  |Name|Type|Item|
+  | **Count Guest** | Item | *GUEST_COUNT*|
+  | **Last Name Guest** | Item | *GUEST_LAST_NAME*| 
+  | **Name Guest** | Item | *GUEST_NAME*|  
+  | **Reservation Date Start** | Item | *REQUEST_START_DATE*|
+  | **Reservation Date End** | Item | *REQUEST_END_DATE*|
+  | | | |
+
+![](../../assets/Kapitel-21/APEX_Workflows_40.jpg)
+
+- Verbinden Sie den Switch **Decide availabilty** mit der Aktivität **Create Reservation Request** per neuem Pfeil. Diese Verbindung erhält den Namen **Available** und die **Condition** when **True**.
+
+![](../../assets/Kapitel-21/APEX_Workflows_41.jpg)
+
+- Um die Entscheidung aus dem Task zu verarbeiten, braucht es nun wieder einen **Switch**. Erstellen Sie einen neuen Switch und geben Sie ihm den Namen **Decide Reservation approved**. Der **Switch-Type** ist **Check Workflow Variable**. Die Variable, die in **Compare Variable** verglichen wird, stellen Sie als **TASK_OUTCOME** ein.
+
+![](../../assets/Kapitel-21/APEX_Workflows_42.jpg)
+
+- Verbinden Sie **Create Reservation Request** per Pfeil mit **Decide Reservation approved**. 
+
+![](../../assets/Kapitel-21/APEX_Workflows_43.jpg)
+
+- Da auch im Falle einer Ablehnung der Reservierung durch den Mitarbeiter eine Absage-Mail verschickt werden soll, verbinden Sie **Decide Reservation approved** mit der **Send Mail unavailable**. Legen Sie den Namen auf **Rejected** fest. der **Operator** lautet **Is Equal to** und der **Value** ist das Ergebnis **REJECTED** aus der Human Task. Danach können Sie wieder zwischenspeichern.
+
+![](../../assets/Kapitel-21/APEX_Workflows_44.jpg)
+
+- Im Falle einer Genehmigung wird mit der nächsten Aktivität nun eine freie Tischnummer ermittelt, die der Reservierung zugeordnet wird. Fügen Sie eine **Invoke API**-Activity hinzu. Geben Sie ihr den Namen **Get free table**. Das zugehörige Package ist wieder **DINNER_RESERVATION_DEMO**, die **Function** ist **GET_FREE_TABLE_ID**.  
+
+![](../../assets/Kapitel-21/APEX_Workflows_45.jpg)
+
+- **Function Result** der Aktivität wird unter **Item** in die Variable **TABLE_ID** übergeben. 
+
+![](../../assets/Kapitel-21/APEX_Workflows_46.jpg)
+
+- Legen Sie die weiteren Parameter auf die folgenden Werte fest (analog zu **Check availabilty**). 
+
+  | | | |  
+  |Parameter|Item|Format Mask|
+  | **pi_guest_count** | GUEST_COUNT | |
+  | **pi_start_date** | REQUEST_START_DATE | DD.MM.YYYY HH24:MI |
+  | **pi_end_date** | REQUEST_END_DATE | DD.MM.YYYY HH24:MI |
+  | | | |
+
+- Verbinden Sie den Switch **Decide Reservation approved** mit der **Get free table**-Aktivität. Legen Sie den Namen der Verbindung auf **Approved**, den Operator auf **Is Equal to** und den Value auf **APPROVED** fest. 
+
+![](../../assets/Kapitel-21/APEX_Workflows_47.jpg)
+
+- Jetzt liegen alle Informationen vor, die benötigt werden um die genehmigte Reservierung zu speichern. Dazu Legen Sie eine weitere **Invoke API**-Aktivität an. Geben Sie ihr den Namen **Set reservation**. Das zugehörige Package ist **DINNER_RESERVATION_DEMO**, die **Function** ist **SET_RESERVATION**.
+
+![](../../assets/Kapitel-21/APEX_Workflows_48.jpg)
+
+- Das Ergebnis der Funktion unter **Function Result** in den **Parameters** legen Sie auf die Variable **RESERVATION_ID** fest. Die weiteren Parameter füllen Sie folgendermaßen aus: 
+
+  | | | |  
+  |Parameter|Item|Format Mask|
+  | **pi_dining_table_id** | TABLE_ID | |
+  | **pi_guest_count** | GUEST_COUNT | |
+  | **pi_guest_name** | GUEST_NAME | |
+  | **pi_guest_last_name** | GUEST_LAST_NAME | |
+  | **pi_guest_email** | GUEST_EMAIL | |
+  | **pi_start_date** | REQUEST_START_DATE | DD.MM.YYYY HH24:MI |
+  | **pi_end_date** | REQUEST_END_DATE | DD.MM.YYYY HH24:MI |
+  | | | |
+
+- Die **pi_workflow_id** erwartet die Workflow ID des aktuellen Workflows. Die Workflow ID können Sie der Prozedur über einen **Static Value** ebenfalls übergeben. Tragen Sie hier **&APEX$WORKFLOW_ID.** ein. Verbinden Sie **Get free table** und **Set reservation**. 
+
+![](../../assets/Kapitel-21/APEX_Workflows_49.jpg)
+
+- Nach dem Speichern soll der Kunde dann per E-Mail darüber informiert werden, dass die Reservierung angenommen wurde. Die entsprechende **Send E-Mail**-Aktivität legen Sie als nächstes an und geben ihr den Namen **Send confirmation**. Im **To**-Feld tragen Sie - analog zur Absagemail - die **&GUEST_EMAIL.** ein. Das Subject wird **Reservation Confirmation**. Verwenden Sie den folgeneden **Body Plain Text**: 
+
+```
+Dear &GUEST_NAME. &GUEST_LAST_NAME., 
+
+hereby we confirm your reservation! We are looking forward to your stay on the following date: &REQUEST_START_DATE.!
+
+With kind regards
+The Restaurant Team
+```
+
+![](../../assets/Kapitel-21/APEX_Workflows_50.jpg)
+
+- Verbinden Sie nun noch die Aktivitäten untereinander und binden das freie **Workflow End** als Endpunkt des Workflows mit ein. Danach speichern Sie den Workflow.
+
+![](../../assets/Kapitel-21/APEX_Workflows_51.jpg)
+
+- Mit dem erstellten Workflow geht es nun weiter mit dem Aufbau der eigentlichen App. Wechseln Sie dazu zunächst in die **Shared Components** und die **Static Application Files**. 
+
+![](../../assets/Kapitel-21/APEX_Workflows_52.jpg)
+
+Fügen Sie als neue Datei im Ordner **images/** das beigefügte Bild **reservation_bckgrnd.jpg** hinzu. 
+
+![](../../assets/Kapitel-21/APEX_Workflows_53.jpg)
+
+- Die in **Reference** entstandene Referenz auf die Datei **#APP_FILES#images/reservation_bckgrnd.jpg** werden Sie gleich benötigen. Wechseln Sie zunächst auf die Seite 1 Ihrer Application in den **Page Deisgner** und fügen Sie den folgenden Code in das **Inline CSS** der Seite ein: 
+
+
+```css
+body {
+    background: url(#APP_FILES#images/reservation_bckgrnd.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+```
+
+![](../../assets/Kapitel-21/APEX_Workflows_54.jpg)
+
+- Fügen Sie der Seite nun im Body eine neue Region mit dem Namen **Book a table** hinzu. Stellen Sie die **Column Span** auf **5**. 
+
+![](../../assets/Kapitel-21/APEX_Workflows_55.jpg)
+
+- Erstellen Sie nun die folgenden **Page Items** in der neuen Region: 
+
+  | | | |  
+  |Name|Type|Label|
+  | **P1_GUEST_NAME** | Text Field | Guest Name |
+  | **P1_GUEST_LAST_NAME** | Text Field | Guest Last Name|
+  | **P1_GUEST_EMAIL** | Text Field | Guest Email |
+  | **P1_GUEST_COUNT** | Select List | Guest Count |
+  | **P1_START_DATE** | Date Picker | Start Date & Time |
+  | **P1_END_DATE** | Date Picker | End Date & Time |
+  | | | |
+
+![](../../assets/Kapitel-21/APEX_Workflows_56.jpg)
+
+- Die neue Select-List **P1_GUEST_COUNT** befüllen Sie mit **Static Values** von 1 - 8. Deaktivieren Sie **Display Extra Values** und **Display Null Value**.
+
+![](../../assets/Kapitel-21/APEX_Workflows_57.jpg)
+
+- Fügen Sie der Region einen **Button** mit dem Namen **Request_reservation** und dem Label **Request Reservation** hinzu. Aktivieren Sie **Hot** und unter **Template Options** den **Style** **Simple**. Das **Behavior** ist **Submit Page**.
+
+![](../../assets/Kapitel-21/APEX_Workflows_58.jpg)
+
+- Für den Zweck der Demo wird an dieser Stelle noch eine Einstellungsmöglichkeit des Mitarbeitenden eingefügt, die die Entscheidung über die Reservierung trifft. Fügen Sie der Seite ein weiteres Page Item **P1_APPROVER** hinzu. Die **Column Span** legen Sie ebenfalls auf **5** fest. Unter **List of Value** legen Sie das folgende **SQL-Query** fest. Deaktivieren **Display Extra Values** und **Display Null Value** und legen den **Default** auf **Static** und den Wert auf **1** fest: 
+
+```sql
+select name as d, id as r from t_restaurant_staff
+```
+![](../../assets/Kapitel-21/APEX_Workflows_59.jpg)
+
+- Das nächste Page Item nennen Sie **P1_TODAY** und setzen den Type auf **Hidden**. 
+
+![](../../assets/Kapitel-21/APEX_Workflows_60.jpg)
+
+- Legen Sie für das Page Item eine Computation an. Verwenden Sie dabei die folgende **SQL Query (return single value)**: 
+
+```sql
+select to_char(systimestamp, 'DD.MM.YYYY HH24:MI') from dual
+```
+
+![](../../assets/Kapitel-21/APEX_Workflows_61.jpg)
+
+- Schalten Sie im die Page Item **P1_START_DATE** **Show Time** ein. Bei **Minimum Date** wählen Sie **Item** und das **Minimum Item** wird **P1_TODAY**. Unter **Format Mask** tragen Sie **DD.MM.YYYY HH24:MI** ein. 
+
+![](../../assets/Kapitel-21/APEX_Workflows_62.jpg)
+
+- Schalten Sie auch beim im die Page Item **P1_END_DATE** **Show Time** ein. Hier wählen Sie das **Minimum Item** wird **P1_START_DATE**. Unter **Format Mask** tragen Sie auch hier **DD.MM.YYYY HH24:MI** ein.
+
+![](../../assets/Kapitel-21/APEX_Workflows_63.jpg)
+
+- 
