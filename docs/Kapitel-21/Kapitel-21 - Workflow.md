@@ -1,8 +1,8 @@
 # 21. APEX Workflow
 
-Mit APEX 23.2 werden Workflows direkt in APEX integriert. Mit **APEX Workflow** lassen sich Business-Prozesse mittels der grafischen Spezifikationssprache **Busines Process Model and Notation (BPMN)** darstellen und ausführen. Workflows basiert auf der Erweiterung **Flows for APEX** zu der Sie weitere Informationen unter dem Link https://flowsforapex.org/ erhalten. 
+Mit APEX 23.2 werden Workflows direkt in APEX integriert. Mit **APEX Workflow** lassen sich Business-Prozesse mittels der grafischen Spezifikationssprache **Busines Process Model and Notation (BPMN)** darstellen und ausführen. Workflows basiert auf der Erweiterung **Flows for APEX** zu der Sie weitere Informationen unter dem Link [https://flowsforapex.org/](https://flowsforapex.org/) erhalten. 
 
-In dem folgenden Kapitel nutzen wir Workflows um eine Demoversion einer vereinfachten Reservierung eines Restauranttisches zu erstellen. Die Demo lehnt sich an den Blog-Beitrag **Simplify Business Process Management Using APEX Workflow** von Ananya Chatterjee an.
+In dem folgenden Kapitel nutzen wir Workflows um eine Demoversion einer vereinfachten Reservierung eines Restauranttisches zu erstellen. Die Demo lehnt sich an den Blog-Beitrag **Simplify Business Process Management Using APEX Workflow** von Ananya Chatterjee [https://blogs.oracle.com/apex/post/simplify-business-process-management-using-apex-workflow-create-doctor-appointment-application](Link zum Blog) an.
 
 ## 21.1. Ausgangspunkt Use Case und Flow-Chart
 
@@ -108,6 +108,8 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass ein Res
 
 ![](../../assets/Kapitel-21/APEX_Workflows_17.jpg)
 
+## 21.4. Task zur Reservierungsanfrage erstellen
+
 - Im nächsten Schritt erstellen Sie den Task zu Bestätigung (oder Ablehnung) der Reservierungsanfrage. Wechseln Sie dazu in die **Shared Components** und zu den **Task Definitions**. Klicken Sie auf **Create** um einen neuen Task zu erstellen.
 
 ![](../../assets/Kapitel-21/APEX_Workflows_18.jpg)
@@ -141,7 +143,11 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass ein Res
 
 ![](../../assets/Kapitel-21/APEX_Workflows_22.jpg)
 
-- Bestätigen Sie die Ergänzungen an der Task über den Button **Apply Changes**.
+- Bestätigen Sie die Ergänzungen an der Task über den Button **Apply Changes**. Sie gelangen zunächst zurück zu den **Task Definitions**. Wechseln Sie aber noch einmal zurück in die Task **Reservation Request** und legen Sie unter dem Punkt **Task Details Page** eine neue Seite an. Die Seite bekommt die Nummer 11.
+
+![](../../assets/Kapitel-21/APEX_Workflows_22b.jpg)
+
+## 21.5. Fertigstellung des Workflows
 
 - Im nächsten Schritt geht es mit der Arbeit am Workflow weiter. Wechseln Sie dafür wieder in die **Workflows** in den **Shared Components** und klicken Sie auf **Dinner Reservation**. 
 
@@ -312,6 +318,8 @@ The Restaurant Team
 
 ![](../../assets/Kapitel-21/APEX_Workflows_51.jpg)
 
+## 21.6. Erstellen der App-Seiten
+
 - Mit dem erstellten Workflow geht es nun weiter mit dem Aufbau der eigentlichen App. Wechseln Sie dazu zunächst in die **Shared Components** und die **Static Application Files**. 
 
 ![](../../assets/Kapitel-21/APEX_Workflows_52.jpg)
@@ -353,9 +361,15 @@ body {
 
 ![](../../assets/Kapitel-21/APEX_Workflows_56.jpg)
 
-- Die neue Select-List **P1_GUEST_COUNT** befüllen Sie mit **Static Values** von 1 - 8. Deaktivieren Sie **Display Extra Values** und **Display Null Value**.
+- Setzen Sie den Wert **Value Required** für die Page Items **P1_GUEST_NAME, P1_GUEST_LAST_NAME, P1_GUEST_EMAIL, P1_START_DATE und P1_END_DATE** auf ein.
+
+![](../../assets/Kapitel-21/APEX_Workflows_56b.jpg)
+
+- Die neue Select-List **P1_GUEST_COUNT** befüllen Sie mit **Static Values** von 1 - 8. Deaktivieren Sie **Display Extra Values** und **Display Null Value**. Setzen Sie **Warn on Unsaved Changes** auf **Ignore**.
 
 ![](../../assets/Kapitel-21/APEX_Workflows_57.jpg)
+
+![](../../assets/Kapitel-21/APEX_Workflows_57b.jpg)
 
 - Fügen Sie der Region einen **Button** mit dem Namen **Request_reservation** und dem Label **Request Reservation** hinzu. Aktivieren Sie **Hot** und unter **Template Options** den **Style** **Simple**. Das **Behavior** ist **Submit Page**.
 
@@ -404,4 +418,115 @@ select to_char(systimestamp, 'DD.MM.YYYY HH24:MI') from dual
   | **Request End Date** | *P1_START_DATE* |
   | | |
  
+ ![](../../assets/Kapitel-21/APEX_Workflows_65.jpg)
+
+ - Erstelen Sie unter **After Processing** einen neuen **Branch** mit dem Namen **Go to Page 1**. Das **Behavior** ist **Type Page or URL (Redirect)**.
  
+  ![](../../assets/Kapitel-21/APEX_Workflows_66.jpg)
+ 
+ - Target stellen Sie auf Page 1 ein. Der Cache der Seite 1 soll dabei geleert werden. Speichern Sie die Seite dann ab.
+
+![](../../assets/Kapitel-21/APEX_Workflows_67.jpg)
+
+- Wechseln Sie nun in den App Builder und erstellen Sie eine neue Seite in Ihrer Application. Erstellen Sie als Page 2 der Application eine **Kalenderseite**.
+
+![](../../assets/Kapitel-21/APEX_Workflows_68.jpg)
+
+- Titel der Seite wird **Reservations**, die verwendete Tabelle ist **T_RESERVATION**. Nutzen Sie die **Navigation** und stellen das **Parent Navigation Menu Entry** auf **Home**. 
+
+![](../../assets/Kapitel-21/APEX_Workflows_69.jpg)
+
+- Wählen Sie nun die folgenden Einstellungen: 
+
+  | | |  
+  |--|--|
+  | **Display Column** | *GUEST_LAST_NAME*|
+  | **Start Date Column** | *START_DATE* | 
+  | **End Date Column** | *END_DATE*|  
+  | **Show Time** | *Yes*|
+  | | |
+
+![](../../assets/Kapitel-21/APEX_Workflows_70.jpg)
+
+- Auf der neuen Seite 2 wählen Sie die **Region** **Reservations** aus. Setzen Sie unter **Attributes** die **Primary Key Column** auf **ID**. Unter **Supplemental Information** tragen Sie den folgenden Text ein: 
+
+```
+Table &DINING_TABLE_ID.: &GUEST_NAME. &GUEST_LAST_NAME. with &GUEST_COUNT. guests.
+```
+![](../../assets/Kapitel-21/APEX_Workflows_71.jpg)
+
+## 21.7. Anlegen einer Unified Task List
+
+- Legen Sie nun eine weitere neue Seite an, eine **Unified Task List**. Über diese Task List kann das Restaurant-Personal die eingegangenen Reservierungsanfragen ansehen und entscheiden.
+
+![](../../assets/Kapitel-21/APEX_Workflows_72.jpg)
+
+- Geben Sie der Seite den Namen **Incoming Reservations**, der **Report Context** ist **My Tasks**. Die Navigation stellen Sei auf **Create a new entry** unter dem Parent Entry **Home**. 
+
+![](../../assets/Kapitel-21/APEX_Workflows_73.jpg)
+
+## 21.8. Anlegen der Workflow Console
+
+- Erstellen Sie im **App Builder** eine weitere Seite - Sie benötigen noch die **Workflow Console** mit der Sie eine Übersicht zum Stand der initiierten Workflows erhalten. 
+
+![](../../assets/Kapitel-21/APEX_Workflows_74.jpg)
+
+- Geben Sie der neuen Seite die Nummer **20** und den Namen **Workflows**. Der **Report Context** ist **Initiated by me**. Zu der Konsole wird direkt eine Detailseite erstellt. Geben Sie dieser **Form Page** die Nummer **21** und den Namen **Reservation Workflow Details**. In der Navigation können Sie wieder **Home** als neuen **Parent Navigation Menu Entry** auswählen.
+
+![](../../assets/Kapitel-21/APEX_Workflows_75.jpg)
+
+## 21.9. Application Logo anpassen
+
+- Um die App noch etwas abzurunden, stellen Sie unter **Shared Components** unter **Application Definition** und dem Punkt **User Interface** ein neues Icon ein
+
+![](../../assets/Kapitel-21/APEX_Workflows_76.jpg)
+
+- Wählen Sie das Icon, das einem Kaleder ähnelt und speichern Sie die Änderung.
+
+![](../../assets/Kapitel-21/APEX_Workflows_77.jpg)
+
+- Starten Sie die App und stellen unter **Customize** im **Theme Roller** das Thenme auf **Vita - Dark**.
+
+![](../../assets/Kapitel-21/APEX_Workflows_78.jpg)
+
+- Speichern Sie die Einstellungen.
+
+![](../../assets/Kapitel-21/APEX_Workflows_79.jpg)
+
+- Mit diesem Schritt ist die Application fertiggestellt! Im nächsten Abschnitt geht es noch auf eine kurze Erkundungstour durch die Reservierungsdemo.
+
+## 21.10. Tour durch die neue App
+
+- Starten Sie die Tour mit einem Log-In mit Ihrem Account. Besuchen Sie das Reservierungsformular und schreiben eine Eingabe, die ähnlich der folgenden sein könnte (verwenden Sie idealerweise Ihre eigene E-Mailadresse). Schicken Sie die vollständige Eingabe ab.
+
+![](../../assets/Kapitel-21/APEX_Workflows_80.jpg)
+
+- Melden Sie sich danacht mit Ihrem Nutzer ab und danach als Nutzer **KOCH** wieder ein.
+
+![](../../assets/Kapitel-21/APEX_Workflows_81.jpg)
+
+- Auf der Seite **Incoming Reservations** sollten Sie nun die eben erstellte Test-Reservierung sehen können.  
+
+![](../../assets/Kapitel-21/APEX_Workflows_82.jpg)
+
+- Ein Klick auf den Titel führt zu den Details der Reservierung.
+
+![](../../assets/Kapitel-21/APEX_Workflows_83.jpg)
+
+- Bestätigen Sie die Reservierung entweder über die Detail- oder die Übersichtsseite. Danach wechseln Sie auf die Seite **Reservations**. Die Testreservierung sollte nun im Kalender sichtbar sein. 
+
+![](../../assets/Kapitel-21/APEX_Workflows_84.jpg)
+
+- Loggen Sie den Nutzer wieder aus und mit Ihrem eigenen Nutzernamen wieder ein. Auf der Seite **Workflows** erhalten Sie eine Übersicht zu den erstellten Workflows. Sie sollte jetzt den komplettierten Workflow aus der Test-Reservierung enthalten.
+
+![](../../assets/Kapitel-21/APEX_Workflows_85.jpg)
+
+- Ein Klick auf den Titel des Workflows ruft die Detailsseite **Reservation Workflow Details** auf. Hier sehen Sie den Ablauf des Workflows und können Inhalte der Variablen und Parameter einsehen. 
+
+![](../../assets/Kapitel-21/APEX_Workflows_86.jpg)
+
+- Zwischenzeitlich könnte die E-Mail bei Ihnen eingetroffen sein, mit der die Reservierung bestätigt wird. Sie sollte etwa folgendermaßen aussehen. 
+
+![](../../assets/Kapitel-21/APEX_Workflows_87.jpg)
+
+- Damit haben Sie die Einführung in APEX Workflow beendet. Wir hoffen, dass wir Ihnen mit diesem Kapitel einen kleinen Einblick in die Möglichkeiten von APEX Workflow geben konnten!
