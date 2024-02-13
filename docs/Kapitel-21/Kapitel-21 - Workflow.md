@@ -2,7 +2,7 @@
 
 Mit APEX 23.2 werden Workflows direkt in APEX integriert. Mit **APEX Workflow** lassen sich Business-Prozesse mittels der grafischen Spezifikationssprache **Busines Process Model and Notation (BPMN)** darstellen und ausführen. Workflows basiert auf der Erweiterung **Flows for APEX** zu der Sie weitere Informationen unter dem Link [https://flowsforapex.org/](https://flowsforapex.org/) erhalten. 
 
-In dem folgenden Kapitel nutzen wir Workflows um eine Demoversion einer vereinfachten Reservierung eines Restauranttisches zu erstellen. Die Demo lehnt sich an den Blog-Beitrag **Simplify Business Process Management Using APEX Workflow** von Ananya Chatterjee [https://blogs.oracle.com/apex/post/simplify-business-process-management-using-apex-workflow-create-doctor-appointment-application](Link zum Blog) an.
+In dem folgenden Kapitel nutzen wir Workflows um eine Demoversion einer vereinfachten Reservierung eines Restauranttisches zu erstellen. Die Demo lehnt sich an den Blog-Beitrag **Simplify Business Process Management Using APEX Workflow** von Ananya Chatterjee an. [Link zum Blog](https://blogs.oracle.com/apex/post/simplify-business-process-management-using-apex-workflow-create-doctor-appointment-application)
 
 ## 21.1. Ausgangspunkt Use Case und Flow-Chart
 
@@ -169,8 +169,8 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass ein Res
 
 - Für die Paramater **pi_guest_count**, **pi_start_date** und **pi_end_date** legen Sie, unter **Value** auf Type **Item** und dann auf die folgenden **Workflow Parameters** und **Format Masks** fest:
 
-  | | | |  
-  |Parameter|Item|Format Mask|
+  | Parameter | Item | Format Mask |
+  | --- | --- | --- |  
   | **pi_guest_count** | GUEST_COUNT | |
   | **pi_start_date** | REQUEST_START_DATE | DD.MM.YYYY HH24:MI |
   | **pi_end_date** | REQUEST_END_DATE | DD.MM.YYYY HH24:MI |
@@ -232,8 +232,8 @@ The Restaurant Team
 
 - Als nächstes legen Sie die **Parameter** dieser Aktivität auf die folgenden Werte fest:
 
-  | | | |  
-  |Name|Type|Item|
+  | Name | Type | Item |
+  | --- | --- | --- |  
   | **Count Guest** | Item | *GUEST_COUNT*|
   | **Last Name Guest** | Item | *GUEST_LAST_NAME*| 
   | **Name Guest** | Item | *GUEST_NAME*|  
@@ -269,8 +269,8 @@ The Restaurant Team
 
 - Legen Sie die weiteren Parameter auf die folgenden Werte fest (analog zu **Check availabilty**). 
 
-  | | | |  
-  |Parameter|Item|Format Mask|
+  | Parameter | Item | Format Mask |
+  | --- | --- | --- |  
   | **pi_guest_count** | GUEST_COUNT | |
   | **pi_start_date** | REQUEST_START_DATE | DD.MM.YYYY HH24:MI |
   | **pi_end_date** | REQUEST_END_DATE | DD.MM.YYYY HH24:MI |
@@ -286,8 +286,8 @@ The Restaurant Team
 
 - Das Ergebnis der Funktion unter **Function Result** in den **Parameters** legen Sie auf die Variable **RESERVATION_ID** fest. Die weiteren Parameter füllen Sie folgendermaßen aus: 
 
-  | | | |  
-  |Parameter|Item|Format Mask|
+  | Parameter | Item | Format Mask |
+  | --- | --- | --- |  
   | **pi_dining_table_id** | TABLE_ID | |
   | **pi_guest_count** | GUEST_COUNT | |
   | **pi_guest_name** | GUEST_NAME | |
@@ -349,8 +349,8 @@ body {
 
 - Erstellen Sie nun die folgenden **Page Items** in der neuen Region: 
 
-  | | | |  
-  |Name|Type|Label|
+  | Name | Type | Label |
+  | --- | --- | --- |  
   | **P1_GUEST_NAME** | Text Field | Guest Name |
   | **P1_GUEST_LAST_NAME** | Text Field | Guest Last Name|
   | **P1_GUEST_EMAIL** | Text Field | Guest Email |
@@ -408,8 +408,8 @@ select to_char(systimestamp, 'DD.MM.YYYY HH24:MI') from dual
 
 - Legen Sie die **Parameters** folgendermaßen fest, **Type** ist jeweils **Item**: 
 
-  | | |  
-  |Parameter|Item|
+  | Parameter | Item |
+  | -- | -- |  
   | **Guest Count** | *P1_GUEST_COUNT* |   
   | **Guest Email** | *P1_GUEST_EMAIL* |
   | **Guest Last Name** | *P1_GUEST_LAST_NAME* |
