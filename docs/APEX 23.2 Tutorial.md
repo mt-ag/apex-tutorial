@@ -2908,7 +2908,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass die Sta
 
 ![](../assets/Kapitel-20/Working_Copy_06.jpg)
 
-- Wählen Sie jetzt die **Series**. Hier können Sie den Namen **Totals** verwenden. Auch hier verwenden Sie dieselbe Source.
+- Wählen Sie jetzt die **Series**. Hier können Sie den Namen **Totals** verwenden. Auch hier verwenden Sie dieselbe **Source**.
 
 ![](../assets/Kapitel-20/Working_Copy_07.jpg)
 
@@ -2964,7 +2964,6 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass die Sta
 
 - Sie gelangen zu dem bekannten Vergleich der Versionen. Öffnen Sie **Diff** den Versionsvergleich. 
 
-
 ![](../assets/Kapitel-20/Working_Copy_18.jpg)
 
 - Im Vergleich sehen Sie, dass nicht nur die Änderungen in der Working Copy aufgeführt sind, sondern auch die neue Quelle der Series **Order** im linken Teil des Vergleichs.
@@ -2979,7 +2978,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass die Sta
 
 ![](../assets/Kapitel-20/Working_Copy_21.jpg)
 
-- Sie Sollten eine Erfolgsmeldung erhalten, wenn der Merge druchgeführt wurde.
+- Sie Sollten eine Erfolgsmeldung erhalten, wenn der Merge durchgeführt wurde.
 
 ![](../assets/Kapitel-20/Working_Copy_22.jpg)
 
@@ -3017,7 +3016,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass die Sta
 
 ![](../assets/Kapitel-20/Working_Copy_30.jpg)
 
-- Herzlichen Glückwunsch! Sie haben das Kapitel zur neuen Versionierungsmöglichkeit in APEX 23.2 - der **Working Copy** erfolgreich abgeschlossen.
+- Sie haben damit das Kapitel zur neuen Versionierungsmöglichkeit in APEX 23.2 - der **Working Copy** - erfolgreich abgeschlossen.
 
 
 # 21. APEX Workflow
@@ -3114,7 +3113,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass ein Res
 
 ![](../assets/Kapitel-21/APEX_Workflows_13.jpg)
 
-- Neben den Input-Parametern braucht brauchen Sie in dem Workflow auch veränderliche Variablen, die im Prozess genutzt werden können. Dazu erstellen Sie im nächsten Schritt **Workflow Variables**. Dazu rechtsklicken Sie wieder auf den Workflow 1.0 und wähle **Create Variable**.
+- Neben den Input-Parametern braucht brauchen Sie in dem Workflow auch veränderliche Variablen, die im Prozess genutzt werden können. Dazu erstellen Sie im nächsten Schritt **Workflow Variables**. Dazu rechtsklicken Sie wieder auf den Workflow 1.0 und wählen **Create Variable**.
 
 ![](../assets/Kapitel-21/APEX_Workflows_14.jpg)
 
@@ -3126,7 +3125,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass ein Res
 
 ![](../assets/Kapitel-21/APEX_Workflows_16.jpg)
 
-- Als nächste Variable erstellen Sie **AVAILABILITY**. Sie ist vom Typ **BOOLEAN**. Unter **True Value** tragen Sie **AVAIL** ein und unter **False Value** darunter **UNAVAIL**. Dies sind die beiden möglichen Rückgabewerte einer Funktion, die später in den Workflow eingebunden wird. Danach speichern Sie den Workflow üner **Save**.
+- Als nächste Variable erstellen Sie **AVAILABILITY**. Sie ist vom Typ **BOOLEAN**. Unter **True Value** tragen Sie **AVAIL** ein und unter **False Value** darunter **UNAVAIL**. Dies sind die beiden möglichen Rückgabewerte einer Funktion, die später in den Workflow eingebunden wird. Danach speichern Sie den Workflow über **Save**.
 
 ![](../assets/Kapitel-21/APEX_Workflows_17.jpg)
 
@@ -3165,7 +3164,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass ein Res
 
 ![](../assets/Kapitel-21/APEX_Workflows_22.jpg)
 
-- Bestätigen Sie die Ergänzungen an der Task über den Button **Apply Changes**. Sie gelangen zunächst zurück zu den **Task Definitions**. Wechseln Sie aber noch einmal zurück in die Task **Reservation Request** und legen Sie unter dem Punkt **Task Details Page** eine neue Seite an. Die Seite bekommt die Nummer 11.
+- Bestätigen Sie die Ergänzungen an der Task über den Button **Apply Changes**. Sie gelangen zunächst zurück zu den **Task Definitions**. Wechseln Sie aber noch einmal zurück in die Task **Reservation Request** und legen Sie unter dem Punkt **Task Details Page** eine neue Seite an. Geben Sie der Seite die Nummer **11**.
 
 ![](../assets/Kapitel-21/APEX_Workflows_22b.jpg)
 
@@ -3179,7 +3178,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass ein Res
 
 ![](../assets/Kapitel-21/APEX_Workflows_24.jpg)
 
-- Geben Sie der neuen Aktivität den Namen **Check Availability** und udn den Typ **Invoke API**. Wählen Sie das Package **DINNER_RESERVATION_DEMO** und daraus die Function **CHECK_AVAILABILITY**. 
+- Geben Sie der neuen Aktivität den Namen **Check Availability** und den Typ **Invoke API**. Wählen Sie das Package **DINNER_RESERVATION_DEMO** und daraus die Function **CHECK_AVAILABILITY**. 
 
 ![](../assets/Kapitel-21/APEX_Workflows_25.jpg)
 
@@ -3220,7 +3219,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass ein Res
 
 ![](../assets/Kapitel-21/APEX_Workflows_33.jpg)
 
-- Es geht weiter mit dem ersten möglichen Ergebnis des Checks: Der Fall, der eintritt, wenn die ergeben hat, dass **kein Tisch** frei ist. In diesem Fall soll eine E-Mail verschickt werden, die dem Anfragenden mitteilt, dass kein Tisch frei ist. Legen Sie dazu eine **Send E-Mail Aktivität** an.
+- Es geht weiter mit dem ersten möglichen Ergebnis des Checks: Der Fall, der eintritt, wenn die Prüfung ergeben hat, dass **kein Tisch** frei ist. In diesem Fall soll eine E-Mail verschickt werden, die dem Anfragenden mitteilt, dass kein Tisch frei ist. Legen Sie dazu eine **Send E-Mail Aktivität** an.
 
 ![](../assets/Kapitel-21/APEX_Workflows_34.jpg)
 
@@ -3248,7 +3247,7 @@ The Restaurant Team
 
 ![](../assets/Kapitel-21/APEX_Workflows_38.jpg)
 
-- Jetzt geht es weiter mit dem Fall, dass die erste Prüfung ergibt, dass ein Tisch frei ist. Für diesen Fall soll ein Mitarbeitender entscheiden, ob die Reservierung angenommen wird. Dazu erstellen Sie zunächst eine **Human Task - Create** Aktivität. Geben Sie der Aktivität den Namen **Create Reservation Request**, in **Definition** wählen Sie den eben erstellten Task **Reservation Request**. Für Outcome wählen Sie die automatisch über die Task erstellte **Variable** **TASK_OUTCOME** und in **Owner** die -ebenfalls automatisch erstellte - **Variable** **APPROVER**. 
+- Jetzt geht es weiter mit dem Fall, dass die erste Prüfung ergibt, dass ein Tisch frei ist. Für diesen Fall soll ein Mitarbeitender entscheiden, ob die Reservierung angenommen wird. Dazu erstellen Sie zunächst eine **Human Task - Create** Aktivität. Geben Sie der Aktivität den Namen **Create Reservation Request**, in **Definition** wählen Sie den eben erstellten Task **Reservation Request**. Für Outcome wählen Sie die automatisch über die Task erstellte **Variable** **TASK_OUTCOME** und in **Owner** die - ebenfalls automatisch erstellte - **Variable** **APPROVER**. 
 
 ![](../assets/Kapitel-21/APEX_Workflows_39.jpg)
 
@@ -3281,7 +3280,7 @@ The Restaurant Team
 
 ![](../assets/Kapitel-21/APEX_Workflows_44.jpg)
 
-- Im Falle einer Genehmigung wird mit der nächsten Aktivität nun eine freie Tischnummer ermittelt, die der Reservierung zugeordnet wird. Fügen Sie eine **Invoke API**-Activity hinzu. Geben Sie ihr den Namen **Get free table**. Das zugehörige Package ist wieder **DINNER_RESERVATION_DEMO**, die **Function** ist **GET_FREE_TABLE_ID**.  
+- Im Falle einer Genehmigung wird mit der nächsten Aktivität nun eine freie Tischnummer ermittelt, die der Reservierung zugeordnet wird. Fügen Sie eine **Invoke API**-Activität hinzu. Geben Sie ihr den Namen **Get free table**. Das zugehörige Package ist wieder **DINNER_RESERVATION_DEMO**, die **Function** ist **GET_FREE_TABLE_ID**.  
 
 ![](../assets/Kapitel-21/APEX_Workflows_45.jpg)
 
@@ -3350,8 +3349,7 @@ Fügen Sie als neue Datei im Ordner **images/** das beigefügte Bild **reservati
 
 ![](../assets/Kapitel-21/APEX_Workflows_53.jpg)
 
-- Die in **Reference** entstandene Referenz auf die Datei **#APP_FILES#images/reservation_bckgrnd.jpg** werden Sie gleich benötigen. Wechseln Sie zunächst auf die Seite 1 Ihrer Application in den **Page Deisgner** und fügen Sie den folgenden Code in das **Inline CSS** der Seite ein: 
-
+- Die in **Reference** entstandene Referenz auf die Datei **#APP_FILES#images/reservation_bckgrnd.jpg** werden Sie gleich benötigen. Wechseln Sie zunächst auf die Seite 1 Ihrer Application in den **Page Designer** und fügen Sie den folgenden Code in das **Inline CSS** der Seite ein, der Teil hinter **APP_FILES** ist die Referenz auf die Datei: 
 
 ```css
 body {
@@ -3362,7 +3360,6 @@ body {
     background-size: cover;
 }
 ```
-
 ![](../assets/Kapitel-21/APEX_Workflows_54.jpg)
 
 - Fügen Sie der Seite nun im Body eine neue Region mit dem Namen **Book a table** hinzu. Stellen Sie die **Column Span** auf **5**. 
@@ -3397,7 +3394,7 @@ body {
 
 ![](../assets/Kapitel-21/APEX_Workflows_58.jpg)
 
-- Für den Zweck der Demo wird an dieser Stelle noch eine Einstellungsmöglichkeit des Mitarbeitenden eingefügt, die die Entscheidung über die Reservierung trifft. Fügen Sie der Seite ein weiteres Page Item **P1_APPROVER** hinzu. Die **Column Span** legen Sie ebenfalls auf **5** fest. Unter **List of Value** legen Sie das folgende **SQL-Query** fest. Deaktivieren **Display Extra Values** und **Display Null Value** und legen den **Default** auf **Static** und den Wert auf **1** fest: 
+- Für den Zweck der Demo wird an dieser Stelle noch eine Einstellungsmöglichkeit des Mitarbeitenden eingefügt, der die Entscheidung über die Reservierung trifft. Fügen Sie der Seite ein weiteres Page Item **P1_APPROVER** hinzu. Die **Column Span** legen Sie ebenfalls auf **5** fest. Unter **List of Value** legen Sie das folgende **SQL-Query** fest. Deaktivieren **Display Extra Values** und **Display Null Value** und legen den **Default** auf **Static** und den Wert auf **1** fest: 
 
 ```sql
 select name as d, id as r from t_restaurant_staff
@@ -3424,7 +3421,7 @@ select to_char(systimestamp, 'DD.MM.YYYY HH24:MI') from dual
 
 ![](../assets/Kapitel-21/APEX_Workflows_63.jpg)
 
-- Wechseln Sie auf der Seite in den Reiter Processing und legen einen neuen Process an. Nennen Sie den Process **Submit Reservation Workflow**, der **Type** ist **Workflow**, die **Definition** ist unser Workflow **Dinner Reservation**. Das **Details Primary Key Item** ist **P1_APPROVER** - hier wird der Task entsprechend an den Mitarbeidenten zugewiesen. Tragen Sie in der **Success Message** den folgenden Text ein: **Reservation request successfully submitted!**. Die Error Message ist **Something went wrong**. Die **Server-side Condition** ist **When Button Pressed** und der Button **Request_reservation**. 
+- Wechseln Sie auf der Seite in den Reiter Processing und legen einen neuen Process an. Nennen Sie den Process **Submit Reservation Workflow**, der **Type** ist **Workflow**, die **Definition** ist unser Workflow **Dinner Reservation**. Das **Details Primary Key Item** ist **P1_APPROVER** - hierdurch wird der Task entsprechend an den Mitarbeidenten zugewiesen, der in dem Page Item ausgewählt wurde. Tragen Sie in der **Success Message** den folgenden Text ein: **Reservation request successfully submitted!**. Die Error Message ist **Something went wrong**. Die **Server-side Condition** ist **When Button Pressed** und der Button **Request_reservation**. 
 
 ![](../assets/Kapitel-21/APEX_Workflows_64.jpg)
 
@@ -3503,7 +3500,7 @@ Table &DINING_TABLE_ID.: &GUEST_NAME. &GUEST_LAST_NAME. with &GUEST_COUNT. guest
 
 ![](../assets/Kapitel-21/APEX_Workflows_76.jpg)
 
-- Wählen Sie das Icon, das einem Kaleder ähnelt und speichern Sie die Änderung.
+- Wählen Sie das Icon, das einem Kalender ähnelt und speichern Sie die Änderung.
 
 ![](../assets/Kapitel-21/APEX_Workflows_77.jpg)
 
@@ -3551,7 +3548,7 @@ Table &DINING_TABLE_ID.: &GUEST_NAME. &GUEST_LAST_NAME. with &GUEST_COUNT. guest
 
 ![](../assets/Kapitel-21/APEX_Workflows_87.jpg)
 
-- Damit haben Sie die Einführung in APEX Workflow beendet. Wir hoffen, dass wir Ihnen mit diesem Kapitel einen kleinen Einblick in die Möglichkeiten von APEX Workflow geben konnten!
+- Damit haben Sie die Einführung in APEX Workflow erfolgreich beendet. Wir hoffen, dass wir Ihnen mit diesem Kapitel einen kleinen Einblick in die Möglichkeiten von APEX Workflow geben konnten!
 
 <br><br>
 Herzlichen Glückwunsch!  

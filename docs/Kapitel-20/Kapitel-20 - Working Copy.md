@@ -56,7 +56,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass die Sta
 
 ![](../../assets/Kapitel-20/Working_Copy_06.jpg)
 
-- Wählen Sie jetzt die **Series**. Hier können Sie den Namen **Totals** verwenden. Auch hier verwenden Sie dieselbe Source.
+- Wählen Sie jetzt die **Series**. Hier können Sie den Namen **Totals** verwenden. Auch hier verwenden Sie dieselbe **Source**.
 
 ![](../../assets/Kapitel-20/Working_Copy_07.jpg)
 
@@ -112,7 +112,6 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass die Sta
 
 - Sie gelangen zu dem bekannten Vergleich der Versionen. Öffnen Sie **Diff** den Versionsvergleich. 
 
-
 ![](../../assets/Kapitel-20/Working_Copy_18.jpg)
 
 - Im Vergleich sehen Sie, dass nicht nur die Änderungen in der Working Copy aufgeführt sind, sondern auch die neue Quelle der Series **Order** im linken Teil des Vergleichs.
@@ -127,7 +126,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass die Sta
 
 ![](../../assets/Kapitel-20/Working_Copy_21.jpg)
 
-- Sie Sollten eine Erfolgsmeldung erhalten, wenn der Merge druchgeführt wurde.
+- Sie Sollten eine Erfolgsmeldung erhalten, wenn der Merge durchgeführt wurde.
 
 ![](../../assets/Kapitel-20/Working_Copy_22.jpg)
 
@@ -165,4 +164,4 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass die Sta
 
 ![](../../assets/Kapitel-20/Working_Copy_30.jpg)
 
-- Herzlichen Glückwunsch! Sie haben das Kapitel zur neuen Versionierungsmöglichkeit in APEX 23.2 - der **Working Copy** erfolgreich abgeschlossen.
+- Sie haben damit das Kapitel zur neuen Versionierungsmöglichkeit in APEX 23.2 - der **Working Copy** - erfolgreich abgeschlossen.
