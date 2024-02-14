@@ -14,11 +14,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass ein Res
 
 ## 21.2. Einrichtung der benötigten Elemente
 
-- Installieren Sie die beigefügten Skripts **install_workflow_tables.sql**, **install_workflow_package_specification.sql** und **install_workflow_package_body.sql** über den **SQL Workshop** in APEX.
-
-- Erstellen Sie dann eine neue APP über den **App Builder** und **Create**. Geben Sie der App den Titel **MT Tutorial - Dinner Reservation**. 
-
-![](../../assets/Kapitel-21/APEX_Workflows_02.jpg)
+- Die benötigten Tabellen und Packages wurden bereits über das **Skript für das Tutorial** in Kapitel 1 mitinstalliert. 
 
 - Für die APP benötigen Sie einen Nutzer mit dem Namen **KOCH**, der später für die Bearbeitung der Reservierungsanfragen zuständig sein soll. Legen Sie einen entsprechenden Nutzer an.
 
@@ -32,6 +28,10 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass ein Res
   - Password: 12345678
   - Confirm Password: 12345678
   - Require Change of Password on First Use: No
+
+- Erstellen Sie dann eine neue APP über den **App Builder** und **Create**. Geben Sie der App den Titel **MT Tutorial - Dinner Reservation**. 
+
+![](../../assets/Kapitel-21/APEX_Workflows_02.jpg)
 
 ## 21.3. Erstellen des Workflows
 
@@ -330,7 +330,6 @@ Fügen Sie als neue Datei im Ordner **images/** das beigefügte Bild **reservati
 
 - Die in **Reference** entstandene Referenz auf die Datei **#APP_FILES#images/reservation_bckgrnd.jpg** werden Sie gleich benötigen. Wechseln Sie zunächst auf die Seite 1 Ihrer Application in den **Page Deisgner** und fügen Sie den folgenden Code in das **Inline CSS** der Seite ein: 
 
-
 ```css
 body {
     background: url(#APP_FILES#images/reservation_bckgrnd.jpg) no-repeat center center fixed; 
@@ -340,7 +339,6 @@ body {
     background-size: cover;
 }
 ```
-
 ![](../../assets/Kapitel-21/APEX_Workflows_54.jpg)
 
 - Fügen Sie der Seite nun im Body eine neue Region mit dem Namen **Book a table** hinzu. Stellen Sie die **Column Span** auf **5**. 
