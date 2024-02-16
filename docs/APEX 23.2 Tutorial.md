@@ -1,3 +1,105 @@
+# Inhaltsverzeichnis
+
+- [Vorbereitung](#vorbereitung)
+- [1. Import der benötigten Daten](#datenimport)
+    - [1.1 Skript](#skript)
+    - [1.2 Import des Skripts](#skriptimport)
+    - [1.3 Datenmodellierung mittels Quick SQL](#datenmodellierung)
+- [2. Create App Wizard](#create)
+    - [Erstellen einer Anwendung](erstelleneineranwendung)
+    - [Report](#report)
+    - [Create Application](#createapplication)
+    - [Run Page](#runpage)
+- [Zugriff auf Views statt auf Tabellen vornehmen](#views)
+    - [Tools](#tools)
+    - [Page Processes](#pageprocesses)
+- [Interactive Grid](#interactivegrid)
+    - [Erstellung der View](#gridview)
+    - [Create Page](#gridcreatepage)
+- [Master-Detail-Detail](#master-detail-detail)
+    - [Erstellung der Views](#erstellung-der-views)
+    - [Erstellung einer Master-Detail-Detail Seite](#erstellung-einer-master-detail-detail-seite)
+    - [Popup List of Values](#popup-list-of-values)
+- [Charts](#charts)
+    - [Erstellung der View](#charts-erstellung-der-view)
+    - [Charts Region](#charts-region)
+- [Features für mobile Endgeräte](#features-fuer-mobile-endgeraete)
+    - [Reflow Report & Column Toggle Report](#reflow-report--column-toggle-report)
+        - [View erstellen](#mobile-view-erstellen)
+        - [Report erstellen](#mobile-report-erstellen)
+    - [Progressive Web Apps](#progressive-web-apps)
+    - [Persistent Authentication](#persistent-authentication)
+- [Cards Region](#cards-region)
+    - [View erstellen](#cards-view-erstellen)
+    - [Seite erstellen](#cards-seite-erstellen)
+    - [Cards mit Bild erstellen](#cards-mit-bild-erstellen)
+- [Faceted Search](#faceted-search)
+    - [Erstellung der View](#fs-erstellung-der-view)
+    - [Create Page](#fs-create-page)
+    - [Create Facets](#fs-create-facets)
+- [Smart Filters](#smart-filters)
+    - [Erstellung der View](#sf-erstellung-der-view)
+    - [Create Page](#sf-create-page)
+    - [Create Filters](#sf-create-filters)
+- [Optische Anpassungen](#optische-anpassungen)
+    - [Dark-Mode](#dark-mode)
+    - [Anpassung des Login-Screens](#anpassung-des-login-screens)
+- [Plug-Ins](#plug-ins)
+    - [Einleitung](#pi-einleitung)
+    - [Plug-Ins](#pi-plug-ins)
+        - [Plug-In importieren](#plug-in-importieren)
+        - [Plugin einbinden](#plugin-einbinden)
+        - [Quality Assurance Plugin](#quality-assurance-plugin)
+- [REST Data Sources](#rest-data-sources)
+    - [RESTful Service erstellen](#restful-service-erstellen)
+    - [REST Data Source erstellen](#rest-data-source-erstellen)
+    - [Senden von Daten an eine REST-Datenquelle](#senden-von-daten-an-eine-rest-datenquelle)
+    - [Abrufen von Daten aus einer REST Data Source](#abrufen-von-daten-aus-einer-rest-data-source)
+- [Exkurs: Datenmodellierung mittels Quick SQL](#exkurs-datenmodellierung-mittels-quick-sql)
+    - [Erstellung der Datenbank-Tabelle](#ex-erstellung-der-datenbank-tabelle)
+    - [Erstellung eines Interactive Reports](#ex-erstellung-eines-interactive-reports)
+    - [Beispieldaten mittels Data Generator generieren](#beispieldaten-mittels-data-generator-generieren)
+- [Karten erstellen](#karten-erstellen)
+    - [REST Data Source](#karten-rest-data-source)
+    - [Erstellen der Karte auf einer neuen Anwendungsseite](#erstellen-der-karte-auf-einer-neuen-anwendungsseite)
+- [Genehmigungsprozess erstellen](#genehmigungsprozess-erstellen)
+    - [Erstellen einer Anwendung](#task-erstellen-einer-anwendung)
+    - [Erstellen einer Task Definition](#erstellen-einer-task-definition)
+    - [Erstellen der „My Approvals“ und „My Request“ Seite](#erstellen-der-my-approvals-und-my-request-seite)
+    - [Erstellen der „Salary Change“ Seite](#erstellen-der-salary-change-seite)
+    - [User erstellen](#task-user-erstellen)
+    - [Anwendung ausführen](#task-anwendung-ausfuehren)
+- [Application Search: Suchregionen und Suchkonfigurationen erstellen](#application-search-suchregionen-und-suchkonfigurationen-erstellen)
+    - [Erstellen eine Suchkonfiguration](#erstellen-eine-suchkonfiguration)
+        - [Lokalen Daten Datenquelle](#lokalen-daten-datenquelle)
+        - [REST-Datenquelle](#suche-rest-datenquelle)
+    - [Suchkonfigurationen in der Anwendung verwenden](#suchkonfigurationen-in-der-anwendung-verwenden)
+        - [Suchseite erstellen](#suchseite-erstellen)
+    - [Suchfeld in die Navigationsleiste einbauen](#suchfeld-in-die-navigationsleiste-einbauen)
+- [Invoke API Process Type](#invoke-api-process-type)
+    - [Erstellung der benötigten Objekte](#api-erstellung-der-benoetigten-objekte)
+        - [Erstellung der View](#api-erstellung-der-view)
+        - [Erstellung der Prozedur](#api-erstellung-der-prozedur)
+    - [Invoke API Process verwenden](#invoke-api-process-verwenden)
+- [Template Components](#template-components)
+    - [Erstellung eines "Template Components" APEX Plugin](#erstellung-eines-template-components-apex-plugin)
+- [Working Copy](#working-copy)
+    - [Arbeitskopie erstellen](#arbeitskopie-erstellen)
+    - [Arbeitsaufgabe erledigen](#arbeitsaufgabe-erledigen)
+    - [Vergleich zwischen Branch und Main](#vergleich-zwischen-branch-und-main)
+    - [Änderung in Main](#aenderung-in-main)
+- [APEX Workflow](#apex-workflow)
+    - [Ausgangspunkt Use Case und Flow-Chart](#ausgangspunkt-use-case-und-flow-chart)
+    - [Einrichtung der benötigten Elemente](#workflow-einrichtung-der-benoetigten-elemente)
+    - [Erstellen des Workflows](#erstellen-des-workflows)
+    - [Task zur Reservierungsanfrage erstellen](#task-zur-reservierungsanfrage-erstellen)
+    - [Fertigstellung des Workflows](#fertigstellung-des-workflows)
+    - [Erstellen der App-Seiten](#workflow-erstellen-der-app-seiten)
+    - [Anlegen einer Unified Task List](#workflow-anlegen-einer-unified-task-list)
+    - [Anlegen der Workflow Console](#anlegen-der-workflow-console)
+    - [Application Logo anpassen](#workflow-application-logo-anpassen)
+    - [Tour durch die neue App](#workflow-tour-durch-die-neue-app)
+
 # Vorbereitung
 
 Herzlich Willkommen bei dem Workshop „Hands-On APEX 23.2“ der MT - IT Solutions.
@@ -5,9 +107,9 @@ Bevor Sie mit der Bearbeitung dieses Tutorials beginnen können, müssen Sie ein
 
 Falls Sie die Möglichkeit nutzen möchten, englischsprachige Tutorials zu bearbeiten, gibt es unter dem folgenden Link die Möglichkeit, dies zu tun. Klicken Sie einfach auf [https://apex.oracle.com/en/learn/tutorials/](https://apex.oracle.com/en/learn/tutorials/) und bearbeiten Sie die von APEX bereitgestellten Tutorials, wenn Sie noch einen größeren Einblick in die Welt von APEX erhalten möchten.  
 
-# 1. Import der benötigten Daten
+# <a name="datenimport"></a> 1. Import der benötigten Daten 
 
-## 1.1. Skript
+## <a name="skript"></a> 1.1 Skript
 
 Ein Skript ist eine Liste von Befehlen zur Automatisierung von Prozessen. In diesem Fall erzeugt das Skript Tabellen und Sequenzen. Außerdem werden die Tabellen durch das Skript mit Daten befüllt.
 
@@ -19,7 +121,7 @@ Das Hochladen und Ausführen des Skripts sorgt dafür, dass alle Datenbankobjekt
 
 Verwenden Sie das beigefügte SQL-Skript (**Skript.sql**), um die Daten wie im Folgenden beschrieben zu importieren.
 
-## 1.2. Import des Skripts
+## <a name="skriptimport"></a> 1.2 Import des Skripts
 
 - Navigieren Sie zum **SQL-Workshop**, indem Sie eine der zwei rot markierten Möglichkeiten wählen.
 
@@ -51,18 +153,18 @@ Verwenden Sie das beigefügte SQL-Skript (**Skript.sql**), um die Daten wie im F
 
 Es sollten jetzt alle Tabellen und Daten, welche für dieses Tutorial benötigt werden, in Ihrem Workspace vorhanden sein.  
 
-## 1.3. Datenmodellierung mittels Quick SQL
+## <a name="datenmodellierung"></a>1.3 Datenmodellierung mittels Quick SQL
 
 Eine weitere Möglichkeit, Datenmodelle ohne viel Aufwand anzulegen, bietet Quick SQL.  
 Wie das funktioniert, erfahren Sie in der <span style="color:red">**Aufgabe #14: Exkurs: Datenmodellierung mittels Quick SQL**</span>.
 
-# 2. Create App Wizard
+# <a name="create"></a>2. Create App Wizard
 
 Der Create App Wizard ist ein Assistent, der es Entwicklern ermöglicht, Standard APEX-Anwendungen schnell zu entwerfen und zu entwickeln. Dabei kann der Assistent verwendet werden, um vollständige Anwendungen zu erstellen, die aus mehreren Seiten und einer Vielzahl von verschiedenen Reports und Forms bestehen.
 
 In diesem Kapitel wird das Grundgerüst der Anwendung und die erste Seite erstellt. Im Create App Wizard geben Sie die Einstellungen für Ihre Anwendung an. Nachdem Sie auf Create Application geklickt haben, erstellt APEX die Anwendung mit Ihren Einstellungen.
 
-## 2.1. Erstellen einer Anwendung
+## <a name="erstelleneineranwendung"></a>2.1 Erstellen einer Anwendung
 
 - Für die weiteren Aufgaben muss zunächst eine **Anwendung** erstellt werden. Öffnen Sie hierzu als erstes den **App Builder**. Der App Builder zeigt alle installierten Anwendungen an. Klicken Sie nun auf den Button **Create**.
 
@@ -82,7 +184,7 @@ In diesem Kapitel wird das Grundgerüst der Anwendung und die erste Seite erstel
 
 ![](../assets/Kapitel-02/Create_App_Wizard_3.jpg)
 
-## 2.2. Report
+## <a name="report"></a>2.2 Report
 
 In APEX ist ein Report eine formatierte Darstellung einer SQL-Abfrage. Ein Report kann über den Assistenten oder über eine händisch eingegebene SQL-Abfrage generiert werden.
 
@@ -103,7 +205,7 @@ APEX unterscheidet zwischen dem klassischen und dem interaktiven Report. Der Unt
 
 ![](../assets/Kapitel-02/Interactive_Report_3.jpg)
  
-## 2.3. Create Application
+## <a name="createapplication"></a>2.3 Create Application
 
 - So sollte Ihr Create App Wizard jetzt aussehen. 
 
@@ -120,7 +222,7 @@ Bei der Application ID handelt es sich um eine eindeutige Nummer, über welche d
 
 ![](../assets/Kapitel-02/Create_App_Wizard_Settings.jpg)
  
-## 2.4. Run Page
+## <a name="runpage"></a> 2.4 Run Page
 
 Nachdem Sie die Anwendung erstellt haben, öffnet sich die Seitenübersicht Ihrer Anwendung. 
 Sie sehen fünf Seiten: **0 - Global Page - Desktop**, **1 - Home** und **9999 - Login Page** sind Standardseiten, die bei jeder Anwendung erstellt werden. Die Global Page ist eine Masterseite. Sämtliche Komponenten, die auf der Global Page angelegt werden, werden auf allen Seiten der Anwendung angezeigt. 
@@ -151,7 +253,7 @@ Die Seiten **2 - STATES** und **3 - State** haben Sie eben über den Add Page �
 
 ![](../assets/Kapitel-02/Navigationbar_Browser.jpg)
 
-# 3. Zugriff auf Views statt auf Tabellen vornehmen
+# <a name="views"></a>3. Zugriff auf Views statt auf Tabellen vornehmen
 
 Um einen einheitlichen Zugriff auf die Daten zu gewähren, werden View-Schichten genutzt.  
 
@@ -169,7 +271,7 @@ In diesem Tutorial wird ausschließlich auf seitenspezifische Views zurückgegri
 
 Im Folgenden werden nun die Views erstellt und die Zugriffe, die auf die Tabellen erfolgen, auf die Views umgestellt.  
  
-## 3.1. Tools
+## <a name="tools"></a>3.1 Tools
 Im SQL Workshop werden Werkzeuge bereitgestellt, mit denen Datenbankobjekte angezeigt, erstellt und verwaltet werden können.  
 
 Eines der Werkzeuge ist **SQL-Commands**. In diesem können direkt SQL-Befehle eingegeben und ausgeführt werden.   
@@ -214,7 +316,7 @@ In diesem Fall setzt sich die Bezeichnung der View wie folgt zusammen:
 
 ![](../assets/Kapitel-03/Object_Browser_Create_View_3.jpg)  
 
-## 3.2. Page Processes
+## <a name="pageprocesses"></a>3.2 Page Processes
 **Page Processes** werden zu bestimmten, festgelegten Zeitpunkten ausgeführt, beispielsweise beim Aufrufen der Seite oder beim Speichern. Durch sie werden Aufrufe der Applikationslogik oder Datenbank-Operationen realisiert. Für die Verarbeitung eines Formulars sind in APEX zwei Prozesse verantwortlich: **Form – Initialization** und **Form – Automatic Row Processing (DML)**.  
 
 Beide werden automatisch beim Erstellen einer Formular-Seite mithilfe des Wizards generiert und sorgen dafür, dass die Eingabefelder beim Aufruf die richtigen Daten enthalten und dass die Werte beim Abschicken des Formulars in der entsprechenden Datenquelle gespeichert werden.  
@@ -267,13 +369,13 @@ Wenn man in APEX Reports und Forms über den Wizard erstellt, werden die benöti
 ![](../assets/Kapitel-03/Page_Process_11.jpg)
 
 
-# 4. Interactive Grid
+# <a name="interactivegrid"></a>4. Interactive Grid
 
 Ein **Interactive Grid** zeigt dem Datenbankbenutzer eine Reihe von festgelegten Datensätzen in einem durchsuchbaren, anpassbaren Bericht an. In diesem Bericht können die Datensätze geändert und aktualisiert werden. Außerdem ist es möglich, neue Datensätze hinzuzufügen und alte zu löschen.
 
 In dieser Aufgabe wird ein **Interactive Grid** angelegt, um die oben genannten Funktionen nutzen zu können.
 
-## 4.1.	Erstellung der View
+## <a name="gridview"></a>4.1	Erstellung der View
 - Für diese Aufgabe muss zuerst eine **View** erstellt werden.
 Dazu gehen Sie wie in Aufgabe #03 über den **SQL Workshop** in den **Object Browser** und starten über das + den Assistenten zur Erstellung der **View**.  
 Dort geben Sie folgende Daten ein:
@@ -294,7 +396,7 @@ Dort geben Sie folgende Daten ein:
 
 - Klicken Sie anschließend auf den Button **Next** und dann auf **Create View**.
 
-## 4.2.	Create Page
+## <a name="gridcreatepage"></a>4.2	Create Page
 - Öffnen Sie den **App Builder** über die Navigationsleiste, wählen Sie Ihre Anwendung aus und klicken Sie auf den Button **Create Page**. 
 
 ![](../assets/Kapitel-04/Interactive_Grid_02.jpg)
@@ -356,14 +458,14 @@ Dies ist besonders wichtig, damit die Spalte APEX$ROW_SELECTOR erstellt werden k
 ![](../assets/Kapitel-04/Interactive_Grid_14.jpg)
 
 
-# 5. Master-Detail-Detail
+# <a name="master-detail-detail"></a>5. Master-Detail-Detail
 Master – Detail Regionen sind praktisch, wenn man auf einer Seite Daten aus voneinander abhängigen Tabellen darstellen möchte.
 
 In diesem Beispiel enthält die erste Tabelle die Kundendaten, die zweite Tabelle die Bestellungen pro Kunde und die dritte Tabelle die Artikel (Items) der Bestellung.
 
 Beim Auswählen eines Datensatzes ändern sich die Inhalte der Tabellen und man kann für einen Kunden alle Bestellungen und nach Auswahl einer Bestellung jeweils alle zugehörigen Artikel auf einer Seite einsehen.
 
-## 5.1. Erstellung der Views
+## <a name="erstellung-der-views"></a>5.1 Erstellung der Views
 - Für die Bearbeitung dieser Aufgabe werden vier Views benötigt. Erstellen Sie diese nach den folgenden Vorgaben:
 
   - TUTO_P0031_1_VW
@@ -419,7 +521,7 @@ Beim Auswählen eines Datensatzes ändern sich die Inhalte der Tabellen und man 
     ```
 
 
-## 5.2. Erstellung einer Master-Detail-Detail Seite
+## <a name="erstellung-einer-master-detail-detail-seite"></a>5.2 Erstellung einer Master-Detail-Detail Seite
 - Öffnen Sie den **App Builder** über die Navigationsleiste, wählen Sie Ihre Anwendung aus und klicken Sie auf den Button **Create Page**.
 
 ![](../assets/Kapitel-05/Master_Detail_01.jpg)
@@ -575,7 +677,7 @@ Sie sehen nun, dass in der untersten **Region** statt der **ID** die zugehörige
 APEX hinterlegt weiterhin in der Datenbank die **ID**. 
 
 
-## 5.3. Popup List of Values
+## <a name="popup-list-of-values"></a>5.3 Popup List of Values
 **List of Values** können auch als Popup-Fenster angezeigt werden. In APEX 23.1 wurden hierfür einige Funktionen optimiert und erweitert. Diese sollen im Folgenden an einem Beispiel angewendet werden.
 
 Die Felder der Spalte **State** im **Interactive Grid** können bislang über eine Texteingabe geändert werden. Stattdessen soll nun dort eine Auswahlliste angezeigt werden, entsprechend der Einträge in der Datenbanktabelle **States**.
@@ -681,13 +783,12 @@ Die Felder der Spalte **State** im **Interactive Grid** können bislang über ei
 ![](../assets/Kapitel-05/Master_Detail_44.jpg)
 
 
-# 6. Charts
+# <a name="charts"></a>6. Charts
 Charts/Diagramme dienen zur grafischen Darstellung von Zahlenwerten. APEX unterstützt standardmäßig u.a. Kuchen-Diagramme, Linien-Diagramme, Blasen-Diagramme, Streu-Diagramme und Balken-Diagramme.
 
 Ziel dieses Kapitels ist es, ein Chart zu erstellen, welches das Verhältnis der Käufe sortiert nach Kategorien anzeigt.
 
-
-## 6.1. Erstellung der View
+## <a name="charts-erstellung-der-view"></a>6.1 Erstellung der View
 - Für die Bearbeitung dieser Aufgabe wird eine **View** benötigt. 
 
 - Geben Sie Ihrer **View** den Namen ***TUTO_P0001_VW***
@@ -712,7 +813,7 @@ Ziel dieses Kapitels ist es, ein Chart zu erstellen, welches das Verhältnis der
     join orders o
       on oi.ordr_item_ordr_id = o.ordr_id
   ```
-## 6.2. Charts Region
+## <a name="charts-region"></a>6.2 Charts Region
 - Öffnen Sie zunächst den **App Builder** für Ihre **Anwendung**. Klicken Sie anschließend auf die **Seite 1 -** ***Home***.
 
 - **Breadcrumbs** können meist nach dem Anlegen gelöscht werden. Sie nehmen viel Platz ein und bringen i. d. R. keinen Mehrwert für den Endanwender. **Breadcrumbs** sind hierarchische Listen von Links und bieten eine hierarchische Navigation.
@@ -751,13 +852,13 @@ Ziel dieses Kapitels ist es, ein Chart zu erstellen, welches das Verhältnis der
 ![](../assets/Kapitel-06/Charts_07.jpg)
 
 
-# 7. Features für mobile Endgeräte
-## 7.1. Reflow Report & Column Toggle Report
+# <a name="features-fuer-mobile-endgeraete"></a>7. Features für mobile Endgeräte
+## <a name="reflow-report--column-toggle-report"></a>7.1 Reflow Report & Column Toggle Report
 Zwei Reporttypen, die dabei helfen, dass APEX Anwendungen auch auf mobilen Endgeräten angenehm genutzt werden können, sind der **Reflow Report** und der **Column Toggle** Report.
 
 Der Reflow Report zeigt Tabellenspalten vertikal an, wenn nicht genügend Platz vorhanden ist, um sie horizontal anzuzeigen. Der **Column Toggle** Report ermöglicht es, Spalten mit verschiedenen Prioritäten zu belegen. Dabei werden Spalten mit geringer Priorität schmaler angezeigt und früher ausgeblendet als Spalten mit einer hohen Priorität.
 
-### 7.1.1. View erstellen
+### <a name="mobile-view-erstellen"></a>7.1.1 View erstellen
 - Für die Bearbeitung dieser Aufgabe wird eine **View** benötigt. 
 
 - Geben Sie Ihrer **View** den Namen ***TUTO_P0032_VW***:
@@ -783,7 +884,7 @@ Der Reflow Report zeigt Tabellenspalten vertikal an, wenn nicht genügend Platz 
       on oi.ordr_item_ordr_id = o.ordr_id
   ```
 
-### 7.1.2. Report erstellen
+### <a name="mobile-report-erstellen"></a>7.1.2 Report erstellen
 - Erstellen Sie eine neue Seite. Navigieren Sie dazu in den **App Builder** und klicken Sie dort auf **Create Page**. 
 - Wählen Sie als **Page Type** ***Interactive Report*** aus. 
 
@@ -818,7 +919,7 @@ Wenn Sie das Browserfenster zusammenschieben, verkleinert sich auch der Anzeigeb
 Es handelt sich hierbei um eine temporäre personalisierte Einstellung der Tabellenspalten. Andere Nutzer sind von dieser Einstellung nicht betroffen. Die Einstellung bleibt über ein neu laden der Webseite ***nicht*** gespeichert.
  
 
-## 7.2. Progressive Web Apps
+## <a name="progressive-web-apps"></a>7.2 Progressive Web Apps
 Durch das Auswählen des Features „Install Progressive Web App“ beim Erstellen der Anwendung, kann diese nun als Desktopanwendung installiert werden.
 
 Progressive Webanwendungen sind schnellere Apps, da sie einen speziellen Browsercache nutzen, um Ressourcen effizienter zu speichern, wodurch Seiten schneller geladen werden.
@@ -852,7 +953,7 @@ Es öffnet sich ein Bereich mit weitern Einstellungen, die zum Anpassen des User
 ![](../assets/Kapitel-07/Features_13.jpg)
 
 
-## 7.3. Persistent Authentication
+## <a name="persistent-authentication"></a>7.3 Persistent Authentication
 Für Progressive Web Apps gibt es seit Version 23.1 von APEX eine neue Authentifizierungsmethode namens „Persistent Authentication“.
 
 Im Gegensatz zu normalen APEX Anwendungen, erscheint hier auf dem Login Bildschirm eine „**Remember me**“-Checkbox, diese ist nicht zu verwechseln mit „**Remember Username**“.
@@ -862,13 +963,13 @@ Im Gegensatz zu normalen APEX Anwendungen, erscheint hier auf dem Login Bildschi
 Wenn die Option „**Remember me**“ aktiviert ist, merkt APEX sich die Logindaten für einen gewissen Zeitraum (30 Tage). In dieser Zeit kann der Nutzer die gewünschte Seite aufrufen, ohne sich erneut anmelden zu müssen. Wenn eine Session abgelaufen ist, wird automatisch eine neue Session bereitgestellt.
 
 
-# 8. Cards Region
+# <a name="cards-region"></a>8. Cards Region
 
 Cards sind eine beliebte Form im Webdesign, um Informationen übersichtlich und anschaulich darzustellen. Die Cards in APEX lassen sich vielfältig gestalten. So kann man einer Card Icons hinzufügen, Bilder oder Videos in dieser anzeigen oder Aktionen für die Card definieren (z.B. über Links oder Buttons). 
 
 In diesem Kapitel erstellen wir eine Seite, die auf einer Cards Region aufbaut. Im ersten Schritt erstellen wir eine Default Cards Region, im zweiten Kapitel bearbeiten wir diese so, dass ein Bild in der Karte angezeigt wird.  
 
-## 8.1.	View erstellen
+## <a name="cards-view-erstellen"></a>8.1	View erstellen
 
 Für die Bearbeitung dieser Aufgabe wird eine **View** benötigt.  
 **View Name: *TUTO_P0041_VW***
@@ -884,7 +985,7 @@ select prdt_info_id as product_id,
 from product_info
  ```
 
-## 8.2.	Seite erstellen
+## <a name="cards-seite-erstellen"></a>8.2	Seite erstellen
 
 - Öffnen Sie den **App Builder** über die Navigationsleiste, wählen Sie Ihre Anwendung aus und klicken Sie auf den Button **Create Page**.  
 - Wählen Sie den Seitentypen **Report** aus.  
@@ -938,7 +1039,7 @@ Hier können SIe die angezeigten Sortierkriterien unter Display Value anpassen. 
 
 ![](../assets/Kapitel-08/Cards_07.jpg) 
  
-## 8.3.	Cards mit Bild erstellen
+## <a name="cards-mit-bild-erstellen"></a>8.3	Cards mit Bild erstellen
 
 In diesem Schritt werden Sie das Aussehen der Cards ändern und die Titelbilder der Filme anzeigen.  
 - Klicken Sie hierfür auf **Attributes** und scrollen Sie dann nach unten zu **Media**.  
@@ -958,11 +1059,11 @@ In diesem Schritt werden Sie das Aussehen der Cards ändern und die Titelbilder 
 ![](../assets/Kapitel-08/Cards_10.jpg)
 
 
-# 9. Faceted Search
+# <a name="faceted-search"></a>9. Faceted Search
 
 Bei der **Faceted Search** handelt es sich um eine Funktion zur dynamischen Filterung der angezeigten Datensätze und der gezielten Suche darin. Sie findet häufig Anwendung in Onlineshops und zeichnet sich meist durch eine fixierte Leiste am Seitenrand aus, in welcher sich die unterschiedlichen Filter in Form von Checkboxen, Slidern und Eingabefeldern befinden.
 
-## 9.1.	Erstellung der View
+## <a name="fs-erstellung-der-view"></a>9.1	Erstellung der View
 
 Für die Bearbeitung dieser Aufgabe wird eine **View** benötigt.
 
@@ -980,7 +1081,7 @@ select prdt_info_id,
 from product_info
  ```
  
-## 9.2.	Create Page
+## <a name="fs-create-page"></a>9.2	Create Page
 
 - Öffnen Sie den **App Builder** über die Navigationsleiste, wählen Sie Ihre Anwendung aus und klicken Sie auf den Button **Create Page**.
 - Wählen Sie den Seitentypen **Component** aus.
@@ -1004,7 +1105,7 @@ Die Daten werden im rechten Seitenbereich als **Classic Report** dargestellt. Li
 
 ![](../assets/Kapitel-09/Faceted_04.jpg) 
 
-## 9.3.	Create Facets
+## <a name="fs-create-facets"></a>9.3	Create Facets
 
 - Wechseln Sie zurück in den **Page Designer** und erstellen Sie ein neues **Facet**, indem Sie einen Rechtsklick auf den Eintrag **Facets** machen und anschließend **Create Facet** auswählen. 
 
@@ -1067,9 +1168,9 @@ Das neu erstellte Facet enthält wie auch das *Category-Facet* diverse Checkboxe
 ![](../assets/Kapitel-09/Faceted_11.jpg) 
  
 
-# 10. Smart Filters
+# <a name="smart-filters"></a>10. Smart Filters
 Die **Smart Filters** bieten die Möglichkeit, Daten mithilfe von Filtervorschlägen oder Suchbegriffen leicht einzugrenzen. Diese werden als Chips unter der Suchleiste oder als Vorschläge während des Tippens angezeigt.
-## 10.1. Erstellung der View
+## <a name="sf-erstellung-der-view"></a>10.1 Erstellung der View
 Für die Bearbeitung dieser Aufgabe wird eine **View** benötigt. 
 **View Name: TUTO_P0091_VW**
 Query:
@@ -1083,7 +1184,7 @@ select prdt_info_id,
 from product_info
 ```
 
-## 10.2. Create Page
+## <a name="sf-create-page"></a>10.2 Create Page
 - Öffnen Sie den **App Builder** über die Navigationsleiste, wählen Sie Ihre Anwendung aus und klicken Sie auf den Button **Create Page**.  
 - Wählen Sie den Seitentypen **Component** aus.  
 - Wählen Sie den Bereichstypen **Smart Filters** aus.  
@@ -1105,7 +1206,7 @@ Die Daten werden als **Classic Report** dargestellt. Darüber befindet sich eine
 
 ![](../assets/Kapitel-10/Smart_04.jpg)  
  
-## 10.3. Create Filters
+## <a name="sf-create-filters"></a>10.3 Create Filters
 - Wechseln Sie zurück in den **Page Designer** und erstellen Sie einen neuen Filter, indem Sie einen Rechtsklick auf den Eintrag **Filters** machen und anschließend **Create Filter** auswählen.  
 
 ![](../assets/Kapitel-10/Smart_05.jpg)  
@@ -1148,12 +1249,12 @@ Die erstellten Filter für *Product Name* und *Category* werden nun beim Klick i
 ![](../assets/Kapitel-10/Smart_08.jpg)  
 
 
-# 11. Optische Anpassungen
+# <a name="optische-anpassungen"></a> 11. Optische Anpassungen
 Unterschiedliche Anwendungsfälle bringen unterschiedliche Anforderungen an das User Interface einer Anwendung mit. Im Standard ist das Interface von APEX eher schlicht gehalten, es lässt sich jedoch durch Kombination von Einstellungen der Komponenten und eigenem CSS-Code umfangreich anpassen.
 
 CSS-Code ermöglicht es Entwicklern, die gestalterischen Attribute von Seiten, Regionen und Items über den Standard hinaus anzupassen. CSS besteht aus einer Liste von Regeln, die dem Web-Browser beschreiben, wie bestimmte Elemente einer Webseite dargestellt werden sollen. Damit nicht für jedes Element eine eigene Liste an Regeln definiert werden muss, können identische Elemente in Klassen zusammengefasst werden.  
 
-## 11.1. Dark-Mode
+## <a name="dark-mode"></a>11.1 Dark-Mode
 Sowohl für die Entwicklungsumgebung als auch für die fertige Anwendung lässt sich ein Dark-Mode aktivieren. Für letztere wird dieser in den Theme-Einstellungen der Anwendung festgelegt.
 - Öffnen Sie zunächst Ihre **Anwendung** aus dem APP Builder. Klicken Sie in der Leiste am unteren Bildschirmrand auf **Customize** und dann auf **Theme Roller**. Sollte die untere Leiste versteckt sein, bewegen Sie den Mauszeiger an den unteren Rand des Browsers. Über die Leiste können Sie das Theme ändern sowie weitere CSS-Anpassungen durchführen.  
 
@@ -1167,7 +1268,7 @@ Ihre erstellte Anwendung sollte nun wie folgt aussehen:
 
 ![](../assets/Kapitel-11/Optisch_03.jpg) 
  
-## 11.2. Anpassung des Login-Screens
+## <a name="anpassung-des-login-screens"></a>11.2 Anpassung des Login-Screens
 Nach diesem Kapitel hat Ihr Login-Screen ein Hintergrundbild und sieht somit ansprechender aus.
 - Öffnen Sie zunächst den **App Builder** und klicken Sie anschließend auf die von Ihnen erstellte **Anwendung**. 
 - Klicken Sie auf die **Seite 9999 - *Login Page***. 
@@ -1255,9 +1356,9 @@ Sie sehen nun die von Ihnen getätigten Änderungen.
 ![](../assets/Kapitel-11/Optisch_20.jpg) 
 
 
-# 12. Plug-Ins
+# <a name="plug-ins"></a>12. Plug-Ins
 
-## 12.1. Einleitung
+## <a name="pi-einleitung"></a>12.1 Einleitung
 
 Plug-Ins sind Erweiterungen und ermöglichen es, APEX um benutzerdefinierte Elementtypen, Regionstypen, Prozesse und dynamische Aktionen zu erweitern. Komponenten, die auf Plug-Ins basieren, werden ähnlich wie die Standard APEX-Komponenten erstellt und gepflegt. Mit Plug-Ins können Entwickler angepasste Komponenten erstellen, um die Funktionalität, das Erscheinungsbild und die Benutzerfreundlichkeit Ihrer Anwendungen zu verbessern.  
 
@@ -1267,7 +1368,7 @@ Im Folgenden werden Sie Plug-Ins in Ihre Anwendung einbinden.
 >Weitere Plug-Ins außer die hier erwähnten finden Sie z.B. auf apex.world:  
 [https://apex.world/ords/f?p=100:700](https://apex.world/ords/f?p=100:700)
 
-## 12.2.	Plug-Ins
+## <a name="pi-plug-ins"></a>12.2 Plug-Ins
 
 Für die Bearbeitung dieser Aufgaben werden wir ein Plug-In von folgender Seite verwenden: 
 
@@ -1276,7 +1377,7 @@ Für die Bearbeitung dieser Aufgaben werden wir ein Plug-In von folgender Seite 
 Dieses Plugin ermöglicht es dem Entwickler, Tooltips bei Buttons, Feldern, Regionen, Berichten und weiteren Komponenten einzubauen.  
 Das Plug-In muss zunächst heruntergeladen und entpackt werden.  
 
-### 12.2.1.	Plug-In importieren
+### <a name="plug-in-importieren"></a>12.2.1	Plug-In importieren
 
 - Öffnen Sie zunächst den **App Builder** und Ihre **Anwendung**. Klicken Sie anschließend auf **Shared Components**.   
 
@@ -1306,7 +1407,7 @@ Das Plug-In muss zunächst heruntergeladen und entpackt werden.
 
 ![](../assets/Kapitel-12/Plugins_05.jpg)
 
-### 12.2.2.	Plugin einbinden
+### <a name="plugin-einbinden"></a>12.2.2	Plugin einbinden
 
 - Das Plug-In wurde nun installiert. Klicken Sie auf Ihre Applikation, um zurück zu gelangen. 
 
@@ -1343,7 +1444,7 @@ Dynamic Actions ermöglichen es Entwicklern, clientseitiges Verhalten ohne JavaS
 
 Es gibt noch viele weitere Einstellungen bzw. **Plug-In Settings**, die Sie wie oben beschrieben, beliebig verwenden können. Probieren Sie gerne einige davon aus.
 
-### 12.2.3.	Quality Assurance Plugin 
+### <a name="quality-assurance-plugin"></a>12.2.3	Quality Assurance Plugin 
 
 - Gehen Sie wie in 12.2.1 beschrieben vor, um ein weiteres Plug-In zu installieren. 
 Das Plug-In ermöglicht es, Entwicklungsvorgaben zu definieren und zeigt anschließend Verstöße hiergegen automatisch auf der jeweiligen Seite an.  
@@ -1388,7 +1489,6 @@ Da diese Region auf der **Global Page – 0** angelegt wurde, wird nun auf jeder
 
 Damit das Plug-In Verstöße gegen die Guidelines anzeigen kann, müssen diese definiert werden. Beim Download des **Plug-Ins** werden bereits einige Beispielregeln mitgeliefert. 
 - Wie zuvor muss nun über den **SQL Workshop** ein **SQL-Skript** hochgeladen und eingespielt werden. Das Skript finden Sie unter: **…src\DML\plugin_qa_rules.sql**
-
  
 - Wenn Sie nun in die Anwendung wechseln und eine Seite aufrufen, werden am Ende der Seite in der Region QS die Regelverstöße angezeigt.  
 
@@ -1397,10 +1497,10 @@ Damit das Plug-In Verstöße gegen die Guidelines anzeigen kann, müssen diese d
 Für eigene Projekte können Sie Ihre individuellen Regeln für dieses Plug-In definieren und so für die Einhaltung der Vorgaben sorgen.
 
 
-# 13. REST Data Sources
+# <a name="rest-data-sources"></a>13. REST Data Sources
 Data Sources ermöglichen die Einbindung von REST-Services. Die empfangenen Daten können in APEX Komponenten wie Reports oder Forms verwendet werden. Die Daten werden dabei als JSON-Objekte zwischen der Anwendung und der REST Source transportiert. Es gibt verschiedene Operationen entsprechend der HTTP-Methoden (GET, POST, PUT, DELETE), die mit der jeweiligen Datenbankoperation (SELECT, INSERT, UPDATE, DELETE) verknüpft werden können.
 
-## 13.1. RESTful Service erstellen
+## <a name="restful-service-erstellen"></a>13.1 RESTful Service erstellen
 In dieser Aufgabe erstellen Sie einen eigenen RESTful Service. Diesen können Sie aus dem Internet aufrufen sowie in anderen Diensten nutzen. 
 - Um den RestFul Service zu erstellen, klicken Sie auf den **SQL Workshop** und dann auf **RESTful Services**. 
 
@@ -1525,7 +1625,7 @@ end;
   ]
  ```
   
-## 13.2. REST Data Source erstellen
+## <a name="rest-data-source-erstellen"></a>13.2 REST Data Source erstellen
 Nachdem Sie im vorherigen Kapitel einen eigenen RESTful Service erstellt haben, werden wir diesen in APEX als REST Data Source nutzen. Die Vorgehensweise, die im Folgenden gezeigt wird, gilt ähnlich auch für REST Datenquellen, die Sie nicht selbst erstellt haben.  
 Um die **REST Data Source** anzulegen, gehen Sie in die **Shared Components** Ihrer Anwendung. 
 
@@ -1570,7 +1670,7 @@ Geben Sie der REST Data Source den **Namen *Departments***. Zudem müssen Sie de
 
 - Kontrollieren Sie, dass Ihre Einstellungen im **Data Profile** wie im Bild gezeigt aussehen und, dass bei **Operations** die beiden Operations ***GET*** und ***POST*** angelegt wurden. 
  
-## 13.3. Senden von Daten an eine REST-Datenquelle
+## <a name="senden-von-daten-an-eine-rest-datenquelle"></a>13.3 Senden von Daten an eine REST-Datenquelle
 In diesem Kapitel werden wir die zuvor erstellte REST Source nutzen, um eigene Daten senden. Konkret werden wir dabei neue Departments hinzufügen. Dafür wird die HTTP-POST-Methode verwendet, welche in der REST Data Source als Operation definiert wurde. 
 - Öffnen Sie den **App Builder** und Ihre Anwendung. Klicken Sie auf **Create Page** und erstellen Sie eine neue Seite, indem Sie auf **Create Page** klicken. 
 
@@ -1596,7 +1696,7 @@ In diesem Kapitel werden wir die zuvor erstellte REST Source nutzen, um eigene D
 
 ![](../assets/Kapitel-13/Rest_26.jpg)
 
-## 13.4. Abrufen von Daten aus einer REST Data Source
+## <a name="abrufen-von-daten-aus-einer-rest-data-source"></a>13.4 Abrufen von Daten aus einer REST Data Source
 Nun möchten wir die REST Data Source nicht nur zum Hinzufügen von Daten nutzen, sondern auch, um Daten abzurufen und diese anzeigen zu lassen. Dafür wird die HTTP-GET-Methode verwendet, welche in der REST Data Source als Operation definiert wurde.  
 - Über das in Kapitel 13.3 erstellte Form ist es nun möglich, neue Departments anzulegen. Um direkt zu erkennen, ob das Hinzufügen erfolgreich war, werden Sie zusätzlich einen Report auf der Seite erstellen. 
 
@@ -1615,13 +1715,13 @@ Nun möchten wir die REST Data Source nicht nur zum Hinzufügen von Daten nutzen
 [https://apex.oracle.com/pls/apex/mt_apisearch/r/datasources](https://apex.oracle.com/pls/apex/mt_apisearch/r/datasources)
 
 
-# 14. Exkurs: Datenmodellierung mittels Quick SQL
+# <a name="exkurs-datenmodellierung-mittels-quick-sql"></a>14. Exkurs: Datenmodellierung mittels Quick SQL
 
 Mit Quick SQL können Datenmodelle schnell entworfen werden, indem eine **Markdown-artige Kurzschriftsyntax** verwendet wird. Hauptdetailbeziehungen können über ein **ERM** („Entity-Relationship-Modell“) dargestellt werden.  
 
 > Weitere Informationen erhalten Sie unter [https://apex.oracle.com/en/quicksql/](https://apex.oracle.com/en/quicksql/) (Login erforderlich).
 
-## 14.1. Erstellung der Datenbank-Tabelle
+## <a name="ex-erstellung-der-datenbank-tabelle"></a>14.1 Erstellung der Datenbank-Tabelle
 
 - Navigieren Sie auf **SQL Workshop** und klicken Sie anschließend auf **SQL Scripts**.
 
@@ -1666,7 +1766,7 @@ SALARIES /insert 5
 
 ![](../assets/Kapitel-14/Exkurs_07.jpg)
  
-## 14.2. Erstellung eines Interactive Reports
+## <a name="ex-erstellung-eines-interactive-reports"></a>14.2 Erstellung eines Interactive Reports
 
 Zur Visualisierung der eben erstellten Daten legen Sie in dieser Aufgabe einen Interactive Report an.
 - Dazu gehen Sie wieder in den **App Builder**, dann auf Ihre **Anwendung** und anschließend klicken Sie auf **Create Page** und wählen **Interactive Report** aus.
@@ -1683,7 +1783,7 @@ Zur Visualisierung der eben erstellten Daten legen Sie in dieser Aufgabe einen I
 
 ![](../assets/Kapitel-14/Exkurs_10.jpg)
 
-## 14.3. Beispieldaten mittels Data Generator generieren
+## <a name="beispieldaten-mittels-data-generator-generieren"></a>14.3 Beispieldaten mittels Data Generator generieren
 
 Verwenden Sie das Dienstprogramm Data Generator, um **Blueprints** zu erstellen und anschließend Beispieldaten zu generieren.
 - Navigieren Sie auf **SQL Workshop** und klicken Sie anschließend auf **Utilities**.
@@ -1732,12 +1832,11 @@ Verwenden Sie das Dienstprogramm Data Generator, um **Blueprints** zu erstellen 
 
 ![](../assets/Kapitel-14/Exkurs_21.jpg)
 
-
-# 15. Karten erstellen 
+# <a name="karten-erstellen"></a>15. Karten erstellen 
 In dieser Aufgabe werden Sie eine Anwendungsseite mit einer Weltkarte erstellen. Die nötigen Daten dafür erlangen wir über eine (in Kapitel 13.2 vorgestellte) REST Data Source.
 Das Ziel ist es, alle Erdbeben auf der Erde, die in den letzten 24 Stunden stattfanden, auf einer Karte in APEX darzustellen.
 
-## 15.1.	REST Data Source 
+## <a name="karten-rest-data-source"></a>15.1	REST Data Source 
 Um später die Erdbebendaten der Karte aktuell zu halten, richten Sie nun eine REST Data Source ein. Die detaillierten Schritte dieses Unterkapitels können Sie sich mit Screenshots bei Bedarf erneut in Kapitel 13.2 anschauen, im Folgenden werden die Schritte darum nur grob beschrieben.
 
 Zu Beginn erstellen Sie im App-Builder eine neue Anwendung und nennen diese **Earthquakes**. Sie brauchen keine weiteren Einstellungen vorzunehmen. In der Anwendungsübersicht wählen Sie dann **Shared Components** aus.
@@ -1765,7 +1864,7 @@ Nach dem Sie auf das zweite Feld geklickt haben, öffnet sich ein Pop-Up Fenster
 
 Die Tabelle mitsamt der aktuellen Erdbebendaten ist nun im **Object Browser** vorzufinden.  
  
-## 15.2.	Erstellen der Karte auf einer neuen Anwendungsseite
+## <a name="erstellen-der-karte-auf-einer-neuen-anwendungsseite"></a>15.2	Erstellen der Karte auf einer neuen Anwendungsseite
 Stellen Sie sicher, dass Sie nun auf die Anwendungsübersicht jener Anwendung navigieren, die Sie zu Beginn erstellt haben.  
 
 - Dort wählen Sie **Create Page**.  
@@ -1794,12 +1893,12 @@ Dort sehen Sie nun alle gespeicherten Erdbeben und bekommen einen Eindruck über
 ![](../assets/Kapitel-15/Karten_07.jpg)
 
 
-# 16. Genehmigungsprozess erstellen
+# <a name="genehmigungsprozess-erstellen"></a>16. Genehmigungsprozess erstellen
 
 In dieser Aufgabe werden Sie eine Anwendung erstellen, die dazu dient, Gehälter von Mitarbeiter anzupassen. Die nötigen Daten dafür haben wir bereits in Kapitel 14 eingefügt.
 Das Ziel ist es, dass jeder Mitarbeiter sein Gehalt entsprechend anpassen kann, wodurch ein Genehmigungsprozess startet. Anschließend muss der Vorgesetzte den Prozess bearbeiten und entweder zustimmen oder ablehnen.
 
-## 16.1. Erstellen einer Anwendung
+## <a name="task-erstellen-einer-anwendung"></a>16.1 Erstellen einer Anwendung
 
 - Für diese Aufgabe wird eine **Anwendung** erstellt. Öffnen Sie hierzu als erstes den **App Builder** und klicken Sie auf den Button **Create**. Der App Builder zeigt alle installierten Anwendungen an.
 
@@ -1815,7 +1914,7 @@ Das Ziel ist es, dass jeder Mitarbeiter sein Gehalt entsprechend anpassen kann, 
 
 - Sie brauchen vorerst keine weiteren Einstellungen vorzunehmen. Klicken Sie **Create Application** um die neue Anwendung zu erstellen.
 
-## 16.2. Erstellen einer Task Definition
+## <a name="erstellen-einer-task-definition"></a>16.2 Erstellen einer Task Definition
 
 - Klicken Sie anschließend auf **Shared Components**. 
  
@@ -1908,7 +2007,7 @@ update salaries
  
 ![](../assets/Kapitel-16/Process_16.jpg)  
 
-## 16.3. Erstellen der „My Approvals“ und „My Request“ Seite
+## <a name="erstellen-der-my-approvals-und-my-request-seite"></a>16.3 Erstellen der „My Approvals“ und „My Request“ Seite
 
 - Klicken Sie auf **Create Page** und wählen **Unified Task List** aus. Anschließend klicken Sie **Next**.  
 
@@ -1945,7 +2044,7 @@ update salaries
  
 ![](../assets/Kapitel-16/Process_19.jpg)  
  
-## 16.4.	Erstellen der „Salary Change“ Seite
+## <a name="erstellen-der-salary-change-seite"></a>16.4	Erstellen der „Salary Change“ Seite
 
 - Klicken Sie auf **Create Page** und wählen **Blank Page** aus.  
 - Anschließend klicken Sie **Next**.  
@@ -2024,7 +2123,7 @@ select sary_id, sary_employee_name, sary_department, sary_salary
 
 Die Anwendung ist jetzt fertig erstellt.
 
-## 16.5.	User erstellen
+## <a name="task-user-erstellen"></a>16.5	User erstellen
 
 Bevor die Anwendung jetzt gestartet und simuliert werden kann, müssen im Workspace noch entsprechende User erstellt werden. In diesem Beispiel wird ein Mitarbeiter erstellt, der eine Gehaltsanpassung beantragen kann, sowie ein Admin User, der den Prozess bearbeiten kann.  
 
@@ -2049,7 +2148,7 @@ Wichtig ist, dass Sie als Administrator in Ihrem Workspace angemeldet sind, so d
 
 - Beenden Sie hier die Eingabe mit Klick auf **Create User**.
  
-## 16.6.	Anwendung ausführen
+## <a name="task-anwendung-ausfuehren"></a>16.6	Anwendung ausführen
 
 - Wechseln Sie jetzt wieder zum Application Builder und starten von dort aus die zuvor erstellte Anwendung **Tutorial Approvals**. 
 - Melden Sie sich zunächst als Mitarbeiter **FISCHER** an.
@@ -2085,19 +2184,19 @@ Wichtig ist, dass Sie als Administrator in Ihrem Workspace angemeldet sind, so d
 - Der Antrag wurde genehmigt und das Gehalt vom Mitarbeiter **FISCHER** entsprechend angepasst.  
 
 
-# 17. Application Search: Suchregionen und Suchkonfigurationen erstellen
+# 17. <a name="application-search-suchregionen-und-suchkonfigurationen-erstellen"></a>Application Search: Suchregionen und Suchkonfigurationen erstellen
 
 In dieser Aufgabe werden Sie eine Suchregion und Suchkonfigurationen erstellen, die in mehreren Datenquellen nach Ergebnissen sucht. Dazu benötigen Sie die in Kapitel 13 beschriebenen Kenntnisse.  
 
 Ziel ist es, Ihren Benutzern eine leistungsstarke Funktion im Stil einer Suchmaschine zur Verfügung stellen, die in Minutenschnelle mehrere Datenquellen nach Ergebnissen durchsucht und diese in einer einzigen einheitlichen Suchergebnisregion anzeigt.  
 
-## 17.1. Erstellen eine Suchkonfiguration 
+## <a name="erstellen-eine-suchkonfiguration"></a>17.1 Erstellen eine Suchkonfiguration 
 
 Diese neue gemeinsame Komponente definiert die zu durchsuchenden Datenquellen und die Anzeige der Ergebnisse. Die Suche kann auf lokalen Daten, APEX-Listen, REST-fähigen SQL-Services oder REST-Services basieren.  
 
 In den folgenden zwei Beispielen wird die Suche einmal in den lokalen Daten und einmal mit einer REST-Datenquelle durchgeführt.  
 
-### 17.1.1. Lokalen Daten Datenquelle
+### <a name="lokalen-daten-datenquelle"></a>17.1.1 Lokalen Daten Datenquelle
 
 - Für die Bearbeitung dieser Aufgabe wird eine **View** benötigt.  
 
@@ -2187,7 +2286,7 @@ In den folgenden zwei Beispielen wird die Suche einmal in den lokalen Daten und 
 
 ![](../assets/Kapitel-17/search_config_10.jpg)  
     
-### 17.1.2. REST-Datenquelle
+### <a name="suche-rest-datenquelle"></a>17.1.2 REST-Datenquelle
 
 Über den in Kapitel 13 erstellten RESTful Service und die REST-Datenquelle erstellen wir eine Suchkonfiguration, die auf der REST-Datenquelle **Departments** basiert.  
 
@@ -2230,11 +2329,11 @@ In den folgenden zwei Beispielen wird die Suche einmal in den lokalen Daten und 
 
 ![](../assets/Kapitel-17/search_config_13.jpg)  
 
-## 17.2. Suchkonfigurationen in der Anwendung verwenden  
+## <a name="suchkonfigurationen-in-der-anwendung-verwenden"></a>17.2 Suchkonfigurationen in der Anwendung verwenden  
 
 Um die Suchkonfigurationen zu verwenden, erstellen Sie eine Seite, auf der die Suchergebnisse angezeigt werden und ein Suchfeld, in das Sie den Suchbegriff eingeben können.  
 
-### 17.2.1. Suchseite erstellen 
+### <a name="suchseite-erstellen"></a>17.2.1 Suchseite erstellen 
 
 - Im **App Builder** klicken Sie auf **Create Page**.  
 - Wählen Sie den Seitentypen **Component** aus.  
@@ -2260,7 +2359,7 @@ Eine Suchkonfigurationsliste ist bereits verfügbar. Wählen Sie die Suchkonfigu
 ![](../assets/Kapitel-17/search_config_17.jpg)  
 
 
-## 17.3. Suchfeld in die Navigationsleiste einbauen  
+## <a name="suchfeld-in-die-navigationsleiste-einbauen"></a>17.3 Suchfeld in die Navigationsleiste einbauen  
 
 - Erstellen Sie auf der globalen Seite ein Item mit den folgenden Einstellungen:  
 
@@ -2351,7 +2450,7 @@ Das Suchfeld taucht nun in der Navigationsleiste auf, ist auf jeder Seite verfü
 ![](../assets/Kapitel-17/search_config_26.jpg)
 
 
-# 18. Invoke API Process Type
+# <a name="invoke-api-process-type"></a>18. Invoke API Process Type
 
 Der *Process Type* **Invoke API** ermöglicht die komplett deklarative Ausführung von Prozeduren und Funktionen, ohne PL/SQL-Code schreiben zu müssen. Prozeduren und Funktionen können eigenständig oder Teil eines Packages sein. Der **Page Designer** legt die Parameter automatisch vorab fest und ordnet sie den entsprechenden Seitenelementen oder Spalten interaktiver Grids zu, wenn verfügbar.  
 
@@ -2365,11 +2464,11 @@ Ein Beispiel für einen API-Aufrufprozess ist auf der **Login Page** in der Anwe
 
 In diesem Kapitel wird eine Prozedur angelegt, um die oben genannten Funktionen nutzen zu können.
 
-## 18.1. Erstellung der benötigten Objekte 
+## <a name="api-erstellung-der-benoetigten-objekte"></a>18.1 Erstellung der benötigten Objekte 
 
 Für dieses Kapitel muss zuerst eine **Prozedur** und eine **View** erstellt werden.
 
-### 18.1.1. Erstellung der View 
+### <a name="api-erstellung-der-view"></a>18.1.1 Erstellung der View 
 
 - Für die Bearbeitung dieser Aufgabe wird eine **View** benötigt. 
 
@@ -2396,7 +2495,7 @@ Für dieses Kapitel muss zuerst eine **Prozedur** und eine **View** erstellt wer
       on oi.ordr_item_ordr_id = o.ordr_id
   ```
   
-### 18.1.2. Erstellung der Prozedur 
+### <a name="api-erstellung-der-prozedur"></a>18.1.2 Erstellung der Prozedur 
 
 - Analog zur Erstellung einer **View** starten Sie den Assistenten zum Erstellen einer **Prozedur**. Öffnen Sie dazu das Dropdown-Menü über das **+** und klicken auf den Eintrag **Procedure**.  
   
@@ -2468,7 +2567,7 @@ In diesem Fall setzt sich die Bezeichnung der View wie folgt zusammen:
 
 - Klicken Sie anschließend wieder auf **Save and Compile**.
 
-## 18.2. Invoke API Process verwenden
+## <a name="invoke-api-process-verwenden"></a>18.2 Invoke API Process verwenden
 
 - Um einen Invoke API Process zu verwenden, erstellen Sie eine editierbare Seite.
 
@@ -2556,13 +2655,13 @@ In diesem Fall setzt sich die Bezeichnung der View wie folgt zusammen:
 ![](../assets/Kapitel-18/invoke_api_18.jpg)  
 
 
-# 19. Template Components
+# <a name="template-components"></a>19. Template Components
 
 **Template Components** sind ein neuer Plug-In-Typ in APEX. Sie ermöglichen es Ihnen, eine HTML-Vorlage (mit oder ohne zusätzliches CSS und JavaScript) zu definieren und Platzhalter zu verwenden. Sie sind viel einfacher zu verwenden als ein vollständiges Regions-Plug-In, bei dem Sie keine tiefgreifenden Kenntnisse der Plug-In-APIs benötigen.
 
 Auf jeder Seite können Sie dann einen Bereich dieses Plug-In-Typs erstellen, eine Abfrage platzieren und dann eine Instanz dieser Vorlage erhalten, die mit den Daten für jede zurückgegebene Zeile gefüllt wird. Sie können auch eine einzelne Instanz in einer Region rendern oder sie sogar in Spalten interaktiver Berichte verwenden.
 
-## 19.1. Erstellung eines "Template Components" (APEX Plugin) 
+## <a name="erstellung-eines-template-components-apex-plugin"></a>19.1 Erstellung eines "Template Components" (APEX Plugin) 
 
 1. Öffnen Sie den **Shared Components**, klicken sie auf **Plug-ins** und anschlißend auf **create**
 
@@ -2850,11 +2949,11 @@ Klicken Sie auf **Template Options**
 ![](../assets/Kapitel-19/19.jpg)
 
 
-# 20. Working Copy
+# <a name="working-copy"></a>20. Working Copy
 
 Mit APEX 23.2 hat ein neues kollaboratives Feature Einzug in APEX erhalten - die Working Copy. Mit der Working Copy kann eine Arbeitskopie einer App erstellt werden, an der weiterentwickelt werden kann, während die Hauptversion der App davon unberührt bleibt. Wenn Sie bereits mit anderen Versionsverwaltungen gearbeitet haben, dann wird Ihnen Vieles in diesem Kapitel vertraut vorkommen.
 
-## 20.1. Arbeitskopie erstellen
+## <a name="arbeitskopie-erstellen"></a>20.1 Arbeitskopie erstellen
 
 Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass die Startseite unserer APP überarbeitet werden soll. Konkret geht es um eine weitere Chart zur Summe der Bestellungen aufgeschlüsselt nach Staaten. Die Entwicklung soll jedoch in einem komplett eigenständigen **Branch** geschehen. Deshalb wird eine Arbeitskopie angelegt, in der das Feature (im Team) entwickelt werden kann.   
 
@@ -2871,7 +2970,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass die Sta
 
 ![](../assets/Kapitel-20/Working_Copy_03.jpg)
 
-## 20.2. Arbeitsaufgabe erledigen
+## <a name="arbeitsaufgabe-erledigen"></a>20.2 Arbeitsaufgabe erledigen
 
 - Im nächsten Schritt geht es an die eigentliche Arbeitsaufgabe. Dazu benötigen wir eine weitere **View**.
 
@@ -2918,7 +3017,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass die Sta
 
 - Wenn Sie die Seite nun speichern und ausführen, sehen Sie das neu hinzugefügte Tortendiagramm.
 
-## 20.3. Vergleich zwischen Branch und Main
+## <a name="vergleich-zwischen-branch-und-main"></a>20.3 Vergleich zwischen Branch und Main
 
 ![](../assets/Kapitel-20/Working_Copy_09.jpg)
 
@@ -2940,7 +3039,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass die Sta
 
 - Beachten Sie auch, dass die angelegte View keinen Unterschied zwischen den Versionen augelöst hat, sie steht beiden Apps zur Verfügung. Es werden nur Änderungen in der App berücksichtigt.
 
-## 20.4. Änderung in Main
+## <a name="aenderung-in-main"></a>20.4 Änderung in Main
 
 - Schließen Sie die Darstellung und wechseln Sie von der Working Copy in die **Hauptversion der App**. 
 
@@ -3019,13 +3118,13 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass die Sta
 - Sie haben damit das Kapitel zur neuen Versionierungsmöglichkeit in APEX 23.2 - der **Working Copy** - erfolgreich abgeschlossen.
 
 
-# 21. APEX Workflow
+# <a name="apex-workflow"></a>21. APEX Workflow
 
 Mit APEX 23.2 werden Workflows direkt in APEX integriert. Mit **APEX Workflow** lassen sich Business-Prozesse mittels der grafischen Spezifikationssprache **Busines Process Model and Notation (BPMN)** darstellen und ausführen. Workflows basiert auf der Erweiterung **Flows for APEX** zu der Sie weitere Informationen unter dem Link [https://flowsforapex.org/](https://flowsforapex.org/) erhalten. 
 
 In dem folgenden Kapitel nutzen wir Workflows um eine Demoversion einer vereinfachten Reservierung eines Restauranttisches zu erstellen. Die Demo lehnt sich an den Blog-Beitrag **Simplify Business Process Management Using APEX Workflow** von Ananya Chatterjee an. [Link zum Blog](https://blogs.oracle.com/apex/post/simplify-business-process-management-using-apex-workflow-create-doctor-appointment-application)
 
-## 21.1. Ausgangspunkt Use Case und Flow-Chart
+## <a name="ausgangspunkt-use-case-und-flow-chart"></a>21.1 Ausgangspunkt Use Case und Flow-Chart
 
 Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass ein Restaurant ein einfaches Buchungsformular über die Website realisieren möchte. In dem Formular können Gäste eine Reservierungsanfrage für einen Tisch übermitteln. Es wird im nächsten Schritt zunächst vom System geprüft, ob zu dem gewünschten Zeitraum ein Tisch für die gewünschte Anzahl an Personen frei ist. Falls nicht, kommt es sofort zu einer E-Mail an den Gast mit einer Absage des Termins. Wenn ein Tisch frei ist, wird die Anfrage an einen Restaurant-Mitarbeitenden übergeben. Der Mitarbeitende entscheidet, ob die Reservierung angenommen wird. Wird sie abgelehnt, erfolgt wieder eine Absage per E-Mail, wird sie angenommen, wird die Reservierung gespeichert und der Gast über die erfolgreiche Reservierung per E-Mail informiert. 
 
@@ -3033,7 +3132,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass ein Res
 
 ![](../assets/Kapitel-21/APEX_Workflows_01.png)
 
-## 21.2. Einrichtung der benötigten Elemente
+## <a name="workflow-einrichtung-der-benoetigten-elemente"></a>21.2 Einrichtung der benötigten Elemente
 
 - Die benötigten Tabellen und Packages wurden bereits über das **Skript für das Tutorial** in Kapitel 1 mitinstalliert. 
 
@@ -3054,7 +3153,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass ein Res
 
 ![](../assets/Kapitel-21/APEX_Workflows_02.jpg)
 
-## 21.3. Erstellen des Workflows
+## <a name="erstellen-des-workflows"></a>21.3 Erstellen des Workflows
 
 - Im nächsten Schritt geht es an die eigentliche Arbeitsaufgabe. Dazu erstellen wir zunächst einen **Workflow**.
 
@@ -3129,7 +3228,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass ein Res
 
 ![](../assets/Kapitel-21/APEX_Workflows_17.jpg)
 
-## 21.4. Task zur Reservierungsanfrage erstellen
+## <a name="task-zur-reservierungsanfrage-erstellen"></a>21.4 Task zur Reservierungsanfrage erstellen
 
 - Im nächsten Schritt erstellen Sie den Task zu Bestätigung (oder Ablehnung) der Reservierungsanfrage. Wechseln Sie dazu in die **Shared Components** und zu den **Task Definitions**. Klicken Sie auf **Create** um einen neuen Task zu erstellen.
 
@@ -3168,7 +3267,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass ein Res
 
 ![](../assets/Kapitel-21/APEX_Workflows_22b.jpg)
 
-## 21.5. Fertigstellung des Workflows
+## <a name="fertigstellung-des-workflows"></a>21.5 Fertigstellung des Workflows
 
 - Im nächsten Schritt geht es mit der Arbeit am Workflow weiter. Wechseln Sie dafür wieder in die **Workflows** in den **Shared Components** und klicken Sie auf **Dinner Reservation**. 
 
@@ -3339,7 +3438,7 @@ The Restaurant Team
 
 ![](../assets/Kapitel-21/APEX_Workflows_51.jpg)
 
-## 21.6. Erstellen der App-Seiten
+## <a name="workflow-erstellen-der-app-seiten"></a>21.6 Erstellen der App-Seiten
 
 - Mit dem erstellten Workflow geht es nun weiter mit dem Aufbau der eigentlichen App. Wechseln Sie dazu zunächst in die **Shared Components** und die **Static Application Files**. 
 
@@ -3474,7 +3573,7 @@ Table &DINING_TABLE_ID.: &GUEST_NAME. &GUEST_LAST_NAME. with &GUEST_COUNT. guest
 ```
 ![](../assets/Kapitel-21/APEX_Workflows_71.jpg)
 
-## 21.7. Anlegen einer Unified Task List
+## <a name="workflow-anlegen-einer-unified-task-list"></a>21.7 Anlegen einer Unified Task List
 
 - Legen Sie nun eine weitere neue Seite an, eine **Unified Task List**. Über diese Task List kann das Restaurant-Personal die eingegangenen Reservierungsanfragen ansehen und entscheiden.
 
@@ -3484,7 +3583,7 @@ Table &DINING_TABLE_ID.: &GUEST_NAME. &GUEST_LAST_NAME. with &GUEST_COUNT. guest
 
 ![](../assets/Kapitel-21/APEX_Workflows_73.jpg)
 
-## 21.8. Anlegen der Workflow Console
+## <a name="anlegen-der-workflow-console"></a>21.8 Anlegen der Workflow Console
 
 - Erstellen Sie im **App Builder** eine weitere Seite - Sie benötigen noch die **Workflow Console** mit der Sie eine Übersicht zum Stand der initiierten Workflows erhalten. 
 
@@ -3494,7 +3593,7 @@ Table &DINING_TABLE_ID.: &GUEST_NAME. &GUEST_LAST_NAME. with &GUEST_COUNT. guest
 
 ![](../assets/Kapitel-21/APEX_Workflows_75.jpg)
 
-## 21.9. Application Logo anpassen
+## <a name="workflow-application-logo-anpassen"></a>21.9 Application Logo anpassen
 
 - Um die App noch etwas abzurunden, stellen Sie unter **Shared Components** unter **Application Definition** und dem Punkt **User Interface** ein neues Icon ein
 
@@ -3514,7 +3613,7 @@ Table &DINING_TABLE_ID.: &GUEST_NAME. &GUEST_LAST_NAME. with &GUEST_COUNT. guest
 
 - Mit diesem Schritt ist die Application fertiggestellt! Im nächsten Abschnitt geht es noch auf eine kurze Erkundungstour durch die Reservierungsdemo.
 
-## 21.10. Tour durch die neue App
+## <a name="workflow-tour-durch-die-neue-app"></a>21.10 Tour durch die neue App
 
 - Starten Sie die Tour mit einem Log-In mit Ihrem Account. Besuchen Sie das Reservierungsformular und schreiben eine Eingabe, die ähnlich der folgenden sein könnte (verwenden Sie idealerweise Ihre eigene E-Mailadresse). Schicken Sie die vollständige Eingabe ab.
 
