@@ -1,6 +1,6 @@
-# 12. Plug-Ins
+# <a name="plug-ins"></a>12. Plug-Ins
 
-## 12.1. Einleitung
+## <a name="pi-einleitung"></a>12.1 Einleitung
 
 Plug-Ins sind Erweiterungen und ermöglichen es, APEX um benutzerdefinierte Elementtypen, Regionstypen, Prozesse und dynamische Aktionen zu erweitern. Komponenten, die auf Plug-Ins basieren, werden ähnlich wie die Standard APEX-Komponenten erstellt und gepflegt. Mit Plug-Ins können Entwickler angepasste Komponenten erstellen, um die Funktionalität, das Erscheinungsbild und die Benutzerfreundlichkeit Ihrer Anwendungen zu verbessern.  
 
@@ -10,7 +10,7 @@ Im Folgenden werden Sie Plug-Ins in Ihre Anwendung einbinden.
 >Weitere Plug-Ins außer die hier erwähnten finden Sie z.B. auf apex.world:  
 [https://apex.world/ords/f?p=100:700](https://apex.world/ords/f?p=100:700)
 
-## 12.2.	Plug-Ins
+## <a name="pi-plug-ins"></a>12.2 Plug-Ins
 
 Für die Bearbeitung dieser Aufgaben werden wir ein Plug-In von folgender Seite verwenden: 
 
@@ -19,7 +19,7 @@ Für die Bearbeitung dieser Aufgaben werden wir ein Plug-In von folgender Seite 
 Dieses Plugin ermöglicht es dem Entwickler, Tooltips bei Buttons, Feldern, Regionen, Berichten und weiteren Komponenten einzubauen.  
 Das Plug-In muss zunächst heruntergeladen und entpackt werden.  
 
-### 12.2.1.	Plug-In importieren
+### <a name="plug-in-importieren"></a>12.2.1	Plug-In importieren
 
 - Öffnen Sie zunächst den **App Builder** und Ihre **Anwendung**. Klicken Sie anschließend auf **Shared Components**.   
 
@@ -49,7 +49,7 @@ Das Plug-In muss zunächst heruntergeladen und entpackt werden.
 
 ![](../../assets/Kapitel-12/Plugins_05.jpg)
 
-### 12.2.2.	Plugin einbinden
+### <a name="plugin-einbinden"></a>12.2.2	Plugin einbinden
 
 - Das Plug-In wurde nun installiert. Klicken Sie auf Ihre Applikation, um zurück zu gelangen. 
 
@@ -86,7 +86,7 @@ Dynamic Actions ermöglichen es Entwicklern, clientseitiges Verhalten ohne JavaS
 
 Es gibt noch viele weitere Einstellungen bzw. **Plug-In Settings**, die Sie wie oben beschrieben, beliebig verwenden können. Probieren Sie gerne einige davon aus.
 
-### 12.2.3.	Quality Assurance Plugin 
+### <a name="quality-assurance-plugin"></a>12.2.3	Quality Assurance Plugin 
 
 - Gehen Sie wie in 12.2.1 beschrieben vor, um ein weiteres Plug-In zu installieren. 
 Das Plug-In ermöglicht es, Entwicklungsvorgaben zu definieren und zeigt anschließend Verstöße hiergegen automatisch auf der jeweiligen Seite an.  
@@ -131,7 +131,6 @@ Da diese Region auf der **Global Page – 0** angelegt wurde, wird nun auf jeder
 
 Damit das Plug-In Verstöße gegen die Guidelines anzeigen kann, müssen diese definiert werden. Beim Download des **Plug-Ins** werden bereits einige Beispielregeln mitgeliefert. 
 - Wie zuvor muss nun über den **SQL Workshop** ein **SQL-Skript** hochgeladen und eingespielt werden. Das Skript finden Sie unter: **…src\DML\plugin_qa_rules.sql**
-
  
 - Wenn Sie nun in die Anwendung wechseln und eine Seite aufrufen, werden am Ende der Seite in der Region QS die Regelverstöße angezeigt.  
 

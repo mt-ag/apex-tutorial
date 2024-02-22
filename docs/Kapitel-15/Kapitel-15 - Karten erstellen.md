@@ -1,8 +1,8 @@
-# 15. Karten erstellen 
+# <a name="karten-erstellen"></a>15. Karten erstellen 
 In dieser Aufgabe werden Sie eine Anwendungsseite mit einer Weltkarte erstellen. Die nötigen Daten dafür erlangen wir über eine (in Kapitel 13.2 vorgestellte) REST Data Source.
 Das Ziel ist es, alle Erdbeben auf der Erde, die in den letzten 24 Stunden stattfanden, auf einer Karte in APEX darzustellen.
 
-## 15.1.	REST Data Source 
+## <a name="karten-rest-data-source"></a>15.1	REST Data Source 
 Um später die Erdbebendaten der Karte aktuell zu halten, richten Sie nun eine REST Data Source ein. Die detaillierten Schritte dieses Unterkapitels können Sie sich mit Screenshots bei Bedarf erneut in Kapitel 13.2 anschauen, im Folgenden werden die Schritte darum nur grob beschrieben.
 
 Zu Beginn erstellen Sie im App-Builder eine neue Anwendung und nennen diese **Earthquakes**. Sie brauchen keine weiteren Einstellungen vorzunehmen. In der Anwendungsübersicht wählen Sie dann **Shared Components** aus.
@@ -30,7 +30,7 @@ Nach dem Sie auf das zweite Feld geklickt haben, öffnet sich ein Pop-Up Fenster
 
 Die Tabelle mitsamt der aktuellen Erdbebendaten ist nun im **Object Browser** vorzufinden.  
  
-## 15.2.	Erstellen der Karte auf einer neuen Anwendungsseite
+## <a name="erstellen-der-karte-auf-einer-neuen-anwendungsseite"></a>15.2	Erstellen der Karte auf einer neuen Anwendungsseite
 Stellen Sie sicher, dass Sie nun auf die Anwendungsübersicht jener Anwendung navigieren, die Sie zu Beginn erstellt haben.  
 
 - Dort wählen Sie **Create Page**.  

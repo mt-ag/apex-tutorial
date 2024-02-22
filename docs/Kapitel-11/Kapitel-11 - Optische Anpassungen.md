@@ -1,9 +1,9 @@
-# 11. Optische Anpassungen
+# <a name="optische-anpassungen"></a> 11. Optische Anpassungen
 Unterschiedliche Anwendungsfälle bringen unterschiedliche Anforderungen an das User Interface einer Anwendung mit. Im Standard ist das Interface von APEX eher schlicht gehalten, es lässt sich jedoch durch Kombination von Einstellungen der Komponenten und eigenem CSS-Code umfangreich anpassen.
 
 CSS-Code ermöglicht es Entwicklern, die gestalterischen Attribute von Seiten, Regionen und Items über den Standard hinaus anzupassen. CSS besteht aus einer Liste von Regeln, die dem Web-Browser beschreiben, wie bestimmte Elemente einer Webseite dargestellt werden sollen. Damit nicht für jedes Element eine eigene Liste an Regeln definiert werden muss, können identische Elemente in Klassen zusammengefasst werden.  
 
-## 11.1. Dark-Mode
+## <a name="dark-mode"></a>11.1 Dark-Mode
 Sowohl für die Entwicklungsumgebung als auch für die fertige Anwendung lässt sich ein Dark-Mode aktivieren. Für letztere wird dieser in den Theme-Einstellungen der Anwendung festgelegt.
 - Öffnen Sie zunächst Ihre **Anwendung** aus dem APP Builder. Klicken Sie in der Leiste am unteren Bildschirmrand auf **Customize** und dann auf **Theme Roller**. Sollte die untere Leiste versteckt sein, bewegen Sie den Mauszeiger an den unteren Rand des Browsers. Über die Leiste können Sie das Theme ändern sowie weitere CSS-Anpassungen durchführen.  
 
@@ -17,7 +17,7 @@ Ihre erstellte Anwendung sollte nun wie folgt aussehen:
 
 ![](../../assets/Kapitel-11/Optisch_03.jpg) 
  
-## 11.2. Anpassung des Login-Screens
+## <a name="anpassung-des-login-screens"></a>11.2 Anpassung des Login-Screens
 Nach diesem Kapitel hat Ihr Login-Screen ein Hintergrundbild und sieht somit ansprechender aus.
 - Öffnen Sie zunächst den **App Builder** und klicken Sie anschließend auf die von Ihnen erstellte **Anwendung**. 
 - Klicken Sie auf die **Seite 9999 - *Login Page***. 
@@ -102,4 +102,4 @@ Klicken Sie anschließend auf den **Edit Page 9999** Button in der **Breadcrumb 
 - Klicken Sie auf den Button **Save and Run Page**, um sich die überarbeitete Seite anzuschauen. 
 Sie sehen nun die von Ihnen getätigten Änderungen. 
 
-![](../../assets/Kapitel-11/Optisch_20.jpg) 
+![](../../assets/Kapitel-11/Optisch_20.jpg)

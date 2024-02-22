@@ -1,6 +1,6 @@
-# 10. Smart Filters
+# <a name="smart-filters"></a>10. Smart Filters
 Die **Smart Filters** bieten die Möglichkeit, Daten mithilfe von Filtervorschlägen oder Suchbegriffen leicht einzugrenzen. Diese werden als Chips unter der Suchleiste oder als Vorschläge während des Tippens angezeigt.
-## 10.1. Erstellung der View
+## <a name="sf-erstellung-der-view"></a>10.1 Erstellung der View
 Für die Bearbeitung dieser Aufgabe wird eine **View** benötigt. 
 **View Name: TUTO_P0091_VW**
 Query:
@@ -14,7 +14,7 @@ select prdt_info_id,
 from product_info
 ```
 
-## 10.2. Create Page
+## <a name="sf-create-page"></a>10.2 Create Page
 - Öffnen Sie den **App Builder** über die Navigationsleiste, wählen Sie Ihre Anwendung aus und klicken Sie auf den Button **Create Page**.  
 - Wählen Sie den Seitentypen **Component** aus.  
 - Wählen Sie den Bereichstypen **Smart Filters** aus.  
@@ -36,7 +36,7 @@ Die Daten werden als **Classic Report** dargestellt. Darüber befindet sich eine
 
 ![](../../assets/Kapitel-10/Smart_04.jpg)  
  
-## 10.3. Create Filters
+## <a name="sf-create-filters"></a>10.3 Create Filters
 - Wechseln Sie zurück in den **Page Designer** und erstellen Sie einen neuen Filter, indem Sie einen Rechtsklick auf den Eintrag **Filters** machen und anschließend **Create Filter** auswählen.  
 
 ![](../../assets/Kapitel-10/Smart_05.jpg)  

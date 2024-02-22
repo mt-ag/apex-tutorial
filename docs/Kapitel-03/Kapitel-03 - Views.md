@@ -1,4 +1,4 @@
-# 3. Zugriff auf Views statt auf Tabellen vornehmen
+# <a name="views"></a>3. Zugriff auf Views statt auf Tabellen vornehmen
 
 Um einen einheitlichen Zugriff auf die Daten zu gewähren, werden View-Schichten genutzt.  
 
@@ -16,7 +16,7 @@ In diesem Tutorial wird ausschließlich auf seitenspezifische Views zurückgegri
 
 Im Folgenden werden nun die Views erstellt und die Zugriffe, die auf die Tabellen erfolgen, auf die Views umgestellt.  
  
-## 3.1. Tools
+## <a name="tools"></a>3.1 Tools
 Im SQL Workshop werden Werkzeuge bereitgestellt, mit denen Datenbankobjekte angezeigt, erstellt und verwaltet werden können.  
 
 Eines der Werkzeuge ist **SQL-Commands**. In diesem können direkt SQL-Befehle eingegeben und ausgeführt werden.   
@@ -61,8 +61,7 @@ In diesem Fall setzt sich die Bezeichnung der View wie folgt zusammen:
 
 ![](../../assets/Kapitel-03/Object_Browser_Create_View_3.jpg)  
 
- 
-## 3.2. Page Processes
+## <a name="pageprocesses"></a>3.2 Page Processes
 **Page Processes** werden zu bestimmten, festgelegten Zeitpunkten ausgeführt, beispielsweise beim Aufrufen der Seite oder beim Speichern. Durch sie werden Aufrufe der Applikationslogik oder Datenbank-Operationen realisiert. Für die Verarbeitung eines Formulars sind in APEX zwei Prozesse verantwortlich: **Form – Initialization** und **Form – Automatic Row Processing (DML)**.  
 
 Beide werden automatisch beim Erstellen einer Formular-Seite mithilfe des Wizards generiert und sorgen dafür, dass die Eingabefelder beim Aufruf die richtigen Daten enthalten und dass die Werte beim Abschicken des Formulars in der entsprechenden Datenquelle gespeichert werden.  

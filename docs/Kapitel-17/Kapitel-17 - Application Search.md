@@ -1,16 +1,16 @@
-# 17. Application Search: Suchregionen und Suchkonfigurationen erstellen
+# 17. <a name="application-search-suchregionen-und-suchkonfigurationen-erstellen"></a>Application Search: Suchregionen und Suchkonfigurationen erstellen
 
 In dieser Aufgabe werden Sie eine Suchregion und Suchkonfigurationen erstellen, die in mehreren Datenquellen nach Ergebnissen sucht. Dazu benötigen Sie die in Kapitel 13 beschriebenen Kenntnisse.  
 
 Ziel ist es, Ihren Benutzern eine leistungsstarke Funktion im Stil einer Suchmaschine zur Verfügung stellen, die in Minutenschnelle mehrere Datenquellen nach Ergebnissen durchsucht und diese in einer einzigen einheitlichen Suchergebnisregion anzeigt.  
 
-## 17.1. Erstellen eine Suchkonfiguration 
+## <a name="erstellen-eine-suchkonfiguration"></a>17.1 Erstellen eine Suchkonfiguration 
 
 Diese neue gemeinsame Komponente definiert die zu durchsuchenden Datenquellen und die Anzeige der Ergebnisse. Die Suche kann auf lokalen Daten, APEX-Listen, REST-fähigen SQL-Services oder REST-Services basieren.  
 
 In den folgenden zwei Beispielen wird die Suche einmal in den lokalen Daten und einmal mit einer REST-Datenquelle durchgeführt.  
 
-### 17.1.1. Lokalen Daten Datenquelle
+### <a name="lokalen-daten-datenquelle"></a>17.1.1 Lokalen Daten Datenquelle
 
 - Für die Bearbeitung dieser Aufgabe wird eine **View** benötigt.  
 
@@ -100,7 +100,7 @@ In den folgenden zwei Beispielen wird die Suche einmal in den lokalen Daten und 
 
 ![](../../assets/Kapitel-17/search_config_10.jpg)  
     
-### 17.1.2. REST-Datenquelle
+### <a name="suche-rest-datenquelle"></a>17.1.2 REST-Datenquelle
 
 Über den in Kapitel 13 erstellten RESTful Service und die REST-Datenquelle erstellen wir eine Suchkonfiguration, die auf der REST-Datenquelle **Departments** basiert.  
 
@@ -143,11 +143,11 @@ In den folgenden zwei Beispielen wird die Suche einmal in den lokalen Daten und 
 
 ![](../../assets/Kapitel-17/search_config_13.jpg)  
 
-## 17.2. Suchkonfigurationen in der Anwendung verwenden  
+## <a name="suchkonfigurationen-in-der-anwendung-verwenden"></a>17.2 Suchkonfigurationen in der Anwendung verwenden  
 
 Um die Suchkonfigurationen zu verwenden, erstellen Sie eine Seite, auf der die Suchergebnisse angezeigt werden und ein Suchfeld, in das Sie den Suchbegriff eingeben können.  
 
-### 17.2.1. Suchseite erstellen 
+### <a name="suchseite-erstellen"></a>17.2.1 Suchseite erstellen 
 
 - Im **App Builder** klicken Sie auf **Create Page**.  
 - Wählen Sie den Seitentypen **Component** aus.  
@@ -173,92 +173,4 @@ Eine Suchkonfigurationsliste ist bereits verfügbar. Wählen Sie die Suchkonfigu
 ![](../../assets/Kapitel-17/search_config_17.jpg)  
 
 
-## 17.3. Suchfeld in die Navigationsleiste einbauen  
-
-- Erstellen Sie auf der globalen Seite ein Item mit den folgenden Einstellungen:  
-
-  | | |  
-  |--|--|
-  | **Name** | *P0_SEARCH* | 
-  | **Type** | *Text Field*| 
-  | **Label** | *Search*| 
-  | **Position** | *After Logo*| 
-  | **Icon** | *fa-search*| 
-  | | |  
-  
--  In **Template Options** wählen Sie **Stretch Form Item** und **Size Large** aus.  
-  
-![](../../assets/Kapitel-17/search_config_18.jpg)  
-
-- Unter **Advanced** verhindern Sie mit **Ignore** bei **Warn on unsaved changes** Meldungen zum Datenverlust beim verlassen von Seiten.
-
-![](../../assets/Kapitel-17/search_config_18b.jpg) 
-
-- Erstellen Sie eine **Dynamic Action** auf dem **P0_SEARCH** Item mit den folgenden Einstellungen:  
-
-  | | |  
-  |--|--|
-  | **Name** | *Redirect to Results* | 
-  | **Event** | *Key Press*| 
-  | **Client-side Condition** | *JavaScript expression*| 
-  | **JavaScript Expression** | *this.browserEvent.keyCode === 13*| 
-  | | |  
-
-![](../../assets/Kapitel-17/search_config_19.jpg)  
-
-Die **Dynamic Action** umfasst drei **True Actions**:  
-
-![](../../assets/Kapitel-17/search_config_20.jpg)  
-
-- Die erste Aktion ist vom Type *Execute JavaScript Code* mit den folgenden Einstellungen:  
-
-  | | |  
-  |--|--|
-  | **Name** | *Prevent Default Page Submit* | 
-  | **Action** | *Execute JavaScript Code*| 
-  | **Code** | *this.browserEvent.preventDefault();*| 
-  | | |  
-
-![](../../assets/Kapitel-17/search_config_21.jpg)
-
-- Die zweite Aktion ist vom Type *Execute Server-side Code* mit den folgenden Einstellungen:
-
-  | | |  
-  |--|--|
-  | **Name** | *Submit Search Item* | 
-  | **Action** | *Execute Server-side Code*| 
-  | **Language** | *PL/SQL*| 
-  | **PL/SQL Code** | *null;*| 
-  | **Items to Submit** | *P0_SEARCH*| 
-  | | | 
-
-![](../../assets/Kapitel-17/search_config_22.jpg)
-
-- Und die dritte Aktion ist wieder vom Type *Execute JavaScript Code* mit den folgenden Einstellungen:
-
-  | | |  
-  |--|--|
-  | **Name** | *Redirect to Results Page* | 
-  | **Action** | *Execute JavaScript Code*| 
-  | **Code** | *apex.navigation.redirect ( "f?p=&APP_ID.:81:&APP_SESSION.::NO:RP::" );*| 
-  | | |  
-
-![](../../assets/Kapitel-17/search_config_23.jpg)  
-
-
-- Löschen Sie das Searchfeld **P81_SEARCH** auf der **Seite 81**.  
-
-![](../../assets/Kapitel-17/search_config_24.jpg)  
-
-- Unter **Body** klicken Sie auf **Search Results** Region, und dann auf **Attributes**.  
-
-- Geben Sie als **Search Page Item**: **P0_SEARCH** ein und klicken Sie anschließend auf **Save**.  
-
-![](../../assets/Kapitel-17/search_config_25.jpg)  
-    
-
-<br>  
-
-Das Suchfeld taucht nun in der Navigationsleiste auf, ist auf jeder Seite verfügbar und leitet Sie auf die Suchergebnisseite weiter, wenn ein Suchwert eingegeben und die Eingabetaste gedrückt wird.  
-
-![](../../assets/Kapitel-17/search_config_26.jpg)
+## <a name="suchfeld-in-die-navigationsleiste-einbauen"></a>17.3 Suchfeld in die Navigationsleiste einbauen

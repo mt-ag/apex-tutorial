@@ -1,10 +1,10 @@
-# 14. Exkurs: Datenmodellierung mittels Quick SQL
+# <a name="exkurs-datenmodellierung-mittels-quick-sql"></a>14. Exkurs: Datenmodellierung mittels Quick SQL
 
 Mit Quick SQL können Datenmodelle schnell entworfen werden, indem eine **Markdown-artige Kurzschriftsyntax** verwendet wird. Hauptdetailbeziehungen können über ein **ERM** („Entity-Relationship-Modell“) dargestellt werden.  
 
 > Weitere Informationen erhalten Sie unter [https://apex.oracle.com/en/quicksql/](https://apex.oracle.com/en/quicksql/) (Login erforderlich).
 
-## 14.1. Erstellung der Datenbank-Tabelle
+## <a name="ex-erstellung-der-datenbank-tabelle"></a>14.1 Erstellung der Datenbank-Tabelle
 
 - Navigieren Sie auf **SQL Workshop** und klicken Sie anschließend auf **SQL Scripts**.
 
@@ -49,7 +49,7 @@ SALARIES /insert 5
 
 ![](../../assets/Kapitel-14/Exkurs_07.jpg)
  
-## 14.2. Erstellung eines Interactive Reports
+## <a name="ex-erstellung-eines-interactive-reports"></a>14.2 Erstellung eines Interactive Reports
 
 Zur Visualisierung der eben erstellten Daten legen Sie in dieser Aufgabe einen Interactive Report an.
 - Dazu gehen Sie wieder in den **App Builder**, dann auf Ihre **Anwendung** und anschließend klicken Sie auf **Create Page** und wählen **Interactive Report** aus.
@@ -66,7 +66,7 @@ Zur Visualisierung der eben erstellten Daten legen Sie in dieser Aufgabe einen I
 
 ![](../../assets/Kapitel-14/Exkurs_10.jpg)
 
-## 14.3. Beispieldaten mittels Data Generator generieren
+## <a name="beispieldaten-mittels-data-generator-generieren"></a>14.3 Beispieldaten mittels Data Generator generieren
 
 Verwenden Sie das Dienstprogramm Data Generator, um **Blueprints** zu erstellen und anschließend Beispieldaten zu generieren.
 - Navigieren Sie auf **SQL Workshop** und klicken Sie anschließend auf **Utilities**.

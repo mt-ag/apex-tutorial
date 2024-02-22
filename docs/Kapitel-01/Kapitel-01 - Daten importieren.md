@@ -5,9 +5,9 @@ Bevor Sie mit der Bearbeitung dieses Tutorials beginnen können, müssen Sie ein
 
 Falls Sie die Möglichkeit nutzen möchten, englischsprachige Tutorials zu bearbeiten, gibt es unter dem folgenden Link die Möglichkeit, dies zu tun. Klicken Sie einfach auf [https://apex.oracle.com/en/learn/tutorials/](https://apex.oracle.com/en/learn/tutorials/) und bearbeiten Sie die von APEX bereitgestellten Tutorials, wenn Sie noch einen größeren Einblick in die Welt von APEX erhalten möchten.  
 
-# 1. Import der benötigten Daten
+# <a name="datenimport"></a> 1. Import der benötigten Daten 
 
-## 1.1. Skript
+## <a name="skript"></a> 1.1 Skript
 
 Ein Skript ist eine Liste von Befehlen zur Automatisierung von Prozessen. In diesem Fall erzeugt das Skript Tabellen und Sequenzen. Außerdem werden die Tabellen durch das Skript mit Daten befüllt.
 
@@ -19,11 +19,11 @@ Das Hochladen und Ausführen des Skripts sorgt dafür, dass alle Datenbankobjekt
 
 Verwenden Sie das beigefügte SQL-Skript (**Skript.sql**), um die Daten wie im Folgenden beschrieben zu importieren.
 
-## 1.2. Import des Skripts
+## <a name="skriptimport"></a> 1.2 Import des Skripts
 
 - Navigieren Sie zum **SQL-Workshop**, indem Sie eine der zwei rot markierten Möglichkeiten wählen.
 
-![](../../assets/Kapitel-01/Open_SQL_Workshop.jpg)
+![](../../assets/Kapitel-01/Open_SQL_Workshop.jpg) 
 
 - Wenn Sie sich im **SQL Workshop** befinden, klicken Sie dort auf **SQL Scripts**.
 
@@ -51,7 +51,7 @@ Verwenden Sie das beigefügte SQL-Skript (**Skript.sql**), um die Daten wie im F
 
 Es sollten jetzt alle Tabellen und Daten, welche für dieses Tutorial benötigt werden, in Ihrem Workspace vorhanden sein.  
 
-## 1.3. Datenmodellierung mittels Quick SQL
+## <a name="datenmodellierung"></a>1.3 Datenmodellierung mittels Quick SQL
 
 Eine weitere Möglichkeit, Datenmodelle ohne viel Aufwand anzulegen, bietet Quick SQL.  
 Wie das funktioniert, erfahren Sie in der <span style="color:red">**Aufgabe #14: Exkurs: Datenmodellierung mittels Quick SQL**</span>.

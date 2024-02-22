@@ -3208,7 +3208,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass ein Res
 
 ![](../assets/Kapitel-21/APEX_Workflows_12.jpg)
 
-- Nun verknüpfen Sie im Workflow 1.0 unter **Additional Data** die Tabelle **T_RESTAURANT_STAFF**. Dies stellt später sicher, dass die erstellen Aufgaben (Tasks) entsprechenden Bearbeitenden zugeordnet werden können. Daneben stehen dadurch die Spalten der Tabelle als Bindvariablen für den Workflow zur Verfügung. Wählen Sie als **Primary Key Column** die Spalte **ID**.
+- Nun verknüpfen Sie im Workflow 1.0 unter **Additional Data** die Tabelle **T_RESTAURANT_STAFF**. Dies stellt später sicher, dass die erstellen Aufgaben (Tasks) entsprechenden Bearbeitenden zugeordnet werden können. Daneben stehen dadurch die Spalten der Tabelle als Bindvariablen für den Workflow zur Verfügung. Wählen Sie als **Primary Key Column** die Spalte **RST_ID**.
 
 ![](../assets/Kapitel-21/APEX_Workflows_13.jpg)
 
@@ -3241,14 +3241,14 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass ein Res
 - Im nächsten Schritt setzen Sie die **Action Source** auf **SQL Query**. In das Feld für die Query tragen Sie die folgende Query ein:
 
 ```sql
-  select * from t_restaurant_staff where id = :APEX$TASK_PK
+  select * from t_restaurant_staff where rst_id = :APEX$TASK_PK
   ```
 
 ![](../assets/Kapitel-21/APEX_Workflows_20.jpg)
 
-- Erstellen Sie eine neue Zeile in der Tabelle **Participants**. Der **Participant Type** ist **Potential Owner**, der **Value Type** ist **Expression** und der **Value** ist **:NAME**. Dies bezieht sich auf die entsprechende Spalte in der Mitarbeitertabelle **T_RESTAURANT_STAFF** die dadurch jeweils Tasks bearbeiten dürfen.
+- Erstellen Sie eine neue Zeile in der Tabelle **Participants**. Der **Participant Type** ist **Potential Owner**, der **Value Type** ist **Expression** und der **Value** ist **:RST_NAME**. Dies bezieht sich auf die entsprechende Spalte in der Mitarbeitertabelle **T_RESTAURANT_STAFF** die dadurch jeweils Tasks bearbeiten dürfen.
 
-![](../assets/Kapitel-21/APEX_Workflows_21.jpg)
+![](../assets/Kapitel-21/APEX_Workflows_21.jpg) 
 
 - Auch für den Task werden **Parameter** bereitgestellt. Fügen Sie jeweils die folgenden Reihen zur Parameter-Tabelle hinzu:
 
@@ -3346,7 +3346,7 @@ The Restaurant Team
 
 ![](../assets/Kapitel-21/APEX_Workflows_38.jpg)
 
-- Jetzt geht es weiter mit dem Fall, dass die erste Prüfung ergibt, dass ein Tisch frei ist. Für diesen Fall soll ein Mitarbeitender entscheiden, ob die Reservierung angenommen wird. Dazu erstellen Sie zunächst eine **Human Task - Create** Aktivität. Geben Sie der Aktivität den Namen **Create Reservation Request**, in **Definition** wählen Sie den eben erstellten Task **Reservation Request**. Für Outcome wählen Sie die automatisch über die Task erstellte **Variable** **TASK_OUTCOME** und in **Owner** die - ebenfalls automatisch erstellte - **Variable** **APPROVER**. 
+- Jetzt geht es weiter mit dem Fall, dass die erste Prüfung ergibt, dass ein Tisch frei ist. Für diesen Fall soll ein Mitarbeitender entscheiden, ob die Reservierung angenommen wird. Dazu erstellen Sie zunächst eine **Human Task - Create** Aktivität. Geben Sie der Aktivität den Namen **Create Reservation Request**, in **Definition** wählen Sie den eben erstellten Task **Reservation Request**. Die **Details Primary Key Item** legen Sie auf **RST_ID** fest. Für **Outcome** wählen Sie die automatisch über die Task erstellte **Variable** **TASK_OUTCOME** und in **Owner** die - ebenfalls automatisch erstellte - **Variable** **APPROVER**. 
 
 ![](../assets/Kapitel-21/APEX_Workflows_39.jpg)
 
@@ -3496,7 +3496,7 @@ body {
 - Für den Zweck der Demo wird an dieser Stelle noch eine Einstellungsmöglichkeit des Mitarbeitenden eingefügt, der die Entscheidung über die Reservierung trifft. Fügen Sie der Seite ein weiteres Page Item **P1_APPROVER** hinzu. Die **Column Span** legen Sie ebenfalls auf **5** fest. Unter **List of Value** legen Sie das folgende **SQL-Query** fest. Deaktivieren **Display Extra Values** und **Display Null Value** und legen den **Default** auf **Static** und den Wert auf **1** fest: 
 
 ```sql
-select name as d, id as r from t_restaurant_staff
+select rst_name as d, rst_id as r from tutowf_staff_vw
 ```
 ![](../assets/Kapitel-21/APEX_Workflows_59.jpg)
 
@@ -3550,7 +3550,7 @@ select to_char(systimestamp, 'DD.MM.YYYY HH24:MI') from dual
 
 ![](../assets/Kapitel-21/APEX_Workflows_68.jpg)
 
-- Titel der Seite wird **Reservations**, die verwendete Tabelle ist **T_RESERVATION**. Nutzen Sie die **Navigation** und stellen das **Parent Navigation Menu Entry** auf **Home**. 
+- Titel der Seite wird **Reservations**, die verwendete View ist **TUTOWF_RESERVATION_VW**. Nutzen Sie die **Navigation** und stellen das **Parent Navigation Menu Entry** auf **Home**. 
 
 ![](../assets/Kapitel-21/APEX_Workflows_69.jpg)
 
@@ -3558,9 +3558,10 @@ select to_char(systimestamp, 'DD.MM.YYYY HH24:MI') from dual
 
   | | |  
   |--|--|
-  | **Display Column** | *GUEST_LAST_NAME*|
-  | **Start Date Column** | *START_DATE* | 
-  | **End Date Column** | *END_DATE*|  
+  | **Display Column** | *RES_GUEST_LAST_NAME*|
+  | **Start Date Column** | *RES_START_DATE* | 
+  | **End Date Column** | *RES_END_DATE*|  
+  | **Primary Key Column** | *RES_ID*|  
   | **Show Time** | *Yes*|
   | | |
 
@@ -3569,7 +3570,7 @@ select to_char(systimestamp, 'DD.MM.YYYY HH24:MI') from dual
 - Auf der neuen Seite 2 wählen Sie die **Region** **Reservations** aus. Setzen Sie unter **Attributes** die **Primary Key Column** auf **ID**. Unter **Supplemental Information** tragen Sie den folgenden Text ein: 
 
 ```
-Table &DINING_TABLE_ID.: &GUEST_NAME. &GUEST_LAST_NAME. with &GUEST_COUNT. guests.
+Table &RES_DINING_TABLE_ID.: &RES_GUEST_NAME. &RES_GUEST_LAST_NAME. with &RES_GUEST_COUNT. guests.
 ```
 ![](../assets/Kapitel-21/APEX_Workflows_71.jpg)
 
@@ -3651,6 +3652,10 @@ Table &DINING_TABLE_ID.: &GUEST_NAME. &GUEST_LAST_NAME. with &GUEST_COUNT. guest
 
 <br><br>
 Herzlichen Glückwunsch!  
-Sie haben das Tutorial erfolgreich beendet.  
+Sie haben das Tutorial erfolgreich beendet.
+ 
 Falls Sie noch mehr über APEX lernen wollen, schauen Sie doch mal auf unserem APEX Portal vorbei:  
 [apex.mt-itsolutions.com/from-zero-to-hero](https://apex.mt-itsolutions.com/from-zero-to-hero)
+
+Wenn Sie die nächsten Schritte mit APEX gehen oder Ihre Kenntnisse im Bereich JavaScript oder Continous Integration erweitern wollen, bieten wir Ihnen individuelle Schulung an!
+Besuchen Sie dazu unser Trainingsportal [https://apex.mt-itsolutions.com/ords/r/portal/apex/training](https://apex.mt-itsolutions.com/ords/r/portal/apex/training).

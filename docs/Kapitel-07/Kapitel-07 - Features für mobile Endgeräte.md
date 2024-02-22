@@ -1,10 +1,10 @@
-# 7. Features für mobile Endgeräte
-## 7.1. Reflow Report & Column Toggle Report
+# <a name="features-fuer-mobile-endgeraete"></a>7. Features für mobile Endgeräte
+## <a name="reflow-report--column-toggle-report"></a>7.1 Reflow Report & Column Toggle Report
 Zwei Reporttypen, die dabei helfen, dass APEX Anwendungen auch auf mobilen Endgeräten angenehm genutzt werden können, sind der **Reflow Report** und der **Column Toggle** Report.
 
 Der Reflow Report zeigt Tabellenspalten vertikal an, wenn nicht genügend Platz vorhanden ist, um sie horizontal anzuzeigen. Der **Column Toggle** Report ermöglicht es, Spalten mit verschiedenen Prioritäten zu belegen. Dabei werden Spalten mit geringer Priorität schmaler angezeigt und früher ausgeblendet als Spalten mit einer hohen Priorität.
 
-### 7.1.1. View erstellen
+### <a name="mobile-view-erstellen"></a>7.1.1 View erstellen
 - Für die Bearbeitung dieser Aufgabe wird eine **View** benötigt. 
 
 - Geben Sie Ihrer **View** den Namen ***TUTO_P0032_VW***:
@@ -30,7 +30,7 @@ Der Reflow Report zeigt Tabellenspalten vertikal an, wenn nicht genügend Platz 
       on oi.ordr_item_ordr_id = o.ordr_id
   ```
 
-### 7.1.2. Report erstellen
+### <a name="mobile-report-erstellen"></a>7.1.2 Report erstellen
 - Erstellen Sie eine neue Seite. Navigieren Sie dazu in den **App Builder** und klicken Sie dort auf **Create Page**. 
 - Wählen Sie als **Page Type** ***Interactive Report*** aus. 
 
@@ -65,7 +65,7 @@ Wenn Sie das Browserfenster zusammenschieben, verkleinert sich auch der Anzeigeb
 Es handelt sich hierbei um eine temporäre personalisierte Einstellung der Tabellenspalten. Andere Nutzer sind von dieser Einstellung nicht betroffen. Die Einstellung bleibt über ein neu laden der Webseite ***nicht*** gespeichert.
  
 
-## 7.2. Progressive Web Apps
+## <a name="progressive-web-apps"></a>7.2 Progressive Web Apps
 Durch das Auswählen des Features „Install Progressive Web App“ beim Erstellen der Anwendung, kann diese nun als Desktopanwendung installiert werden.
 
 Progressive Webanwendungen sind schnellere Apps, da sie einen speziellen Browsercache nutzen, um Ressourcen effizienter zu speichern, wodurch Seiten schneller geladen werden.
@@ -99,7 +99,7 @@ Es öffnet sich ein Bereich mit weitern Einstellungen, die zum Anpassen des User
 ![](../../assets/Kapitel-07/Features_13.jpg)
 
 
-## 7.3. Persistent Authentication
+## <a name="persistent-authentication"></a>7.3 Persistent Authentication
 Für Progressive Web Apps gibt es seit Version 23.1 von APEX eine neue Authentifizierungsmethode namens „Persistent Authentication“.
 
 Im Gegensatz zu normalen APEX Anwendungen, erscheint hier auf dem Login Bildschirm eine „**Remember me**“-Checkbox, diese ist nicht zu verwechseln mit „**Remember Username**“.

@@ -1,4 +1,4 @@
-# 18. Invoke API Process Type
+# <a name="invoke-api-process-type"></a>18. Invoke API Process Type
 
 Der *Process Type* **Invoke API** ermöglicht die komplett deklarative Ausführung von Prozeduren und Funktionen, ohne PL/SQL-Code schreiben zu müssen. Prozeduren und Funktionen können eigenständig oder Teil eines Packages sein. Der **Page Designer** legt die Parameter automatisch vorab fest und ordnet sie den entsprechenden Seitenelementen oder Spalten interaktiver Grids zu, wenn verfügbar.  
 
@@ -12,11 +12,11 @@ Ein Beispiel für einen API-Aufrufprozess ist auf der **Login Page** in der Anwe
 
 In diesem Kapitel wird eine Prozedur angelegt, um die oben genannten Funktionen nutzen zu können.
 
-## 18.1. Erstellung der benötigten Objekte 
+## <a name="api-erstellung-der-benoetigten-objekte"></a>18.1 Erstellung der benötigten Objekte 
 
 Für dieses Kapitel muss zuerst eine **Prozedur** und eine **View** erstellt werden.
 
-### 18.1.1. Erstellung der View 
+### <a name="api-erstellung-der-view"></a>18.1.1 Erstellung der View 
 
 - Für die Bearbeitung dieser Aufgabe wird eine **View** benötigt. 
 
@@ -43,7 +43,7 @@ Für dieses Kapitel muss zuerst eine **Prozedur** und eine **View** erstellt wer
       on oi.ordr_item_ordr_id = o.ordr_id
   ```
   
-### 18.1.2. Erstellung der Prozedur 
+### <a name="api-erstellung-der-prozedur"></a>18.1.2 Erstellung der Prozedur 
 
 - Analog zur Erstellung einer **View** starten Sie den Assistenten zum Erstellen einer **Prozedur**. Öffnen Sie dazu das Dropdown-Menü über das **+** und klicken auf den Eintrag **Procedure**.  
   
@@ -115,7 +115,7 @@ In diesem Fall setzt sich die Bezeichnung der View wie folgt zusammen:
 
 - Klicken Sie anschließend wieder auf **Save and Compile**.
 
-## 18.2. Invoke API Process verwenden
+## <a name="invoke-api-process-verwenden"></a>18.2 Invoke API Process verwenden
 
 - Um einen Invoke API Process zu verwenden, erstellen Sie eine editierbare Seite.
 
@@ -200,4 +200,4 @@ In diesem Fall setzt sich die Bezeichnung der View wie folgt zusammen:
   
 - Bearbeiten Sie die markierten Felder oder löschen Sie das ausgewählte **Order Item**  
 
-![](../../assets/Kapitel-18/invoke_api_18.jpg)  
+![](../../assets/Kapitel-18/invoke_api_18.jpg)

@@ -1,8 +1,8 @@
-# 20. Working Copy
+# <a name="working-copy"></a>20. Working Copy
 
 Mit APEX 23.2 hat ein neues kollaboratives Feature Einzug in APEX erhalten - die Working Copy. Mit der Working Copy kann eine Arbeitskopie einer App erstellt werden, an der weiterentwickelt werden kann, während die Hauptversion der App davon unberührt bleibt. Wenn Sie bereits mit anderen Versionsverwaltungen gearbeitet haben, dann wird Ihnen Vieles in diesem Kapitel vertraut vorkommen.
 
-## 20.1. Arbeitskopie erstellen
+## <a name="arbeitskopie-erstellen"></a>20.1 Arbeitskopie erstellen
 
 Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass die Startseite unserer APP überarbeitet werden soll. Konkret geht es um eine weitere Chart zur Summe der Bestellungen aufgeschlüsselt nach Staaten. Die Entwicklung soll jedoch in einem komplett eigenständigen **Branch** geschehen. Deshalb wird eine Arbeitskopie angelegt, in der das Feature (im Team) entwickelt werden kann.   
 
@@ -19,7 +19,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass die Sta
 
 ![](../../assets/Kapitel-20/Working_Copy_03.jpg)
 
-## 20.2. Arbeitsaufgabe erledigen
+## <a name="arbeitsaufgabe-erledigen"></a>20.2 Arbeitsaufgabe erledigen
 
 - Im nächsten Schritt geht es an die eigentliche Arbeitsaufgabe. Dazu benötigen wir eine weitere **View**.
 
@@ -66,7 +66,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass die Sta
 
 - Wenn Sie die Seite nun speichern und ausführen, sehen Sie das neu hinzugefügte Tortendiagramm.
 
-## 20.3. Vergleich zwischen Branch und Main
+## <a name="vergleich-zwischen-branch-und-main"></a>20.3 Vergleich zwischen Branch und Main
 
 ![](../../assets/Kapitel-20/Working_Copy_09.jpg)
 
@@ -88,7 +88,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass die Sta
 
 - Beachten Sie auch, dass die angelegte View keinen Unterschied zwischen den Versionen augelöst hat, sie steht beiden Apps zur Verfügung. Es werden nur Änderungen in der App berücksichtigt.
 
-## 20.4. Änderung in Main
+## <a name="aenderung-in-main"></a>20.4 Änderung in Main
 
 - Schließen Sie die Darstellung und wechseln Sie von der Working Copy in die **Hauptversion der App**. 
 

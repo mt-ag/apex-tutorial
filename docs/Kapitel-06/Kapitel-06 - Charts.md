@@ -1,10 +1,9 @@
-# 6. Charts
+# <a name="charts"></a>6. Charts
 Charts/Diagramme dienen zur grafischen Darstellung von Zahlenwerten. APEX unterstützt standardmäßig u.a. Kuchen-Diagramme, Linien-Diagramme, Blasen-Diagramme, Streu-Diagramme und Balken-Diagramme.
 
 Ziel dieses Kapitels ist es, ein Chart zu erstellen, welches das Verhältnis der Käufe sortiert nach Kategorien anzeigt.
 
-
-## 6.1. Erstellung der View
+## <a name="charts-erstellung-der-view"></a>6.1 Erstellung der View
 - Für die Bearbeitung dieser Aufgabe wird eine **View** benötigt. 
 
 - Geben Sie Ihrer **View** den Namen ***TUTO_P0001_VW***
@@ -29,7 +28,7 @@ Ziel dieses Kapitels ist es, ein Chart zu erstellen, welches das Verhältnis der
     join orders o
       on oi.ordr_item_ordr_id = o.ordr_id
   ```
-## 6.2. Charts Region
+## <a name="charts-region"></a>6.2 Charts Region
 - Öffnen Sie zunächst den **App Builder** für Ihre **Anwendung**. Klicken Sie anschließend auf die **Seite 1 -** ***Home***.
 
 - **Breadcrumbs** können meist nach dem Anlegen gelöscht werden. Sie nehmen viel Platz ein und bringen i. d. R. keinen Mehrwert für den Endanwender. **Breadcrumbs** sind hierarchische Listen von Links und bieten eine hierarchische Navigation.

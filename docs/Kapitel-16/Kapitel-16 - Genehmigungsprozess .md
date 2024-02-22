@@ -1,9 +1,9 @@
-# 16. Genehmigungsprozess erstellen
+# <a name="genehmigungsprozess-erstellen"></a>16. Genehmigungsprozess erstellen
 
 In dieser Aufgabe werden Sie eine Anwendung erstellen, die dazu dient, Gehälter von Mitarbeiter anzupassen. Die nötigen Daten dafür haben wir bereits in Kapitel 14 eingefügt.
 Das Ziel ist es, dass jeder Mitarbeiter sein Gehalt entsprechend anpassen kann, wodurch ein Genehmigungsprozess startet. Anschließend muss der Vorgesetzte den Prozess bearbeiten und entweder zustimmen oder ablehnen.
 
-## 16.1. Erstellen einer Anwendung
+## <a name="task-erstellen-einer-anwendung"></a>16.1 Erstellen einer Anwendung
 
 - Für diese Aufgabe wird eine **Anwendung** erstellt. Öffnen Sie hierzu als erstes den **App Builder** und klicken Sie auf den Button **Create**. Der App Builder zeigt alle installierten Anwendungen an.
 
@@ -19,7 +19,7 @@ Das Ziel ist es, dass jeder Mitarbeiter sein Gehalt entsprechend anpassen kann, 
 
 - Sie brauchen vorerst keine weiteren Einstellungen vorzunehmen. Klicken Sie **Create Application** um die neue Anwendung zu erstellen.
 
-## 16.2. Erstellen einer Task Definition
+## <a name="erstellen-einer-task-definition"></a>16.2 Erstellen einer Task Definition
 
 - Klicken Sie anschließend auf **Shared Components**. 
  
@@ -112,7 +112,7 @@ update salaries
  
 ![](../../assets/Kapitel-16/Process_16.jpg)  
 
-## 16.3. Erstellen der „My Approvals“ und „My Request“ Seite
+## <a name="erstellen-der-my-approvals-und-my-request-seite"></a>16.3 Erstellen der „My Approvals“ und „My Request“ Seite
 
 - Klicken Sie auf **Create Page** und wählen **Unified Task List** aus. Anschließend klicken Sie **Next**.  
 
@@ -149,7 +149,7 @@ update salaries
  
 ![](../../assets/Kapitel-16/Process_19.jpg)  
  
-## 16.4.	Erstellen der „Salary Change“ Seite
+## <a name="erstellen-der-salary-change-seite"></a>16.4	Erstellen der „Salary Change“ Seite
 
 - Klicken Sie auf **Create Page** und wählen **Blank Page** aus.  
 - Anschließend klicken Sie **Next**.  
@@ -228,7 +228,7 @@ select sary_id, sary_employee_name, sary_department, sary_salary
 
 Die Anwendung ist jetzt fertig erstellt.
 
-## 16.5.	User erstellen
+## <a name="task-user-erstellen"></a>16.5	User erstellen
 
 Bevor die Anwendung jetzt gestartet und simuliert werden kann, müssen im Workspace noch entsprechende User erstellt werden. In diesem Beispiel wird ein Mitarbeiter erstellt, der eine Gehaltsanpassung beantragen kann, sowie ein Admin User, der den Prozess bearbeiten kann.  
 
@@ -253,7 +253,7 @@ Wichtig ist, dass Sie als Administrator in Ihrem Workspace angemeldet sind, so d
 
 - Beenden Sie hier die Eingabe mit Klick auf **Create User**.
  
-## 16.6.	Anwendung ausführen
+## <a name="task-anwendung-ausfuehren"></a>16.6	Anwendung ausführen
 
 - Wechseln Sie jetzt wieder zum Application Builder und starten von dort aus die zuvor erstellte Anwendung **Tutorial Approvals**. 
 - Melden Sie sich zunächst als Mitarbeiter **FISCHER** an.
@@ -286,4 +286,4 @@ Wichtig ist, dass Sie als Administrator in Ihrem Workspace angemeldet sind, so d
 
 ![](../../assets/Kapitel-16/Process_36.jpg)  
 
-- Der Antrag wurde genehmigt und das Gehalt vom Mitarbeiter **FISCHER** entsprechend angepasst.  
+- Der Antrag wurde genehmigt und das Gehalt vom Mitarbeiter **FISCHER** entsprechend angepasst.

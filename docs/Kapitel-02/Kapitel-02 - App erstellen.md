@@ -1,10 +1,10 @@
-# 2. Create App Wizard
+# <a name="create"></a>2. Create App Wizard
 
 Der Create App Wizard ist ein Assistent, der es Entwicklern ermöglicht, Standard APEX-Anwendungen schnell zu entwerfen und zu entwickeln. Dabei kann der Assistent verwendet werden, um vollständige Anwendungen zu erstellen, die aus mehreren Seiten und einer Vielzahl von verschiedenen Reports und Forms bestehen.
 
 In diesem Kapitel wird das Grundgerüst der Anwendung und die erste Seite erstellt. Im Create App Wizard geben Sie die Einstellungen für Ihre Anwendung an. Nachdem Sie auf Create Application geklickt haben, erstellt APEX die Anwendung mit Ihren Einstellungen.
 
-## 2.1. Erstellen einer Anwendung
+## <a name="erstelleneineranwendung"></a>2.1 Erstellen einer Anwendung
 
 - Für die weiteren Aufgaben muss zunächst eine **Anwendung** erstellt werden. Öffnen Sie hierzu als erstes den **App Builder**. Der App Builder zeigt alle installierten Anwendungen an. Klicken Sie nun auf den Button **Create**.
 
@@ -24,7 +24,7 @@ In diesem Kapitel wird das Grundgerüst der Anwendung und die erste Seite erstel
 
 ![](../../assets/Kapitel-02/Create_App_Wizard_3.jpg)
 
-## 2.2. Report
+## <a name="report"></a>2.2 Report
 
 In APEX ist ein Report eine formatierte Darstellung einer SQL-Abfrage. Ein Report kann über den Assistenten oder über eine händisch eingegebene SQL-Abfrage generiert werden.
 
@@ -45,7 +45,7 @@ APEX unterscheidet zwischen dem klassischen und dem interaktiven Report. Der Unt
 
 ![](../../assets/Kapitel-02/Interactive_Report_3.jpg)
  
-## 2.3. Create Application
+## <a name="createapplication"></a>2.3 Create Application
 
 - So sollte Ihr Create App Wizard jetzt aussehen. 
 
@@ -62,7 +62,7 @@ Bei der Application ID handelt es sich um eine eindeutige Nummer, über welche d
 
 ![](../../assets/Kapitel-02/Create_App_Wizard_Settings.jpg)
  
-## 2.4. Run Page
+## <a name="runpage"></a> 2.4 Run Page
 
 Nachdem Sie die Anwendung erstellt haben, öffnet sich die Seitenübersicht Ihrer Anwendung. 
 Sie sehen fünf Seiten: **0 - Global Page - Desktop**, **1 - Home** und **9999 - Login Page** sind Standardseiten, die bei jeder Anwendung erstellt werden. Die Global Page ist eine Masterseite. Sämtliche Komponenten, die auf der Global Page angelegt werden, werden auf allen Seiten der Anwendung angezeigt. 

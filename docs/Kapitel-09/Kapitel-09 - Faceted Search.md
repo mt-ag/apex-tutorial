@@ -1,8 +1,8 @@
-# 9. Faceted Search
+# <a name="faceted-search"></a>9. Faceted Search
 
 Bei der **Faceted Search** handelt es sich um eine Funktion zur dynamischen Filterung der angezeigten Datensätze und der gezielten Suche darin. Sie findet häufig Anwendung in Onlineshops und zeichnet sich meist durch eine fixierte Leiste am Seitenrand aus, in welcher sich die unterschiedlichen Filter in Form von Checkboxen, Slidern und Eingabefeldern befinden.
 
-## 9.1.	Erstellung der View
+## <a name="fs-erstellung-der-view"></a>9.1	Erstellung der View
 
 Für die Bearbeitung dieser Aufgabe wird eine **View** benötigt.
 
@@ -20,7 +20,7 @@ select prdt_info_id,
 from product_info
  ```
  
-## 9.2.	Create Page
+## <a name="fs-create-page"></a>9.2	Create Page
 
 - Öffnen Sie den **App Builder** über die Navigationsleiste, wählen Sie Ihre Anwendung aus und klicken Sie auf den Button **Create Page**.
 - Wählen Sie den Seitentypen **Component** aus.
@@ -44,7 +44,7 @@ Die Daten werden im rechten Seitenbereich als **Classic Report** dargestellt. Li
 
 ![](../../assets/Kapitel-09/Faceted_04.jpg) 
 
-## 9.3.	Create Facets
+## <a name="fs-create-facets"></a>9.3	Create Facets
 
 - Wechseln Sie zurück in den **Page Designer** und erstellen Sie ein neues **Facet**, indem Sie einen Rechtsklick auf den Eintrag **Facets** machen und anschließend **Create Facet** auswählen. 
 
@@ -105,4 +105,3 @@ In der Faceted Search Region befindet sich jetzt ein neues Element mit drei Chec
 Das neu erstellte Facet enthält wie auch das *Category-Facet* diverse Checkboxen, um die angezeigten Daten zu filtern. Darunter befinden sich zwei Eingabefelder, in die manuell Werte als Ober- und Untergrenze eingetragen werden können.
 
 ![](../../assets/Kapitel-09/Faceted_11.jpg) 
- 

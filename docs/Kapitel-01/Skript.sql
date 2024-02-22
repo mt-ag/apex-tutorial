@@ -142,6 +142,20 @@ BEGIN
  
 end;
 /
+
+begin
+    execute immediate 'drop table t_reservation';
+    execute immediate 'drop table t_dining_table';
+    execute immediate 'drop table t_restaurant_staff';
+    execute immediate 'drop sequence s_reservation';
+    execute immediate 'drop sequence s_dining_table';
+    execute immediate 'drop sequence s_restaurant_staff';
+  exception
+    when others then
+        dbms_output.put_line('DB Objects not exist');
+end;
+  /
+
 -- create tables
 CREATE TABLE  CUSTOMERS (	
     CTMR_ID NUMBER, 
@@ -329,6 +343,44 @@ BEGIN
 END;
 /
 ALTER TRIGGER  BI_DEPARTMENTS ENABLE
+/
+
+CREATE SEQUENCE S_RESTAURANT_STAFF START WITH 1 NOCACHE ORDER;
+/
+CREATE TABLE T_RESTAURANT_STAFF (
+      RST_ID                NUMBER DEFAULT ON NULL S_RESTAURANT_STAFF.NEXTVAL NOT NULL
+    , RST_NAME              VARCHAR2(50 CHAR)
+    , RST_EMAIL             VARCHAR2(50 CHAR)
+);
+/
+ALTER TABLE T_RESTAURANT_STAFF ADD CONSTRAINT RESTAURANT_STAFF_PK PRIMARY KEY ( RST_ID );
+/
+CREATE SEQUENCE S_RESERVATION START WITH 1 NOCACHE ORDER;
+/
+CREATE TABLE T_RESERVATION (
+      RES_ID                    NUMBER DEFAULT ON NULL S_RESERVATION.NEXTVAL NOT NULL
+	  , RES_DINING_TABLE_ID       NUMBER NOT NULL
+	  , RES_GUEST_COUNT           NUMBER NOT NULL
+    , RES_GUEST_NAME            VARCHAR2(50 CHAR)
+    , RES_GUEST_LAST_NAME       VARCHAR2(50 CHAR)
+    , RES_GUEST_EMAIL           VARCHAR2(50 CHAR)
+    , RES_START_DATE            DATE
+    , RES_END_DATE              DATE
+    , RES_WORKFLOW_ID           NUMBER
+);
+/
+ALTER TABLE T_RESERVATION ADD CONSTRAINT RESERVATION_PK PRIMARY KEY ( RES_ID );
+/
+CREATE SEQUENCE S_DINING_TABLE START WITH 1 NOCACHE ORDER;
+/
+CREATE TABLE T_DINING_TABLE (
+      TBL_ID                NUMBER DEFAULT ON NULL S_DINING_TABLE.NEXTVAL NOT NULL
+    , TBL_SEATS_AVAILABLE   NUMBER 
+);
+/
+ALTER TABLE T_DINING_TABLE ADD CONSTRAINT DINING_TABLE PRIMARY KEY ( TBL_ID );
+/
+ALTER TABLE T_RESERVATION ADD CONSTRAINT FK_DINING_TABLE FOREIGN KEY (RES_DINING_TABLE_ID) REFERENCES T_DINING_TABLE(TBL_ID);
 /
 
 INSERT INTO CUSTOMERS 
@@ -721,5 +773,205 @@ VALUES('Sales', 'Chicago');
 INSERT INTO DEPARTMENTS (DEPT_NAME, DEPT_LOCATION)
 VALUES('Operations', 'Boston');
 
+INSERT INTO T_DINING_TABLE VALUES (1,4); 
+INSERT INTO T_DINING_TABLE VALUES (2,2); 
+INSERT INTO T_DINING_TABLE VALUES (3,4); 
+INSERT INTO T_DINING_TABLE VALUES (4,2); 
+INSERT INTO T_DINING_TABLE VALUES (5,4); 
+INSERT INTO T_DINING_TABLE VALUES (6,4); 
+INSERT INTO T_DINING_TABLE VALUES (7,4); 
+INSERT INTO T_DINING_TABLE VALUES (8,2); 
+INSERT INTO T_DINING_TABLE VALUES (9,2); 
+INSERT INTO T_DINING_TABLE VALUES (10,4); 
+INSERT INTO T_DINING_TABLE VALUES (11,4); 
+INSERT INTO T_DINING_TABLE VALUES (12,8);
+
+INSERT INTO T_RESTAURANT_STAFF VALUES (1, 'KOCH','test@abc.com');
+
 COMMIT
+/
+
+set define '^' verify off
+prompt ...MT_TUTORIAL 23.2 Workflow Demo
+
+create or replace package dinner_reservation_demo as 
+
+function check_availability(
+    pi_guest_count  IN NUMBER DEFAULT 1
+   ,pi_start_date   IN DATE 
+   ,pi_end_date     IN DATE
+) return VARCHAR2;
+
+function set_reservation(
+      pi_dining_table_id        IN T_RESERVATION.RES_DINING_TABLE_ID%TYPE
+    , pi_guest_count            IN T_RESERVATION.RES_GUEST_COUNT%TYPE
+    , pi_guest_name             IN T_RESERVATION.RES_GUEST_NAME%TYPE
+    , pi_guest_last_name        IN T_RESERVATION.RES_GUEST_LAST_NAME%TYPE
+    , pi_guest_email            IN T_RESERVATION.RES_GUEST_EMAIL%TYPE
+    , pi_start_date             IN T_RESERVATION.RES_START_DATE%TYPE
+    , pi_end_date               IN T_RESERVATION.RES_END_DATE%TYPE
+    , pi_workflow_id            IN T_RESERVATION.RES_WORKFLOW_ID%TYPE
+) return number;
+
+function get_free_table_id (
+    pi_guest_count  IN NUMBER DEFAULT 1
+   ,pi_start_date   IN DATE 
+   ,pi_end_date     IN DATE
+) return number;
+
+end dinner_reservation_demo;
+
+/
+show err;
+/
+
+set define '^' verify off
+prompt ...MT_TUTORIAL 23.2 Workflow Demo
+
+create or replace package body dinner_reservation_demo as 
+
+function set_reservation(
+      pi_dining_table_id        IN T_RESERVATION.RES_DINING_TABLE_ID%TYPE
+	  , pi_guest_count            IN T_RESERVATION.RES_GUEST_COUNT%TYPE
+    , pi_guest_name             IN T_RESERVATION.RES_GUEST_NAME%TYPE
+    , pi_guest_last_name        IN T_RESERVATION.RES_GUEST_LAST_NAME%TYPE
+    , pi_guest_email            IN T_RESERVATION.RES_GUEST_EMAIL%TYPE
+    , pi_start_date             IN T_RESERVATION.RES_START_DATE%TYPE
+    , pi_end_date               IN T_RESERVATION.RES_END_DATE%TYPE
+    , pi_workflow_id            IN T_RESERVATION.RES_WORKFLOW_ID%TYPE
+)
+return number
+is l_reservation_id     T_RESERVATION.RES_ID%TYPE;
+begin
+
+    insert into T_RESERVATION(
+         RES_DINING_TABLE_ID
+        ,RES_GUEST_COUNT
+        ,RES_GUEST_NAME
+        ,RES_GUEST_LAST_NAME
+        ,RES_GUEST_EMAIL
+        ,RES_START_DATE
+        ,RES_END_DATE
+        ,RES_WORKFLOW_ID
+    )
+    values(
+         pi_dining_table_id
+        ,pi_guest_count
+        ,pi_guest_name
+        ,pi_guest_last_name
+        ,pi_guest_email
+        ,pi_start_date
+        ,pi_end_date
+        ,pi_workflow_id
+    )
+    returning RES_ID into l_reservation_id; 
+ 
+  return l_reservation_id;
+  
+end set_reservation;
+
+function check_availability(
+    pi_guest_count  IN NUMBER DEFAULT 1
+   ,pi_start_date   IN DATE 
+   ,pi_end_date     IN DATE
+)
+return VARCHAR2
+is l_table_id number;
+begin
+    
+     for l in(
+                select    tbl_id 
+                        , tbl_seats_available
+                from      t_dining_table
+                where     tbl_seats_available >= pi_guest_count
+                order by  tbl_id asc
+                ) loop
+    
+                    select  tab.tbl_id
+                    into    l_table_id
+                    from t_dining_table tab
+                    left join t_reservation res
+                    on res.res_dining_table_id = tab.tbl_id 
+                    where 
+                    tab.tbl_id = l.tbl_id and
+                    (res.res_start_date between pi_start_date AND pi_end_date
+                    or 
+                    res.res_end_date between pi_start_date AND pi_end_date );
+    
+     end loop;
+
+     return 'UNAVAIL';
+    
+     exception when no_data_found then return 'AVAIL';
+
+end check_availability;
+
+function get_free_table_id(
+    pi_guest_count  IN NUMBER DEFAULT 1
+   ,pi_start_date   IN DATE 
+   ,pi_end_date     IN DATE
+)
+return NUMBER
+is 
+l_table_id number;
+l_id_temp number;
+begin
+    
+     for l in(
+                select    tbl_id 
+                        , tbl_seats_available
+                from      t_dining_table
+                where     tbl_seats_available >= pi_guest_count
+                order by  tbl_id asc
+                ) loop
+
+                    l_id_temp := l.tbl_id; 
+    
+                    select  tab.tbl_id
+                    into    l_table_id
+                    from t_dining_table tab
+                    left join t_reservation res
+                    on res.res_dining_table_id = tab.tbl_id 
+                    where 
+                    tab.tbl_id = l.tbl_id and
+                    (res.res_start_date between pi_start_date AND pi_end_date
+                    or 
+                    res.res_end_date between pi_start_date AND pi_end_date );
+    
+     end loop;
+
+     return 0;
+    
+     exception when no_data_found then return l_id_temp;
+
+end get_free_table_id;
+    
+end dinner_reservation_demo;
+/
+show err;
+/
+
+create or replace force editionable view tutowf_staff_vw
+as
+select 	rst_id
+,	      rst_name
+,	      rst_email	
+from t_restaurant_staff
+with read only;
+
+/
+
+create or replace force editionable view tutowf_reservation_vw
+as
+select 	res_id
+,	      res_dining_table_id
+,	      res_guest_count
+,	      res_guest_name
+,	      res_guest_last_name
+,	      res_guest_email
+,	      res_start_date
+,	      res_end_date
+,	      res_workflow_id
+from t_reservation
+with read only;
 /

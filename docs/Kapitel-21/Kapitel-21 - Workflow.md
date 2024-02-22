@@ -1,10 +1,10 @@
-# 21. APEX Workflow
+# <a name="apex-workflow"></a>21. APEX Workflow
 
-Mit APEX 23.2 werden Workflows direkt in APEX integriert. Mit **APEX Workflow** lassen sich Business-Prozesse mittels der grafischen Spezifikationssprache **Busines Process Model and Notation (BPMN)** darstellen und ausführen. Workflows basiert auf der Erweiterung **Flows for APEX** zu der Sie weitere Informationen unter dem Link [https://flowsforapex.org/](https://flowsforapex.org/) erhalten. 
+Mit APEX 23.2 werden Workflows direkt in APEX integriert. Mit **APEX Workflow** lassen sich Business-Prozesse mittels der eines grafischen Editors erstellen und ausführen. Nutzer, die Prozesse mittels  **Busines Process Model and Notation (BPMN 2.0)** abbilden wollen, finden mit der eng verwandten Erweiterung **Flows for APEX** von MT - IT Solutions eine passende Erweiterung. Weitere Informationen dazu erhalten Sie unter dem Link [https://flowsforapex.org/](https://flowsforapex.org/). 
 
 In dem folgenden Kapitel nutzen wir Workflows um eine Demoversion einer vereinfachten Reservierung eines Restauranttisches zu erstellen. Die Demo lehnt sich an den Blog-Beitrag **Simplify Business Process Management Using APEX Workflow** von Ananya Chatterjee an. [Link zum Blog](https://blogs.oracle.com/apex/post/simplify-business-process-management-using-apex-workflow-create-doctor-appointment-application)
 
-## 21.1. Ausgangspunkt Use Case und Flow-Chart
+## <a name="ausgangspunkt-use-case-und-flow-chart"></a>21.1 Ausgangspunkt Use Case und Flow-Chart
 
 Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass ein Restaurant ein einfaches Buchungsformular über die Website realisieren möchte. In dem Formular können Gäste eine Reservierungsanfrage für einen Tisch übermitteln. Es wird im nächsten Schritt zunächst vom System geprüft, ob zu dem gewünschten Zeitraum ein Tisch für die gewünschte Anzahl an Personen frei ist. Falls nicht, kommt es sofort zu einer E-Mail an den Gast mit einer Absage des Termins. Wenn ein Tisch frei ist, wird die Anfrage an einen Restaurant-Mitarbeitenden übergeben. Der Mitarbeitende entscheidet, ob die Reservierung angenommen wird. Wird sie abgelehnt, erfolgt wieder eine Absage per E-Mail, wird sie angenommen, wird die Reservierung gespeichert und der Gast über die erfolgreiche Reservierung per E-Mail informiert. 
 
@@ -12,7 +12,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass ein Res
 
 ![](../../assets/Kapitel-21/APEX_Workflows_01.png)
 
-## 21.2. Einrichtung der benötigten Elemente
+## <a name="workflow-einrichtung-der-benoetigten-elemente"></a>21.2 Einrichtung der benötigten Elemente
 
 - Die benötigten Tabellen und Packages wurden bereits über das **Skript für das Tutorial** in Kapitel 1 mitinstalliert. 
 
@@ -33,7 +33,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass ein Res
 
 ![](../../assets/Kapitel-21/APEX_Workflows_02.jpg)
 
-## 21.3. Erstellen des Workflows
+## <a name="erstellen-des-workflows"></a>21.3 Erstellen des Workflows
 
 - Im nächsten Schritt geht es an die eigentliche Arbeitsaufgabe. Dazu erstellen wir zunächst einen **Workflow**.
 
@@ -88,7 +88,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass ein Res
 
 ![](../../assets/Kapitel-21/APEX_Workflows_12.jpg)
 
-- Nun verknüpfen Sie im Workflow 1.0 unter **Additional Data** die Tabelle **T_RESTAURANT_STAFF**. Dies stellt später sicher, dass die erstellen Aufgaben (Tasks) entsprechenden Bearbeitenden zugeordnet werden können. Daneben stehen dadurch die Spalten der Tabelle als Bindvariablen für den Workflow zur Verfügung. Wählen Sie als **Primary Key Column** die Spalte **ID**.
+- Nun verknüpfen Sie im Workflow 1.0 unter **Additional Data** die Tabelle **T_RESTAURANT_STAFF**. Dies stellt später sicher, dass die erstellen Aufgaben (Tasks) entsprechenden Bearbeitenden zugeordnet werden können. Daneben stehen dadurch die Spalten der Tabelle als Bindvariablen für den Workflow zur Verfügung. Wählen Sie als **Primary Key Column** die Spalte **RST_ID**.
 
 ![](../../assets/Kapitel-21/APEX_Workflows_13.jpg)
 
@@ -108,7 +108,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass ein Res
 
 ![](../../assets/Kapitel-21/APEX_Workflows_17.jpg)
 
-## 21.4. Task zur Reservierungsanfrage erstellen
+## <a name="task-zur-reservierungsanfrage-erstellen"></a>21.4 Task zur Reservierungsanfrage erstellen
 
 - Im nächsten Schritt erstellen Sie den Task zu Bestätigung (oder Ablehnung) der Reservierungsanfrage. Wechseln Sie dazu in die **Shared Components** und zu den **Task Definitions**. Klicken Sie auf **Create** um einen neuen Task zu erstellen.
 
@@ -121,14 +121,14 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass ein Res
 - Im nächsten Schritt setzen Sie die **Action Source** auf **SQL Query**. In das Feld für die Query tragen Sie die folgende Query ein:
 
 ```sql
-  select * from t_restaurant_staff where id = :APEX$TASK_PK
+  select * from t_restaurant_staff where rst_id = :APEX$TASK_PK
   ```
 
 ![](../../assets/Kapitel-21/APEX_Workflows_20.jpg)
 
-- Erstellen Sie eine neue Zeile in der Tabelle **Participants**. Der **Participant Type** ist **Potential Owner**, der **Value Type** ist **Expression** und der **Value** ist **:NAME**. Dies bezieht sich auf die entsprechende Spalte in der Mitarbeitertabelle **T_RESTAURANT_STAFF** die dadurch jeweils Tasks bearbeiten dürfen.
+- Erstellen Sie eine neue Zeile in der Tabelle **Participants**. Der **Participant Type** ist **Potential Owner**, der **Value Type** ist **Expression** und der **Value** ist **:RST_NAME**. Dies bezieht sich auf die entsprechende Spalte in der Mitarbeitertabelle **T_RESTAURANT_STAFF** die dadurch jeweils Tasks bearbeiten dürfen.
 
-![](../../assets/Kapitel-21/APEX_Workflows_21.jpg)
+![](../../assets/Kapitel-21/APEX_Workflows_21.jpg) 
 
 - Auch für den Task werden **Parameter** bereitgestellt. Fügen Sie jeweils die folgenden Reihen zur Parameter-Tabelle hinzu:
 
@@ -147,7 +147,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass ein Res
 
 ![](../../assets/Kapitel-21/APEX_Workflows_22b.jpg)
 
-## 21.5. Fertigstellung des Workflows
+## <a name="fertigstellung-des-workflows"></a>21.5 Fertigstellung des Workflows
 
 - Im nächsten Schritt geht es mit der Arbeit am Workflow weiter. Wechseln Sie dafür wieder in die **Workflows** in den **Shared Components** und klicken Sie auf **Dinner Reservation**. 
 
@@ -226,7 +226,7 @@ The Restaurant Team
 
 ![](../../assets/Kapitel-21/APEX_Workflows_38.jpg)
 
-- Jetzt geht es weiter mit dem Fall, dass die erste Prüfung ergibt, dass ein Tisch frei ist. Für diesen Fall soll ein Mitarbeitender entscheiden, ob die Reservierung angenommen wird. Dazu erstellen Sie zunächst eine **Human Task - Create** Aktivität. Geben Sie der Aktivität den Namen **Create Reservation Request**, in **Definition** wählen Sie den eben erstellten Task **Reservation Request**. Für Outcome wählen Sie die automatisch über die Task erstellte **Variable** **TASK_OUTCOME** und in **Owner** die - ebenfalls automatisch erstellte - **Variable** **APPROVER**. 
+- Jetzt geht es weiter mit dem Fall, dass die erste Prüfung ergibt, dass ein Tisch frei ist. Für diesen Fall soll ein Mitarbeitender entscheiden, ob die Reservierung angenommen wird. Dazu erstellen Sie zunächst eine **Human Task - Create** Aktivität. Geben Sie der Aktivität den Namen **Create Reservation Request**, in **Definition** wählen Sie den eben erstellten Task **Reservation Request**. Die **Details Primary Key Item** legen Sie auf **RST_ID** fest. Für **Outcome** wählen Sie die automatisch über die Task erstellte **Variable** **TASK_OUTCOME** und in **Owner** die - ebenfalls automatisch erstellte - **Variable** **APPROVER**. 
 
 ![](../../assets/Kapitel-21/APEX_Workflows_39.jpg)
 
@@ -318,7 +318,7 @@ The Restaurant Team
 
 ![](../../assets/Kapitel-21/APEX_Workflows_51.jpg)
 
-## 21.6. Erstellen der App-Seiten
+## <a name="workflow-erstellen-der-app-seiten"></a>21.6 Erstellen der App-Seiten
 
 - Mit dem erstellten Workflow geht es nun weiter mit dem Aufbau der eigentlichen App. Wechseln Sie dazu zunächst in die **Shared Components** und die **Static Application Files**. 
 
@@ -376,7 +376,7 @@ body {
 - Für den Zweck der Demo wird an dieser Stelle noch eine Einstellungsmöglichkeit des Mitarbeitenden eingefügt, der die Entscheidung über die Reservierung trifft. Fügen Sie der Seite ein weiteres Page Item **P1_APPROVER** hinzu. Die **Column Span** legen Sie ebenfalls auf **5** fest. Unter **List of Value** legen Sie das folgende **SQL-Query** fest. Deaktivieren **Display Extra Values** und **Display Null Value** und legen den **Default** auf **Static** und den Wert auf **1** fest: 
 
 ```sql
-select name as d, id as r from t_restaurant_staff
+select rst_name as d, rst_id as r from tutowf_staff_vw
 ```
 ![](../../assets/Kapitel-21/APEX_Workflows_59.jpg)
 
@@ -430,7 +430,7 @@ select to_char(systimestamp, 'DD.MM.YYYY HH24:MI') from dual
 
 ![](../../assets/Kapitel-21/APEX_Workflows_68.jpg)
 
-- Titel der Seite wird **Reservations**, die verwendete Tabelle ist **T_RESERVATION**. Nutzen Sie die **Navigation** und stellen das **Parent Navigation Menu Entry** auf **Home**. 
+- Titel der Seite wird **Reservations**, die verwendete View ist **TUTOWF_RESERVATION_VW**. Nutzen Sie die **Navigation** und stellen das **Parent Navigation Menu Entry** auf **Home**. 
 
 ![](../../assets/Kapitel-21/APEX_Workflows_69.jpg)
 
@@ -438,9 +438,10 @@ select to_char(systimestamp, 'DD.MM.YYYY HH24:MI') from dual
 
   | | |  
   |--|--|
-  | **Display Column** | *GUEST_LAST_NAME*|
-  | **Start Date Column** | *START_DATE* | 
-  | **End Date Column** | *END_DATE*|  
+  | **Display Column** | *RES_GUEST_LAST_NAME*|
+  | **Start Date Column** | *RES_START_DATE* | 
+  | **End Date Column** | *RES_END_DATE*|  
+  | **Primary Key Column** | *RES_ID*|  
   | **Show Time** | *Yes*|
   | | |
 
@@ -449,11 +450,11 @@ select to_char(systimestamp, 'DD.MM.YYYY HH24:MI') from dual
 - Auf der neuen Seite 2 wählen Sie die **Region** **Reservations** aus. Setzen Sie unter **Attributes** die **Primary Key Column** auf **ID**. Unter **Supplemental Information** tragen Sie den folgenden Text ein: 
 
 ```
-Table &DINING_TABLE_ID.: &GUEST_NAME. &GUEST_LAST_NAME. with &GUEST_COUNT. guests.
+Table &RES_DINING_TABLE_ID.: &RES_GUEST_NAME. &RES_GUEST_LAST_NAME. with &RES_GUEST_COUNT. guests.
 ```
 ![](../../assets/Kapitel-21/APEX_Workflows_71.jpg)
 
-## 21.7. Anlegen einer Unified Task List
+## <a name="workflow-anlegen-einer-unified-task-list"></a>21.7 Anlegen einer Unified Task List
 
 - Legen Sie nun eine weitere neue Seite an, eine **Unified Task List**. Über diese Task List kann das Restaurant-Personal die eingegangenen Reservierungsanfragen ansehen und entscheiden.
 
@@ -463,7 +464,7 @@ Table &DINING_TABLE_ID.: &GUEST_NAME. &GUEST_LAST_NAME. with &GUEST_COUNT. guest
 
 ![](../../assets/Kapitel-21/APEX_Workflows_73.jpg)
 
-## 21.8. Anlegen der Workflow Console
+## <a name="anlegen-der-workflow-console"></a>21.8 Anlegen der Workflow Console
 
 - Erstellen Sie im **App Builder** eine weitere Seite - Sie benötigen noch die **Workflow Console** mit der Sie eine Übersicht zum Stand der initiierten Workflows erhalten. 
 
@@ -473,7 +474,7 @@ Table &DINING_TABLE_ID.: &GUEST_NAME. &GUEST_LAST_NAME. with &GUEST_COUNT. guest
 
 ![](../../assets/Kapitel-21/APEX_Workflows_75.jpg)
 
-## 21.9. Application Logo anpassen
+## <a name="workflow-application-logo-anpassen"></a>21.9 Application Logo anpassen
 
 - Um die App noch etwas abzurunden, stellen Sie unter **Shared Components** unter **Application Definition** und dem Punkt **User Interface** ein neues Icon ein
 
@@ -493,7 +494,7 @@ Table &DINING_TABLE_ID.: &GUEST_NAME. &GUEST_LAST_NAME. with &GUEST_COUNT. guest
 
 - Mit diesem Schritt ist die Application fertiggestellt! Im nächsten Abschnitt geht es noch auf eine kurze Erkundungstour durch die Reservierungsdemo.
 
-## 21.10. Tour durch die neue App
+## <a name="workflow-tour-durch-die-neue-app"></a>21.10 Tour durch die neue App
 
 - Starten Sie die Tour mit einem Log-In mit Ihrem Account. Besuchen Sie das Reservierungsformular und schreiben eine Eingabe, die ähnlich der folgenden sein könnte (verwenden Sie idealerweise Ihre eigene E-Mailadresse). Schicken Sie die vollständige Eingabe ab.
 
@@ -525,6 +526,6 @@ Table &DINING_TABLE_ID.: &GUEST_NAME. &GUEST_LAST_NAME. with &GUEST_COUNT. guest
 
 - Zwischenzeitlich könnte die E-Mail bei Ihnen eingetroffen sein, mit der die Reservierung bestätigt wird. Sie sollte etwa folgendermaßen aussehen. 
 
-![](../../assets/Kapitel-21/APEX_Workflows_87.jpg)
+![](Kapitel-21/APEX_Workflows_87.jpg)
 
-- Damit haben Sie die Einführung in APEX Workflow beendet. Wir hoffen, dass wir Ihnen mit diesem Kapitel einen kleinen Einblick in die Möglichkeiten von APEX Workflow geben konnten!
+- Damit haben Sie die Einführung in APEX Workflow erfolgreich beendet. Wir hoffen, dass wir Ihnen mit diesem Kapitel einen kleinen Einblick in die Möglichkeiten von APEX Workflow geben konnten!

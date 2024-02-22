@@ -1,10 +1,10 @@
-# 4. Interactive Grid
+# <a name="interactivegrid"></a>4. Interactive Grid
 
 Ein **Interactive Grid** zeigt dem Datenbankbenutzer eine Reihe von festgelegten Datensätzen in einem durchsuchbaren, anpassbaren Bericht an. In diesem Bericht können die Datensätze geändert und aktualisiert werden. Außerdem ist es möglich, neue Datensätze hinzuzufügen und alte zu löschen.
 
 In dieser Aufgabe wird ein **Interactive Grid** angelegt, um die oben genannten Funktionen nutzen zu können.
 
-## 4.1.	Erstellung der View
+## <a name="gridview"></a>4.1	Erstellung der View
 - Für diese Aufgabe muss zuerst eine **View** erstellt werden.
 Dazu gehen Sie wie in Aufgabe #03 über den **SQL Workshop** in den **Object Browser** und starten über das + den Assistenten zur Erstellung der **View**.  
 Dort geben Sie folgende Daten ein:
@@ -25,7 +25,7 @@ Dort geben Sie folgende Daten ein:
 
 - Klicken Sie anschließend auf den Button **Next** und dann auf **Create View**.
 
-## 4.2.	Create Page
+## <a name="gridcreatepage"></a>4.2	Create Page
 - Öffnen Sie den **App Builder** über die Navigationsleiste, wählen Sie Ihre Anwendung aus und klicken Sie auf den Button **Create Page**. 
 
 ![](../../assets/Kapitel-04/Interactive_Grid_02.jpg)

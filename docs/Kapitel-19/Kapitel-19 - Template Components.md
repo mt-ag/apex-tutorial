@@ -1,10 +1,10 @@
-# 19. Template Components
+# <a name="template-components"></a>19. Template Components
 
 **Template Components** sind ein neuer Plug-In-Typ in APEX. Sie ermöglichen es Ihnen, eine HTML-Vorlage (mit oder ohne zusätzliches CSS und JavaScript) zu definieren und Platzhalter zu verwenden. Sie sind viel einfacher zu verwenden als ein vollständiges Regions-Plug-In, bei dem Sie keine tiefgreifenden Kenntnisse der Plug-In-APIs benötigen.
 
 Auf jeder Seite können Sie dann einen Bereich dieses Plug-In-Typs erstellen, eine Abfrage platzieren und dann eine Instanz dieser Vorlage erhalten, die mit den Daten für jede zurückgegebene Zeile gefüllt wird. Sie können auch eine einzelne Instanz in einer Region rendern oder sie sogar in Spalten interaktiver Berichte verwenden.
 
-## 19.1. Erstellung eines "Template Components" (APEX Plugin) 
+## <a name="erstellung-eines-template-components-apex-plugin"></a>19.1 Erstellung eines "Template Components" (APEX Plugin) 
 
 1. Öffnen Sie den **Shared Components**, klicken sie auf **Plug-ins** und anschlißend auf **create**
 
@@ -290,9 +290,3 @@ Klicken Sie auf **Template Options**
 19. Abschließend sieht die Seite wie folgt aus. Drücken Sie auf den Refresh Button, um **Zufällige** Werte neu zuladen.
 
 ![](../../assets/Kapitel-19/19.jpg)
-
-<br><br>
-Herzlichen Glückwunsch!
-Sie haben das Tutorial erfolgreich beendet.  
-Falls Sie noch mehr über APEX lernen wollen, schauen Sie doch mal auf unserem APEX Portal vorbei:  
-[apex.mt-itsolutions.com/from-zero-to-hero](https://apex.mt-itsolutions.com/from-zero-to-hero)

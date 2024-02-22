@@ -1,10 +1,10 @@
-# 8. Cards Region
+# <a name="cards-region"></a>8. Cards Region
 
 Cards sind eine beliebte Form im Webdesign, um Informationen übersichtlich und anschaulich darzustellen. Die Cards in APEX lassen sich vielfältig gestalten. So kann man einer Card Icons hinzufügen, Bilder oder Videos in dieser anzeigen oder Aktionen für die Card definieren (z.B. über Links oder Buttons). 
 
 In diesem Kapitel erstellen wir eine Seite, die auf einer Cards Region aufbaut. Im ersten Schritt erstellen wir eine Default Cards Region, im zweiten Kapitel bearbeiten wir diese so, dass ein Bild in der Karte angezeigt wird.  
 
-## 8.1.	View erstellen
+## <a name="cards-view-erstellen"></a>8.1	View erstellen
 
 Für die Bearbeitung dieser Aufgabe wird eine **View** benötigt.  
 **View Name: *TUTO_P0041_VW***
@@ -20,7 +20,7 @@ select prdt_info_id as product_id,
 from product_info
  ```
 
-## 8.2.	Seite erstellen
+## <a name="cards-seite-erstellen"></a>8.2	Seite erstellen
 
 - Öffnen Sie den **App Builder** über die Navigationsleiste, wählen Sie Ihre Anwendung aus und klicken Sie auf den Button **Create Page**.  
 - Wählen Sie den Seitentypen **Report** aus.  
@@ -74,7 +74,7 @@ Hier können SIe die angezeigten Sortierkriterien unter Display Value anpassen. 
 
 ![](../../assets/Kapitel-08/Cards_07.jpg) 
  
-## 8.3.	Cards mit Bild erstellen
+## <a name="cards-mit-bild-erstellen"></a>8.3	Cards mit Bild erstellen
 
 In diesem Schritt werden Sie das Aussehen der Cards ändern und die Titelbilder der Filme anzeigen.  
 - Klicken Sie hierfür auf **Attributes** und scrollen Sie dann nach unten zu **Media**.  
