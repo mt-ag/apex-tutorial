@@ -92,7 +92,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass ein Res
 
 ![](../../assets/Kapitel-21/APEX_Workflows_13.jpg)
 
-- Neben den Input-Parametern braucht brauchen Sie in dem Workflow auch veränderliche Variablen, die im Prozess genutzt werden können. Dazu erstellen Sie im nächsten Schritt **Workflow Variables**. Dazu rechtsklicken Sie wieder auf den Workflow 1.0 und wählen **Create Variable**.
+- Neben den Input-Parametern brauchen Sie in dem Workflow auch veränderliche Variablen, die im Prozess genutzt werden können. Dazu erstellen Sie im nächsten Schritt **Workflow Variables**. Dazu rechtsklicken Sie wieder auf den Workflow 1.0 und wählen **Create Variable**.
 
 ![](../../assets/Kapitel-21/APEX_Workflows_14.jpg)
 
@@ -114,7 +114,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass ein Res
 
 ![](../../assets/Kapitel-21/APEX_Workflows_18.jpg)
 
-- Im Dialogfenster zum Erstellen der **Task Definition** geben Sie der Task den Namen **Reservation Request** und das **Subject: Reservation for Guest &GUEST_NAME. &GUEST_LAST_NAME.**. Die **Static ID** lautet **RESERVATION REQUEST**. Klicken Sie danach auf **Create**.
+- Im Dialogfenster zum Erstellen der **Task Definition** geben Sie der Task den Namen **Reservation Request** und das **Subject: Reservation for Guest &GUEST_NAME. &GUEST_LAST_NAME.**. Die **Static ID** lautet **RESERVATION_REQUEST**. Klicken Sie danach auf **Create**.
 
 ![](../../assets/Kapitel-21/APEX_Workflows_19.jpg)
 
@@ -202,7 +202,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass ein Res
 
 ![](../../assets/Kapitel-21/APEX_Workflows_34.jpg)
 
-- Name dieser Aktivität wird **Send Mail unavailable**. Im **To-Feld** tragen Sie mit **&GUEST_EMAIL.** den Paramter mit der E-Mail des Gastes ein. In das Feld **Subject** kommt der E-Mail-Betreff. Setzen Sie es auf **Your reservation: No table available**. Tragen Sie den folgenden Mail-Text im Feld **Body Plain Text** ein: 
+- Name dieser Aktivität wird **Send Mail unavailable**. Im **To-Feld** tragen Sie mit **&GUEST_EMAIL.** den Parameter mit der E-Mail des Gastes ein. In das Feld **Subject** kommt der E-Mail-Betreff. Setzen Sie es auf **Your reservation: No table available**. Tragen Sie den folgenden Mail-Text im Feld **Body Plain Text** ein: 
 
 ```
 Dear &GUEST_NAME. &GUEST_LAST_NAME., 
@@ -301,7 +301,7 @@ The Restaurant Team
 
 ![](../../assets/Kapitel-21/APEX_Workflows_49.jpg)
 
-- Nach dem Speichern soll der Kunde dann per E-Mail darüber informiert werden, dass die Reservierung angenommen wurde. Die entsprechende **Send E-Mail**-Aktivität legen Sie als nächstes an und geben ihr den Namen **Send confirmation**. Im **To**-Feld tragen Sie - analog zur Absagemail - die **&GUEST_EMAIL.** ein. Das Subject wird **Reservation Confirmation**. Verwenden Sie den folgeneden **Body Plain Text**: 
+- Nach dem Speichern soll der Kunde dann per E-Mail darüber informiert werden, dass die Reservierung angenommen wurde. Die entsprechende **Send E-Mail**-Aktivität legen Sie als nächstes an und geben ihr den Namen **Send confirmation**. Im **To**-Feld tragen Sie - analog zur Absagemail - die **&GUEST_EMAIL.** ein. Das Subject wird **Reservation Confirmation**. Verwenden Sie den folgenden **Body Plain Text**: 
 
 ```
 Dear &GUEST_NAME. &GUEST_LAST_NAME., 
@@ -373,12 +373,16 @@ body {
 
 ![](../../assets/Kapitel-21/APEX_Workflows_58.jpg)
 
-- Für den Zweck der Demo wird an dieser Stelle noch eine Einstellungsmöglichkeit des Mitarbeitenden eingefügt, der die Entscheidung über die Reservierung trifft. Fügen Sie der Seite ein weiteres Page Item **P1_APPROVER** hinzu. Die **Column Span** legen Sie ebenfalls auf **5** fest. Unter **List of Value** legen Sie das folgende **SQL-Query** fest. Deaktivieren **Display Extra Values** und **Display Null Value** und legen den **Default** auf **Static** und den Wert auf **1** fest: 
+- Für den Zweck der Demo wird an dieser Stelle noch eine Einstellungsmöglichkeit des Mitarbeitenden eingefügt, der die Entscheidung über die Reservierung trifft. Fügen Sie der Seite ein weiteres Page Item **P1_APPROVER** hinzu. Die **Column Span** legen Sie ebenfalls auf **5** fest. Unter **List of Value** legen Sie das folgende **SQL-Query** fest: 
 
 ```sql
 select rst_name as d, rst_id as r from tutowf_staff_vw
 ```
 ![](../../assets/Kapitel-21/APEX_Workflows_59.jpg)
+
+- Deaktivieren Sie **Display Extra Values** und **Display Null Value** und legen den **Default** auf **Static** und den Wert auf **1** fest.
+
+![](../../assets/Kapitel-21/APEX_Workflows_59a.jpg)
 
 - Das nächste Page Item nennen Sie **P1_TODAY** und setzen den Type auf **Hidden**. 
 
@@ -418,7 +422,7 @@ select to_char(systimestamp, 'DD.MM.YYYY HH24:MI') from dual
  
  ![](../../assets/Kapitel-21/APEX_Workflows_65.jpg)
 
- - Erstelen Sie unter **After Processing** einen neuen **Branch** mit dem Namen **Go to Page 1**. Das **Behavior** ist **Type Page or URL (Redirect)**.
+ - Erstellen Sie unter **After Processing** einen neuen **Branch** mit dem Namen **Go to Page 1**. Das **Behavior** ist **Type Page or URL (Redirect)**.
  
   ![](../../assets/Kapitel-21/APEX_Workflows_66.jpg)
  
@@ -441,7 +445,6 @@ select to_char(systimestamp, 'DD.MM.YYYY HH24:MI') from dual
   | **Display Column** | *RES_GUEST_LAST_NAME*|
   | **Start Date Column** | *RES_START_DATE* | 
   | **End Date Column** | *RES_END_DATE*|  
-  | **Primary Key Column** | *RES_ID*|  
   | **Show Time** | *Yes*|
   | | |
 
@@ -484,7 +487,7 @@ Table &RES_DINING_TABLE_ID.: &RES_GUEST_NAME. &RES_GUEST_LAST_NAME. with &RES_GU
 
 ![](../../assets/Kapitel-21/APEX_Workflows_77.jpg)
 
-- Starten Sie die App und stellen unter **Customize** im **Theme Roller** das Thenme auf **Vita - Dark**.
+- Starten Sie die App und stellen unter **Customize** im **Theme Roller** das Theme auf **Vita - Dark**.
 
 ![](../../assets/Kapitel-21/APEX_Workflows_78.jpg)
 
@@ -526,6 +529,6 @@ Table &RES_DINING_TABLE_ID.: &RES_GUEST_NAME. &RES_GUEST_LAST_NAME. with &RES_GU
 
 - Zwischenzeitlich könnte die E-Mail bei Ihnen eingetroffen sein, mit der die Reservierung bestätigt wird. Sie sollte etwa folgendermaßen aussehen. 
 
-![](Kapitel-21/APEX_Workflows_87.jpg)
+![](../../assets/Kapitel-21/APEX_Workflows_87.jpg)
 
 - Damit haben Sie die Einführung in APEX Workflow erfolgreich beendet. Wir hoffen, dass wir Ihnen mit diesem Kapitel einen kleinen Einblick in die Möglichkeiten von APEX Workflow geben konnten!
