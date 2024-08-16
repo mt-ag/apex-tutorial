@@ -792,7 +792,7 @@ COMMIT
 /
 
 set define '^' verify off
-prompt ...MT_TUTORIAL 23.2 Workflow Demo
+prompt ...MT_TUTORIAL 24.1 Workflow Demo
 
 create or replace package dinner_reservation_demo as 
 
@@ -826,7 +826,7 @@ show err;
 /
 
 set define '^' verify off
-prompt ...MT_TUTORIAL 23.2 Workflow Demo
+prompt ...MT_TUTORIAL 24.1 Workflow Demo
 
 create or replace package body dinner_reservation_demo as 
 
@@ -879,30 +879,30 @@ return VARCHAR2
 is l_table_id number;
 begin
     
-     for l in(
+     for l in (
                 select    tbl_id 
                         , tbl_seats_available
                 from      t_dining_table
                 where     tbl_seats_available >= pi_guest_count
                 order by  tbl_id asc
-                ) loop
+              ) loop
     
-                    select  tab.tbl_id
-                    into    l_table_id
-                    from t_dining_table tab
+                       select .tbl_id
+                         into l_table_id
+                         from t_dining_table tab
                     left join t_reservation res
-                    on res.res_dining_table_id = tab.tbl_id 
-                    where 
-                    tab.tbl_id = l.tbl_id and
-                    (res.res_start_date between pi_start_date AND pi_end_date
-                    or 
-                    res.res_end_date between pi_start_date AND pi_end_date );
+                           on res.res_dining_table_id = tab.tbl_id 
+                        where tab.tbl_id = l.tbl_id and
+                              ( res.res_start_date between pi_start_date AND pi_end_date or 
+                                res.res_end_date between pi_start_date AND pi_end_date 
+                              );
     
      end loop;
 
      return 'UNAVAIL';
     
-     exception when no_data_found then return 'AVAIL';
+     exception 
+      when no_data_found then return 'AVAIL';
 
 end check_availability;
 
@@ -917,7 +917,7 @@ l_table_id number;
 l_id_temp number;
 begin
     
-     for l in(
+     for l in (
                 select    tbl_id 
                         , tbl_seats_available
                 from      t_dining_table
@@ -927,22 +927,22 @@ begin
 
                     l_id_temp := l.tbl_id; 
     
-                    select  tab.tbl_id
-                    into    l_table_id
-                    from t_dining_table tab
+                       select tab.tbl_id
+                         into l_table_id
+                         from t_dining_table tab
                     left join t_reservation res
-                    on res.res_dining_table_id = tab.tbl_id 
-                    where 
-                    tab.tbl_id = l.tbl_id and
-                    (res.res_start_date between pi_start_date AND pi_end_date
-                    or 
-                    res.res_end_date between pi_start_date AND pi_end_date );
+                           on res.res_dining_table_id = tab.tbl_id 
+                        where tab.tbl_id = l.tbl_id and
+                              (res.res_start_date between pi_start_date AND pi_end_date or 
+                               res.res_end_date between pi_start_date AND pi_end_date 
+                              );
     
      end loop;
 
      return 0;
     
-     exception when no_data_found then return l_id_temp;
+     exception 
+      when no_data_found then return l_id_temp;
 
 end get_free_table_id;
     

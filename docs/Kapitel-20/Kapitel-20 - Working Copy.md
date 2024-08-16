@@ -10,7 +10,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass die Sta
 
 ![](../../assets/Kapitel-20/Working_Copy_01.jpg)
 
-- Geben Sie der Arbeitskopie den Namen **Working Copy Tutorial 23.2** und fügen Sie eine Beschreibung hinzu.  
+- Geben Sie der Arbeitskopie den Namen **Working Copy Tutorial 24.1** und fügen Sie eine Beschreibung hinzu.  
 
 ![](../../assets/Kapitel-20/Working_Copy_02.jpg)
 
@@ -70,7 +70,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass die Sta
 
 ![](../../assets/Kapitel-20/Working_Copy_09.jpg)
 
-- Kehren Sie zurück auf die Üersichsseite in den App Builder. Im Menü **Tutorial 23.2 Working Copy** können Sie unter dem Punkt **Compare Changes** einen Vergleich zwischen der Hauptversion und der Arbeitsversion durchführen.
+- Kehren Sie zurück auf die Üersichsseite in den App Builder. Im Menü **Tutorial 24.1 Working Copy** können Sie unter dem Punkt **Compare Changes** einen Vergleich zwischen der Hauptversion und der Arbeitsversion durchführen.
 
 ![](../../assets/Kapitel-20/Working_Copy_10.jpg)
 
@@ -164,4 +164,4 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass die Sta
 
 ![](../../assets/Kapitel-20/Working_Copy_30.jpg)
 
-- Sie haben damit das Kapitel zur neuen Versionierungsmöglichkeit in APEX 23.2 - der **Working Copy** - erfolgreich abgeschlossen.
+- Sie haben damit das Kapitel zur Versionierungsmöglichkeit in APEX 24.1 - der **Working Copy** - erfolgreich abgeschlossen.

@@ -11,12 +11,12 @@ Für die Bearbeitung dieser Aufgabe wird eine **View** benötigt.
 **Query**:
 
 ```sql
-select prdt_info_id as product_id,
-       prdt_info_name as product_name,
-       prdt_info_descr as product_description,
-       prdt_info_category as category,
-       prdt_info_product_image as product_image,
-       prdt_info_list_price as list_price 
+select prdt_info_id,
+       prdt_info_name,
+       prdt_info_descr,
+       prdt_info_category,
+       prdt_info_product_image,
+       prdt_info_list_price
 from product_info
  ```
 
@@ -66,7 +66,7 @@ Hier können SIe die angezeigten Sortierkriterien unter Display Value anpassen. 
   |Product Name | **PRDT_INFO_NAME** |
   |Product Description | **PRDT_INFO_DESCR** |
   |Product List Price | **PRDT_INFO_LIST_PRICE** |
-    |  |  | 
+  |  |  | 
 
 ![](../../assets/Kapitel-08/Cards_06.jpg) 
 
@@ -76,7 +76,7 @@ Hier können SIe die angezeigten Sortierkriterien unter Display Value anpassen. 
  
 ## <a name="cards-mit-bild-erstellen"></a>8.3	Cards mit Bild erstellen
 
-In diesem Schritt werden Sie das Aussehen der Cards ändern und die Titelbilder der Filme anzeigen.  
+In diesem Schritt werden Sie das Aussehen der Cards ändern und die Titelbilder der Produkte anzeigen.  
 - Klicken Sie hierfür auf **Attributes** und scrollen Sie dann nach unten zu **Media**.  
 
 - Wählen Sie als **Source *BLOB Column*** und dann unter **BLOB_Column *PRDT_INFO_PRODUCT_IMAGE*** aus. 
