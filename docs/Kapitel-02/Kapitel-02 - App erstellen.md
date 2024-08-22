@@ -14,7 +14,7 @@ In diesem Kapitel wird das Grundgerüst der Anwendung und die erste Seite erstel
 
 ![](../../assets/Kapitel-02/Create_App_Wizard_1.jpg)
 
-- Geben Sie jetzt den Namen der Anwendung ein (z.B. Tutorial 24.1).
+- Geben Sie jetzt den Namen der Anwendung ein (z.B. Apex Tutorial).
 
 ![](../../assets/Kapitel-02/Create_App_Wizard_2.jpg)
 
