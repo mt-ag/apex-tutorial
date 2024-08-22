@@ -155,7 +155,6 @@ begin
         dbms_output.put_line('DB Objects not exist');
 end;
   /
-
 -- create tables
 CREATE TABLE  CUSTOMERS (	
     CTMR_ID NUMBER, 
@@ -331,7 +330,8 @@ END;
 /
 ALTER TRIGGER  BI_STATES ENABLE
 /
-CREATE OR REPLACE TRIGGER  BI_DEPARTMENTS 
+
+CREATE OR REPLACE TRIGGER BI_DEPARTMENTS 
   BEFORE INSERT ON DEPARTMENTS              
   FOR EACH ROW 
 BEGIN  
@@ -344,18 +344,17 @@ END;
 /
 ALTER TRIGGER  BI_DEPARTMENTS ENABLE
 /
-
-CREATE SEQUENCE S_RESTAURANT_STAFF START WITH 1 NOCACHE ORDER;
+CREATE SEQUENCE S_RESTAURANT_STAFF START WITH 1 NOCACHE ORDER
 /
 CREATE TABLE T_RESTAURANT_STAFF (
       RST_ID                NUMBER DEFAULT ON NULL S_RESTAURANT_STAFF.NEXTVAL NOT NULL
     , RST_NAME              VARCHAR2(50 CHAR)
     , RST_EMAIL             VARCHAR2(50 CHAR)
-);
+)
 /
-ALTER TABLE T_RESTAURANT_STAFF ADD CONSTRAINT RESTAURANT_STAFF_PK PRIMARY KEY ( RST_ID );
+ALTER TABLE T_RESTAURANT_STAFF ADD CONSTRAINT RESTAURANT_STAFF_PK PRIMARY KEY ( RST_ID )
 /
-CREATE SEQUENCE S_RESERVATION START WITH 1 NOCACHE ORDER;
+CREATE SEQUENCE S_RESERVATION START WITH 1 NOCACHE ORDER
 /
 CREATE TABLE T_RESERVATION (
       RES_ID                    NUMBER DEFAULT ON NULL S_RESERVATION.NEXTVAL NOT NULL
@@ -367,22 +366,21 @@ CREATE TABLE T_RESERVATION (
     , RES_START_DATE            DATE
     , RES_END_DATE              DATE
     , RES_WORKFLOW_ID           NUMBER
-);
+)
 /
-ALTER TABLE T_RESERVATION ADD CONSTRAINT RESERVATION_PK PRIMARY KEY ( RES_ID );
+ALTER TABLE T_RESERVATION ADD CONSTRAINT RESERVATION_PK PRIMARY KEY ( RES_ID )
 /
-CREATE SEQUENCE S_DINING_TABLE START WITH 1 NOCACHE ORDER;
+CREATE SEQUENCE S_DINING_TABLE START WITH 1 NOCACHE ORDER
 /
 CREATE TABLE T_DINING_TABLE (
       TBL_ID                NUMBER DEFAULT ON NULL S_DINING_TABLE.NEXTVAL NOT NULL
     , TBL_SEATS_AVAILABLE   NUMBER 
-);
+)
 /
-ALTER TABLE T_DINING_TABLE ADD CONSTRAINT DINING_TABLE PRIMARY KEY ( TBL_ID );
+ALTER TABLE T_DINING_TABLE ADD CONSTRAINT DINING_TABLE PRIMARY KEY ( TBL_ID )
 /
-ALTER TABLE T_RESERVATION ADD CONSTRAINT FK_DINING_TABLE FOREIGN KEY (RES_DINING_TABLE_ID) REFERENCES T_DINING_TABLE(TBL_ID);
+ALTER TABLE T_RESERVATION ADD CONSTRAINT FK_DINING_TABLE FOREIGN KEY (RES_DINING_TABLE_ID) REFERENCES T_DINING_TABLE(TBL_ID)
 /
-
 INSERT INTO CUSTOMERS 
 VALUES (1,'John','Dulles','45020 Aviation Drive','','Sterling','VA','20166','john.dulles@email.com','703-555-2143','703-555-8967','http://www.johndulles.com','1000','', '', '');
 
@@ -789,10 +787,8 @@ INSERT INTO T_DINING_TABLE VALUES (12,8);
 INSERT INTO T_RESTAURANT_STAFF VALUES (1, 'KOCH','test@abc.com');
 
 COMMIT
-/
 
-set define '^' verify off
-prompt ...MT_TUTORIAL 24.1 Workflow Demo
+/ 
 
 create or replace package dinner_reservation_demo as 
 
@@ -821,12 +817,7 @@ function get_free_table_id (
 
 end dinner_reservation_demo;
 
-/
-show err;
-/
-
-set define '^' verify off
-prompt ...MT_TUTORIAL 24.1 Workflow Demo
+/ 
 
 create or replace package body dinner_reservation_demo as 
 
@@ -887,7 +878,7 @@ begin
                 order by  tbl_id asc
               ) loop
     
-                       select .tbl_id
+                       select l.tbl_id
                          into l_table_id
                          from t_dining_table tab
                     left join t_reservation res
@@ -947,9 +938,8 @@ begin
 end get_free_table_id;
     
 end dinner_reservation_demo;
-/
-show err;
-/
+
+/ 
 
 create or replace force editionable view tutowf_staff_vw
 as
@@ -957,7 +947,7 @@ select 	rst_id
 ,	      rst_name
 ,	      rst_email	
 from t_restaurant_staff
-with read only;
+with read only
 
 /
 
@@ -973,5 +963,6 @@ select 	res_id
 ,	      res_end_date
 ,	      res_workflow_id
 from t_reservation
-with read only;
+with read only
+
 /
