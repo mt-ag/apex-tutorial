@@ -226,7 +226,7 @@ Die Felder der Spalte **State** im **Interactive Grid** können bislang über ei
   - TUTO_P0031_5_VW
     ```sql
     select STTS_ID,
-           STTS_ST
+           STTS_ST,
            STTS_STATE_NAME
       from STATES
     ```
