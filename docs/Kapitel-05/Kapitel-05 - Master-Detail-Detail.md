@@ -218,7 +218,7 @@ APEX hinterlegt weiterhin in der Datenbank die **ID**.
 
 
 ## <a name="popup-list-of-values"></a>5.3 Popup List of Values
-**List of Values** können auch als Popup-Fenster angezeigt werden. In APEX 23.1 wurden hierfür einige Funktionen optimiert und erweitert. Diese sollen im Folgenden an einem Beispiel angewendet werden.
+**List of Values** können auch als Popup-Fenster angezeigt werden. In APEX wurden hierfür einige Funktionen optimiert und erweitert. Diese sollen im Folgenden an einem Beispiel angewendet werden.
 
 Die Felder der Spalte **State** im **Interactive Grid** können bislang über eine Texteingabe geändert werden. Stattdessen soll nun dort eine Auswahlliste angezeigt werden, entsprechend der Einträge in der Datenbanktabelle **States**.
 
@@ -226,7 +226,7 @@ Die Felder der Spalte **State** im **Interactive Grid** können bislang über ei
   - TUTO_P0031_5_VW
     ```sql
     select STTS_ID,
-           STTS_ST
+           STTS_ST,
            STTS_STATE_NAME
       from STATES
     ```
