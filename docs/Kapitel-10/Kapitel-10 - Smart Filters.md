@@ -64,7 +64,7 @@ Beim Klicken in die Suchleiste, erscheint der Filter *Product Name*. Wenn Sie au
   | | |  
   |--|--|
   | **Identification** |
-  | Name | *P91_CATEGORY* |
+  | Name | *P91_PRDT_INFO_CATEGORY* |
   | Type | *Checkbox Group*|  
   | **Label**| *Category* |
   | **List of Values** |  |
