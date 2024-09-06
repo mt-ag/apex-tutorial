@@ -93,7 +93,17 @@ Klicken Sie anschließend auf den **Edit Page 9999** Button in der **Breadcrumb 
 - Klicken Sie auf das **Icon** rechts über dem Feld, um den Code Editor zu starten. Geben Sie dort die folgenden CSS-Vorgaben ein:
  ```css
 .t-Login-region {
-    opacity: 0.9;
+   opacity: 0.9;
+}
+
+.apex-item-text, .t-Button{
+    border-radius: 20px;
+}
+
+.t-Login-region{
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+}  opacity: 0.9;
 }
  ```  
 
