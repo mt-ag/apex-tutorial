@@ -10,7 +10,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass die Sta
 
 ![](../../assets/Kapitel-20/Working_Copy_01.jpg)
 
-- Geben Sie der Arbeitskopie den Namen **Working Copy Tutorial 24.1** und fügen Sie eine Beschreibung hinzu.  
+- Geben Sie der Arbeitskopie den Namen **Apex Tutorial - Working Copy** und fügen Sie eine Beschreibung hinzu.  
 
 ![](../../assets/Kapitel-20/Working_Copy_02.jpg)
 
