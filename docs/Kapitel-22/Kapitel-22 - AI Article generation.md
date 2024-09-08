@@ -120,7 +120,7 @@ create or replace PACKAGE BODY AI_WEBSHOP AS
         apex_web_service.g_request_headers(1).name := 'Content-Type';
         apex_web_service.g_request_headers(1).value := 'application/json';
         apex_web_service.g_request_headers(2).name := 'Authorization';
-        apex_web_service.g_request_headers(2).value := 'Bearer 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';
+        apex_web_service.g_request_headers(2).value := 'Bearer sk-proj-kOC3wyI3bqKQl2';
         
         -- Body for the POST request with the prompt, provided by the user
         l_body := '{
@@ -173,7 +173,7 @@ create or replace PACKAGE BODY AI_WEBSHOP AS
         apex_web_service.g_request_headers(1).name := 'Content-Type';
         apex_web_service.g_request_headers(1).value := 'application/json';
         apex_web_service.g_request_headers(2).name := 'Authorization';
-        apex_web_service.g_request_headers(2).value := 'Bearer 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';
+        apex_web_service.g_request_headers(2).value := 'Bearer sk-proj-kOC3wyI3bqKQl2';
         
         -- Body for the POST request with the prompt, provided by the user
         l_body := '{
