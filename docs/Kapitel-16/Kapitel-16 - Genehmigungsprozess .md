@@ -195,7 +195,8 @@ update salaries
 select sary_id, sary_employee_name, sary_department, sary_salary
   into :P6_SARY_ID, :P6_SARY_EMPLOYEE_NAME, :P6_SARY_DEPARTMENT, :P6_SARY_SALARY
   from salaries
- where initcap(sary_employee_name) = initcap(:APP_USER);
+ where initcap(sary_employee_name) = initcap(:APP_USER)
+AND ROWNUM = 1;
  ```
 
 ![](../../assets/Kapitel-16/Process_23.jpg)  

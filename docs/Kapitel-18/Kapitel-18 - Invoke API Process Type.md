@@ -170,7 +170,7 @@ In diesem Fall setzt sich die Bezeichnung der View wie folgt zusammen:
   | **p_ordr_item_id** | *P102_ORDR_ITEM_ID*| 
   | **p_ordr_item_unit_price** | *P102_ORDR_ITEM_UNIT_PRICE*| 
   | **p_ordr_item_quantity** | *P102_ORDRD_ITEM_QUANTITY*| 
-  | **p_prdt_info_id** | *P102_PRDT_INFO_ID*| 
+  | **p_prdt_info_id** | *P102_ORDR_ITEM_PRDT_INFO_ID*| 
   | **p_prdt_info_category** | *P102_PRDT_INFO_CATEGORY*| 
   | **p_prdt_info_avail** | *P102_PRDT_INFO_AVAIL*| 
   | **p_prdt_info_list_price** | *P102_PRDT_INFO_LIST_PRICE*| 
