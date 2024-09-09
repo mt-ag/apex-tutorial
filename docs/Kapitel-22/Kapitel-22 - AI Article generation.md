@@ -1,14 +1,18 @@
 
-# <a name="AI Integration"></a>22. Kapitel-22 - AI Artikelerstellung für den Webshop
+# <a name="AI-basierte-Artikelgenerierung"></a>22. AI-basierte Artikelgenerierung für Webshops
 
-In diesem Tutorial zeigen wir, wie man mit Hilfe von KI Artikel für einen Webshop generiert. Wir werden KI verwenden, um Folgendes für jedes Produkt zu generieren:
+In diesem Tutorial zeigen wir Ihnen, wie Sie mithilfe von KI automatisch Artikel für einen Webshop erstellen. Die KI wird verwendet, um für jedes Produkt Folgendes zu generieren:
 
-- **Article Name** 
-- **Article Description** 
-- **Article Price** 
-- **Article Image (as URL)**
+- **Artikelname** 
+- **Artikelbeschreibung** 
+- **Artikelpreis** 
+- **Artikelbild (als URL)**
 
-## 1. Create the View
+## <a name="Eine-View-erstellen"></a>1. Eine View erstellen
+
+- Für die Bearbeitung dieser Aufgabe wird eine **View** benötigt. 
+
+- Geben Sie Ihrer **View** den Namen ***TUTO_P0200_VW***:  
 
 ```sql
 CREATE VIEW TUTO_P0200_VW AS
@@ -23,59 +27,106 @@ SELECT AIGE_ID
 ;
 ```
 
-1. Dann erstellen wir eine neue Seite mit **Cards**:
-
+1. Anschließend erstellen Sie eine neue Seite mit **Cards**:
   
 ![](../../assets/Kapitel-22/AI_01.jpg)
 
-## 2. Configure the Cards Layout
+## <a name="Konfiguration-des-Kartenlayouts"></a>2. Konfiguration des Kartenlayouts
 
-1. Erstelle die Seite mit der Nummer 200 und wähle die View `200` aus. Drücke **Next**:
-  
+1. Erstellen Sie die Seite mit der Nummer 200 und wählen Sie die View ***TUTO_P0200_VW*** aus. Klicken Sie anschließend auf **Next**:
+
+  | | |  
+  |--|--|
+  | **Page Number** | *200* | 
+  | **Name** | *Webshop*| 
+  | **Table/View Name** | *TUTO_P0200_VW*| 
+  | | |
+
 ![](../../assets/Kapitel-22/AI_02.jpg)
 
-2. Auf der Seite wähle das **Grid** Layout für die Cards aus und definiere es wie folgt:
-- **Title**: AIGE_NAME
-- **Body**: AIGE_DESCRIPTION
-- **Badge**: AIGE_PRICE
+2. Wählen Sie auf der Seite das **Grid-Layout** für die Karten aus und definieren Sie es wie folgt:
 
-3. Dann drücke **Create Page**:
-  
+  | | |  
+  |--|--|
+  | **Title** | *AIGE_NAME* | 
+  | **Body** | *AIGE_DESCRIPTION*| 
+  | **Badge** | *AIGE_PRICE*| 
+  | | |
+
+3. Klicken Sie anschließend auf **Create Page**:
+
 ![](../../assets/Kapitel-22/AI_03.jpg)
 
-## 3. Define a New Article Region
+## <a name="Region-Erstellen"></a>3. Region Erstellen
 
-1. Erstelle eine neue Region mit dem Namen: **Define a new Article**:
+1. Erstellen Sie eine neue Region mit dem Namen: **Define a new Article**:
   
+  | | |  
+  |--|--|
+  | **Name** | *Define a new Article* |  
+  | | |
+
 ![](../../assets/Kapitel-22/AI_04.jpg)
 
-## 4. Create a Text Item and Button
+## <a name="Erstellung-eines-Textfelds-und-eines-Buttons"></a>4. Erstellung eines Textfelds und eines Buttons
 
-1. Erstelle ein neues APEX **Text Item** mit dem Namen: `P200_NEW_ARTICLE`
-  
+1. Erstellen Sie ein neues APEX **Text Item** mit dem Namen: `P200_NEW_ARTICLE`
+
+  | | |  
+  |--|--|
+  | **Name** | *P200_NEW_ARTICLE* | 
+  | **Label** | *New Article*| 
+  | | |
+
 ![](../../assets/Kapitel-22/AI_05.jpg)
 
-2. Erstelle einen neuen Button mit dem Namen: `P200_ADD_ARTICLE`
-  
+2. Erstellen Sie einen neuen Button mit dem Namen: `P200_ADD_ARTICLE`
+
+  | | |  
+  |--|--|
+  | **Button Name** | *P200_ADD_ARTICLE* | 
+  | **Label** | *Add Article*| 
+  | **Button Template** | *Text with Icon*| 
+  | **Icon** | *fa-cart-plus*|  
+  | | |
+
 ![](../../assets/Kapitel-22/AI_06.jpg)
 
-3. Setze die folgenden Einstellungen für das Button-Aussehen:
+3. Setzen Sie die folgenden Einstellungen für das Button-Design fest:
   
+  | | |  
+  |--|--|
+  | **Size** | *Large* | 
+  | **Type** | *Success*| 
+  | **Icon Hover Animation** | *Push*| 
+  | **Width** | *Stretch*|  
+  | | |
+
 ![](../../assets/Kapitel-22/AI_07.jpg)
 
-4. Speichere und öffne die Vorschau der Seite. Jetzt solltest du ein Sucheingabefeld und einen **Add** Button sehen, aber die **Card Report** Region ist leer. Das Ziel ist es, die Artikel über eine Funktion hinzuzufügen.
+4. Speichern Sie die Seite und öffnen Sie die Vorschau. Jetzt sollten Sie ein Sucheingabefeld und einen **Add**-Button sehen, jedoch ist die **Card Report**-Region noch leer. Das Ziel besteht darin, die Artikel mithilfe einer Funktion hinzuzufügen.
   
 ![](../../assets/Kapitel-22/AI_08.jpg)
 
-## 5. Create a Package for AI Webshop
+## <a name="Erstellung-eines-Textfelds-und-eines-Buttons"></a>5. Erstellung eines Pakets für den AI-Webshop
 
-1. Als Nächstes erstellen wir ein Package, um die Funktionen und Prozeduren zur automatisierten Artikelerstellung zu speichern:
+1. Als Nächstes erstellen Sie ein Paket, um die Funktionen und Prozeduren zur automatisierten Artikelerstellung zu speichern:
+
+- 1. Klicken Sie auf **SQL Workshop**.
+- 2. Wählen Sie anschließend **Object Browser** aus.
+- 3. Klicken Sie auf das kleine **Plus-Symbol** neben der Suchleiste.
+- 4. Wählen Sie dann **Package** aus, um ein neues Paket zu erstellen.
   
 ![](../../assets/Kapitel-22/AI_09.jpg)
 
-### 5.1. Create the Package Specification
+2. Als Nächstes öffnet sich ein **Popup-Fenster**. Tragen Sie hier den Namen **AI_WEBSHOP** ein. 
+Schalten Sie die Option **Include Sample Code** aus, sodass sie grau wird. Drücken Sie anschließend auf **Create Package**.
 
-1. Hier ist der Code für die Specification, um die Funktionen und Prozeduren zu speichern:
+![](../../assets/Kapitel-22/AI_10.jpg)
+
+### <a name="Erstellung-der-Paketspezifikation">5.1. Erstellung der Paketspezifikation (Package Specification)
+
+1. Hier ist der Code für die Paketspezifikation, um die Funktionen und Prozeduren zu speichern:
 
 ```sql
 create or replace PACKAGE AI_WEBSHOP AS
@@ -96,13 +147,22 @@ create or replace PACKAGE AI_WEBSHOP AS
 END AI_WEBSHOP;
 /
 ```
-2. Nachdem einfügen auf den Button "Save and Compile" drücken.
+2. Nachdem Sie den Code eingefügt haben, klicken Sie auf den Button **Speichern und Kompilieren**.
   
 ![](../../assets/Kapitel-22/AI_11.jpg)
 
-### 5.2. Create the Package Body
+### <a name="Erstellung-des-Package-Body">5.2. Erstellung des Package Body
 
 1. Hier ist der Code für den Package Body:
+
+Hinweis: Suchen Sie im Code nach der Variable **l_api_key** in den Funktionen **get_chatgpt_response** und **get_dalle_image**. 
+Ersetzen Sie dort den Platzhalter `'Bearer API_KEY'` durch Ihren gültigen API-Schlüssel.
+
+In beiden Funktionen an folgender Stelle: 
+```sql
+l_api_key VARCHAR2(500) := 'Bearer API_KEY';
+```
+
 
 ```sql
 create or replace PACKAGE BODY AI_WEBSHOP AS
@@ -111,16 +171,17 @@ create or replace PACKAGE BODY AI_WEBSHOP AS
     FUNCTION get_chatgpt_response(p_prompt IN VARCHAR2) 
     RETURN CLOB
     IS
-        l_response CLOB;
-        l_url VARCHAR2(500) := 'https://api.openai.com/v1/chat/completions';
-        l_body CLOB;
-        l_chat_response CLOB; -- Variable to store the chat response
+        l_response          CLOB;
+        l_url               VARCHAR2(500) := 'https://api.openai.com/v1/chat/completions';
+        l_body              CLOB;
+        l_chat_response     CLOB; -- Variable to store the chat response
+        l_api_key           VARCHAR2(500) := 'Bearer API_KEY'; -- An dieser Stelle muss der gültige API-Schlüssel eingefügt werden:
     BEGIN
         -- Set necessary headers for JSON Content-Type and Authorization
         apex_web_service.g_request_headers(1).name := 'Content-Type';
         apex_web_service.g_request_headers(1).value := 'application/json';
         apex_web_service.g_request_headers(2).name := 'Authorization';
-        apex_web_service.g_request_headers(2).value := 'Bearer sk-proj-kOC3wyI3bqKQl2';
+        apex_web_service.g_request_headers(2).value := l_api_key; 
         
         -- Body for the POST request with the prompt, provided by the user
         l_body := '{
@@ -163,17 +224,18 @@ create or replace PACKAGE BODY AI_WEBSHOP AS
     FUNCTION get_dalle_image(p_prompt IN VARCHAR2) 
     RETURN VARCHAR2
     IS
-        l_response CLOB;
-        l_url VARCHAR2(500) := 'https://api.openai.com/v1/images/generations';
-        l_body CLOB;
-        l_image_url VARCHAR2(1000);  -- To store the image URL from the API response
-        l_blob BLOB;                 -- To store the downloaded image as BLOB
+        l_response          CLOB;
+        l_url               VARCHAR2(500) := 'https://api.openai.com/v1/images/generations';
+        l_body              CLOB;
+        l_image_url         VARCHAR2(1000);                     -- To store the image URL from the API response
+        l_blob              BLOB;                               -- To store the downloaded image as BLOB
+        l_api_key           VARCHAR2(500) := 'Bearer API_KEY';  -- An dieser Stelle muss der gültige API-Schlüssel eingefügt werden:
     BEGIN
         -- Set necessary headers for JSON Content-Type and Authorization
         apex_web_service.g_request_headers(1).name := 'Content-Type';
         apex_web_service.g_request_headers(1).value := 'application/json';
         apex_web_service.g_request_headers(2).name := 'Authorization';
-        apex_web_service.g_request_headers(2).value := 'Bearer sk-proj-kOC3wyI3bqKQl2';
+        apex_web_service.g_request_headers(2).value := l_api_key;
         
         -- Body for the POST request with the prompt, provided by the user
         l_body := '{
@@ -267,7 +329,7 @@ create or replace PACKAGE BODY AI_WEBSHOP AS
 END AI_WEBSHOP;
 /
 ```
-2. Nachdem einfügen auf den Button "Save and Compile" drücken.
+2. Nachdem Sie den API-Schlüssel eingefügt haben, klicken Sie auf den Button **Speichern und Kompilieren**.
   
 ![](../../assets/Kapitel-22/AI_12.jpg)
 
@@ -276,38 +338,67 @@ Zusammenfassung:
 - **`get_dalle_image`** → Diese Funktion holt eine URL für das KI-generierte Bild.
 - **`generate_article`** → Diese Prozedur generiert den Artikel basierend auf dem Artikelnamen und speichert ihn in der Datenbank.
 
-## 6. Create the Process for Adding an Article
+## <a name="Erstellung-des-Prozesses-zum-Hinzufügen-eines-Artikels">6. Erstellung des Prozesses zum Hinzufügen eines Artikels
 
-1. Gehe nun zurück zum **Page Designer** auf Seite 200 und erstelle einen neuen Prozess mit den folgenden Einstellungen:
-  
+1. Gehen Sie nun zurück zum **Page Designer** auf Seite 200 und erstellen Sie einen neuen Prozess mit den folgenden Einstellungen:
+
+  | | |  
+  |--|--|
+  | **Page** | *200* | 
+  | **Process Name** | *Generate new article*| 
+  | **Type** | *Invoke API*| 
+  | **Package** | *AI_WEBSHOP*|  
+  | **Procedure or Function** | *GENERATE_ARTICLE*|  
+  | | |
+
 ![](../../assets/Kapitel-22/AI_13.jpg)
 
-2. Füge eine Erfolgsmeldung hinzu und setze den Prozess so, dass er nur ausgeführt wird, wenn der Button geklickt wird.
+2. Fügen Sie eine Erfolgsmeldung hinzu und stellen Sie sicher, dass der Prozess nur ausgeführt wird, wenn der entsprechende Button geklickt wird.
   
+  | | |  
+  |--|--|
+  | **Success Message** | *The article has been successfully generated by AI and is now available in the webshop!* | 
+  | **When Button Pressed** | *P200_ADD_ARTICLE*| 
+  | | |
+
 ![](../../assets/Kapitel-22/AI_14.jpg)
 
-## 7. Verify the `p_new_article` Parameter
+## <a name="Erstellung-des-Prozesses-zum-Hinzufügen-eines-Artikels">7. Überprüfung des Parameters `p_new_article`
 
-1. Stelle sicher, dass der Parameter `p_new_article` korrekt mit dem Item verbunden ist. Ansonsten kann dies manuell erfolgen.
+1. Stellen Sie sicher, dass der Parameter `p_new_article` korrekt mit dem Item verbunden ist. Falls dies nicht der Fall ist, kann die Verbindung manuell vorgenommen werden.
   
+  | | |  
+  |--|--|
+  | **Name** | *p_new_article* | 
+  | **Item** | *P200_NEW_ARTICLE*| 
+  | | |
 ![](../../assets/Kapitel-22/AI_15.jpg)
 
-## 8. Final Page Preview
+## <a name="Endgültige-Seitenvorschau">8. Endgültige Seitenvorschau
 
-1. Sobald die Benutzeroberfläche vollständig ist, sieht die Seite in etwa so aus. Du kannst nun einen Artikelnamen eingeben und auf den **Add Article** Button klicken.
+1. Sobald die Benutzeroberfläche vollständig ist, sollte die Seite in etwa so aussehen. Sie können nun einen Artikelnamen eingeben und auf den **Artikel hinzufügen**-Button klicken.
   
 ![](../../assets/Kapitel-22/AI_16.jpg)
 
-2. Nach ca. 5-10 Sekunden wird die KI den Artikel generieren, und du solltest den Artikel in der **Card** Ansicht sehen können, jedoch zunächst ohne Bild.
+2. Nach etwa 5-10 Sekunden wird die KI den Artikel generieren, und Sie sollten den Artikel in der **Kartenansicht** sehen können, jedoch zunächst ohne Bild.
   
 ![](../../assets/Kapitel-22/AI_17.jpg)
 
-## 9. Add the Image URL
+## <a name="Endgültige-Seitenvorschau">9. Bild-URL hinzufügen
 
-1. Um das Bild als URL zu integrieren, setze folgende Einstellungen, speichere und lade die Seite neu.
-  
+1. Um das Bild als URL zu integrieren, setzen Sie die folgenden Einstellungen, speichern Sie und laden Sie die Seite neu.
+    
+  | | |  
+  |--|--|
+  | **Card Region** | *Webshop* | 
+  | **Media** | **| 
+  | **Source** | *URL Column*| 
+  | **Appearance** | *Widescreen*| 
+  | **Sizing** | *Cover*| 
+  | | |
+
 ![](../../assets/Kapitel-22/AI_18.jpg)
 
-2. Jetzt kannst du weitere Artikel erstellen, und das Endergebnis sollte so aussehen:
+2. Jetzt können Sie weitere Artikel erstellen, und das Endergebnis sollte in etwa so aussehen:
   
 ![](../../assets/Kapitel-22/AI_19.jpg)
