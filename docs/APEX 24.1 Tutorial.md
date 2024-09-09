@@ -99,7 +99,7 @@
     - [Anlegen der Workflow Console](#anlegen-der-workflow-console)
     - [Application Logo anpassen](#workflow-application-logo-anpassen)
     - [Tour durch die neue App](#workflow-tour-durch-die-neue-app)
-- [21. AI-basierte Artikelgenerierung für Webshops](#apex-workflow)
+- [22. AI-basierte Artikelgenerierung für Webshops](#AI-basierte-Artikelgenerierung)
     - [1. Eine View erstellen](#Eine-View-erstellen)
     - [2. Konfiguration des Kartenlayouts](#Konfiguration-des-Kartenlayouts)
     - [3. Region Erstellen](#Region-Erstellen) 
