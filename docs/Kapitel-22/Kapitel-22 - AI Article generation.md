@@ -1,6 +1,7 @@
+
 # <a name="AI Integration"></a>22. Kapitel-22 - AI Artikelerstellung für den Webshop
 
-In this tutorial, we will demonstrate how to generate articles with the help of AI for a webshop. We will use AI to generate the following for each product:
+In diesem Tutorial zeigen wir, wie man mit Hilfe von KI Artikel für einen Webshop generiert. Wir werden KI verwenden, um Folgendes für jedes Produkt zu generieren:
 
 - **Article Name** 
 - **Article Description** 
@@ -22,97 +23,291 @@ SELECT AIGE_ID
 ;
 ```
 
-Next, we create a new page with **Cards**:
+1. Dann erstellen wir eine neue Seite mit **Cards**:
+
+  
 ![](../../assets/Kapitel-22/AI_01.jpg)
 
 ## 2. Configure the Cards Layout
 
-Create the page with number 200 and select the view `200`. Press **Next**:
+1. Erstelle die Seite mit der Nummer 200 und wähle die View `200` aus. Drücke **Next**:
+  
 ![](../../assets/Kapitel-22/AI_02.jpg)
 
-On the page, select the **Grid** layout for the cards and define it as follows:
+2. Auf der Seite wähle das **Grid** Layout für die Cards aus und definiere es wie folgt:
 - **Title**: AIGE_NAME
 - **Body**: AIGE_DESCRIPTION
 - **Badge**: AIGE_PRICE
 
-Then, press **Create Page**:
+3. Dann drücke **Create Page**:
+  
 ![](../../assets/Kapitel-22/AI_03.jpg)
 
 ## 3. Define a New Article Region
 
-Create a new region with the name: **Define a new Article**:
+1. Erstelle eine neue Region mit dem Namen: **Define a new Article**:
+  
 ![](../../assets/Kapitel-22/AI_04.jpg)
 
 ## 4. Create a Text Item and Button
 
-1. Create a new APEX **Text Item** with the name: `P200_NEW_ARTICLE`
+1. Erstelle ein neues APEX **Text Item** mit dem Namen: `P200_NEW_ARTICLE`
+  
 ![](../../assets/Kapitel-22/AI_05.jpg)
 
-2. Create a new button with the name: `P200_ADD_ARTICLE`
+2. Erstelle einen neuen Button mit dem Namen: `P200_ADD_ARTICLE`
+  
 ![](../../assets/Kapitel-22/AI_06.jpg)
 
-Set the following settings for the button appearance:
+3. Setze die folgenden Einstellungen für das Button-Aussehen:
+  
 ![](../../assets/Kapitel-22/AI_07.jpg)
 
-Save and preview the page. Now you will see a search input and an **Add** button, but the **Card Report** region is empty. The goal is to automate the addition of articles via a function.
+4. Speichere und öffne die Vorschau der Seite. Jetzt solltest du ein Sucheingabefeld und einen **Add** Button sehen, aber die **Card Report** Region ist leer. Das Ziel ist es, die Artikel über eine Funktion hinzuzufügen.
+  
 ![](../../assets/Kapitel-22/AI_08.jpg)
 
 ## 5. Create a Package for AI Webshop
 
-Next, we need a package to store the functions and procedures for automating article generation:
+1. Als Nächstes erstellen wir ein Package, um die Funktionen und Prozeduren zur automatisierten Artikelerstellung zu speichern:
+  
 ![](../../assets/Kapitel-22/AI_09.jpg)
 
 ### 5.1. Create the Package Specification
 
-Here is the specification code to store the functions and procedure:
+1. Hier ist der Code für die Specification, um die Funktionen und Prozeduren zu speichern:
 
-```pascal
--- Insert my code here manually
+```sql
+create or replace PACKAGE AI_WEBSHOP AS
+
+    -- Function to get a response from ChatGPT (returns text as CLOB)
+    FUNCTION get_chatgpt_response(p_prompt IN VARCHAR2) 
+    RETURN CLOB;
+
+    -- Function to get an image URL from DALL·E (returns the image URL as VARCHAR2)
+    FUNCTION get_dalle_image(p_prompt IN VARCHAR2) 
+    RETURN VARCHAR2;
+
+    -- Procedure to generate an article and store it in the database
+    PROCEDURE generate_article(
+        p_new_article IN VARCHAR2
+    );
+
+END AI_WEBSHOP;
+/
 ```
-
+2. Nachdem einfügen auf den Button "Save and Compile" drücken.
+  
 ![](../../assets/Kapitel-22/AI_11.jpg)
 
 ### 5.2. Create the Package Body
 
-Here is the code for the package body:
+1. Hier ist der Code für den Package Body:
 
 ```sql
--- Insert my code here manually
-```
+create or replace PACKAGE BODY AI_WEBSHOP AS
 
+    -- Function to get a response from ChatGPT (returns text as CLOB)
+    FUNCTION get_chatgpt_response(p_prompt IN VARCHAR2) 
+    RETURN CLOB
+    IS
+        l_response CLOB;
+        l_url VARCHAR2(500) := 'https://api.openai.com/v1/chat/completions';
+        l_body CLOB;
+        l_chat_response CLOB; -- Variable to store the chat response
+    BEGIN
+        -- Set necessary headers for JSON Content-Type and Authorization
+        apex_web_service.g_request_headers(1).name := 'Content-Type';
+        apex_web_service.g_request_headers(1).value := 'application/json';
+        apex_web_service.g_request_headers(2).name := 'Authorization';
+        apex_web_service.g_request_headers(2).value := 'Bearer sk-proj-kOC3wyI3bqKQl2';
+        
+        -- Body for the POST request with the prompt, provided by the user
+        l_body := '{
+            "model": "gpt-3.5-turbo",
+            "messages": [{"role": "user", "content": "' || p_prompt || '"}],
+            "max_tokens": 100
+        }';
+
+        -- Execute the POST request
+        l_response := apex_web_service.make_rest_request(
+            p_url => l_url,
+            p_http_method => 'POST',
+            p_body => l_body
+        );
+
+        -- Parse the response using JSON_TABLE to extract the description
+        FOR r IN (
+            SELECT message_content
+            FROM JSON_TABLE(
+                l_response, '$'
+                COLUMNS (
+                    message_content CLOB PATH '$.choices[0].message.content'
+                )
+            )
+        ) LOOP
+            -- Store the chat response in the variable
+            l_chat_response := r.message_content;
+        END LOOP;
+
+        -- Return the extracted response
+        RETURN l_chat_response;
+
+    EXCEPTION
+        WHEN OTHERS THEN
+            RETURN 'Error: ' || SQLERRM;
+    END;
+
+
+    -- Function to get an image URL from DALL·E (returns the image URL as VARCHAR2)
+    FUNCTION get_dalle_image(p_prompt IN VARCHAR2) 
+    RETURN VARCHAR2
+    IS
+        l_response CLOB;
+        l_url VARCHAR2(500) := 'https://api.openai.com/v1/images/generations';
+        l_body CLOB;
+        l_image_url VARCHAR2(1000);  -- To store the image URL from the API response
+        l_blob BLOB;                 -- To store the downloaded image as BLOB
+    BEGIN
+        -- Set necessary headers for JSON Content-Type and Authorization
+        apex_web_service.g_request_headers(1).name := 'Content-Type';
+        apex_web_service.g_request_headers(1).value := 'application/json';
+        apex_web_service.g_request_headers(2).name := 'Authorization';
+        apex_web_service.g_request_headers(2).value := 'Bearer sk-proj-kOC3wyI3bqKQl2';
+        
+        -- Body for the POST request with the prompt, provided by the user
+        l_body := '{
+            "prompt": "' || p_prompt || '",
+            "n": 1,
+            "size": "256x256"
+        }';
+
+        -- Execute the POST request to generate the image
+        l_response := apex_web_service.make_rest_request(
+            p_url => l_url,
+            p_http_method => 'POST',
+            p_body => l_body
+        );
+
+        -- Parse the response to extract the image URL
+        FOR r IN (
+            SELECT image_url
+            FROM JSON_TABLE(
+                l_response, '$'
+                COLUMNS (
+                    image_url VARCHAR2(1000) PATH '$.data[0].url'
+                )
+            )
+        ) LOOP
+            -- Store the image URL in the variable
+            l_image_url := r.image_url;
+        END LOOP;
+
+        -- Return the URL containing the image
+        RETURN l_image_url;
+
+    EXCEPTION
+        WHEN OTHERS THEN
+            -- If an error occurs, return NULL or handle it accordingly
+            RETURN NULL;
+    END;
+
+
+    -- Procedure to generate an article and store it in the database
+    PROCEDURE generate_article(
+        p_new_article IN VARCHAR2
+    ) 
+    IS
+        v_article        CLOB;
+        v_article_desc   CLOB;
+        v_AIGE_URL       VARCHAR2(1000);
+        v_AIGE_PRICE     CLOB;
+        v_AIGE_PRICE_nr  NUMBER;
+    BEGIN
+
+        -- Get the article name from ChatGPT
+        v_article := get_chatgpt_response(
+            'I have an online shop. Please provide the perfect name for this product, limited to a maximum of 80 characters. The product is: ' || p_new_article
+        );
+
+        -- Get the article description from ChatGPT
+        v_article_desc := get_chatgpt_response(
+            'I have an online shop. Please provide the perfect description for this product, limited to a maximum of 4000 characters. The product is: ' || p_new_article
+        );
+
+        -- Get the image URL from DALL·E
+        v_AIGE_URL := get_dalle_image(
+            'I have an online shop. Please generate the perfect image for this product. The product is: ' || p_new_article
+        );
+
+        -- Get the price from ChatGPT
+        v_AIGE_PRICE := get_chatgpt_response(
+            'I have an online shop. Please provide the perfect price for this product as a number, formatted like 22.40 with no currency symbol. The product is: ' || p_new_article
+        );
+
+
+        -- Convert the price to a number
+        v_AIGE_PRICE_nr := TO_NUMBER(v_AIGE_PRICE);
+
+        -- Insert the generated article into the AI_GENERATED_ARTICLE table
+        INSERT INTO AI_GENERATED_ARTICLE (AIGE_NAME, AIGE_DESCRIPTION, AIGE_URL, AIGE_PRICE)
+        VALUES (v_article, v_article_desc, v_AIGE_URL, v_AIGE_PRICE_nr);
+
+        -- Commit the transaction
+        COMMIT;
+
+        DBMS_OUTPUT.put_line('Article successfully generated and stored.');
+
+    EXCEPTION
+        WHEN OTHERS THEN
+            DBMS_OUTPUT.put_line('Error: ' || SQLERRM);
+            ROLLBACK;
+    END generate_article;
+
+END AI_WEBSHOP;
+/
+```
+2. Nachdem einfügen auf den Button "Save and Compile" drücken.
+  
 ![](../../assets/Kapitel-22/AI_12.jpg)
 
-In summary:
-- **`get_chatgpt_response`** → Used to get a response from the AI for the article name and description.
-- **`get_dalle_image`** → Used to get a URL for the AI-generated image.
-- **`generate_article`** → This procedure generates the article based on the article name and stores it in the database.
+Zusammenfassung:
+- **`get_chatgpt_response`** → Diese Funktion holt eine Antwort von der KI für den Artikelnamen und die Beschreibung.
+- **`get_dalle_image`** → Diese Funktion holt eine URL für das KI-generierte Bild.
+- **`generate_article`** → Diese Prozedur generiert den Artikel basierend auf dem Artikelnamen und speichert ihn in der Datenbank.
 
 ## 6. Create the Process for Adding an Article
 
-Now, go back to the **Page Designer** on page 200 and create a new process with the following settings:
+1. Gehe nun zurück zum **Page Designer** auf Seite 200 und erstelle einen neuen Prozess mit den folgenden Einstellungen:
+  
 ![](../../assets/Kapitel-22/AI_13.jpg)
 
-Assign a success message and set the process to run when the button is clicked.
+2. Füge eine Erfolgsmeldung hinzu und setze den Prozess so, dass er nur ausgeführt wird, wenn der Button geklickt wird.
+  
 ![](../../assets/Kapitel-22/AI_14.jpg)
 
 ## 7. Verify the `p_new_article` Parameter
 
-Make sure the parameter `p_new_article` is correctly connected to the item. Otherwise, it can be done manually.
+1. Stelle sicher, dass der Parameter `p_new_article` korrekt mit dem Item verbunden ist. Ansonsten kann dies manuell erfolgen.
+  
 ![](../../assets/Kapitel-22/AI_15.jpg)
 
 ## 8. Final Page Preview
 
-Once the UI is complete, you will see something like this, where you can input an article name and click the **Add Article** button.
+1. Sobald die Benutzeroberfläche vollständig ist, sieht die Seite in etwa so aus. Du kannst nun einen Artikelnamen eingeben und auf den **Add Article** Button klicken.
+  
 ![](../../assets/Kapitel-22/AI_16.jpg)
 
-After 5-10 seconds, AI will generate the article, and you should be able to view the article in the **Card** layout, though without the image initially.
+2. Nach ca. 5-10 Sekunden wird die KI den Artikel generieren, und du solltest den Artikel in der **Card** Ansicht sehen können, jedoch zunächst ohne Bild.
+  
 ![](../../assets/Kapitel-22/AI_17.jpg)
 
 ## 9. Add the Image URL
 
-To integrate the image as a URL, set the following, then save and reload the page.
+1. Um das Bild als URL zu integrieren, setze folgende Einstellungen, speichere und lade die Seite neu.
+  
 ![](../../assets/Kapitel-22/AI_18.jpg)
 
-You can now create more articles, and the final result should look like this:
+2. Jetzt kannst du weitere Artikel erstellen, und das Endergebnis sollte so aussehen:
+  
 ![](../../assets/Kapitel-22/AI_19.jpg)
-
