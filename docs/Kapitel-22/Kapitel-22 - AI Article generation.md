@@ -108,7 +108,7 @@ SELECT AIGE_ID
   
 ![](../../assets/Kapitel-22/AI_08.jpg)
 
-## <a name="Erstellung-eines-Textfelds-und-eines-Buttons"></a>5. Erstellung eines Pakets für den AI-Webshop
+## <a name="Erstellung-eines-Pakets-für-den-AI-Webshop"></a>5. Erstellung eines Pakets für den AI-Webshop
 
 1. Als Nächstes erstellen Sie ein Paket, um die Funktionen und Prozeduren zur automatisierten Artikelerstellung zu speichern:
 
@@ -384,7 +384,7 @@ Zusammenfassung:
   
 ![](../../assets/Kapitel-22/AI_17.jpg)
 
-## <a name="Endgültige-Seitenvorschau">9. Bild-URL hinzufügen
+## <a name="Bild-URL-hinzufügen">9. Bild-URL hinzufügen
 
 1. Um das Bild als URL zu integrieren, setzen Sie die folgenden Einstellungen, speichern Sie und laden Sie die Seite neu.
     
