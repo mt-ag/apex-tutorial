@@ -80,7 +80,7 @@ Nachdem der AI-Service festgelegt wurde, navigieren Sie zum **SQL Workshop**.
 Im **APEX Assistant**-Feld können Sie Hilfestellung zur Erstellung von SQL-Queries erhalten. Geben Sie z. B. den folgenden Beispieltext ein:
 
 **Beschreibung der Abfrage:**  
-Erstelle eine SQL-Abfrage, die alle Kunden aus der Tabelle "CUSTOMERS" findet, deren Kreditlimit größer als 5000 ist. Gib dabei nur die wichtigsten Informationen wie Name, Stadt, E-Mail und Kreditlimit der Kunden zurück.
+> Erstelle eine SQL-Abfrage, die alle Kunden aus der Tabelle "CUSTOMERS" findet, deren Kreditlimit größer als 5000 ist. Gib dabei nur die wichtigsten Informationen wie Name, Stadt, E-Mail und Kreditlimit der Kunden zurück.
 
 ```sql
 select ctmr_frst_name,
@@ -101,7 +101,7 @@ select ctmr_frst_name,
 Nachdem Sie den Text eingegeben haben, erhalten Sie Vorschläge für SQL-Queries. Hier ist ein Beispiel:
 
 **Beschreibung der Abfrage:** 
-Suche nach allen Kunden und gib den vollständigen Namen des Kunden (Vorname und Nachname), seine E-Mail-Adresse und die Anzahl der Bestellungen, die jeder Kunde aufgegeben hat, zurück. Verwende die Daten aus den Tabellen "CUSTOMERS" und "ORDERS", wobei die Kunden in der Tabelle "CUSTOMERS" und ihre Bestellungen in der Tabelle "ORDERS" gespeichert sind. Verknüpfe die beiden Tabellen anhand der Kunden-ID. Gib nur den vollständigen Namen, die E-Mail-Adresse und die Anzahl der Bestellungen aus.
+> Suche nach allen Kunden und gib den vollständigen Namen des Kunden (Vorname und Nachname), seine E-Mail-Adresse und die Anzahl der Bestellungen, die jeder Kunde aufgegeben hat, zurück. Verwende die Daten aus den Tabellen "CUSTOMERS" und "ORDERS", wobei die Kunden in der Tabelle "CUSTOMERS" und ihre Bestellungen in der Tabelle "ORDERS" gespeichert sind. Verknüpfe die beiden Tabellen anhand der Kunden-ID. Gib nur den vollständigen Namen, die E-Mail-Adresse und die Anzahl der Bestellungen aus.
 
 ```sql
 select ctmr.ctmr_frst_name || ' ' || ctmr.ctmr_last_name as full_name,
@@ -124,7 +124,7 @@ select ctmr.ctmr_frst_name || ' ' || ctmr.ctmr_last_name as full_name,
 Hier ist ein weiteres Beispiel für eine SQL-Query:
 
 **Beschreibung der Abfrage:** 
-Suche nach allen Kunden und gib den vollständigen Namen des Kunden (Vorname und Nachname), seine E-Mail-Adresse sowie die Anzahl der Bestellungen zurück, die jeder Kunde seit dem Jahr 2016 aufgegeben hat. Berücksichtige dabei nur Bestellungen, die einen Gesamtwert (ORDR_TOTAL) von mehr als 100 aufweisen. Die Kundeninformationen stammen aus der Tabelle "CUSTOMERS", und die Bestellungen sind in der Tabelle "ORDERS" gespeichert. Verknüpfe die beiden Tabellen anhand der Kunden-ID. Gib nur die folgenden Informationen zurück: vollständiger Name, E-Mail-Adresse und die Anzahl der qualifizierten Bestellungen seit 2016.
+> Suche nach allen Kunden und gib den vollständigen Namen des Kunden (Vorname und Nachname), seine E-Mail-Adresse sowie die Anzahl der Bestellungen zurück, die jeder Kunde seit dem Jahr 2016 aufgegeben hat. Berücksichtige dabei nur Bestellungen, die einen Gesamtwert (ORDR_TOTAL) von mehr als 100 aufweisen. Die Kundeninformationen stammen aus der Tabelle "CUSTOMERS", und die Bestellungen sind in der Tabelle "ORDERS" gespeichert. Verknüpfe die beiden Tabellen anhand der Kunden-ID. Gib nur die folgenden Informationen zurück: vollständiger Name, E-Mail-Adresse und die Anzahl der qualifizierten Bestellungen seit 2016.
 
 ```sql
 select ctmr.ctmr_frst_name || ' ' || ctmr.ctmr_last_name as full_name,
