@@ -7,417 +7,364 @@ In diesem Kapitel werden wir drei verschiedene Funktionen von AI in Kombination 
 
 In diesem Abschnitt testen wir, wie AI uns bei der Erstellung von SQL-Abfragen unterstützen kann. Die AI wird genutzt, um komplexe SQL-Queries effizient und fehlerfrei zu generieren, die auf den Anforderungen der Datenbanktabellen und Geschäftslogik basieren.
 
-Ziel: Erstellen Sie verschiedene SQL-Abfragen, die auf den Datenbanken laufen, und optimieren Sie den Prozess durch die Einbindung von AI.
+**Ziel:** Erstellen Sie verschiedene SQL-Abfragen, die auf den Datenbanken laufen, und optimieren Sie den Prozess durch die Einbindung von AI.
 
 ## 2. Automatisierte App-Erstellung mit AI
 
-Der zweite Test wird sich auf die Fähigkeit von AI konzentrieren, eine vollständige Anwendung mit Oracle APEX zu generieren. Die Anwendung soll es ermöglichen, verschiedene Tabellen zu verwalten (z. B. Erstellen, Bearbeiten, Löschen von Datensätzen).
+Der zweite Test konzentriert sich auf die Fähigkeit von AI, eine vollständige Anwendung mit Oracle APEX zu generieren. Diese Anwendung wird verschiedene Tabellen miteinander verknüpfen und die Verwaltung der Daten ermöglichen, einschließlich der Funktionen für **Insert**, **Update** und **Delete**. Darüber hinaus sollen folgende Features in der App enthalten sein:
 
-Ziel: Nutzen Sie AI, um eine voll funktionsfähige Applikation in Oracle APEX zu erstellen, die auf den vorhandenen Datenbanktabellen basiert.
+- **Report-Seite**: Ein Bericht, der die Daten aus den Tabellen anzeigt und gefiltert werden kann.
+- **Dashboard**: Ein Dashboard mit wichtigen Metriken, wie z. B. die Anzahl der Kunden, Bestellungen oder Verkäufe, visualisiert durch Diagramme.
+- **Suchfunktion**: Eine Suchseite, auf der nach spezifischen Bestellungen oder Kunden gesucht werden kann.
+
+**Ziel:** Nutzen Sie AI, um eine voll funktionsfähige Applikation in Oracle APEX zu erstellen, die die Verwaltung von Daten aus verschiedenen Tabellen ermöglicht, sowie ein Dashboard, eine Report-Seite und eine Suchfunktion beinhaltet.
 
 ## 3. Aufgabenautomatisierung innerhalb der Anwendung durch AI
 
-In der finalen Funktion soll die AI Aufgaben innerhalb der erstellten Anwendung automatisieren. Diese Aufgaben können beispielsweise das Erstellen von Berichten, das Analysieren von Daten oder das Unterstützen von Benutzern durch Vorschläge und Lösungen umfassen.
+In der dritten Funktion wird getestet, wie AI Aufgaben innerhalb der Anwendung übernehmen kann. Hier wird speziell darauf abgezielt, dass die AI eingehende E-Mails verarbeitet und automatische Antworten generiert. Wenn beispielsweise eine E-Mail eintrifft, soll die AI darauf basierend eine Antwort verfassen.
 
-Ziel: Verwenden Sie AI, um Aufgaben und Prozesse innerhalb der Oracle APEX-Anwendung zu automatisieren, wodurch der Workflow verbessert und die Effizienz gesteigert wird.
+**Ziel:** Verwenden Sie AI, um automatisch E-Mail-Antworten zu generieren. Diese Funktion soll die Effizienz steigern, indem die AI kontextbezogene Antworten erstellt.
 
 
-- **Artikelname** 
-- **Artikelbeschreibung** 
-- **Artikelpreis** 
-- **Artikelbild (als URL)**
+## Schritt 1: Zugriff auf den App Builder
 
-## <a name="Eine-View-erstellen"></a>1. Eine View erstellen
+Um mit der Erstellung des AI-Dienstes zu beginnen, navigieren Sie zunächst zum **App Builder**.
 
-- Für die Bearbeitung dieser Aufgabe wird eine **View** benötigt. 
+1. Klicken Sie im Hauptmenü auf **App Builder**.
+2. Wählen Sie dann **Workspace Utilities**, um weitere Tools zu nutzen.
 
-- Geben Sie Ihrer **View** den Namen ***TUTO_P0200_VW***:  
+![](../../assets/Kapitel-22/ai_basic_01.jpg)
 
-```sql
-CREATE VIEW TUTO_P0200_VW AS
-SELECT AIGE_ID
-     , AIGE_NAME
-     , AIGE_DESCRIPTION
-     , AIGE_PRICE
-     , AIGE_URL
-     , AIGE_IMAGE
-     , AIGE_MIME_TYPE
-  FROM AI_GENERATED_ARTICLE
-;
-```
+---
 
-1. Anschließend erstellen Sie eine neue Seite mit **Cards**:
-  
-![](../../assets/Kapitel-22/AI_01.jpg)
+## Schritt 2: Zugriff auf den AI-Generator
 
-## <a name="Konfiguration-des-Kartenlayouts"></a>2. Konfiguration des Kartenlayouts
+Nachdem Sie im Bereich **Workspace Utilities** sind:
 
-1. Erstellen Sie die Seite mit der Nummer 200 und wählen Sie die View ***TUTO_P0200_VW*** aus. Klicken Sie anschließend auf **Next**:
+1. Klicken Sie auf **Generator AI**, um den AI-Dienst zu starten.
 
-  | | |  
-  |--|--|
-  | **Page Number** | *200* | 
-  | **Name** | *Webshop*| 
-  | **Table/View Name** | *TUTO_P0200_VW*| 
-  | | |
+![](../../assets/Kapitel-22/ai_basic_02.jpg)
 
-![](../../assets/Kapitel-22/AI_02.jpg)
+---
 
-2. Wählen Sie auf der Seite das **Grid-Layout** für die Karten aus und definieren Sie es wie folgt:
+## Schritt 3: Erstellen eines AI-Services
 
-  | | |  
-  |--|--|
-  | **Title** | *AIGE_NAME* | 
-  | **Body** | *AIGE_DESCRIPTION*| 
-  | **Badge** | *AIGE_PRICE*| 
-  | | |
+Um den AI-Service zu konfigurieren:
 
-3. Klicken Sie anschließend auf **Create Page**:
+1. Klicken Sie auf den **Create**-Button, um einen neuen AI-Service zu erstellen.
 
-![](../../assets/Kapitel-22/AI_03.jpg)
+![](../../assets/Kapitel-22/ai_basic_03.jpg)
 
-## <a name="Region-Erstellen"></a>3. Region Erstellen
+---
 
-1. Erstellen Sie eine neue Region mit dem Namen: **Define a new Article**:
-  
-  | | |  
-  |--|--|
-  | **Name** | *Define a new Article* |  
-  | | |
+## Schritt 4: AI-Service konfigurieren
 
-![](../../assets/Kapitel-22/AI_04.jpg)
+Definieren Sie die Einstellungen für den AI-Service wie auf dem Bild gezeigt:
 
-## <a name="Erstellung-eines-Textfelds-und-eines-Buttons"></a>4. Erstellung eines Textfelds und eines Buttons
+![](../../assets/Kapitel-22/ai_basic_04.jpg)
 
-1. Erstellen Sie ein neues APEX **Text Item** mit dem Namen: `P200_NEW_ARTICLE`
+---
 
-  | | |  
-  |--|--|
-  | **Name** | *P200_NEW_ARTICLE* | 
-  | **Label** | *New Article*| 
-  | | |
+## Schritt 5: Wechsel zum SQL Workshop
 
-![](../../assets/Kapitel-22/AI_05.jpg)
+Nachdem der AI-Service festgelegt wurde, navigieren Sie zum **SQL Workshop**.
 
-2. Erstellen Sie einen neuen Button mit dem Namen: `P200_ADD_ARTICLE`
+1. Gehen Sie zum **SQL Commands**-Bereich.
+2. Klicken Sie auf den Button **APEX Assistant**, um Unterstützung für SQL-Abfragen zu erhalten.
 
-  | | |  
-  |--|--|
-  | **Button Name** | *P200_ADD_ARTICLE* | 
-  | **Label** | *Add Article*| 
-  | **Button Template** | *Text with Icon*| 
-  | **Icon** | *fa-cart-plus*|  
-  | | |
+![](../../assets/Kapitel-22/ai_basic_05.jpg)
+---
 
-![](../../assets/Kapitel-22/AI_06.jpg)
+## Schritt 6: Nutzung des APEX Assistant für SQL-Abfragen
 
-3. Setzen Sie die folgenden Einstellungen für das Button-Design fest:
-  
-  | | |  
-  |--|--|
-  | **Size** | *Large* | 
-  | **Type** | *Success*| 
-  | **Icon Hover Animation** | *Push*| 
-  | **Width** | *Stretch*|  
-  | | |
+Im **APEX Assistant**-Feld können Sie Hilfestellung zur Erstellung von SQL-Queries erhalten. Geben Sie z. B. den folgenden Beispieltext ein:
 
-![](../../assets/Kapitel-22/AI_07.jpg)
-
-4. Speichern Sie die Seite und öffnen Sie die Vorschau. Jetzt sollten Sie ein Sucheingabefeld und einen **Add**-Button sehen, jedoch ist die **Card Report**-Region noch leer. Das Ziel besteht darin, die Artikel mithilfe einer Funktion hinzuzufügen.
-  
-![](../../assets/Kapitel-22/AI_08.jpg)
-
-## <a name="Erstellung-eines-Pakets-für-den-AI-Webshop"></a>5. Erstellung eines Pakets für den AI-Webshop
-
-1. Als Nächstes erstellen Sie ein Paket, um die Funktionen und Prozeduren zur automatisierten Artikelerstellung zu speichern:
-
-- 1. Klicken Sie auf **SQL Workshop**.
-- 2. Wählen Sie anschließend **Object Browser** aus.
-- 3. Klicken Sie auf das kleine **Plus-Symbol** neben der Suchleiste.
-- 4. Wählen Sie dann **Package** aus, um ein neues Paket zu erstellen.
-  
-![](../../assets/Kapitel-22/AI_09.jpg)
-
-2. Als Nächstes öffnet sich ein **Popup-Fenster**. Tragen Sie hier den Namen **AI_WEBSHOP** ein. 
-Schalten Sie die Option **Include Sample Code** aus, sodass sie grau wird. Drücken Sie anschließend auf **Create Package**.
-
-![](../../assets/Kapitel-22/AI_10.jpg)
-
-### <a name="Erstellung-der-Paketspezifikation">5.1. Erstellung der Paketspezifikation (Package Specification)
-
-1. Hier ist der Code für die Paketspezifikation, um die Funktionen und Prozeduren zu speichern:
+**Beschreibung der Abfrage:**  
+Erstelle eine SQL-Abfrage, die alle Kunden aus der Tabelle "CUSTOMERS" findet, deren Kreditlimit größer als 5000 ist. Gib dabei nur die wichtigsten Informationen wie Name, Stadt, E-Mail und Kreditlimit der Kunden zurück.
 
 ```sql
-create or replace PACKAGE AI_WEBSHOP AS
-
-    -- Function to get a response from ChatGPT (returns text as CLOB)
-    FUNCTION get_chatgpt_response(p_prompt IN VARCHAR2) 
-    RETURN CLOB;
-
-    -- Function to get an image URL from DALL·E (returns the image URL as VARCHAR2)
-    FUNCTION get_dalle_image(p_prompt IN VARCHAR2) 
-    RETURN VARCHAR2;
-
-    -- Procedure to generate an article and store it in the database
-    PROCEDURE generate_article(
-        p_new_article IN VARCHAR2
-    );
-
-END AI_WEBSHOP;
-/
-```
-2. Nachdem Sie den Code eingefügt haben, klicken Sie auf den Button **Speichern und Kompilieren**.
-  
-![](../../assets/Kapitel-22/AI_11.jpg)
-
-### <a name="Erstellung-des-Package-Body">5.2. Erstellung des Package Body
-
-1. Hier ist der Code für den Package Body:
-
-Hinweis: Suchen Sie im Code nach der Variable **l_api_key** in den Funktionen **get_chatgpt_response** und **get_dalle_image**. 
-Ersetzen Sie dort den Platzhalter `'Bearer API_KEY'` durch Ihren gültigen API-Schlüssel.
-
-In beiden Funktionen an folgender Stelle: 
-```sql
-l_api_key VARCHAR2(500) := 'Bearer API_KEY';
+select ctmr_frst_name,
+       ctmr_last_name,
+       ctmr_city,
+       ctmr_email,
+       ctmr_credit_limit
+  from customers
+ where ctmr_credit_limit > 5000
 ```
 
+![](../../assets/Kapitel-22/ai_basic_06.jpg)
+
+---
+
+## Schritt 7: SQL-Query Vorschläge
+
+Nachdem Sie den Text eingegeben haben, erhalten Sie Vorschläge für SQL-Queries. Hier ist ein Beispiel:
+
+**Beschreibung der Abfrage:** 
+Suche nach allen Kunden und gib den vollständigen Namen des Kunden (Vorname und Nachname), seine E-Mail-Adresse und die Anzahl der Bestellungen, die jeder Kunde aufgegeben hat, zurück. Verwende die Daten aus den Tabellen "CUSTOMERS" und "ORDERS", wobei die Kunden in der Tabelle "CUSTOMERS" und ihre Bestellungen in der Tabelle "ORDERS" gespeichert sind. Verknüpfe die beiden Tabellen anhand der Kunden-ID. Gib nur den vollständigen Namen, die E-Mail-Adresse und die Anzahl der Bestellungen aus.
 
 ```sql
-create or replace PACKAGE BODY AI_WEBSHOP AS
-
-    -- Function to get a response from ChatGPT (returns text as CLOB)
-    FUNCTION get_chatgpt_response(p_prompt IN VARCHAR2) 
-    RETURN CLOB
-    IS
-        l_response          CLOB;
-        l_url               VARCHAR2(500) := 'https://api.openai.com/v1/chat/completions';
-        l_body              CLOB;
-        l_chat_response     CLOB; -- Variable to store the chat response
-        l_api_key           VARCHAR2(500) := 'Bearer API_KEY'; -- An dieser Stelle muss der gültige API-Schlüssel eingefügt werden:
-    BEGIN
-        -- Set necessary headers for JSON Content-Type and Authorization
-        apex_web_service.g_request_headers(1).name := 'Content-Type';
-        apex_web_service.g_request_headers(1).value := 'application/json';
-        apex_web_service.g_request_headers(2).name := 'Authorization';
-        apex_web_service.g_request_headers(2).value := l_api_key; 
-        
-        -- Body for the POST request with the prompt, provided by the user
-        l_body := '{
-            "model": "gpt-3.5-turbo",
-            "messages": [{"role": "user", "content": "' || p_prompt || '"}],
-            "max_tokens": 100
-        }';
-
-        -- Execute the POST request
-        l_response := apex_web_service.make_rest_request(
-            p_url => l_url,
-            p_http_method => 'POST',
-            p_body => l_body
-        );
-
-        -- Parse the response using JSON_TABLE to extract the description
-        FOR r IN (
-            SELECT message_content
-            FROM JSON_TABLE(
-                l_response, '$'
-                COLUMNS (
-                    message_content CLOB PATH '$.choices[0].message.content'
-                )
-            )
-        ) LOOP
-            -- Store the chat response in the variable
-            l_chat_response := r.message_content;
-        END LOOP;
-
-        -- Return the extracted response
-        RETURN l_chat_response;
-
-    EXCEPTION
-        WHEN OTHERS THEN
-            RETURN 'Error: ' || SQLERRM;
-    END;
-
-
-    -- Function to get an image URL from DALL·E (returns the image URL as VARCHAR2)
-    FUNCTION get_dalle_image(p_prompt IN VARCHAR2) 
-    RETURN VARCHAR2
-    IS
-        l_response          CLOB;
-        l_url               VARCHAR2(500) := 'https://api.openai.com/v1/images/generations';
-        l_body              CLOB;
-        l_image_url         VARCHAR2(1000);                     -- To store the image URL from the API response
-        l_blob              BLOB;                               -- To store the downloaded image as BLOB
-        l_api_key           VARCHAR2(500) := 'Bearer API_KEY';  -- An dieser Stelle muss der gültige API-Schlüssel eingefügt werden:
-    BEGIN
-        -- Set necessary headers for JSON Content-Type and Authorization
-        apex_web_service.g_request_headers(1).name := 'Content-Type';
-        apex_web_service.g_request_headers(1).value := 'application/json';
-        apex_web_service.g_request_headers(2).name := 'Authorization';
-        apex_web_service.g_request_headers(2).value := l_api_key;
-        
-        -- Body for the POST request with the prompt, provided by the user
-        l_body := '{
-            "prompt": "' || p_prompt || '",
-            "n": 1,
-            "size": "256x256"
-        }';
-
-        -- Execute the POST request to generate the image
-        l_response := apex_web_service.make_rest_request(
-            p_url => l_url,
-            p_http_method => 'POST',
-            p_body => l_body
-        );
-
-        -- Parse the response to extract the image URL
-        FOR r IN (
-            SELECT image_url
-            FROM JSON_TABLE(
-                l_response, '$'
-                COLUMNS (
-                    image_url VARCHAR2(1000) PATH '$.data[0].url'
-                )
-            )
-        ) LOOP
-            -- Store the image URL in the variable
-            l_image_url := r.image_url;
-        END LOOP;
-
-        -- Return the URL containing the image
-        RETURN l_image_url;
-
-    EXCEPTION
-        WHEN OTHERS THEN
-            -- If an error occurs, return NULL or handle it accordingly
-            RETURN NULL;
-    END;
-
-
-    -- Procedure to generate an article and store it in the database
-    PROCEDURE generate_article(
-        p_new_article IN VARCHAR2
-    ) 
-    IS
-        v_article        CLOB;
-        v_article_desc   CLOB;
-        v_AIGE_URL       VARCHAR2(1000);
-        v_AIGE_PRICE     CLOB;
-        v_AIGE_PRICE_nr  NUMBER;
-    BEGIN
-
-        -- Get the article name from ChatGPT
-        v_article := get_chatgpt_response(
-            'I have an online shop. Please provide the perfect name for this product, limited to a maximum of 80 characters. The product is: ' || p_new_article
-        );
-
-        -- Get the article description from ChatGPT
-        v_article_desc := get_chatgpt_response(
-            'I have an online shop. Please provide the perfect description for this product, limited to a maximum of 4000 characters. The product is: ' || p_new_article
-        );
-
-        -- Get the image URL from DALL·E
-        v_AIGE_URL := get_dalle_image(
-            'I have an online shop. Please generate the perfect image for this product. The product is: ' || p_new_article
-        );
-
-        -- Get the price from ChatGPT
-        v_AIGE_PRICE := get_chatgpt_response(
-            'I have an online shop. Please provide the perfect price for this product as a number, formatted like 22.40 with no currency symbol. The product is: ' || p_new_article
-        );
-
-
-        -- Convert the price to a number
-        v_AIGE_PRICE_nr := TO_NUMBER(v_AIGE_PRICE);
-
-        -- Insert the generated article into the AI_GENERATED_ARTICLE table
-        INSERT INTO AI_GENERATED_ARTICLE (AIGE_NAME, AIGE_DESCRIPTION, AIGE_URL, AIGE_PRICE)
-        VALUES (v_article, v_article_desc, v_AIGE_URL, v_AIGE_PRICE_nr);
-
-        -- Commit the transaction
-        COMMIT;
-
-        DBMS_OUTPUT.put_line('Article successfully generated and stored.');
-
-    EXCEPTION
-        WHEN OTHERS THEN
-            DBMS_OUTPUT.put_line('Error: ' || SQLERRM);
-            ROLLBACK;
-    END generate_article;
-
-END AI_WEBSHOP;
-/
+select ctmr.ctmr_frst_name || ' ' || ctmr.ctmr_last_name as full_name,
+       ctmr.ctmr_email,
+       count(ord.ordr_id)                          as order_count
+  from customers ctmr
+  left join orders ord
+    on ctmr.ctmr_id = ord.ordr_ctmr_id
+ group by ctmr.ctmr_frst_name,
+          ctmr.ctmr_last_name,
+          ctmr.ctmr_email
 ```
-2. Nachdem Sie den API-Schlüssel eingefügt haben, klicken Sie auf den Button **Speichern und Kompilieren**.
-  
-![](../../assets/Kapitel-22/AI_12.jpg)
 
-Zusammenfassung:
-- **`get_chatgpt_response`** → Diese Funktion holt eine Antwort von der KI für den Artikelnamen und die Beschreibung.
-- **`get_dalle_image`** → Diese Funktion holt eine URL für das KI-generierte Bild.
-- **`generate_article`** → Diese Prozedur generiert den Artikel basierend auf dem Artikelnamen und speichert ihn in der Datenbank.
+![](../../assets/Kapitel-22/ai_basic_07.jpg)
 
-## <a name="Erstellung-des-Prozesses-zum-Hinzufügen-eines-Artikels">6. Erstellung des Prozesses zum Hinzufügen eines Artikels
+---
 
-1. Gehen Sie nun zurück zum **Page Designer** auf Seite 200 und erstellen Sie einen neuen Prozess mit den folgenden Einstellungen:
+## Schritt 8: Weiteres SQL-Beispiel
 
-  | | |  
-  |--|--|
-  | **Page** | *200* | 
-  | **Process Name** | *Generate new article*| 
-  | **Type** | *Invoke API*| 
-  | **Package** | *AI_WEBSHOP*|  
-  | **Procedure or Function** | *GENERATE_ARTICLE*|  
-  | | |
+Hier ist ein weiteres Beispiel für eine SQL-Query:
 
-![](../../assets/Kapitel-22/AI_13.jpg)
+**Beschreibung der Abfrage:** 
+Suche nach allen Kunden und gib den vollständigen Namen des Kunden (Vorname und Nachname), seine E-Mail-Adresse sowie die Anzahl der Bestellungen zurück, die jeder Kunde seit dem Jahr 2016 aufgegeben hat. Berücksichtige dabei nur Bestellungen, die einen Gesamtwert (ORDR_TOTAL) von mehr als 100 aufweisen. Die Kundeninformationen stammen aus der Tabelle "CUSTOMERS", und die Bestellungen sind in der Tabelle "ORDERS" gespeichert. Verknüpfe die beiden Tabellen anhand der Kunden-ID. Gib nur die folgenden Informationen zurück: vollständiger Name, E-Mail-Adresse und die Anzahl der qualifizierten Bestellungen seit 2016.
 
-2. Fügen Sie eine Erfolgsmeldung hinzu und stellen Sie sicher, dass der Prozess nur ausgeführt wird, wenn der entsprechende Button geklickt wird.
-  
-  | | |  
-  |--|--|
-  | **Success Message** | *The article has been successfully generated by AI and is now available in the webshop!* | 
-  | **When Button Pressed** | *P200_ADD_ARTICLE*| 
-  | | |
+```sql
+select ctmr.ctmr_frst_name || ' ' || ctmr.ctmr_last_name as full_name,
+       ctmr.ctmr_email,
+       count(ordr.ordr_id)                     as order_count
+  from customers           ctmr
+  join orders              ordr
+    on ctmr.ctmr_id = ordr.ordr_ctmr_id
+ where ordr.ordr_dd >= to_date('2016-01-01', 'YYYY-MM-DD')
+   and ordr.ordr_total > 100
+ group by ctmr.ctmr_frst_name,
+          ctmr.ctmr_last_name,
+          ctmr.ctmr_email
+```
 
-![](../../assets/Kapitel-22/AI_14.jpg)
+![](../../assets/Kapitel-22/ai_basic_08.jpg)
 
-## <a name="Erstellung-des-Prozesses-zum-Hinzufügen-eines-Artikels">7. Überprüfung des Parameters `p_new_article`
+--- 
 
-1. Stellen Sie sicher, dass der Parameter `p_new_article` korrekt mit dem Item verbunden ist. Falls dies nicht der Fall ist, kann die Verbindung manuell vorgenommen werden.
-  
-  | | |  
-  |--|--|
-  | **Name** | *p_new_article* | 
-  | **Item** | *P200_NEW_ARTICLE*| 
-  | | |
-![](../../assets/Kapitel-22/AI_15.jpg)
+Das war der erste Teil der Anleitung, der zeigt, wie die AI Ihnen bei der Erstellung von SQL-Queries basierend auf Ihrer eigenen Datenbank helfen kann.
 
-## <a name="Endgültige-Seitenvorschau">8. Endgültige Seitenvorschau
+# Teil 2: Erstellen einer App mit Hilfe von AI in Oracle APEX
 
-1. Sobald die Benutzeroberfläche vollständig ist, sollte die Seite in etwa so aussehen. Sie können nun einen Artikelnamen eingeben und auf den **Artikel hinzufügen**-Button klicken.
-  
-![](../../assets/Kapitel-22/AI_16.jpg)
+## Schritt 1: Zugriff auf den App Builder
 
-2. Nach etwa 5-10 Sekunden wird die KI den Artikel generieren, und Sie sollten den Artikel in der **Kartenansicht** sehen können, jedoch zunächst ohne Bild.
-  
-![](../../assets/Kapitel-22/AI_17.jpg)
+Um eine Anwendung mit Hilfe von AI zu erstellen, gehen Sie wie folgt vor:
 
-## <a name="Bild-URL-hinzufügen">9. Bild-URL hinzufügen
+1. Navigieren Sie zum **App Builder**.
+2. Klicken Sie auf **Create**, um den Prozess zur Erstellung einer neuen App zu starten.
 
-1. Um das Bild als URL zu integrieren, setzen Sie die folgenden Einstellungen, speichern Sie und laden Sie die Seite neu.
-    
-  | | |  
-  |--|--|
-  | **Card Region** | *Webshop* | 
-  | **Media** | **| 
-  | **Source** | *URL Column*| 
-  | **Appearance** | *Widescreen*| 
-  | **Sizing** | *Cover*| 
-  | | |
+![](../../assets/Kapitel-22/ai_basic_09.jpg)
 
-![](../../assets/Kapitel-22/AI_18.jpg)
+---
 
-2. Jetzt können Sie weitere Artikel erstellen, und das Endergebnis sollte in etwa so aussehen:
-  
-![](../../assets/Kapitel-22/AI_19.jpg)
+## Schritt 2: App-Erstellung mit AI starten
+
+Anstatt einen Namen für die Anwendung einzugeben, klicken Sie auf **Create app using generative AI**.
+
+![](../../assets/Kapitel-22/ai_basic_10.jpg)
+
+---
+
+## Schritt 3: Eingeben eines Prompts
+
+In der Suchleiste können Sie nun einen Prompt eingeben, der die Anwendung beschreibt, die Sie erstellen möchten. Geben Sie z. B. eine Beschreibung Ihrer Tabellen und Anforderungen ein und klicken Sie auf den kleinen Pfeil.
+
+**Beschreibung des Prompts:** 
+> Create a full application to manage the following tables: CUSTOMERS, ORDERS, ORDER_ITEMS, PRODUCT_INFO, STATES, and DEPARTMENTS. The application should allow me to create, update, and delete records for all these tables.
+> 
+> Additionally, provide the following functionalities:
+> 
+> Search Page: Create a search page where I can search for the orders of any customer by customer name, order date, or other relevant criteria.
+> 
+> Report Page: Create a report page that shows how many sales I have made, including the total revenue. The report should allow filtering by date range, customer, and product.
+> 
+> Dashboard: Create a dashboard that displays key metrics, such as the total number of customers, total sales, and the most frequently ordered products. Visualize this data with charts and summary figures.
+> 
+> Ensure the application has a user-friendly interface with the ability to easily navigate between the search page, report page, and dashboard. Include necessary validations, dynamic actions, and form handling where appropriate. Also, provide a security mechanism that allows role-based access to certain features, such as administrative actions.
+
+
+![](../../assets/Kapitel-22/ai_basic_11.jpg)
+
+---
+
+## Schritt 4: App wird generiert
+
+Sobald Sie den Prompt eingegeben haben, beginnt AI damit, die App zu erstellen. Sie sehen die Fortschrittsanzeige anhand von Punkten, die den Status des Erstellungsprozesses darstellen.
+
+![](../../assets/Kapitel-22/ai_basic_12.jpg)
+
+---
+
+## Schritt 5: Überprüfung der generierten App
+
+Nachdem die App generiert wurde, erhalten Sie eine Übersicht aller Tabellen sowie der Seiten, die die App beinhaltet. Hier können Sie sehen, welche Funktionen für welche Tabellen vorgesehen sind. Falls alles korrekt ist, klicken Sie einfach auf **Create Application**.
+
+![](../../assets/Kapitel-22/ai_basic_13.jpg)
+
+---
+
+## Schritt 6: Seitenübersicht anpassen
+
+Auf der nächsten Seite wird Ihnen eine kurze Übersicht über die automatisch erstellten Seiten angezeigt. Falls Sie Änderungen vornehmen möchten, können Sie dies hier tun. Ansonsten klicken Sie auf **Create Application**.
+
+![](../../assets/Kapitel-22/ai_basic_14.jpg)
+
+---
+
+## Schritt 7: Erstellung der App
+
+Innerhalb weniger Sekunden wird die Anwendung erstellt.
+
+![](../../assets/Kapitel-22/ai_basic_15.jpg)
+
+---
+
+## Schritt 8: Die Anwendung starten
+
+Wenn Sie die Anwendung ausführen, können Sie auf der Navigationsleiste mehrere Schaltflächen sehen. Über diese können Sie nun durch die Anwendung navigieren und verschiedene Daten einfügen, bearbeiten und verwalten. Zudem gibt es eine **Suchseite** sowie eine **Dashboard-Seite**, die zusätzliche Funktionalitäten bieten.
+
+![](../../assets/Kapitel-22/ai_basic_17.jpg)
+
+
+---
+
+Das war der zweite Teil der Anleitung, der zeigt, wie Sie mit Hilfe von AI in Oracle APEX eine Anwendung erstellen können. Dieser Prozess erleichtert die Verwaltung Ihrer Daten und bietet Ihnen die Möglichkeit, Ihre App durch eine generative AI effizient zu erstellen, inklusive Dashboards, Suchseiten und vielem mehr.
+
+
+
+# Teil 3: Erstellen einer E-Mail-Reply-Funktion mit AI in Oracle APEX
+
+## Schritt 1: Erstellen einer neuen leeren Seite
+
+1. Gehen Sie in Ihrer Applikation auf **Create** und erstellen Sie eine neue **Blank Page**.
+2. Klicken Sie auf **Next**, um fortzufahren.
+
+![](../../assets/Kapitel-22/ai_basic_18.jpg)
+
+---
+
+## Schritt 2: Seiteneinstellungen
+
+Geben Sie die Einstellungen wie im Bild gezeigt ein und klicken Sie auf **Create Page**.
+
+![](../../assets/Kapitel-22/ai_basic_19.jpg)
+
+---
+
+## Schritt 3: Erstellen der Region
+
+Erstellen Sie eine Region mit dem Namen **Email Reply**.
+
+![](../../assets/Kapitel-22/ai_basic_20.jpg)
+
+---
+
+## Schritt 4: Hinzufügen eines Items
+
+Fügen Sie ein neues Item hinzu:
+
+- **Item Name**: `P50_MAIL`
+- **Label**: `MAIL`
+
+![](../../assets/Kapitel-22/ai_basic_21.jpg)
+
+Scrollen Sie nach unten und geben Sie die gewünschte E-Mail im **Static Value**-Feld ein. Klicken Sie dann auf **OK**.
+
+> Subject: Urgent: Password Recovery Assistance Required
+> 
+> Dear Our Company,
+> 
+> I hope this message finds you well. I am writing to request your urgent assistance in recovering my password for my account with your services. Unfortunately, I am currently unable to access my account and have been unsuccessful in using the standard password recovery options provided.
+> 
+> Here are my account details for your reference:
+> 
+> Account Holder Name: John Doe
+> Username/Email Associated with Account: john.doe@example.com
+> Could you please assist me in resetting my password at your earliest convenience? If there are any additional steps or verification processes required, please let me know so that I can promptly provide the necessary information.
+> 
+> Thank you for your immediate attention to this matter. I appreciate your help and look forward to resolving this issue as soon as possible.
+> 
+> Best regards,
+> 
+> Edward Logan
+> 
+> Edward.Logan@example.com
+> 
+> (123) 456-7890
+
+![](../../assets/Kapitel-22/ai_basic_22.jpg)
+
+
+---
+
+## Schritt 5: Erstellen eines Buttons
+
+Erstellen Sie einen neuen Button mit den gezeigten Einstellungen.
+
+![](../../assets/Kapitel-22/ai_basic_23.jpg)
+
+---
+
+## Schritt 6: Hinzufügen einer Dynamic Action
+
+Wählen Sie den zuvor erstellten Button und fügen Sie eine **Dynamic Action** mit dem Namen **click on mail reply button** hinzu.
+
+![](../../assets/Kapitel-22/ai_basic_24.jpg)
+
+---
+
+## Schritt 7: Konfigurieren der Dynamic Action
+
+- **Action Name**: `ai mail reply`
+- **Action**: Wählen Sie **Open AI Assistant**.
+- Wählen Sie den zuvor erstellten AI-Service **Tutorial** aus.
+
+Geben Sie den System Prompt wie folgt ein:
+
+- **System Prompt**: `Here is an E-Mail, please reply the E-Mail`.
+- **Display As**: Lassen Sie die Standard-Einstellung auf **Dialog**.
+
+![](../../assets/Kapitel-22/ai_basic_25.jpg)
+
+---
+
+## Schritt 8: System Prompt und Anzeigeeinstellungen
+
+Scrollen Sie nach unten und konfigurieren Sie folgende Einstellungen:
+
+- **Initial Prompt**: Wählen Sie **Item** und dann das Item **P50_MAIL** aus.
+- **Message**: Geben Sie hier z. B. ein: `Here is an E-Mail, please reply the E-Mail`.
+
+Speichern Sie anschließend die Seite und führen Sie sie aus.
+
+![](../../assets/Kapitel-22/ai_basic_26.jpg)
+
+
+
+---
+
+## Schritt 9: Ausführen der Seite
+
+Nach dem Speichern sieht die Seite wie folgt aus. Sie können nun auf den Button **Mail Reply** klicken.
+
+![](../../assets/Kapitel-22/ai_basic_27.jpg)
+
+---
+
+## Schritt 10: E-Mail-Verarbeitung durch AI
+
+Nachdem Sie auf **Here is an E-Mail, Please Reply the E-Mail** geklickt haben, gibt die AI eine Antwort auf die E-Mail.
+
+![](../../assets/Kapitel-22/ai_basic_28.jpg)
+
+---
+
+Das war der dritte Teil der Anleitung, in dem Sie gelernt haben, wie Sie eine E-Mail-Reply-Funktion mit AI in Oracle APEX erstellen können.
+
+Vielen Dank, dass Sie diese Anleitung durchgearbeitet haben. Sie haben nun die Werkzeuge an der Hand, um SQL-Abfragen zu erstellen, Anwendungen effizient zu entwickeln und E-Mails automatisch beantworten zu lassen. Dies zeigt, wie leistungsstark Oracle APEX in Kombination mit generativer AI sein kann.
+
+Wir hoffen, dass diese Anleitung Ihnen geholfen hat, die Integration von AI in Oracle APEX besser zu verstehen und produktiv anzuwenden. Sollten Sie weitere Fragen oder neue Herausforderungen haben, stehen wir Ihnen gerne zur Seite.
+
+Viel Erfolg bei Ihren Projekten!
