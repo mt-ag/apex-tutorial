@@ -3730,7 +3730,7 @@ Um mit der Erstellung des AI-Dienstes zu beginnen, navigieren Sie zunächst zum 
 1. Klicken Sie im Hauptmenü auf **App Builder**.
 2. Wählen Sie dann **Workspace Utilities**, um weitere Tools zu nutzen.
 
-![](../../assets/Kapitel-22/ai_basic_01.jpg)
+![](../assets/Kapitel-22/ai_basic_01.jpg)
 
 ---
 
@@ -3740,7 +3740,7 @@ Nachdem Sie im Bereich **Workspace Utilities** sind:
 
 1. Klicken Sie auf **Generator AI**, um den AI-Dienst zu starten.
 
-![](../../assets/Kapitel-22/ai_basic_02.jpg)
+![](../assets/Kapitel-22/ai_basic_02.jpg)
 
 ---
 
@@ -3750,7 +3750,7 @@ Um den AI-Service zu konfigurieren:
 
 1. Klicken Sie auf den **Create**-Button, um einen neuen AI-Service zu erstellen.
 
-![](../../assets/Kapitel-22/ai_basic_03.jpg)
+![](../assets/Kapitel-22/ai_basic_03.jpg)
 
 ---
 
@@ -3758,7 +3758,7 @@ Um den AI-Service zu konfigurieren:
 
 Definieren Sie die Einstellungen für den AI-Service wie auf dem Bild gezeigt:
 
-![](../../assets/Kapitel-22/ai_basic_04.jpg)
+![](../assets/Kapitel-22/ai_basic_04.jpg)
 
 ---
 
@@ -3769,7 +3769,7 @@ Nachdem der AI-Service festgelegt wurde, navigieren Sie zum **SQL Workshop**.
 1. Gehen Sie zum **SQL Commands**-Bereich.
 2. Klicken Sie auf den Button **APEX Assistant**, um Unterstützung für SQL-Abfragen zu erhalten.
 
-![](../../assets/Kapitel-22/ai_basic_05.jpg)
+![](../assets/Kapitel-22/ai_basic_05.jpg)
 ---
 
 ## <a name="schritt-nutzung-des-apex-assistant"></a>Schritt 6: Nutzung des APEX Assistant für SQL-Abfragen
@@ -3789,7 +3789,7 @@ select ctmr_frst_name,
  where ctmr_credit_limit > 5000
 ```
 
-![](../../assets/Kapitel-22/ai_basic_06.jpg)
+![](../assets/Kapitel-22/ai_basic_06.jpg)
 
 ---
 
@@ -3812,7 +3812,7 @@ select ctmr.ctmr_frst_name || ' ' || ctmr.ctmr_last_name as full_name,
           ctmr.ctmr_email
 ```
 
-![](../../assets/Kapitel-22/ai_basic_07.jpg)
+![](../assets/Kapitel-22/ai_basic_07.jpg)
 
 ---
 
@@ -3837,7 +3837,7 @@ select ctmr.ctmr_frst_name || ' ' || ctmr.ctmr_last_name as full_name,
           ctmr.ctmr_email
 ```
 
-![](../../assets/Kapitel-22/ai_basic_08.jpg)
+![](../assets/Kapitel-22/ai_basic_08.jpg)
 
 --- 
 
@@ -3852,7 +3852,7 @@ Um eine Anwendung mit Hilfe von AI zu erstellen, gehen Sie wie folgt vor:
 1. Navigieren Sie zum **App Builder**.
 2. Klicken Sie auf **Create**, um den Prozess zur Erstellung einer neuen App zu starten.
 
-![](../../assets/Kapitel-22/ai_basic_09.jpg)
+![](../assets/Kapitel-22/ai_basic_09.jpg)
 
 ---
 
@@ -3860,7 +3860,7 @@ Um eine Anwendung mit Hilfe von AI zu erstellen, gehen Sie wie folgt vor:
 
 Anstatt einen Namen für die Anwendung einzugeben, klicken Sie auf **Create app using generative AI**.
 
-![](../../assets/Kapitel-22/ai_basic_10.jpg)
+![](../assets/Kapitel-22/ai_basic_10.jpg)
 
 ---
 
@@ -3882,7 +3882,7 @@ In der Suchleiste können Sie nun einen Prompt eingeben, der die Anwendung besch
 > Ensure the application has a user-friendly interface with the ability to easily navigate between the search page, report page, and dashboard. Include necessary validations, dynamic actions, and form handling where appropriate. Also, provide a security mechanism that allows role-based access to certain features, such as administrative actions.
 
 
-![](../../assets/Kapitel-22/ai_basic_11.jpg)
+![](../assets/Kapitel-22/ai_basic_11.jpg)
 
 ---
 
@@ -3890,7 +3890,7 @@ In der Suchleiste können Sie nun einen Prompt eingeben, der die Anwendung besch
 
 Sobald Sie den Prompt eingegeben haben, beginnt AI damit, die App zu erstellen. Sie sehen die Fortschrittsanzeige anhand von Punkten, die den Status des Erstellungsprozesses darstellen.
 
-![](../../assets/Kapitel-22/ai_basic_12.jpg)
+![](../assets/Kapitel-22/ai_basic_12.jpg)
 
 ---
 
@@ -3898,7 +3898,7 @@ Sobald Sie den Prompt eingegeben haben, beginnt AI damit, die App zu erstellen. 
 
 Nachdem die App generiert wurde, erhalten Sie eine Übersicht aller Tabellen sowie der Seiten, die die App beinhaltet. Hier können Sie sehen, welche Funktionen für welche Tabellen vorgesehen sind. Falls alles korrekt ist, klicken Sie einfach auf **Create Application**.
 
-![](../../assets/Kapitel-22/ai_basic_13.jpg)
+![](../assets/Kapitel-22/ai_basic_13.jpg)
 
 ---
 
@@ -3906,7 +3906,7 @@ Nachdem die App generiert wurde, erhalten Sie eine Übersicht aller Tabellen sow
 
 Auf der nächsten Seite wird Ihnen eine kurze Übersicht über die automatisch erstellten Seiten angezeigt. Falls Sie Änderungen vornehmen möchten, können Sie dies hier tun. Ansonsten klicken Sie auf **Create Application**.
 
-![](../../assets/Kapitel-22/ai_basic_14.jpg)
+![](../assets/Kapitel-22/ai_basic_14.jpg)
 
 ---
 
@@ -3914,7 +3914,7 @@ Auf der nächsten Seite wird Ihnen eine kurze Übersicht über die automatisch e
 
 Innerhalb weniger Sekunden wird die Anwendung erstellt.
 
-![](../../assets/Kapitel-22/ai_basic_15.jpg)
+![](../assets/Kapitel-22/ai_basic_15.jpg)
 
 ---
 
@@ -3922,7 +3922,7 @@ Innerhalb weniger Sekunden wird die Anwendung erstellt.
 
 Wenn Sie die Anwendung ausführen, können Sie auf der Navigationsleiste mehrere Schaltflächen sehen. Über diese können Sie nun durch die Anwendung navigieren und verschiedene Daten einfügen, bearbeiten und verwalten. Zudem gibt es eine **Suchseite** sowie eine **Dashboard-Seite**, die zusätzliche Funktionalitäten bieten.
 
-![](../../assets/Kapitel-22/ai_basic_17.jpg)
+![](../assets/Kapitel-22/ai_basic_17.jpg)
 
 
 ---
@@ -3937,7 +3937,7 @@ Das war der zweite Teil der Anleitung, der zeigt, wie Sie mit Hilfe von AI in Or
 1. Gehen Sie in Ihrer Applikation auf **Create** und erstellen Sie eine neue **Blank Page**.
 2. Klicken Sie auf **Next**, um fortzufahren.
 
-![](../../assets/Kapitel-22/ai_basic_18.jpg)
+![](../assets/Kapitel-22/ai_basic_18.jpg)
 
 ---
 
@@ -3945,7 +3945,7 @@ Das war der zweite Teil der Anleitung, der zeigt, wie Sie mit Hilfe von AI in Or
 
 Geben Sie die Einstellungen wie im Bild gezeigt ein und klicken Sie auf **Create Page**.
 
-![](../../assets/Kapitel-22/ai_basic_19.jpg)
+![](../assets/Kapitel-22/ai_basic_19.jpg)
 
 ---
 
@@ -3953,7 +3953,7 @@ Geben Sie die Einstellungen wie im Bild gezeigt ein und klicken Sie auf **Create
 
 Erstellen Sie eine Region mit dem Namen **Email Reply**.
 
-![](../../assets/Kapitel-22/ai_basic_20.jpg)
+![](../assets/Kapitel-22/ai_basic_20.jpg)
 
 ---
 
@@ -3964,7 +3964,7 @@ Fügen Sie ein neues Item hinzu:
 - **Item Name**: `P50_MAIL`
 - **Label**: `MAIL`
 
-![](../../assets/Kapitel-22/ai_basic_21.jpg)
+![](../assets/Kapitel-22/ai_basic_21.jpg)
 
 Scrollen Sie nach unten und geben Sie die gewünschte E-Mail im **Static Value**-Feld ein. Klicken Sie dann auf **OK**.
 
@@ -3990,7 +3990,7 @@ Scrollen Sie nach unten und geben Sie die gewünschte E-Mail im **Static Value**
 > 
 > (123) 456-7890
 
-![](../../assets/Kapitel-22/ai_basic_22.jpg)
+![](../assets/Kapitel-22/ai_basic_22.jpg)
 
 ---
 
@@ -3998,7 +3998,7 @@ Scrollen Sie nach unten und geben Sie die gewünschte E-Mail im **Static Value**
 
 Erstellen Sie einen neuen Button mit den gezeigten Einstellungen.
 
-![](../../assets/Kapitel-22/ai_basic_23.jpg)
+![](../assets/Kapitel-22/ai_basic_23.jpg)
 
 ---
 
@@ -4006,7 +4006,7 @@ Erstellen Sie einen neuen Button mit den gezeigten Einstellungen.
 
 Wählen Sie den zuvor erstellten Button und fügen Sie eine **Dynamic Action** mit dem Namen **click on mail reply button** hinzu.
 
-![](../../assets/Kapitel-22/ai_basic_24.jpg)
+![](../assets/Kapitel-22/ai_basic_24.jpg)
 
 ---
 
@@ -4021,7 +4021,7 @@ Geben Sie den System Prompt wie folgt ein:
 - **System Prompt**: `Here is an E-Mail, please reply the E-Mail`.
 - **Display As**: Lassen Sie die Standard-Einstellung auf **Dialog**.
 
-![](../../assets/Kapitel-22/ai_basic_25.jpg)
+![](../assets/Kapitel-22/ai_basic_25.jpg)
 
 ---
 
@@ -4034,7 +4034,7 @@ Scrollen Sie nach unten und konfigurieren Sie folgende Einstellungen:
 
 Speichern Sie anschließend die Seite und führen Sie sie aus.
 
-![](../../assets/Kapitel-22/ai_basic_26.jpg)
+![](../assets/Kapitel-22/ai_basic_26.jpg)
 
 ---
 
@@ -4042,7 +4042,7 @@ Speichern Sie anschließend die Seite und führen Sie sie aus.
 
 Nach dem Speichern sieht die Seite wie folgt aus. Sie können nun auf den Button **Mail Reply** klicken.
 
-![](../../assets/Kapitel-22/ai_basic_27.jpg)
+![](../assets/Kapitel-22/ai_basic_27.jpg)
 
 ---
 
@@ -4050,7 +4050,7 @@ Nach dem Speichern sieht die Seite wie folgt aus. Sie können nun auf den Button
 
 Nachdem Sie auf **Here is an E-Mail, Please Reply the E-Mail** geklickt haben, gibt die AI eine Antwort auf die E-Mail.
 
-![](../../assets/Kapitel-22/ai_basic_28.jpg)
+![](../assets/Kapitel-22/ai_basic_28.jpg)
 
 ---
 
@@ -4092,7 +4092,7 @@ SELECT AIGE_ID
 
 1. Anschließend erstellen Sie eine neue Seite mit **Cards**:
   
-![](../../assets/Kapitel-22/AI_01.jpg)
+![](../assets/Kapitel-22/AI_01.jpg)
 
 ## <a name="konfiguration-des-kartenlayouts"></a>2. Konfiguration des Kartenlayouts
 
@@ -4105,7 +4105,7 @@ SELECT AIGE_ID
   | **Table/View Name** | *TUTO_P0200_VW*| 
   | | |
 
-![](../../assets/Kapitel-22/AI_02.jpg)
+![](../assets/Kapitel-22/AI_02.jpg)
 
 2. Wählen Sie auf der Seite das **Grid-Layout** für die Karten aus und definieren Sie es wie folgt:
 
@@ -4118,7 +4118,7 @@ SELECT AIGE_ID
 
 3. Klicken Sie anschließend auf **Create Page**:
 
-![](../../assets/Kapitel-22/AI_03.jpg)
+![](../assets/Kapitel-22/AI_03.jpg)
 
 ## <a name="region-erstellen"></a>3. Region Erstellen
 
@@ -4129,7 +4129,7 @@ SELECT AIGE_ID
   | **Name** | *Define a new Article* |  
   | | |
 
-![](../../assets/Kapitel-22/AI_04.jpg)
+![](../assets/Kapitel-22/AI_04.jpg)
 
 ## <a name="erstellung-eines-textfelds-und-eines-buttons"></a>4. Erstellung eines Textfelds und eines Buttons
 
@@ -4141,7 +4141,7 @@ SELECT AIGE_ID
   | **Label** | *New Article*| 
   | | |
 
-![](../../assets/Kapitel-22/AI_05.jpg)
+![](../assets/Kapitel-22/AI_05.jpg)
 
 2. Erstellen Sie einen neuen Button mit dem Namen: `P200_ADD_ARTICLE`
 
@@ -4153,7 +4153,7 @@ SELECT AIGE_ID
   | **Icon** | *fa-cart-plus*|  
   | | |
 
-![](../../assets/Kapitel-22/AI_06.jpg)
+![](../assets/Kapitel-22/AI_06.jpg)
 
 3. Setzen Sie die folgenden Einstellungen für das Button-Design fest:
   
@@ -4165,11 +4165,11 @@ SELECT AIGE_ID
   | **Width** | *Stretch*|  
   | | |
 
-![](../../assets/Kapitel-22/AI_07.jpg)
+![](../assets/Kapitel-22/AI_07.jpg)
 
 4. Speichern Sie die Seite und öffnen Sie die Vorschau. Jetzt sollten Sie ein Sucheingabefeld und einen **Add**-Button sehen, jedoch ist die **Card Report**-Region noch leer. Das Ziel besteht darin, die Artikel mithilfe einer Funktion hinzuzufügen.
   
-![](../../assets/Kapitel-22/AI_08.jpg)
+![](../assets/Kapitel-22/AI_08.jpg)
 
 ## <a name="erstellung-eines-pakets-für-den-ai-webshop"></a>5. Erstellung eines Pakets für den AI-Webshop
 
@@ -4180,12 +4180,12 @@ SELECT AIGE_ID
 - 3. Klicken Sie auf das kleine **Plus-Symbol** neben der Suchleiste.
 - 4. Wählen Sie dann **Package** aus, um ein neues Paket zu erstellen.
   
-![](../../assets/Kapitel-22/AI_09.jpg)
+![](../assets/Kapitel-22/AI_09.jpg)
 
 2. Als Nächstes öffnet sich ein **Popup-Fenster**. Tragen Sie hier den Namen **AI_WEBSHOP** ein. 
 Schalten Sie die Option **Include Sample Code** aus, sodass sie grau wird. Drücken Sie anschließend auf **Create Package**.
 
-![](../../assets/Kapitel-22/AI_10.jpg)
+![](../assets/Kapitel-22/AI_10.jpg)
 
 ### <a name="erstellung-der-paketspezifikation">5.1. Erstellung der Paketspezifikation (Package Specification)
 
@@ -4212,7 +4212,7 @@ END AI_WEBSHOP;
 ```
 2. Nachdem Sie den Code eingefügt haben, klicken Sie auf den Button **Speichern und Kompilieren**.
   
-![](../../assets/Kapitel-22/AI_11.jpg)
+![](../assets/Kapitel-22/AI_11.jpg)
 
 ### <a name="erstellung-des-package-body">5.2. Erstellung des Package Body
 
@@ -4394,7 +4394,7 @@ END AI_WEBSHOP;
 ```
 2. Nachdem Sie den API-Schlüssel eingefügt haben, klicken Sie auf den Button **Speichern und Kompilieren**.
   
-![](../../assets/Kapitel-22/AI_12.jpg)
+![](../assets/Kapitel-22/AI_12.jpg)
 
 Zusammenfassung:
 - **`get_chatgpt_response`** → Diese Funktion holt eine Antwort von der KI für den Artikelnamen und die Beschreibung.
@@ -4414,7 +4414,7 @@ Zusammenfassung:
   | **Procedure or Function** | *GENERATE_ARTICLE*|  
   | | |
 
-![](../../assets/Kapitel-22/AI_13.jpg)
+![](../assets/Kapitel-22/AI_13.jpg)
 
 2. Fügen Sie eine Erfolgsmeldung hinzu und stellen Sie sicher, dass der Prozess nur ausgeführt wird, wenn der entsprechende Button geklickt wird.
   
@@ -4424,7 +4424,7 @@ Zusammenfassung:
   | **When Button Pressed** | *P200_ADD_ARTICLE*| 
   | | |
 
-![](../../assets/Kapitel-22/AI_14.jpg)
+![](../assets/Kapitel-22/AI_14.jpg)
 
 ## <a name="ueberpruefung-des-parameters">7. Überprüfung des Parameters `p_new_article`
 
@@ -4435,17 +4435,17 @@ Zusammenfassung:
   | **Name** | *p_new_article* | 
   | **Item** | *P200_NEW_ARTICLE*| 
   | | |
-![](../../assets/Kapitel-22/AI_15.jpg)
+![](../assets/Kapitel-22/AI_15.jpg)
 
 ## <a name="endgueltige-seitenvorschau">8. Endgültige Seitenvorschau
 
 1. Sobald die Benutzeroberfläche vollständig ist, sollte die Seite in etwa so aussehen. Sie können nun einen Artikelnamen eingeben und auf den **Artikel hinzufügen**-Button klicken.
   
-![](../../assets/Kapitel-22/AI_16.jpg)
+![](../assets/Kapitel-22/AI_16.jpg)
 
 2. Nach etwa 5-10 Sekunden wird die KI den Artikel generieren, und Sie sollten den Artikel in der **Kartenansicht** sehen können, jedoch zunächst ohne Bild.
   
-![](../../assets/Kapitel-22/AI_17.jpg)
+![](../assets/Kapitel-22/AI_17.jpg)
 
 ## <a name="bild-url-hinzufuegen">9. Bild-URL hinzufügen
 
@@ -4460,11 +4460,11 @@ Zusammenfassung:
   | **Sizing** | *Cover*| 
   | | |
 
-![](../../assets/Kapitel-22/AI_18.jpg)
+![](../assets/Kapitel-22/AI_18.jpg)
 
 2. Jetzt können Sie weitere Artikel erstellen, und das Endergebnis sollte in etwa so aussehen:
   
-![](../../assets/Kapitel-22/AI_19.jpg)
+![](../assets/Kapitel-22/AI_19.jpg)
 
 
 
