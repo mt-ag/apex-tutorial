@@ -128,17 +128,17 @@
         - [Schritt 5: Erstellen eines Buttons](#schritt-erstellen-eines-buttons) 
         - [Schritt 6: Hinzufügen einer Dynamic Action](#schritt-hinzufuegen-einer-dynamic-action) 
         - [Schritt 7: Konfigurieren der Dynamic Action](#schritt-konfigurieren-der-dynamic-action)
-    - [22.2 AI-basierte Artikelgenerierung für Webshops (forgeschtittener Workshop)](#ai-basierte-srtikelgenerierung)
+    - [22.2 AI-basierte Artikelgenerierung für Webshops (forgeschtittener Workshop)](#ai-basierte-artikelgenerierung)
         - [1. Eine View erstellen](#eine-view-erstellen)
         - [2. Konfiguration des Kartenlayouts](#konfiguration-des-kartenlayouts)
-        - [3. Region Erstellen](#region-Erstellen) 
+        - [3. Region Erstellen](#region-erstellen) 
         - [4. Erstellung eines Textfelds und eines Buttons](#erstellung-eines-textfelds-und-eines-buttons) 
         - [5. Erstellung eines Pakets für den AI-Webshop](#erstellung-eines-pakets-für-den-ai-webshop) 
             - [5.1. Erstellung der Paketspezifikation (Package Specification)](#erstellung-der-paketspezifikation)
             - [5.2. Erstellung des Package Body](#erstellung-des-package-body)
         - [6. Erstellung des Prozesses zum Hinzufügen eines Artikels](#erstellung-des-prozesses-zum-hinzufuegen-eines-artikels) 
-        - [7. Überprüfung des Parameters `p_new_article`](#erstellung-des-prozesses-zum-hinzufuegen-eines-artikels) 
-        - [8. Endgültige Seitenvorschau](#Endgueltige-Seitenvorschau) 
+        - [7. Überprüfung des Parameters `p_new_article`](#ueberpruefung-des-parameters) 
+        - [8. Endgültige Seitenvorschau](#endgueltige-Seitenvorschau) 
         - [9. Bild-URL hinzufügen](#bild-url-hinzufuegen)  
 
 # Vorbereitung
@@ -4120,7 +4120,7 @@ SELECT AIGE_ID
 
 ![](../../assets/Kapitel-22/AI_03.jpg)
 
-## <a name="Region-Erstellen"></a>3. Region Erstellen
+## <a name="region-erstellen"></a>3. Region Erstellen
 
 1. Erstellen Sie eine neue Region mit dem Namen: **Define a new Article**:
   
@@ -4131,7 +4131,7 @@ SELECT AIGE_ID
 
 ![](../../assets/Kapitel-22/AI_04.jpg)
 
-## <a name="Erstellung-eines-Textfelds-und-eines-Buttons"></a>4. Erstellung eines Textfelds und eines Buttons
+## <a name="erstellung-eines-textfelds-und-eines-buttons"></a>4. Erstellung eines Textfelds und eines Buttons
 
 1. Erstellen Sie ein neues APEX **Text Item** mit dem Namen: `P200_NEW_ARTICLE`
 
@@ -4426,7 +4426,7 @@ Zusammenfassung:
 
 ![](../../assets/Kapitel-22/AI_14.jpg)
 
-## <a name="erstellung-des-prozesses-zum-hinzufuegen-eines-artikels">7. Überprüfung des Parameters `p_new_article`
+## <a name="ueberpruefung-des-parameters">7. Überprüfung des Parameters `p_new_article`
 
 1. Stellen Sie sicher, dass der Parameter `p_new_article` korrekt mit dem Item verbunden ist. Falls dies nicht der Fall ist, kann die Verbindung manuell vorgenommen werden.
   
@@ -4447,7 +4447,7 @@ Zusammenfassung:
   
 ![](../../assets/Kapitel-22/AI_17.jpg)
 
-## <a name="bild-url-hinzufügen">9. Bild-URL hinzufügen
+## <a name="bild-url-hinzufuegen">9. Bild-URL hinzufügen
 
 1. Um das Bild als URL zu integrieren, setzen Sie die folgenden Einstellungen, speichern Sie und laden Sie die Seite neu.
     

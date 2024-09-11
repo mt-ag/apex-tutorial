@@ -1,5 +1,5 @@
 
-# <a name="AI-basierte-Artikelgenerierung"></a>22. AI-basierte Artikelgenerierung für Webshops
+# <a name="ai-basierte-artikelgenerierung"></a>22. AI-basierte Artikelgenerierung für Webshops
 
 In diesem Tutorial zeigen wir Ihnen, wie Sie mithilfe von KI automatisch Artikel für einen Webshop erstellen. Die KI wird verwendet, um für jedes Produkt Folgendes zu generieren:
 
@@ -8,7 +8,7 @@ In diesem Tutorial zeigen wir Ihnen, wie Sie mithilfe von KI automatisch Artikel
 - **Artikelpreis** 
 - **Artikelbild (als URL)**
 
-## <a name="Eine-View-erstellen"></a>1. Eine View erstellen
+## <a name="eine-view-erstellen"></a>1. Eine View erstellen
 
 - Für die Bearbeitung dieser Aufgabe wird eine **View** benötigt. 
 
@@ -31,7 +31,7 @@ SELECT AIGE_ID
   
 ![](../../assets/Kapitel-22/AI_01.jpg)
 
-## <a name="Konfiguration-des-Kartenlayouts"></a>2. Konfiguration des Kartenlayouts
+## <a name="konfiguration-des-kartenlayouts"></a>2. Konfiguration des Kartenlayouts
 
 1. Erstellen Sie die Seite mit der Nummer 200 und wählen Sie die View ***TUTO_P0200_VW*** aus. Klicken Sie anschließend auf **Next**:
 
@@ -57,7 +57,7 @@ SELECT AIGE_ID
 
 ![](../../assets/Kapitel-22/AI_03.jpg)
 
-## <a name="Region-Erstellen"></a>3. Region Erstellen
+## <a name="region-erstellen"></a>3. Region Erstellen
 
 1. Erstellen Sie eine neue Region mit dem Namen: **Define a new Article**:
   
@@ -68,7 +68,7 @@ SELECT AIGE_ID
 
 ![](../../assets/Kapitel-22/AI_04.jpg)
 
-## <a name="Erstellung-eines-Textfelds-und-eines-Buttons"></a>4. Erstellung eines Textfelds und eines Buttons
+## <a name="erstellung-eines-textfelds-und-eines-buttons"></a>4. Erstellung eines Textfelds und eines Buttons
 
 1. Erstellen Sie ein neues APEX **Text Item** mit dem Namen: `P200_NEW_ARTICLE`
 
@@ -108,7 +108,7 @@ SELECT AIGE_ID
   
 ![](../../assets/Kapitel-22/AI_08.jpg)
 
-## <a name="Erstellung-eines-Pakets-für-den-AI-Webshop"></a>5. Erstellung eines Pakets für den AI-Webshop
+## <a name="erstellung-eines-pakets-für-den-ai-webshop"></a>5. Erstellung eines Pakets für den AI-Webshop
 
 1. Als Nächstes erstellen Sie ein Paket, um die Funktionen und Prozeduren zur automatisierten Artikelerstellung zu speichern:
 
@@ -124,7 +124,7 @@ Schalten Sie die Option **Include Sample Code** aus, sodass sie grau wird. Drüc
 
 ![](../../assets/Kapitel-22/AI_10.jpg)
 
-### <a name="Erstellung-der-Paketspezifikation">5.1. Erstellung der Paketspezifikation (Package Specification)
+### <a name="erstellung-der-paketspezifikation">5.1. Erstellung der Paketspezifikation (Package Specification)
 
 1. Hier ist der Code für die Paketspezifikation, um die Funktionen und Prozeduren zu speichern:
 
@@ -151,7 +151,7 @@ END AI_WEBSHOP;
   
 ![](../../assets/Kapitel-22/AI_11.jpg)
 
-### <a name="Erstellung-des-Package-Body">5.2. Erstellung des Package Body
+### <a name="erstellung-des-package-body">5.2. Erstellung des Package Body
 
 1. Hier ist der Code für den Package Body:
 
@@ -338,7 +338,7 @@ Zusammenfassung:
 - **`get_dalle_image`** → Diese Funktion holt eine URL für das KI-generierte Bild.
 - **`generate_article`** → Diese Prozedur generiert den Artikel basierend auf dem Artikelnamen und speichert ihn in der Datenbank.
 
-## <a name="Erstellung-des-Prozesses-zum-Hinzufügen-eines-Artikels">6. Erstellung des Prozesses zum Hinzufügen eines Artikels
+## <a name="erstellung-des-prozesses-zum-hinzufuegen-eines-artikels">6. Erstellung des Prozesses zum Hinzufügen eines Artikels
 
 1. Gehen Sie nun zurück zum **Page Designer** auf Seite 200 und erstellen Sie einen neuen Prozess mit den folgenden Einstellungen:
 
@@ -363,7 +363,7 @@ Zusammenfassung:
 
 ![](../../assets/Kapitel-22/AI_14.jpg)
 
-## <a name="Erstellung-des-Prozesses-zum-Hinzufügen-eines-Artikels">7. Überprüfung des Parameters `p_new_article`
+## <a name="ueberpruefung-des-parameters">7. Überprüfung des Parameters `p_new_article`
 
 1. Stellen Sie sicher, dass der Parameter `p_new_article` korrekt mit dem Item verbunden ist. Falls dies nicht der Fall ist, kann die Verbindung manuell vorgenommen werden.
   
@@ -374,7 +374,7 @@ Zusammenfassung:
   | | |
 ![](../../assets/Kapitel-22/AI_15.jpg)
 
-## <a name="Endgültige-Seitenvorschau">8. Endgültige Seitenvorschau
+## <a name="endgueltige-Seitenvorschau">8. Endgültige Seitenvorschau
 
 1. Sobald die Benutzeroberfläche vollständig ist, sollte die Seite in etwa so aussehen. Sie können nun einen Artikelnamen eingeben und auf den **Artikel hinzufügen**-Button klicken.
   
@@ -384,7 +384,7 @@ Zusammenfassung:
   
 ![](../../assets/Kapitel-22/AI_17.jpg)
 
-## <a name="Bild-URL-hinzufügen">9. Bild-URL hinzufügen
+## <a name="bild-urk-hinzufuegen">9. Bild-URL hinzufügen
 
 1. Um das Bild als URL zu integrieren, setzen Sie die folgenden Einstellungen, speichern Sie und laden Sie die Seite neu.
     
