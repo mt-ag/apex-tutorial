@@ -1,4 +1,3 @@
-
 # <a name="oracle-apex-und-ai"></a> 22. Oracle APEX und AI
 # <a name="testen-von-funktionen-oracle-apex-und-ai"></a>22.1 Teil 1: Testen von drei verschiedenen Funktionen mit Oracle APEX und AI
 
