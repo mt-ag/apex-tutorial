@@ -1,15 +1,16 @@
 
-# <a name="AI-basierte-Artikelgenerierung"></a>22.1 Testen von 3 verschiedenen Funktionen mit Oracle APEX und AI
+# <a name="oracle-apex-und-ai"></a> 22. Oracle APEX und AI
+# <a name="testen-von-funktionen-oracle-apex-und-ai"></a>22.1 Teil 1: Testen von drei verschiedenen Funktionen mit Oracle APEX und AI
 
 In diesem Kapitel werden wir drei verschiedene Funktionen von AI in Kombination mit Oracle APEX testen. Dabei konzentrieren wir uns auf den Einsatz von AI zur Unterstützung bei der SQL-Erstellung, zur App-Generierung und zur Übernahme von Aufgaben innerhalb einer Anwendung.
 
-## 1. Unterstützung bei der Erstellung von SQL-Abfragen
+## <a name="unterstuetzung-bei-der-erstellung-von-abfragen"></a>1. Unterstützung bei der Erstellung von SQL-Abfragen
 
 In diesem Abschnitt testen wir, wie AI uns bei der Erstellung von SQL-Abfragen unterstützen kann. Die AI wird genutzt, um komplexe SQL-Queries effizient und fehlerfrei zu generieren, die auf den Anforderungen der Datenbanktabellen und Geschäftslogik basieren.
 
 **Ziel:** Erstellen Sie verschiedene SQL-Abfragen, die auf den Datenbanken laufen, und optimieren Sie den Prozess durch die Einbindung von AI.
 
-## 2. Automatisierte App-Erstellung mit AI
+##  <a name="automatisierte-app-erstellung"></a>2. Automatisierte App-Erstellung mit AI
 
 Der zweite Test konzentriert sich auf die Fähigkeit von AI, eine vollständige Anwendung mit Oracle APEX zu generieren. Diese Anwendung wird verschiedene Tabellen miteinander verknüpfen und die Verwaltung der Daten ermöglichen, einschließlich der Funktionen für **Insert**, **Update** und **Delete**. Darüber hinaus sollen folgende Features in der App enthalten sein:
 
@@ -19,14 +20,14 @@ Der zweite Test konzentriert sich auf die Fähigkeit von AI, eine vollständige 
 
 **Ziel:** Nutzen Sie AI, um eine voll funktionsfähige Applikation in Oracle APEX zu erstellen, die die Verwaltung von Daten aus verschiedenen Tabellen ermöglicht, sowie ein Dashboard, eine Report-Seite und eine Suchfunktion beinhaltet.
 
-## 3. Aufgabenautomatisierung innerhalb der Anwendung durch AI
+## <a name="aufgabenautomatisierung-durch-ai"></a>3. Aufgabenautomatisierung innerhalb der Anwendung durch AI
 
 In der dritten Funktion wird getestet, wie AI Aufgaben innerhalb der Anwendung übernehmen kann. Hier wird speziell darauf abgezielt, dass die AI eingehende E-Mails verarbeitet und automatische Antworten generiert. Wenn beispielsweise eine E-Mail eintrifft, soll die AI darauf basierend eine Antwort verfassen.
 
 **Ziel:** Verwenden Sie AI, um automatisch E-Mail-Antworten zu generieren. Diese Funktion soll die Effizienz steigern, indem die AI kontextbezogene Antworten erstellt.
 
 
-## Schritt 1: Zugriff auf den App Builder
+## <a name="schritt-zugriff-auf-den-app-builder"></a>Schritt 1: Zugriff auf den App Builder
 
 Um mit der Erstellung des AI-Dienstes zu beginnen, navigieren Sie zunächst zum **App Builder**.
 
@@ -37,7 +38,7 @@ Um mit der Erstellung des AI-Dienstes zu beginnen, navigieren Sie zunächst zum 
 
 ---
 
-## Schritt 2: Zugriff auf den AI-Generator
+## <a name="schritt-zugriff-auf-den-ai-generator"></a>Schritt 2: Zugriff auf den AI-Generator
 
 Nachdem Sie im Bereich **Workspace Utilities** sind:
 
@@ -47,7 +48,7 @@ Nachdem Sie im Bereich **Workspace Utilities** sind:
 
 ---
 
-## Schritt 3: Erstellen eines AI-Services
+## <a name="schritt-erstellen-eines-ai-services"></a>Schritt 3: Erstellen eines AI-Services
 
 Um den AI-Service zu konfigurieren:
 
@@ -57,7 +58,7 @@ Um den AI-Service zu konfigurieren:
 
 ---
 
-## Schritt 4: AI-Service konfigurieren
+## <a name="schritt-ai-service-konfigurieren"></a>Schritt 4: AI-Service konfigurieren
 
 Definieren Sie die Einstellungen für den AI-Service wie auf dem Bild gezeigt:
 
@@ -65,7 +66,7 @@ Definieren Sie die Einstellungen für den AI-Service wie auf dem Bild gezeigt:
 
 ---
 
-## Schritt 5: Wechsel zum SQL Workshop
+## <a name="schritt-wechsel-zum-sql-workshop"></a>Schritt 5: Wechsel zum SQL Workshop
 
 Nachdem der AI-Service festgelegt wurde, navigieren Sie zum **SQL Workshop**.
 
@@ -75,7 +76,7 @@ Nachdem der AI-Service festgelegt wurde, navigieren Sie zum **SQL Workshop**.
 ![](../../assets/Kapitel-22/ai_basic_05.jpg)
 ---
 
-## Schritt 6: Nutzung des APEX Assistant für SQL-Abfragen
+## <a name="schritt-nutzung-des-apex-assistant"></a>Schritt 6: Nutzung des APEX Assistant für SQL-Abfragen
 
 Im **APEX Assistant**-Feld können Sie Hilfestellung zur Erstellung von SQL-Queries erhalten. Geben Sie z. B. den folgenden Beispieltext ein:
 
@@ -96,7 +97,7 @@ select ctmr_frst_name,
 
 ---
 
-## Schritt 7: SQL-Query Vorschläge
+## <a name="schritt-sql-query-vorschlaege"></a>Schritt 7: SQL-Query Vorschläge
 
 Nachdem Sie den Text eingegeben haben, erhalten Sie Vorschläge für SQL-Queries. Hier ist ein Beispiel:
 
@@ -119,7 +120,7 @@ select ctmr.ctmr_frst_name || ' ' || ctmr.ctmr_last_name as full_name,
 
 ---
 
-## Schritt 8: Weiteres SQL-Beispiel
+## <a name="schritt-weiteres-sql-beispiel"></a>Schritt 8: Weiteres SQL-Beispiel
 
 Hier ist ein weiteres Beispiel für eine SQL-Query:
 
@@ -146,9 +147,9 @@ select ctmr.ctmr_frst_name || ' ' || ctmr.ctmr_last_name as full_name,
 
 Das war der erste Teil der Anleitung, der zeigt, wie die AI Ihnen bei der Erstellung von SQL-Queries basierend auf Ihrer eigenen Datenbank helfen kann.
 
-# Teil 2: Erstellen einer App mit Hilfe von AI in Oracle APEX
+# <a name="erstellen-einer-app-mit-ai"></a>22.1 Teil 2: Erstellen einer App mit Hilfe von AI in Oracle APEX
 
-## Schritt 1: Zugriff auf den App Builder
+## <a name="schritt-zugriff-auf-den-app-builder-2"></a>Schritt 1: Zugriff auf den App Builder
 
 Um eine Anwendung mit Hilfe von AI zu erstellen, gehen Sie wie folgt vor:
 
@@ -159,7 +160,7 @@ Um eine Anwendung mit Hilfe von AI zu erstellen, gehen Sie wie folgt vor:
 
 ---
 
-## Schritt 2: App-Erstellung mit AI starten
+## <a name="schritt-app-erstellung-mit-ai-starten"></a>Schritt 2: App-Erstellung mit AI starten
 
 Anstatt einen Namen für die Anwendung einzugeben, klicken Sie auf **Create app using generative AI**.
 
@@ -167,7 +168,7 @@ Anstatt einen Namen für die Anwendung einzugeben, klicken Sie auf **Create app 
 
 ---
 
-## Schritt 3: Eingeben eines Prompts
+## <a name="schritt-eingeben-eines-prompts"></a>Schritt 3: Eingeben eines Prompts
 
 In der Suchleiste können Sie nun einen Prompt eingeben, der die Anwendung beschreibt, die Sie erstellen möchten. Geben Sie z. B. eine Beschreibung Ihrer Tabellen und Anforderungen ein und klicken Sie auf den kleinen Pfeil.
 
@@ -189,7 +190,7 @@ In der Suchleiste können Sie nun einen Prompt eingeben, der die Anwendung besch
 
 ---
 
-## Schritt 4: App wird generiert
+## <a name="schritt-app-wird-generiert"></a>Schritt 4: App wird generiert
 
 Sobald Sie den Prompt eingegeben haben, beginnt AI damit, die App zu erstellen. Sie sehen die Fortschrittsanzeige anhand von Punkten, die den Status des Erstellungsprozesses darstellen.
 
@@ -197,7 +198,7 @@ Sobald Sie den Prompt eingegeben haben, beginnt AI damit, die App zu erstellen. 
 
 ---
 
-## Schritt 5: Überprüfung der generierten App
+## <a name="ueberpruefung-der-generierten-app"></a>Schritt 5: Überprüfung der generierten App
 
 Nachdem die App generiert wurde, erhalten Sie eine Übersicht aller Tabellen sowie der Seiten, die die App beinhaltet. Hier können Sie sehen, welche Funktionen für welche Tabellen vorgesehen sind. Falls alles korrekt ist, klicken Sie einfach auf **Create Application**.
 
@@ -205,7 +206,7 @@ Nachdem die App generiert wurde, erhalten Sie eine Übersicht aller Tabellen sow
 
 ---
 
-## Schritt 6: Seitenübersicht anpassen
+## <a name="schritt-seitenuebersicht-anpassen"></a>Schritt 6: Seitenübersicht anpassen
 
 Auf der nächsten Seite wird Ihnen eine kurze Übersicht über die automatisch erstellten Seiten angezeigt. Falls Sie Änderungen vornehmen möchten, können Sie dies hier tun. Ansonsten klicken Sie auf **Create Application**.
 
@@ -213,7 +214,7 @@ Auf der nächsten Seite wird Ihnen eine kurze Übersicht über die automatisch e
 
 ---
 
-## Schritt 7: Erstellung der App
+## <a name="schritt-erstellung-der-app"></a>Schritt 7: Erstellung der App
 
 Innerhalb weniger Sekunden wird die Anwendung erstellt.
 
@@ -221,7 +222,7 @@ Innerhalb weniger Sekunden wird die Anwendung erstellt.
 
 ---
 
-## Schritt 8: Die Anwendung starten
+## <a name="schritt-starten-der-anwendung"></a>Schritt 8: Die Anwendung starten
 
 Wenn Sie die Anwendung ausführen, können Sie auf der Navigationsleiste mehrere Schaltflächen sehen. Über diese können Sie nun durch die Anwendung navigieren und verschiedene Daten einfügen, bearbeiten und verwalten. Zudem gibt es eine **Suchseite** sowie eine **Dashboard-Seite**, die zusätzliche Funktionalitäten bieten.
 
@@ -233,10 +234,9 @@ Wenn Sie die Anwendung ausführen, können Sie auf der Navigationsleiste mehrere
 Das war der zweite Teil der Anleitung, der zeigt, wie Sie mit Hilfe von AI in Oracle APEX eine Anwendung erstellen können. Dieser Prozess erleichtert die Verwaltung Ihrer Daten und bietet Ihnen die Möglichkeit, Ihre App durch eine generative AI effizient zu erstellen, inklusive Dashboards, Suchseiten und vielem mehr.
 
 
+# <a name="erstellen-einer-email-reply-funktion-mit-ai"></a>22.1 Teil 3: Erstellen einer E-Mail-Reply-Funktion mit AI in Oracle APEX
 
-# Teil 3: Erstellen einer E-Mail-Reply-Funktion mit AI in Oracle APEX
-
-## Schritt 1: Erstellen einer neuen leeren Seite
+## <a name="schritt-erstellen-einer-neuen-leeren-seite"></a>Schritt 1: Erstellen einer neuen leeren Seite
 
 1. Gehen Sie in Ihrer Applikation auf **Create** und erstellen Sie eine neue **Blank Page**.
 2. Klicken Sie auf **Next**, um fortzufahren.
@@ -245,7 +245,7 @@ Das war der zweite Teil der Anleitung, der zeigt, wie Sie mit Hilfe von AI in Or
 
 ---
 
-## Schritt 2: Seiteneinstellungen
+## <a name="schritt-seiteneinstellungen"></a>Schritt 2: Seiteneinstellungen
 
 Geben Sie die Einstellungen wie im Bild gezeigt ein und klicken Sie auf **Create Page**.
 
@@ -253,7 +253,7 @@ Geben Sie die Einstellungen wie im Bild gezeigt ein und klicken Sie auf **Create
 
 ---
 
-## Schritt 3: Erstellen der Region
+## <a name="schritt-erstellen-einer-region"></a>Schritt 3: Erstellen der Region
 
 Erstellen Sie eine Region mit dem Namen **Email Reply**.
 
@@ -261,7 +261,7 @@ Erstellen Sie eine Region mit dem Namen **Email Reply**.
 
 ---
 
-## Schritt 4: Hinzufügen eines Items
+## <a name="schritt-hinzufuegen-eines-items"></a>Schritt 4: Hinzufügen eines Items
 
 Fügen Sie ein neues Item hinzu:
 
@@ -296,10 +296,9 @@ Scrollen Sie nach unten und geben Sie die gewünschte E-Mail im **Static Value**
 
 ![](../../assets/Kapitel-22/ai_basic_22.jpg)
 
-
 ---
 
-## Schritt 5: Erstellen eines Buttons
+## <a name="schritt-erstellen-eines-buttons"></a>Schritt 5: Erstellen eines Buttons
 
 Erstellen Sie einen neuen Button mit den gezeigten Einstellungen.
 
@@ -307,7 +306,7 @@ Erstellen Sie einen neuen Button mit den gezeigten Einstellungen.
 
 ---
 
-## Schritt 6: Hinzufügen einer Dynamic Action
+## <a name="schritt-hinzufuegen-einer-dynamic-action"></a>Schritt 6: Hinzufügen einer Dynamic Action
 
 Wählen Sie den zuvor erstellten Button und fügen Sie eine **Dynamic Action** mit dem Namen **click on mail reply button** hinzu.
 
@@ -315,7 +314,7 @@ Wählen Sie den zuvor erstellten Button und fügen Sie eine **Dynamic Action** m
 
 ---
 
-## Schritt 7: Konfigurieren der Dynamic Action
+## <a name="schritt-konfigurieren-der-dynamic-action"></a>Schritt 7: Konfigurieren der Dynamic Action
 
 - **Action Name**: `ai mail reply`
 - **Action**: Wählen Sie **Open AI Assistant**.
@@ -330,7 +329,7 @@ Geben Sie den System Prompt wie folgt ein:
 
 ---
 
-## Schritt 8: System Prompt und Anzeigeeinstellungen
+## <a name="schritt-system-prompt-und-anzeigeneinstellungen"></a>Schritt 8: System Prompt und Anzeigeeinstellungen
 
 Scrollen Sie nach unten und konfigurieren Sie folgende Einstellungen:
 
@@ -341,11 +340,9 @@ Speichern Sie anschließend die Seite und führen Sie sie aus.
 
 ![](../../assets/Kapitel-22/ai_basic_26.jpg)
 
-
-
 ---
 
-## Schritt 9: Ausführen der Seite
+## <a name="schritt-ausfuehren-der-seite"></a>Schritt 9: Ausführen der Seite
 
 Nach dem Speichern sieht die Seite wie folgt aus. Sie können nun auf den Button **Mail Reply** klicken.
 
@@ -353,7 +350,7 @@ Nach dem Speichern sieht die Seite wie folgt aus. Sie können nun auf den Button
 
 ---
 
-## Schritt 10: E-Mail-Verarbeitung durch AI
+## <a name="schritt-email-verarbeitung-durch-ai"></a>Schritt 10: E-Mail-Verarbeitung durch AI
 
 Nachdem Sie auf **Here is an E-Mail, Please Reply the E-Mail** geklickt haben, gibt die AI eine Antwort auf die E-Mail.
 
