@@ -1369,7 +1369,7 @@ Herzlichen Glückwunsch!
 Sie haben das Tutorial erfolgreich beendet.
  
 Falls Sie noch mehr über APEX lernen wollen, schauen Sie doch mal auf unserem APEX Portal vorbei:  
-[apex.mt-itsolutions.com/from-zero-to-hero](https://apex.mt-itsolutions.com/from-zero-to-hero)
+[apex.hyand.com/ords/portal/r/apex/videos](https://apex.hyand.com/ords/portal/r/apex/videos)
 
 Wenn Sie die nächsten Schritte mit APEX gehen oder Ihre Kenntnisse im Bereich JavaScript oder Continous Integration erweitern wollen, bieten wir Ihnen individuelle Schulung an!
-Besuchen Sie dazu unser Trainingsportal [https://apex.mt-itsolutions.com/ords/r/portal/apex/training](https://apex.mt-itsolutions.com/ords/r/portal/apex/training).
+Besuchen Sie dazu unser Trainingsportal [https://apex.hyand.com/ords/r/portal/apex/training](apex.hyand.com/ords/r/portal/apex/training).
