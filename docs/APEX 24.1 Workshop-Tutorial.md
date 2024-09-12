@@ -3,8 +3,7 @@
 - [Vorbereitung](#vorbereitung)
 - [1. Import der benötigten Daten](#datenimport)
     - [1.1 Skript](#skript)
-    - [1.2 Import des Skripts](#skriptimport)
-    - [1.3 Datenmodellierung mittels Quick SQL](#datenmodellierung)
+    - [1.2 Import des Skripts](#skriptimport) 
 - [2. Create App Wizard](#create)
     - [Erstellen einer Anwendung](erstelleneineranwendung)
     - [Report](#report)
@@ -96,11 +95,6 @@ Verwenden Sie das beigefügte SQL-Skript (**Skript.sql**), um die Daten wie im F
 ![](../assets/Kapitel-01/SQL_Workshop_result.jpg)
 
 Es sollten jetzt alle Tabellen und Daten, welche für dieses Tutorial benötigt werden, in Ihrem Workspace vorhanden sein.  
-
-## <a name="datenmodellierung"></a>1.3 Datenmodellierung mittels Quick SQL
-
-Eine weitere Möglichkeit, Datenmodelle ohne viel Aufwand anzulegen, bietet Quick SQL.  
-Wie das funktioniert, erfahren Sie in der <span style="color:red">**Aufgabe #14: Exkurs: Datenmodellierung mittels Quick SQL**</span>.
 
 # <a name="create"></a>2. Create App Wizard
 
