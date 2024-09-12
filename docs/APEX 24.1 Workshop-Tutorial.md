@@ -23,30 +23,30 @@
 - [6. Charts](#charts)
     - [Erstellung der View](#charts-erstellung-der-view)
     - [Charts Region](#charts-region) 
-- [8. Cards Region](#cards-region)
+- [7. Cards Region](#cards-region)
     - [View erstellen](#cards-view-erstellen)
     - [Seite erstellen](#cards-seite-erstellen)
     - [Cards mit Bild erstellen](#cards-mit-bild-erstellen)
-- [9. Faceted Search](#faceted-search)
+- [8. Faceted Search](#faceted-search)
     - [Erstellung der View](#fs-erstellung-der-view)
     - [Create Page](#fs-create-page)
     - [Create Facets](#fs-create-facets)
-- [10. Smart Filters](#smart-filters)
+- [9. Smart Filters](#smart-filters)
     - [Erstellung der View](#sf-erstellung-der-view)
     - [Create Page](#sf-create-page)
     - [Create Filters](#sf-create-filters)  
-- [13. REST Data Sources](#rest-data-sources)
+- [10. REST Data Sources](#rest-data-sources)
     - [RESTful Service erstellen](#restful-service-erstellen)
     - [REST Data Source erstellen](#rest-data-source-erstellen)
     - [Senden von Daten an eine REST-Datenquelle](#senden-von-daten-an-eine-rest-datenquelle)
     - [Abrufen von Daten aus einer REST Data Source](#abrufen-von-daten-aus-einer-rest-data-source) 
-- [15. Karten erstellen](#karten-erstellen)
+- [11. Karten erstellen](#karten-erstellen)
     - [REST Data Source](#karten-rest-data-source)
     - [Erstellen der Karte auf einer neuen Anwendungsseite](#erstellen-der-karte-auf-einer-neuen-anwendungsseite) 
 
 # Vorbereitung
 
-Herzlich Willkommen bei dem Workshop „Hands-On APEX 23.2“ der MT - IT Solutions.
+Herzlich Willkommen bei dem Workshop „Hands-On APEX 24.1“ der Hyand.
 Bevor Sie mit der Bearbeitung dieses Tutorials beginnen können, müssen Sie einen Workspace auf den Servern von Oracle beantragen. Dies können Sie innerhalb weniger Minuten unter [apex.oracle.com](apex.oracle.com) erledigen.
 
 Falls Sie die Möglichkeit nutzen möchten, englischsprachige Tutorials zu bearbeiten, gibt es unter dem folgenden Link die Möglichkeit, dies zu tun. Klicken Sie einfach auf [https://apex.oracle.com/en/learn/tutorials/](https://apex.oracle.com/en/learn/tutorials/) und bearbeiten Sie die von APEX bereitgestellten Tutorials, wenn Sie noch einen größeren Einblick in die Welt von APEX erhalten möchten.  
@@ -118,7 +118,7 @@ In diesem Kapitel wird das Grundgerüst der Anwendung und die erste Seite erstel
 
 ![](../assets/Kapitel-02/Create_App_Wizard_1.jpg)
 
-- Geben Sie jetzt den Namen der Anwendung ein (z.B. Tutorial 23.2).
+- Geben Sie jetzt den Namen der Anwendung ein (z.B. Tutorial 24.1).
 
 ![](../assets/Kapitel-02/Create_App_Wizard_2.jpg)
 
@@ -762,7 +762,7 @@ Ziel dieses Kapitels ist es, ein Chart zu erstellen, welches das Verhältnis der
 
 - **Breadcrumbs** können meist nach dem Anlegen gelöscht werden. Sie nehmen viel Platz ein und bringen i. d. R. keinen Mehrwert für den Endanwender. **Breadcrumbs** sind hierarchische Listen von Links und bieten eine hierarchische Navigation.
 
-- Klicken Sie mit der rechten Maustaste auf die *Breadcrumb* **TUTORIAL 23.2** und wählen Sie **Delete** aus. 
+- Klicken Sie mit der rechten Maustaste auf die *Breadcrumb* **TUTORIAL 24.1** und wählen Sie **Delete** aus. 
 
 ![](../assets/Kapitel-06/Charts_01.jpg)
 
@@ -796,13 +796,13 @@ Ziel dieses Kapitels ist es, ein Chart zu erstellen, welches das Verhältnis der
 ![](../assets/Kapitel-06/Charts_07.jpg)
 
  
-# <a name="cards-region"></a>8. Cards Region
+# <a name="cards-region"></a>7. Cards Region
 
 Cards sind eine beliebte Form im Webdesign, um Informationen übersichtlich und anschaulich darzustellen. Die Cards in APEX lassen sich vielfältig gestalten. So kann man einer Card Icons hinzufügen, Bilder oder Videos in dieser anzeigen oder Aktionen für die Card definieren (z.B. über Links oder Buttons). 
 
 In diesem Kapitel erstellen wir eine Seite, die auf einer Cards Region aufbaut. Im ersten Schritt erstellen wir eine Default Cards Region, im zweiten Kapitel bearbeiten wir diese so, dass ein Bild in der Karte angezeigt wird.  
 
-## <a name="cards-view-erstellen"></a>8.1	View erstellen
+## <a name="cards-view-erstellen"></a>7.1	View erstellen
 
 Für die Bearbeitung dieser Aufgabe wird eine **View** benötigt.  
 **View Name: *TUTO_P0041_VW***
@@ -818,7 +818,7 @@ select prdt_info_id as product_id,
 from product_info
  ```
 
-## <a name="cards-seite-erstellen"></a>8.2	Seite erstellen
+## <a name="cards-seite-erstellen"></a>7.2	Seite erstellen
 
 - Öffnen Sie den **App Builder** über die Navigationsleiste, wählen Sie Ihre Anwendung aus und klicken Sie auf den Button **Create Page**.  
 - Wählen Sie den Seitentypen **Report** aus.  
@@ -872,7 +872,7 @@ Hier können SIe die angezeigten Sortierkriterien unter Display Value anpassen. 
 
 ![](../assets/Kapitel-08/Cards_07.jpg) 
  
-## <a name="cards-mit-bild-erstellen"></a>8.3	Cards mit Bild erstellen
+## <a name="cards-mit-bild-erstellen"></a>7.3	Cards mit Bild erstellen
 
 In diesem Schritt werden Sie das Aussehen der Cards ändern und die Titelbilder der Filme anzeigen.  
 - Klicken Sie hierfür auf **Attributes** und scrollen Sie dann nach unten zu **Media**.  
@@ -892,11 +892,11 @@ In diesem Schritt werden Sie das Aussehen der Cards ändern und die Titelbilder 
 ![](../assets/Kapitel-08/Cards_10.jpg)
 
 
-# <a name="faceted-search"></a>9. Faceted Search
+# <a name="faceted-search"></a>8. Faceted Search
 
 Bei der **Faceted Search** handelt es sich um eine Funktion zur dynamischen Filterung der angezeigten Datensätze und der gezielten Suche darin. Sie findet häufig Anwendung in Onlineshops und zeichnet sich meist durch eine fixierte Leiste am Seitenrand aus, in welcher sich die unterschiedlichen Filter in Form von Checkboxen, Slidern und Eingabefeldern befinden.
 
-## <a name="fs-erstellung-der-view"></a>9.1	Erstellung der View
+## <a name="fs-erstellung-der-view"></a>8.1	Erstellung der View
 
 Für die Bearbeitung dieser Aufgabe wird eine **View** benötigt.
 
@@ -914,7 +914,7 @@ select prdt_info_id,
 from product_info
  ```
  
-## <a name="fs-create-page"></a>9.2	Create Page
+## <a name="fs-create-page"></a>8.2	Create Page
 
 - Öffnen Sie den **App Builder** über die Navigationsleiste, wählen Sie Ihre Anwendung aus und klicken Sie auf den Button **Create Page**.
 - Wählen Sie den Seitentypen **Component** aus.
@@ -938,7 +938,7 @@ Die Daten werden im rechten Seitenbereich als **Classic Report** dargestellt. Li
 
 ![](../assets/Kapitel-09/Faceted_04.jpg) 
 
-## <a name="fs-create-facets"></a>9.3	Create Facets
+## <a name="fs-create-facets"></a>8.3	Create Facets
 
 - Wechseln Sie zurück in den **Page Designer** und erstellen Sie ein neues **Facet**, indem Sie einen Rechtsklick auf den Eintrag **Facets** machen und anschließend **Create Facet** auswählen. 
 
@@ -1001,9 +1001,9 @@ Das neu erstellte Facet enthält wie auch das *Category-Facet* diverse Checkboxe
 ![](../assets/Kapitel-09/Faceted_11.jpg) 
  
 
-# <a name="smart-filters"></a>10. Smart Filters
+# <a name="smart-filters"></a>9. Smart Filters
 Die **Smart Filters** bieten die Möglichkeit, Daten mithilfe von Filtervorschlägen oder Suchbegriffen leicht einzugrenzen. Diese werden als Chips unter der Suchleiste oder als Vorschläge während des Tippens angezeigt.
-## <a name="sf-erstellung-der-view"></a>10.1 Erstellung der View
+## <a name="sf-erstellung-der-view"></a>9.1 Erstellung der View
 Für die Bearbeitung dieser Aufgabe wird eine **View** benötigt. 
 **View Name: TUTO_P0091_VW**
 Query:
@@ -1017,7 +1017,7 @@ select prdt_info_id,
 from product_info
 ```
 
-## <a name="sf-create-page"></a>10.2 Create Page
+## <a name="sf-create-page"></a>9.2 Create Page
 - Öffnen Sie den **App Builder** über die Navigationsleiste, wählen Sie Ihre Anwendung aus und klicken Sie auf den Button **Create Page**.  
 - Wählen Sie den Seitentypen **Component** aus.  
 - Wählen Sie den Bereichstypen **Smart Filters** aus.  
@@ -1039,7 +1039,7 @@ Die Daten werden als **Classic Report** dargestellt. Darüber befindet sich eine
 
 ![](../assets/Kapitel-10/Smart_04.jpg)  
  
-## <a name="sf-create-filters"></a>10.3 Create Filters
+## <a name="sf-create-filters"></a>9.3 Create Filters
 - Wechseln Sie zurück in den **Page Designer** und erstellen Sie einen neuen Filter, indem Sie einen Rechtsklick auf den Eintrag **Filters** machen und anschließend **Create Filter** auswählen.  
 
 ![](../assets/Kapitel-10/Smart_05.jpg)  
@@ -1083,10 +1083,10 @@ Die erstellten Filter für *Product Name* und *Category* werden nun beim Klick i
 
  
  
-# <a name="rest-data-sources"></a>13. REST Data Sources
+# <a name="rest-data-sources"></a>10. REST Data Sources
 Data Sources ermöglichen die Einbindung von REST-Services. Die empfangenen Daten können in APEX Komponenten wie Reports oder Forms verwendet werden. Die Daten werden dabei als JSON-Objekte zwischen der Anwendung und der REST Source transportiert. Es gibt verschiedene Operationen entsprechend der HTTP-Methoden (GET, POST, PUT, DELETE), die mit der jeweiligen Datenbankoperation (SELECT, INSERT, UPDATE, DELETE) verknüpft werden können.
 
-## <a name="restful-service-erstellen"></a>13.1 RESTful Service erstellen
+## <a name="restful-service-erstellen"></a>10.1 RESTful Service erstellen
 In dieser Aufgabe erstellen Sie einen eigenen RESTful Service. Diesen können Sie aus dem Internet aufrufen sowie in anderen Diensten nutzen. 
 - Um den RestFul Service zu erstellen, klicken Sie auf den **SQL Workshop** und dann auf **RESTful Services**. 
 
@@ -1211,7 +1211,7 @@ end;
   ]
  ```
   
-## <a name="rest-data-source-erstellen"></a>13.2 REST Data Source erstellen
+## <a name="rest-data-source-erstellen"></a>10.2 REST Data Source erstellen
 Nachdem Sie im vorherigen Kapitel einen eigenen RESTful Service erstellt haben, werden wir diesen in APEX als REST Data Source nutzen. Die Vorgehensweise, die im Folgenden gezeigt wird, gilt ähnlich auch für REST Datenquellen, die Sie nicht selbst erstellt haben.  
 Um die **REST Data Source** anzulegen, gehen Sie in die **Shared Components** Ihrer Anwendung. 
 
@@ -1256,7 +1256,7 @@ Geben Sie der REST Data Source den **Namen *Departments***. Zudem müssen Sie de
 
 - Kontrollieren Sie, dass Ihre Einstellungen im **Data Profile** wie im Bild gezeigt aussehen und, dass bei **Operations** die beiden Operations ***GET*** und ***POST*** angelegt wurden. 
  
-## <a name="senden-von-daten-an-eine-rest-datenquelle"></a>13.3 Senden von Daten an eine REST-Datenquelle
+## <a name="senden-von-daten-an-eine-rest-datenquelle"></a>10.3 Senden von Daten an eine REST-Datenquelle
 In diesem Kapitel werden wir die zuvor erstellte REST Source nutzen, um eigene Daten senden. Konkret werden wir dabei neue Departments hinzufügen. Dafür wird die HTTP-POST-Methode verwendet, welche in der REST Data Source als Operation definiert wurde. 
 - Öffnen Sie den **App Builder** und Ihre Anwendung. Klicken Sie auf **Create Page** und erstellen Sie eine neue Seite, indem Sie auf **Create Page** klicken. 
 
@@ -1301,11 +1301,11 @@ Nun möchten wir die REST Data Source nicht nur zum Hinzufügen von Daten nutzen
 [https://apex.oracle.com/pls/apex/mt_apisearch/r/datasources](https://apex.oracle.com/pls/apex/mt_apisearch/r/datasources)
 
 
-# <a name="karten-erstellen"></a>15. Karten erstellen 
+# <a name="karten-erstellen"></a>11. Karten erstellen 
 In dieser Aufgabe werden Sie eine Anwendungsseite mit einer Weltkarte erstellen. Die nötigen Daten dafür erlangen wir über eine (in Kapitel 13.2 vorgestellte) REST Data Source.
 Das Ziel ist es, alle Erdbeben auf der Erde, die in den letzten 24 Stunden stattfanden, auf einer Karte in APEX darzustellen.
 
-## <a name="karten-rest-data-source"></a>15.1	REST Data Source 
+## <a name="karten-rest-data-source"></a>11.1	REST Data Source 
 Um später die Erdbebendaten der Karte aktuell zu halten, richten Sie nun eine REST Data Source ein. Die detaillierten Schritte dieses Unterkapitels können Sie sich mit Screenshots bei Bedarf erneut in Kapitel 13.2 anschauen, im Folgenden werden die Schritte darum nur grob beschrieben.
 
 Zu Beginn erstellen Sie im App-Builder eine neue Anwendung und nennen diese **Earthquakes**. Sie brauchen keine weiteren Einstellungen vorzunehmen. In der Anwendungsübersicht wählen Sie dann **Shared Components** aus.
