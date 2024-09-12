@@ -1282,7 +1282,7 @@ In diesem Kapitel werden wir die zuvor erstellte REST Source nutzen, um eigene D
 
 ![](../assets/Kapitel-13/Rest_26.jpg)
 
-## <a name="abrufen-von-daten-aus-einer-rest-data-source"></a>13.4 Abrufen von Daten aus einer REST Data Source
+## <a name="abrufen-von-daten-aus-einer-rest-data-source"></a>10.4 Abrufen von Daten aus einer REST Data Source
 Nun möchten wir die REST Data Source nicht nur zum Hinzufügen von Daten nutzen, sondern auch, um Daten abzurufen und diese anzeigen zu lassen. Dafür wird die HTTP-GET-Methode verwendet, welche in der REST Data Source als Operation definiert wurde.  
 - Über das in Kapitel 13.3 erstellte Form ist es nun möglich, neue Departments anzulegen. Um direkt zu erkennen, ob das Hinzufügen erfolgreich war, werden Sie zusätzlich einen Report auf der Seite erstellen. 
 
@@ -1333,7 +1333,7 @@ Nach dem Sie auf das zweite Feld geklickt haben, öffnet sich ein Pop-Up Fenster
 
 Die Tabelle mitsamt der aktuellen Erdbebendaten ist nun im **Object Browser** vorzufinden.  
  
-## <a name="erstellen-der-karte-auf-einer-neuen-anwendungsseite"></a>15.2	Erstellen der Karte auf einer neuen Anwendungsseite
+## <a name="erstellen-der-karte-auf-einer-neuen-anwendungsseite"></a>11.2	Erstellen der Karte auf einer neuen Anwendungsseite
 Stellen Sie sicher, dass Sie nun auf die Anwendungsübersicht jener Anwendung navigieren, die Sie zu Beginn erstellt haben.  
 
 - Dort wählen Sie **Create Page**.  
