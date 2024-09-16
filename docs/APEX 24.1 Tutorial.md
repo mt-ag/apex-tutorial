@@ -143,7 +143,7 @@
 
 # Vorbereitung
 
-Herzlich Willkommen bei dem Workshop „Hands-On APEX 23.2“ der MT - IT Solutions.
+Herzlich Willkommen bei dem Workshop „Hands-On APEX“ der MT - IT Solutions.
 Bevor Sie mit der Bearbeitung dieses Tutorials beginnen können, müssen Sie einen Workspace auf den Servern von Oracle beantragen. Dies können Sie innerhalb weniger Minuten unter [apex.oracle.com](apex.oracle.com) erledigen.
 
 Falls Sie die Möglichkeit nutzen möchten, englischsprachige Tutorials zu bearbeiten, gibt es unter dem folgenden Link die Möglichkeit, dies zu tun. Klicken Sie einfach auf [https://apex.oracle.com/en/learn/tutorials/](https://apex.oracle.com/en/learn/tutorials/) und bearbeiten Sie die von APEX bereitgestellten Tutorials, wenn Sie noch einen größeren Einblick in die Welt von APEX erhalten möchten.  
@@ -215,7 +215,7 @@ In diesem Kapitel wird das Grundgerüst der Anwendung und die erste Seite erstel
 
 ![](../assets/Kapitel-02/Create_App_Wizard_1.jpg)
 
-- Geben Sie jetzt den Namen der Anwendung ein (z.B. Tutorial 23.2).
+- Geben Sie jetzt den Namen der Anwendung ein (z.B. Tutorial).
 
 ![](../assets/Kapitel-02/Create_App_Wizard_2.jpg)
 
@@ -859,7 +859,7 @@ Ziel dieses Kapitels ist es, ein Chart zu erstellen, welches das Verhältnis der
 
 - **Breadcrumbs** können meist nach dem Anlegen gelöscht werden. Sie nehmen viel Platz ein und bringen i. d. R. keinen Mehrwert für den Endanwender. **Breadcrumbs** sind hierarchische Listen von Links und bieten eine hierarchische Navigation.
 
-- Klicken Sie mit der rechten Maustaste auf die *Breadcrumb* **TUTORIAL 23.2** und wählen Sie **Delete** aus. 
+- Klicken Sie mit der rechten Maustaste auf die *Breadcrumb* **TUTORIAL** und wählen Sie **Delete** aus. 
 
 ![](../assets/Kapitel-06/Charts_01.jpg)
 
@@ -1317,7 +1317,7 @@ Nach diesem Kapitel hat Ihr Login-Screen ein Hintergrundbild und sieht somit ans
 ![](../assets/Kapitel-11/Optisch_04.jpg) 
 
 Ein Template enthält alle Elemente, die Benutzer zum Erstellen eine Seite benötigen, inklusive von Beispielen zu den Elementen, damit Entwickler sehen können, wie die einzelnen Elemente zu verwenden sind. Immer wenn eine neue Seite in APEX angelegt wird, muss für diese ein Template ausgewählt werden. Entwickler haben die Möglichkeit, vorhandene Templates zu bearbeiten oder neue anzulegen.  
-- Wählen Sie die **Region TUTORIAL23.2** aus. Ändern Sie dort den **Namen** zu ***Log In***. 
+- Wählen Sie die **Region TUTORIAL** aus. Ändern Sie dort den **Namen** zu ***Log In***. 
 
 ![](../assets/Kapitel-11/Optisch_05.jpg) 
 
@@ -2992,7 +2992,7 @@ Klicken Sie auf **Template Options**
 
 # <a name="working-copy"></a>20. Working Copy
 
-Mit APEX 23.2 hat ein neues kollaboratives Feature Einzug in APEX erhalten - die Working Copy. Mit der Working Copy kann eine Arbeitskopie einer App erstellt werden, an der weiterentwickelt werden kann, während die Hauptversion der App davon unberührt bleibt. Wenn Sie bereits mit anderen Versionsverwaltungen gearbeitet haben, dann wird Ihnen Vieles in diesem Kapitel vertraut vorkommen.
+Mit APEX hat ein neues kollaboratives Feature Einzug in APEX erhalten - die Working Copy. Mit der Working Copy kann eine Arbeitskopie einer App erstellt werden, an der weiterentwickelt werden kann, während die Hauptversion der App davon unberührt bleibt. Wenn Sie bereits mit anderen Versionsverwaltungen gearbeitet haben, dann wird Ihnen Vieles in diesem Kapitel vertraut vorkommen.
 
 ## <a name="arbeitskopie-erstellen"></a>20.1 Arbeitskopie erstellen
 
@@ -3002,7 +3002,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass die Sta
 
 ![](../assets/Kapitel-20/Working_Copy_01.jpg)
 
-- Geben Sie der Arbeitskopie den Namen **Working Copy Tutorial 23.2** und fügen Sie eine Beschreibung hinzu.  
+- Geben Sie der Arbeitskopie den Namen **Working Copy Tutorial ** und fügen Sie eine Beschreibung hinzu.  
 
 ![](../assets/Kapitel-20/Working_Copy_02.jpg)
 
@@ -3062,7 +3062,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass die Sta
 
 ![](../assets/Kapitel-20/Working_Copy_09.jpg)
 
-- Kehren Sie zurück auf die Üersichsseite in den App Builder. Im Menü **Tutorial 23.2 Working Copy** können Sie unter dem Punkt **Compare Changes** einen Vergleich zwischen der Hauptversion und der Arbeitsversion durchführen.
+- Kehren Sie zurück auf die Üersichsseite in den App Builder. Im Menü **Tutorial Working Copy** können Sie unter dem Punkt **Compare Changes** einen Vergleich zwischen der Hauptversion und der Arbeitsversion durchführen.
 
 ![](../assets/Kapitel-20/Working_Copy_10.jpg)
 
@@ -3156,12 +3156,12 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass die Sta
 
 ![](../assets/Kapitel-20/Working_Copy_30.jpg)
 
-- Sie haben damit das Kapitel zur neuen Versionierungsmöglichkeit in APEX 23.2 - der **Working Copy** - erfolgreich abgeschlossen.
+- Sie haben damit das Kapitel zur neuen Versionierungsmöglichkeit in APEX - der **Working Copy** - erfolgreich abgeschlossen.
 
 
 # <a name="apex-workflow"></a>21. APEX Workflow
 
-Mit APEX 23.2 werden Workflows direkt in APEX integriert. Mit **APEX Workflow** lassen sich Business-Prozesse mittels der eines grafischen Editors erstellen und ausführen. Nutzer, die Prozesse mittels  **Busines Process Model and Notation (BPMN 2.0)** abbilden wollen, finden mit der eng verwandten Erweiterung **Flows for APEX** von MT - IT Solutions eine passende Erweiterung. Weitere Informationen dazu erhalten Sie unter dem Link [https://flowsforapex.org/](https://flowsforapex.org/). 
+Mit APEX werden Workflows direkt in APEX integriert. Mit **APEX Workflow** lassen sich Business-Prozesse mittels der eines grafischen Editors erstellen und ausführen. Nutzer, die Prozesse mittels  **Busines Process Model and Notation (BPMN 2.0)** abbilden wollen, finden mit der eng verwandten Erweiterung **Flows for APEX** von MT - IT Solutions eine passende Erweiterung. Weitere Informationen dazu erhalten Sie unter dem Link [https://flowsforapex.org/](https://flowsforapex.org/). 
 
 In dem folgenden Kapitel nutzen wir Workflows um eine Demoversion einer vereinfachten Reservierung eines Restauranttisches zu erstellen. Die Demo lehnt sich an den Blog-Beitrag **Simplify Business Process Management Using APEX Workflow** von Ananya Chatterjee an. [Link zum Blog](https://blogs.oracle.com/apex/post/simplify-business-process-management-using-apex-workflow-create-doctor-appointment-application)
 
