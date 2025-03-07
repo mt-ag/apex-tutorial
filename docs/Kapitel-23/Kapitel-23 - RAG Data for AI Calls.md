@@ -1,11 +1,20 @@
-# <a name="oracle-apex-und-ai"></a> 23. Oracle APEX und AI - RAG Daten
-# <a name="testen-von-funktionen-oracle-apex-und-ai"></a>Bereitstellung von RAG-Daten für KI-Anrufe
+# <a name="oracle-apex-und-ai"></a> 23. Oracle APEX und AI - RAG Daten  
 
-In diesem Kapitel werden wir drei verschiedene Funktionen von AI in Kombination mit Oracle APEX testen. Dabei konzentrieren wir uns auf den Einsatz von KI-Bots in verschiedenen bereichen. z.b haben wir erstmal einen public bot, der auskunft über alle artikel an public user ausgibt.
-dann werden wir einen weitere ki-bot erstellen, der bezogen auf den eingeloggten kunden bestellungsdetails auskunft ausgibt.
-diese 2 szenarion werden wir hier durch gehen.
+## <a name="einleitung"></a>Einleitung  
 
- 
+In diesem Kapitel befassen wir uns mit der Integration von **Retrieval-Augmented Generation (RAG)** in **Oracle APEX**, um eine KI-gestützte Assistenz für Benutzer bereitzustellen. Der Fokus liegt darauf, wie KI-Anfragen mit **strukturieren Daten aus der Datenbank** kombiniert werden können, um gezielte und relevante Antworten zu liefern.  
+
+Das Tutorial gliedert sich in zwei zentrale Szenarien:  
+
+1. **Teil 1: Öffentliche Produktanfragen (Public Bot)**  
+   - Ein **KI-gestützter Assistent**, der **nicht angemeldeten Benutzern** Produktinformationen bereitstellt.  
+   - Besucher erhalten Auskunft über **Produktnamen, Beschreibungen, Preise und Verfügbarkeit**, ohne sich registrieren oder anmelden zu müssen.  
+
+2. **Teil 2: Personalisierte Bestellinformationen für Kunden (Kunden-Bot)**  
+   - Ein **KI-gestützter Assistent**, der **angemeldeten Kunden** detaillierte Informationen zu ihren **Bestellungen und Bestellstatus** bereitstellt.  
+   - Die KI greift auf **kundenbezogene Daten** zu, wie z. B. **Bestelldatum, Gesamtbetrag, enthaltene Artikel und Kreditlimit**.  
+
+Im ersten Teil des Tutorials konzentrieren wir uns auf die Umsetzung des **Public Bots**, mit dem **nicht angemeldete Nutzer** durch eine KI-Produktauskunft Informationen zu Artikeln abrufen können. Im zweiten Teil wird ein **kundenindividueller Bestellassistent** implementiert, der nur für angemeldete Benutzer relevante Bestelldetails bereitstellt.  
 
 ## <a name="schritt-zugriff-auf-den-app-builder"></a>Schritt 1: Zugriff auf den App Builder
 
@@ -531,3 +540,8 @@ Nach dem erfolgreichen Einrichten des AI-Assistenten können Besucher nun den **
 
 ---
 
+## <a name="kundenindividuelle-bestellauskunft"></a>Teil 2: Kundenindividuelle Bestellauskunft mit KI  
+
+Nachdem wir im ersten Teil erfolgreich einen **öffentlichen KI-Assistenten** zur **Produktauskunft für Besucher** erstellt haben, widmen wir uns nun dem zweiten Szenario:  
+
+Hier entwickeln wir einen **kundenspezifischen KI-Bot**, der **angemeldeten Benutzern** personalisierte Informationen zu ihren Bestellungen bereitstellt.  
