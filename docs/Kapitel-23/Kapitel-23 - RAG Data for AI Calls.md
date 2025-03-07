@@ -109,7 +109,7 @@ Nun können Sie eine **AI Configuration** anlegen, um den generativen KI-Dienst 
 
 1. Klicken Sie auf den **Create**-Button, um eine neue AI Configuration zu erstellen.  
 
-![](../../assets/Kapitel-23/ai_rag_8.jpeg)  
+![](../../assets/Kapitel-23/ai_rag_9.jpeg)  
 
 ---
 
@@ -329,6 +329,8 @@ Nun wird eine **RAG Source** erstellt, die Bestellinformationen für den aktuell
   JOIN STATES ON (STTS_ST = CTMR_STATE)
   WHERE LOWER(CTMR_FRST_NAME) = LOWER(:APP_USER)
   ```
+
+![](../../assets/Kapitel-23/ai_rag_17.jpeg) 
 
 4. Klicken Sie auf **Create**, um die RAG Source zu speichern.
 
