@@ -359,3 +359,175 @@ Nachdem beide **AI Configurations** erfolgreich erstellt wurden, erscheinen sie 
 ![](../../assets/Kapitel-23/ai_rag_19.jpeg)  
 
 ---
+
+## <a name="schritt-login-seite-öffnen"></a>Schritt 20: Login-Seite öffnen  
+
+Wechseln Sie nun zur **Login-Seite**, um die Anmeldefunktion der Anwendung zu überprüfen oder anzupassen.  
+
+1. Klicken Sie auf die **Login Page (9999)**, um die Anmeldeeinstellungen zu bearbeiten.  
+
+![](../../assets/Kapitel-23/ai_rag_20.jpeg)  
+
+---
+
+
+## <a name="schritt-anpassung-der-login-seite"></a>Schritt 21: Anpassung der Login-Seite  
+
+Auf der **Login-Seite (9999)** nehmen Sie nun einige Anpassungen vor, um eine zusätzliche **Region** für die Anzeige von Artikeln hinzuzufügen.  
+
+1. **Neue Region erstellen**:  
+   - Erstellen Sie eine neue **Region** mit dem Namen **"Unsere Artikel im Shop"**.  
+
+2. **Einstellungen der Region anpassen**:  
+   - Setzen Sie den **Namen** der Region auf **"Unsere Artikel im Shop"**.  
+   - Der **Typ** bleibt **Static Content**.  
+
+3. **Layout-Anpassungen vornehmen**:  
+   - Setzen Sie **Start New Row** auf **Deaktiviert**.  
+   - Lassen Sie die **Column**-Einstellung auf **Automatisch**.  
+
+4. **Template setzen**:  
+   - Wählen Sie unter **Appearance** das **Template "Login"**.  
+
+5. **Speichern**:  
+   - Klicken Sie abschließend auf **Save**, um die Änderungen zu sichern.  
+
+![](../../assets/Kapitel-23/ai_rag_21.jpeg)  
+
+---
+
+## <a name="schritt-button-hinzufügen"></a>Schritt 22: Button zur KI-gestützten Artikelsuche hinzufügen  
+
+In der zuvor erstellten **Region "Unsere Artikel im Shop"** fügen Sie nun einen **Button** hinzu, der den Zugriff auf die KI-gestützte Artikelsuche ermöglicht.  
+
+1. **Button erstellen**:  
+   - Erstellen Sie einen neuen **Button** innerhalb der Region **"Unsere Artikel im Shop"**.  
+   - Setzen Sie den **Button Name** auf **`P9999_GET_ARTICLE_INFO`**.  
+   - Vergeben Sie die **Bezeichnung (Label)**: **"AI-basierte Artikelsuche und -beratung"**.  
+
+2. **Button-Template festlegen**:  
+   - Wählen Sie als **Button Template**: **"Text with Icon"**.  
+
+3. **Template-Optionen anpassen**:  
+   - Unter **Template Options** setzen Sie:  
+     - **Common** → **Type: Success**  
+     - **Advanced** → **Width: Stretch**  
+     - **Spacing** → **Bottom: Large**  
+
+4. **Icon hinzufügen**:  
+   - Verwenden Sie als **Icon**: **`fa-ai-square`**.  
+
+5. **Änderungen speichern**:  
+   - Klicken Sie abschließend auf **Save**, um die Konfiguration zu sichern.  
+
+![](../../assets/Kapitel-23/ai_rag_22.jpeg)  
+
+---
+
+## <a name="schritt-subregion-erstellen"></a>Schritt 23: Subregion "Artikel Report" erstellen  
+
+Um eine Übersicht über die Artikel im Shop bereitzustellen, fügen wir innerhalb der Region **"Unsere Artikel im Shop"** eine **Subregion** hinzu, die als **Classic Report** dient.  
+
+### 1. **Subregion hinzufügen**  
+- Erstellen Sie eine **Subregion** mit dem Namen **"Artikel Report"** innerhalb der Region **"Unsere Artikel im Shop"**.  
+- Setzen Sie den **Typ** auf **"Classic Report"**.  
+
+### 2. **Datenquelle konfigurieren**  
+- Wählen Sie als **Location**: **Local Database**.  
+- Setzen Sie den **Type** auf **"Table / View"**.  
+- Wählen Sie als **Table Name** die zuvor erstellte **View `PRODUCT_INFO_VIEW`**.  
+
+### 3. **Template-Optionen anpassen**  
+- Unter **Template Options** setzen Sie:  
+  - **Common** → **Header: Hidden but accessible**  
+  - **Style** → **Remove UI Decoration**  
+
+### 4. **Attribute & Layout anpassen**  
+- Wechseln Sie zum **Tab "Attributes"** und nehmen Sie folgende Anpassungen vor:  
+  - **Layout → Number of Rows**: **Setzen Sie den Wert auf "2"**.  
+  - **Pagination → Type**: **Row Ranges X to Y of Z (with pagination)**.  
+
+### 5. **Änderungen speichern**  
+- Klicken Sie abschließend auf **Save**, um die Einstellungen zu übernehmen.  
+
+![](../../assets/Kapitel-23/ai_rag_23.jpeg)  
+
+---
+
+## <a name="schritt-überprüfung-der-login-seite"></a>Schritt 24: Überprüfung der Login-Seite  
+
+Nach den vorgenommenen Anpassungen sollte die **Login-Seite** wie im folgenden Bild dargestellt erscheinen.  
+
+1. **Öffentlicher Zugriff auf Artikel**  
+   - Nutzer, die nicht angemeldet sind, können weiterhin die **Shop-Artikel** einsehen.  
+   - Der **Artikel-Report** wird neben dem Anmeldeformular angezeigt.  
+
+2. **Funktionalität der Shop-Übersicht**  
+   - Jeder Besucher kann ohne Account alle verfügbaren Artikel durchsuchen.  
+   - Die **AI-basierte Artikelsuche und -beratung** steht zur Verfügung, um gezielte Informationen zu erhalten.  
+
+3. **Nächster Schritt: Implementierung des InfoBots**  
+   - Im nächsten Schritt werden wir den **InfoBot** einrichten, sodass Besucher noch detailliertere Informationen zu den Artikeln erhalten können.  
+
+![](../../assets/Kapitel-23/ai_rag_24.jpeg)  
+
+---
+
+
+## <a name="schritt-integration-des-info-bots"></a>Schritt 25: Integration des InfoBots  
+
+In diesem Schritt wird eine **dynamische Aktion** erstellt, die es ermöglicht, den **AI-Assistenten (InfoBot)** über den Button **"AI-basierte Artikelsuche und -beratung"** zu starten.  
+
+### 1. **Dynamische Aktion für den Button erstellen**  
+   - Wählen Sie den **Button** `P9999_GET_ARTICLE_INFO` aus.  
+   - Fügen Sie eine **neue dynamische Aktion** hinzu und setzen Sie:  
+     - **Name**: `Click on button`  
+     - **Event**: `Click`  
+
+### 2. **Aktion für den AI-Chatbot definieren**  
+   - Innerhalb der **True-Aktion** erstellen Sie eine neue Aktion:  
+     - **Name**: `Open AI Chatbox`  
+     - **Action**: `Show AI Assistant`  
+
+### 3. **Konfiguration des AI-Assistenten**  
+   - Wählen Sie unter **Configuration** die **AI-Konfiguration**:  
+     - **Produktauskunft für Besucher**  
+
+   - Passen Sie die **Darstellung** an:  
+     - **Display As**: `Dialog`  
+     - **Title**: `Produktauskunft für Besucher`  
+
+### 4. **Speichern und Testen**  
+   - Klicken Sie auf **Save**, um die Änderungen zu speichern.  
+   - Führen Sie die Anwendung aus, um den AI-Assistenten zu testen.  
+
+![](../../assets/Kapitel-23/ai_rag_25.jpeg)  
+
+---
+
+## <a name="schritt-interaktion-mit-dem-info-bot"></a>Schritt 26: Interaktion mit dem InfoBot  
+
+Nach dem erfolgreichen Einrichten des AI-Assistenten können Besucher nun den **InfoBot** verwenden, um gezielt Informationen über die im Shop verfügbaren Artikel abzurufen.  
+
+### 1. **AI-Assistent starten**  
+   - Klicken Sie auf den Button **"AI-basierte Artikelsuche und -beratung"** in der Region **"Unsere Artikel im Shop"**.  
+   - Der **AI-Assistent (InfoBot)** öffnet sich als Dialogfenster.  
+
+### 2. **Anfrage an den InfoBot stellen**  
+   - Nutzer können gezielte Fragen zu Produkten stellen, z. B.:  
+     **"Ich suche eine Herren Hose, die aktuell im Trend ist?"**  
+   - Der InfoBot verarbeitet die Anfrage basierend auf den hinterlegten Produktinformationen.  
+
+### 3. **Antwort des InfoBots**  
+   - Der InfoBot gibt eine präzise Antwort basierend auf den vorhandenen Produktdaten.  
+   - Im gezeigten Beispiel schlägt der InfoBot eine **schwarze Business-Hose** vor, die als **TOP SELLER** gekennzeichnet ist und im Trend liegt.  
+   - Die Antwort enthält relevante Details wie **Kategorie, Beschreibung und Preis**.  
+
+**Wichtig**:  
+   - Der InfoBot hat ausschließlich Zugriff auf **Produktinformationen**.  
+   - Keine persönlichen oder kundenbezogenen Daten werden preisgegeben.  
+
+![](../../assets/Kapitel-23/ai_rag_26.jpeg)  
+
+---
+

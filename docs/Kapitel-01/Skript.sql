@@ -1020,3 +1020,13 @@ from t_reservation
 with read only
 
 /
+
+CREATE OR REPLACE VIEW PRODUCT_INFO_VIEW AS
+SELECT PRDT_INFO_NAME         AS name,
+       PRDT_INFO_DESCR        AS Beschreibung,
+       PRDT_INFO_CATEGORY     AS Kategorie,
+       TO_CHAR(PRDT_INFO_LIST_PRICE, '999G990D00', 'NLS_NUMERIC_CHARACTERS = '',.''') || ' €' AS Preis
+FROM PRODUCT_INFO
+
+
+/
