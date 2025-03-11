@@ -545,3 +545,232 @@ Nach dem erfolgreichen Einrichten des AI-Assistenten können Besucher nun den **
 Nachdem wir im ersten Teil erfolgreich einen **öffentlichen KI-Assistenten** zur **Produktauskunft für Besucher** erstellt haben, widmen wir uns nun dem zweiten Szenario:  
 
 Hier entwickeln wir einen **kundenspezifischen KI-Bot**, der **angemeldeten Benutzern** personalisierte Informationen zu ihren Bestellungen bereitstellt.  
+
+---
+
+## <a name="schritt-login-seite-anpassen"></a>Schritt 1: Login-Seite anpassen  
+
+Um die Anwendung für eine **kundenspezifische Bestellauskunft** vorzubereiten, passen wir die bestehende **Login-Seite (9999)** an.  
+
+1. **Bestehende Login-Elemente ausblenden**:  
+   - Kommentieren Sie die bestehenden **Items** `P9999_USERNAME`, `P9999_PASSWORD` und `P9999_REMEMBER` aus (*Rechtsklick → Comment Out*).  
+   - Ebenso **den Login-Button** (`LOGIN`) auskommentieren.  
+   - Die auskommentierten Elemente sollten nun **durchgestrichen** dargestellt werden.  
+
+2. **Neues Item hinzufügen**:  
+   - Erstellen Sie innerhalb der vorhandenen **Region** ein neues Item mit dem Namen **`P9999_CUSTOMER_NAME`**.  
+   - Setzen Sie den **Item-Typ** auf **Select List**.  
+   - Vergeben Sie das **Label** *"Kunden Name"*.  
+
+3. **List of Values (LOV) definieren**:  
+   - Wählen Sie als **Type**: `SQL Query`.  
+   - Geben Sie die folgende **SQL-Abfrage** ein, um eine Liste eindeutiger Kundennamen aus der Datenbank bereitzustellen:  
+
+  ```sql
+  select distinct Vorname as d
+       , Vorname          as r
+    from CUSTOMER_ORDER_INFO_VIEW
+  ```
+
+![](../../assets/Kapitel-23/ai_rag_27.jpeg)  
+
+---
+
+## <a name="schritt-kundenanmeldung-button-erstellen"></a>Schritt 2: Button für die Kundenanmeldung erstellen  
+
+Damit sich Kunden anmelden und ihre Bestellungen einsehen können, fügen wir einen neuen **Login-Button** zur **Login-Seite (9999)** hinzu.  
+
+1. **Neuen Button hinzufügen**:  
+   - Erstellen Sie einen **Button** mit dem Namen **`CUSTOMER_LOGIN`**.  
+   - Vergeben Sie das **Label** *"Kunden Anmeldung"*.  
+
+2. **Erscheinungsbild des Buttons anpassen**:  
+   - Wählen Sie als **Button Template**: *Text with Icon*.  
+   - Setzen Sie unter **Template Options** folgende Einstellungen:  
+     - *Use Template Defaults, Success, Left, Stretch*.  
+   - Als **Icon** wählen Sie `fa-sign-in`.  
+
+3. **Verhalten des Buttons definieren**:  
+   - Setzen Sie die **Aktion** des Buttons auf *Submit Page*.  
+
+4. **Speichern**:  
+   - Klicken Sie auf **Save**, um die Änderungen zu sichern.  
+
+![](../../assets/Kapitel-23/ai_rag_28.jpeg)  
+
+---
+
+## <a name="schritt-login-prozess-anpassen"></a>Schritt 3: Login-Prozess für Kunden anpassen  
+
+Nachdem wir den **Login-Button** erstellt haben, passen wir den **Login-Prozess** an, sodass sich Kunden mit ihrem Namen anmelden können.  
+
+### 1. **Login-Prozess anpassen**  
+   - Navigieren Sie zum **Processing**-Bereich der Seite 9999.  
+   - Kommentieren Sie den bestehenden **Login-Prozess** aus, wie zuvor bei den Login-Elementen.  
+
+### 2. **Neuen Login-Prozess erstellen**  
+   - Erstellen Sie einen neuen **Process** mit folgenden Einstellungen:  
+     - **Name**: `customer login`  
+     - **Type**: *Execute Code*  
+     - **Language**: *PL/SQL*  
+
+   - Fügen Sie den folgenden **PL/SQL-Code** hinzu:  
+
+     ```plsql
+     Wwv_Flow_Custom_Auth_Std.Post_Login(
+         P_UNAME        => :P9999_CUSTOMER_NAME 
+       , P_PASSWORD     => null 
+       , P_SESSION_ID   => :APP_SESSION
+       , P_FLOW_PAGE    => :APP_ID || ':1' 
+     );
+     ```
+
+### 3. **Bedingung für den Login-Prozess festlegen**  
+   - Setzen Sie **"When Button Pressed"** auf `CUSTOMER_LOGIN`.  
+
+### 4. **Speichern und Ausführen**  
+   - Klicken Sie auf **Save** und anschließend auf **Run**, um die Änderungen zu testen.  
+
+![](../../assets/Kapitel-23/ai_rag_29.jpeg)  
+
+---
+
+
+## <a name="schritt-kundenanmeldung-testen"></a>Schritt 4: Kundenanmeldung testen  
+
+Nach den vorgenommenen Anpassungen sollte die **Login-Seite** wie folgt aussehen:  
+
+### 1. **Seitenaufbau prüfen**  
+   - Die **Standard-Login-Felder** wurden entfernt.  
+   - Stattdessen gibt es ein **Dropdown-Feld**, in dem ein Kunde ausgewählt werden kann.  
+   - Der **Button "Kunden Anmeldung"** dient zur Anmeldung mit dem gewählten Kundenprofil.  
+
+### 2. **Anmeldung mit einem Kunden testen**  
+   - Wählen Sie einen **beliebigen Kunden** aus der Liste.  
+   - In diesem Beispiel wird **Frank** als Kunde ausgewählt.  
+   - Klicken Sie auf **"Kunden Anmeldung"**, um sich mit dem gewählten Kundenkonto anzumelden.  
+
+![](../../assets/Kapitel-23/ai_rag_30.jpeg)  
+
+---
+
+## <a name="schritt-anmeldebestätigung"></a>Schritt 5: Anmeldebestätigung  
+
+Nach der Anmeldung sollte der **Name des angemeldeten Kunden** oben rechts in der **Navigationsleiste** erscheinen.  
+
+### 1. **Anmeldung überprüfen**  
+   - Nach dem erfolgreichen Login wird der **gewählte Kundenname** in der Kopfzeile angezeigt.  
+   - In diesem Beispiel ist der Benutzer **Frank** angemeldet.  
+
+### 2. **Bestätigung der Anmeldung**  
+   - Falls der Kundenname nicht angezeigt wird, stellen Sie sicher, dass der **Login-Prozess** korrekt ausgeführt wurde.  
+   - Bei Problemen prüfen Sie die **Session-Variablen** oder die **Authentifizierungseinstellungen**.  
+
+![](../../assets/Kapitel-23/ai_rag_31.jpeg)  
+
+---
+
+
+## <a name="schritt-kundenbestellungen-anzeigen"></a>Schritt 6: Kundenbestellungen auf der Startseite anzeigen  
+
+Nun erstellen wir auf der **Startseite (Seite 1)** eine **neue Region**, die die **Bestellungen des angemeldeten Kunden** anzeigt.  
+
+### 1. **Zur Startseite navigieren**  
+   - Öffnen Sie die **Anwendung 234017**.  
+   - Wechseln Sie zu **Seite 1 (Home)**.  
+
+### 2. **Neue Region erstellen**  
+   - Erstellen Sie eine **Region** mit dem Namen:  
+     **"Hallo &APP_USER., hier sind Ihre Bestellungen"**  
+   - Setzen Sie den **Regionstyp** auf **Classic Report**.  
+
+### 3. **Datenquelle konfigurieren**  
+   - Wählen Sie als **Datenquelle** den Typ **Table / View**.  
+   - Setzen Sie als **Tabellenname**:  
+     **CUSTOMER_ORDER_INFO_VIEW**  
+   - Fügen Sie die folgende **WHERE-Bedingung** hinzu:  
+     ```sql
+     lower(vorname) = lower(:APP_USER)
+     ```  
+
+### 4. **Speichern und Übernehmen**  
+   - Klicken Sie abschließend auf **Save**, um die Änderungen zu sichern.  
+
+![](../../assets/Kapitel-23/ai_rag_32.jpeg)  
+
+--
+
+## <a name="schritt-ki-button-hinzufügen"></a>Schritt 7: KI-Button zur Bestellabfrage hinzufügen  
+
+Um dem Benutzer eine einfache Möglichkeit zu geben, **Bestellungen per KI zu erfragen**, fügen wir einen **Button** hinzu.  
+
+### 1. **Button erstellen**  
+   - Navigieren Sie zur **Startseite (Seite 1)**.  
+   - Erstellen Sie einen **neuen Button** mit folgenden Werten:  
+     - **Button Name**: `ASK_AI`  
+     - **Label**: `"Ihre Bestellungen schnell und einfach per KI abfragen"`  
+
+### 2. **Layout-Einstellungen anpassen**  
+   - **Region**: `Hallo &APP_USER., hier sind Ihre Bestellungen`  
+   - **Slot**: `Edit`  
+
+### 3. **Design und Darstellung anpassen**  
+   - **Button Template**: `Text with Icon`  
+   - **Template Options**: `Use Template Defaults, Success, Left`  
+   - **Icon**: `fa-head-ai-sparkle`  
+
+### 4. **Speichern und Übernehmen**  
+   - Klicken Sie auf **Save**, um die Änderungen zu speichern.  
+
+![](../../assets/Kapitel-23/ai_rag_33.jpeg)  
+
+
+---
+
+## <a name="schritt-dynamische-aktion-für-ki-button"></a>Schritt 8: Dynamische Aktion für den KI-Button erstellen  
+
+Nachdem wir den **Button "ASK_AI"** erstellt haben, richten wir nun eine **dynamische Aktion** ein, die den **KI-Assistenten** aufruft, wenn der Button geklickt wird.  
+
+### 1. **Dynamische Aktion anlegen**  
+   - **Aktionstyp**: `Click on button`  
+   - **Betroffene Komponente**: `ASK_AI`  
+
+### 2. **True Action hinzufügen**  
+   - Erstellen Sie eine **True Action** mit den folgenden Einstellungen:  
+     - **Name**: `Open ai chatbox`  
+     - **Action**: `Show AI Assistant`  
+     - **Configuration**: `Bestellungsauskunft für Kunden`  
+     - **Display As**: `Dialog`  
+     - **Title**: `Bestellungsauskunft für Kunden`  
+
+### 3. **Speichern und Übernehmen**  
+   - Klicken Sie auf **Save** und führen Sie die Anwendung aus.  
+
+![](../../assets/Kapitel-23/ai_rag_34.jpeg)  
+
+
+---
+
+## <a name="abschluss-der-bestellauskunft-per-ki"></a>Abschluss: Bestellauskunft per KI  
+
+Nachdem alle Konfigurationen abgeschlossen wurden, sollte die Anwendung nun wie folgt funktionieren:  
+
+1. **Angemeldeter Kunde**  
+   - Oben rechts wird der angemeldete Kunde angezeigt.  
+   - In diesem Beispiel ist **Frank** angemeldet.  
+
+2. **KI-gestützte Bestellauskunft starten**  
+   - Der Nutzer kann auf den Button **"Ihre Bestellungen schnell und einfach per KI abfragen"** klicken.  
+   - Dadurch öffnet sich der **KI-gestützte Chat-Assistent**.  
+
+3. **Personalisierte Anfragen stellen**  
+   - Der Kunde kann individuelle Fragen zu seinen Bestellungen stellen, z. B.:  
+     - *"Wie heiße ich als Kunde?"*  
+     - *"Was ist mein Gesamtpreis Einkauf in diesem Shop?"*  
+     - *"Wie viele Artikel habe ich insgesamt gekauft?"*  
+     - *"Wo wohne ich?"*  
+   - Die Antworten basieren auf den RAG-Daten, die wir zuvor in der **AI-Configuration** definiert haben.  
+
+![](../../assets/Kapitel-23/ai_rag_35.jpeg)  
+
+

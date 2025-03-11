@@ -1030,3 +1030,21 @@ FROM PRODUCT_INFO
 
 
 /
+
+CREATE OR REPLACE VIEW CUSTOMER_ORDER_INFO_VIEW AS
+select CTMR_FRST_NAME || ' ' || CTMR_LAST_NAME  as Name 
+     , CTMR_FRST_NAME                           as Vorname
+     , CTMR_STREET_ADDRESS1 ||' '|| CTMR_POSTAL_CODE ||' '|| CTMR_CITY               as Adresse
+     , CTMR_PHONE_NUMBER1                       as Telefon
+     , CTMR_CREDIT_LIMIT                        as Kredit_limit
+     , TO_CHAR(ORDR_TOTAL, '999G990D00', 'NLS_NUMERIC_CHARACTERS = '',.''') || ' €'  as Gesamt
+     , ORDR_TAGS                                as Tags
+     , ORDR_DD                                  as Datum
+     , TO_CHAR(ORDR_ITEM_UNIT_PRICE, '999G990D00', 'NLS_NUMERIC_CHARACTERS = '',.''') || ' €' AS Preis
+     , ORDR_ITEM_QUANTITY                       as Menge
+  from CUSTOMERS
+  join ORDERS                    on (CTMR_ID = ORDR_CTMR_ID)
+  join ORDER_ITEMS               on (ORDR_ID = ORDR_ITEM_ORDR_ID)
+  join STATES                    on (STTS_ST = CTMR_STATE) 
+
+/
