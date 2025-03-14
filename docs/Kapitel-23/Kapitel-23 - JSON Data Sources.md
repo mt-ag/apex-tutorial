@@ -16,7 +16,6 @@ JSON ist ein flexibles Datenformat, das häufig für API-Integrationen und struk
 4. **Einen Classic Report mit JSON-Daten erstellen**  
 5. **Spalten organisieren und Report anpassen**  
 
-## Fazit  
 Die Integration von JSON in **Oracle APEX** ermöglicht dynamische, API-freundliche Anwendungen mit flexiblen Datenmodellen.
 
 ---
