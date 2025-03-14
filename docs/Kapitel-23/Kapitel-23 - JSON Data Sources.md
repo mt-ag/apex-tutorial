@@ -18,20 +18,19 @@ Im ersten Teil des Tutorials konzentrieren wir uns auf die Umsetzung des **Publi
 
 
 
-
-
-
+---
+---
 
 ## <a name="schritt-sql-workshop-json"></a>Schritt 1: SQL Workshop öffnen und JSON-Daten vorbereiten
 
-Um JSON-Daten in Oracle APEX zu verwenden, müssen wir zunächst eine JSON-Spalte in der `CUSTOMERS`-Tabelle erstellen und Daten einfügen.
+Um JSON-Daten in Oracle APEX zu verwenden, müssen Sie zunächst eine JSON-Spalte in der `CUSTOMERS`-Tabelle erstellen und Daten einfügen.
 
 ### 1. SQL Workshop öffnen
-1. Navigiere in **Oracle APEX** zum **SQL Workshop**.
-2. Klicke auf **SQL Commands**, um eine neue SQL-Abfrage einzugeben.
+1. Navigieren Sie in **Oracle APEX** zum **SQL Workshop**.
+2. Klicken Sie auf **SQL Commands**, um eine neue SQL-Abfrage einzugeben.
 
 ### 2. SQL-Befehle vorbereiten und ausführen
-Füge die folgenden SQL-Befehle in das SQL Commands-Fenster ein und führe die ersten beiden Befehle aus:
+Fügen Sie die folgenden SQL-Befehle in das SQL Commands-Fenster ein und führen Sie die ersten beiden Befehle aus:
 
 #### **Befehl 1: JSON-Spalte zur Tabelle hinzufügen**
 ```sql
@@ -60,7 +59,7 @@ Dieser Befehl generiert JSON-Daten aus den vorhandenen Spalten der `CUSTOMERS`-T
 ```sql
 select CTMR_JSON_DATA from CUSTOMERS;                                            -- 3
 ```
-Hiermit können wir überprüfen, ob die Daten erfolgreich gespeichert wurden.
+Hiermit können Sie überprüfen, ob die Daten erfolgreich gespeichert wurden.
 
 #### **Befehl 4: JSON-Werte extrahieren**
 ```sql
@@ -72,10 +71,12 @@ FROM CUSTOMERS;
 Dieser Befehl extrahiert gezielt JSON-Werte aus der `CTMR_JSON_DATA`-Spalte.
 
 ### 3. SQL-Befehle ausführen
-1. Füge die **Befehle 1 und 2** in das **SQL Commands**-Fenster ein.
-2. Klicke auf **Run**, um sie auszuführen.
-3. Danach kannst du die **Befehle 3 und 4** ausführen, um die Ergebnisse zu überprüfen.
+1. Fügen Sie die **Befehle 1 und 2** in das **SQL Commands**-Fenster ein.
+2. Klicken Sie auf **Run**, um sie auszuführen.
+3. Danach können Sie die **Befehle 3 und 4** ausführen, um die Ergebnisse zu überprüfen.
 
-![](../../assets/json_1.jpeg)
+![](../../assets/Kapitel-23/json_1.jpeg)  
+
+---
 
  
