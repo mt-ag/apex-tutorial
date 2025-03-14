@@ -1,24 +1,24 @@
-# <a name="oracle-apex-und-ai"></a> 23. Oracle APEX und AI - RAG Daten  
+# <a name="oracle-apex-und-ai"></a> 23. JSON-Daten in Oracle APEX nutzen
 
 ## <a name="einleitung"></a>Einleitung  
+  
+JSON ist ein flexibles Datenformat, das häufig für API-Integrationen und strukturierte Daten verwendet wird. In **Oracle APEX** kann JSON direkt aus der Datenbank verarbeitet und in Reports angezeigt werden.  
 
-In diesem Kapitel befassen wir uns mit der Integration von **Retrieval-Augmented Generation (RAG)** in **Oracle APEX**, um eine KI-gestützte Assistenz für Benutzer bereitzustellen. Der Fokus liegt darauf, wie KI-Anfragen mit **strukturieren Daten aus der Datenbank** kombiniert werden können, um gezielte und relevante Antworten zu liefern.  
+## Vorteile  
+- **Flexible Datenstruktur** ohne starre Tabellen  
+- **Nahtlose Integration mit APIs und externen Systemen**  
+- **Einfache Verarbeitung und Anzeige in APEX**  
 
-Das Tutorial gliedert sich in zwei zentrale Szenarien:  
+## Schritte  
+1. **JSON-Spalte in der Datenbank anlegen**  
+2. **JSON-Daten in einer Tabelle speichern**  
+3. **In APEX eine JSON-Quelle erstellen**  
+4. **Einen Classic Report mit JSON-Daten erstellen**  
+5. **Spalten organisieren und Report anpassen**  
 
-1. **Teil 1: Öffentliche Produktanfragen (Public Bot)**  
-   - Ein **KI-gestützter Assistent**, der **nicht angemeldeten Benutzern** Produktinformationen bereitstellt.  
-   - Besucher erhalten Auskunft über **Produktnamen, Beschreibungen, Preise und Verfügbarkeit**, ohne sich registrieren oder anmelden zu müssen.  
+## Fazit  
+Die Integration von JSON in **Oracle APEX** ermöglicht dynamische, API-freundliche Anwendungen mit flexiblen Datenmodellen.
 
-2. **Teil 2: Personalisierte Bestellinformationen für Kunden (Kunden-Bot)**  
-   - Ein **KI-gestützter Assistent**, der **angemeldeten Kunden** detaillierte Informationen zu ihren **Bestellungen und Bestellstatus** bereitstellt.  
-   - Die KI greift auf **kundenbezogene Daten** zu, wie z. B. **Bestelldatum, Gesamtbetrag, enthaltene Artikel und Kreditlimit**.  
-
-Im ersten Teil des Tutorials konzentrieren wir uns auf die Umsetzung des **Public Bots**, mit dem **nicht angemeldete Nutzer** durch eine KI-Produktauskunft Informationen zu Artikeln abrufen können. Im zweiten Teil wird ein **kundenindividueller Bestellassistent** implementiert, der nur für angemeldete Benutzer relevante Bestelldetails bereitstellt.  
-
-
-
----
 ---
 
 ## <a name="schritt-sql-workshop-json"></a>Schritt 1: SQL Workshop öffnen und JSON-Daten vorbereiten
@@ -288,9 +288,9 @@ Nachdem alle Anpassungen vorgenommen wurden, sollte die JSON-Report-Seite nun ko
 
 ## <a name="abschluss"></a>Abschluss  
 
-Herzlichen Glückwunsch! 🎉 Sie haben erfolgreich eine **JSON-Datenquelle in Oracle APEX** integriert und einen **dynamischen JSON-Report** erstellt.  
+Herzlichen Glückwunsch! Sie haben erfolgreich eine **JSON-Datenquelle in Oracle APEX** integriert und einen **dynamischen JSON-Report** erstellt.  
 
-Vielen Dank fürs Mitmachen – viel Erfolg mit **APEX & JSON**! 🚀  
+Vielen Dank fürs Mitmachen
 
  
  
