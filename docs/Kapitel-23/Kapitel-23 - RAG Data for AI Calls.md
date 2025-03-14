@@ -1,6 +1,6 @@
 # <a name="oracle-apex-und-ai"></a> 23. Oracle APEX und AI - RAG Daten  
 
-## <a name="einleitung"></a>Einleitung  
+## <a name="einleitung-ai"></a>Einleitung  
 
 In diesem Kapitel befassen wir uns mit der Integration von **Retrieval-Augmented Generation (RAG)** in **Oracle APEX**, um eine KI-gestützte Assistenz für Benutzer bereitzustellen. Der Fokus liegt darauf, wie KI-Anfragen mit **strukturieren Daten aus der Datenbank** kombiniert werden können, um gezielte und relevante Antworten zu liefern.  
 
@@ -90,7 +90,7 @@ In diesem Schritt müssen verschiedene Einstellungen vorgenommen werden. Zusätz
 
 ---
 
-## <a name="schritt-erfolgreiche-erstellung-und rückkehr-zu-shared-components"></a>Schritt 7: Erfolgreiche Erstellung und Rückkehr zu Shared Components  
+## <a name="schritt-erfolgreiche-erstellung-und-rückkehr-zu-shared-components"></a>Schritt 7: Erfolgreiche Erstellung und Rückkehr zu Shared Components  
 
 Nachdem der AI Service erfolgreich erstellt wurde, erscheint eine **Erfolgsmeldung** auf dem Bildschirm.  
 
