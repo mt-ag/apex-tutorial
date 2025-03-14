@@ -4553,7 +4553,7 @@ Um mit der Erstellung des AI-Dienstes zu beginnen, navigieren Sie zunächst zum 
 1. Klicken Sie im Hauptmenü auf **App Builder**.
 2. Wählen Sie dann **Workspace Utilities**, um weitere Tools zu nutzen.
 
-![](../../assets/Kapitel-23/ai_rag_1.jpeg)
+![](../assets/Kapitel-23/ai_rag_1.jpeg)
 
 
 ## <a name="schritt-anlegen-einer-neuen-applikation"></a>Schritt 2: Anlegen einer neuen Applikation  
@@ -4563,7 +4563,7 @@ Nachdem Sie den **App Builder** aufgerufen haben, können Sie nun eine neue Appl
 1. Geben Sie einen Namen für die Applikation ein, beispielsweise **SmartStyle Shop**.  
 2. Klicken Sie anschließend auf **Create Application**, um die Applikation zu erstellen.  
 
-![](../../assets/Kapitel-23/ai_rag_2.jpeg)  
+![](../assets/Kapitel-23/ai_rag_2.jpeg)  
 
 
 ---
@@ -4575,7 +4575,7 @@ Nachdem die Applikation erfolgreich erstellt wurde, navigieren Sie zu den **Shar
 1. Öffnen Sie die erstellte Applikation.  
 2. Klicken Sie im Menü auf **Shared Components**, wie im folgenden Bild dargestellt.  
 
-![](../../assets/Kapitel-23/ai_rag_3.jpeg) 
+![](../assets/Kapitel-23/ai_rag_3.jpeg) 
 
 ---
 
@@ -4586,7 +4586,7 @@ Sobald Sie die **Shared Components** geöffnet haben, scrollen Sie nach unten, b
 1. Scrollen Sie nach unten, bis der Abschnitt **Generative AI** sichtbar ist.  
 2. Wählen Sie anschließend **AI Services** aus.  
 
-![](../../assets/Kapitel-23/ai_rag_4.jpeg)  
+![](../assets/Kapitel-23/ai_rag_4.jpeg)  
 
 ---
 
@@ -4596,7 +4596,7 @@ Nun können Sie einen neuen AI Service anlegen.
 
 1. Klicken Sie auf der rechten Seite auf den **Create**-Button.  
 
-![](../../assets/Kapitel-23/ai_rag_5.jpeg)  
+![](../assets/Kapitel-23/ai_rag_5.jpeg)  
 
 ---
 
@@ -4616,7 +4616,7 @@ In diesem Schritt müssen verschiedene Einstellungen vorgenommen werden. Zusätz
 10. Wenn die Verbindung erfolgreich ist, erscheint die Meldung **Connection Succeeded!**.  
 11. Abschließend klicken Sie auf **Create**, um den AI Service zu speichern.  
 
-![](../../assets/Kapitel-23/ai_rag_6.jpeg)  
+![](../assets/Kapitel-23/ai_rag_6.jpeg)  
 
 ---
 
@@ -4627,7 +4627,7 @@ Nachdem der AI Service erfolgreich erstellt wurde, erscheint eine **Erfolgsmeldu
 1. Stellen Sie sicher, dass die Meldung **"Changes applied."** angezeigt wird, was bestätigt, dass der AI Service erfolgreich eingerichtet wurde.  
 2. Klicken Sie auf das **Shared Components-Symbol**, um zurück zur Übersicht der Shared Components zu gelangen.  
 
-![](../../assets/Kapitel-23/ai_rag_7.jpeg)  
+![](../assets/Kapitel-23/ai_rag_7.jpeg)  
 
 ---
 
@@ -4638,7 +4638,7 @@ Anschließend scrollen Sie wieder nach unten, bis Sie den Abschnitt **Generative
 1. Scrollen Sie nach unten, bis der Bereich **Generative AI** sichtbar ist.  
 2. Wählen Sie anschließend **AI Configurations** aus.  
 
-![](../../assets/Kapitel-23/ai_rag_8.jpeg) 
+![](../assets/Kapitel-23/ai_rag_8.jpeg) 
 
 ---
 
@@ -4648,7 +4648,7 @@ Nun können Sie eine **AI Configuration** anlegen, um den generativen KI-Dienst 
 
 1. Klicken Sie auf den **Create**-Button, um eine neue AI Configuration zu erstellen.  
 
-![](../../assets/Kapitel-23/ai_rag_9.jpeg)  
+![](../assets/Kapitel-23/ai_rag_9.jpeg)  
 
 ---
 
@@ -4713,7 +4713,7 @@ In diesem Schritt legen Sie die Parameter für die **Generative AI Configuration
 
 6. Klicken Sie auf **Create**, um die AI Configuration zu speichern.
 
-![](../../assets/Kapitel-23/ai_rag_10.jpeg)
+![](../assets/Kapitel-23/ai_rag_10.jpeg)
 
 ---
 
@@ -4724,7 +4724,7 @@ Nachdem Sie die **AI Configuration** gespeichert haben, wird die Option **RAG So
 1. Scrollen Sie nach unten zum Abschnitt **RAG Sources**.  
 2. Klicken Sie auf **Create RAG Source**, um eine neue Datenquelle hinzuzufügen.  
 
-![](../../assets/Kapitel-23/ai_rag_11.jpeg)  
+![](../assets/Kapitel-23/ai_rag_11.jpeg)  
 
 --- 
 
@@ -4749,7 +4749,7 @@ Nun wird eine **RAG Source** erstellt, die als Datenquelle für den KI-Dienst di
 
 4. Klicken Sie auf **Create**, um die RAG Source zu speichern.
 
-![](../../assets/Kapitel-23/ai_rag_12.jpeg)  
+![](../assets/Kapitel-23/ai_rag_12.jpeg)  
 
 --- 
 
@@ -4761,7 +4761,7 @@ Nachdem die **RAG Source** erfolgreich erstellt wurde, kehren Sie automatisch zu
 2. Die neu erstellte **RAG Source** wird nun in der Liste angezeigt.  
 3. Klicken Sie auf **Apply Changes**, um alle Änderungen zu übernehmen und die Konfiguration abzuschließen.  
 
-![](../../assets/Kapitel-23/ai_rag_13.jpeg)  
+![](../assets/Kapitel-23/ai_rag_13.jpeg)  
 
 ---
 
@@ -4773,7 +4773,7 @@ Nachdem die erste **AI Configuration** erfolgreich erstellt wurde, gelangen Sie 
 2. Die erstellte Konfiguration **"Produktauskunft für Besucher"** ist in der Liste aufgeführt.  
 3. Klicken Sie auf **Create**, um eine weitere **AI Configuration** zu erstellen.  
 
-![](../../assets/Kapitel-23/ai_rag_14.jpeg)  
+![](../assets/Kapitel-23/ai_rag_14.jpeg)  
 
 ---
 
@@ -4837,7 +4837,7 @@ Im nächsten Schritt erstellen wir einen weiteren KI-Bot, der Bestellinformation
 
 6. Klicken Sie auf **Create**, um die neue AI Configuration zu speichern.
 
-![](../../assets/Kapitel-23/ai_rag_15.jpeg)  
+![](../assets/Kapitel-23/ai_rag_15.jpeg)  
 
 ---
  
@@ -4848,7 +4848,7 @@ Nachdem die **AI Configuration** erfolgreich gespeichert wurde, erscheint die **
 1. Die grüne **Erfolgsmeldung** bestätigt, dass die Änderungen gespeichert wurden.  
 2. Nun können Sie eine **RAG Source** hinzufügen, indem Sie auf **Create RAG Source** klicken.  
 
-![](../../assets/Kapitel-23/ai_rag_16.jpeg)  
+![](../assets/Kapitel-23/ai_rag_16.jpeg)  
 
 ---
 
@@ -4869,7 +4869,7 @@ Nun wird eine **RAG Source** erstellt, die Bestellinformationen für den aktuell
   WHERE LOWER(CTMR_FRST_NAME) = LOWER(:APP_USER)
   ```
 
-![](../../assets/Kapitel-23/ai_rag_17.jpeg) 
+![](../assets/Kapitel-23/ai_rag_17.jpeg) 
 
 4. Klicken Sie auf **Create**, um die RAG Source zu speichern.
 
@@ -4883,7 +4883,7 @@ Nachdem die **RAG Source** erfolgreich erstellt wurde, erscheint eine **Erfolgsm
 2. Die soeben erstellte **RAG Source** ist nun in der Übersicht sichtbar.  
 3. Klicken Sie abschließend auf **Apply Changes**, um alle Änderungen zu übernehmen.  
 
-![](../../assets/Kapitel-23/ai_rag_18.jpeg)  
+![](../assets/Kapitel-23/ai_rag_18.jpeg)  
 
 ---
 
@@ -4895,7 +4895,7 @@ Nachdem beide **AI Configurations** erfolgreich erstellt wurden, erscheinen sie 
 2. Jede Konfiguration enthält die zugehörige **RAG Source**, die zur Generierung der Antworten verwendet wird.  
 3. Klicken Sie auf **Application **, um zur Haupt-App zurückzukehren und dort weiterzuarbeiten.  
 
-![](../../assets/Kapitel-23/ai_rag_19.jpeg)  
+![](../assets/Kapitel-23/ai_rag_19.jpeg)  
 
 ---
 
@@ -4905,7 +4905,7 @@ Wechseln Sie nun zur **Login-Seite**, um die Anmeldefunktion der Anwendung zu ü
 
 1. Klicken Sie auf die **Login Page (9999)**, um die Anmeldeeinstellungen zu bearbeiten.  
 
-![](../../assets/Kapitel-23/ai_rag_20.jpeg)  
+![](../assets/Kapitel-23/ai_rag_20.jpeg)  
 
 ---
 
@@ -4931,7 +4931,7 @@ Auf der **Login-Seite (9999)** nehmen Sie nun einige Anpassungen vor, um eine zu
 5. **Speichern**:  
    - Klicken Sie abschließend auf **Save**, um die Änderungen zu sichern.  
 
-![](../../assets/Kapitel-23/ai_rag_21.jpeg)  
+![](../assets/Kapitel-23/ai_rag_21.jpeg)  
 
 ---
 
@@ -4959,7 +4959,7 @@ In der zuvor erstellten **Region "Unsere Artikel im Shop"** fügen Sie nun einen
 5. **Änderungen speichern**:  
    - Klicken Sie abschließend auf **Save**, um die Konfiguration zu sichern.  
 
-![](../../assets/Kapitel-23/ai_rag_22.jpeg)  
+![](../assets/Kapitel-23/ai_rag_22.jpeg)  
 
 ---
 
@@ -4989,7 +4989,7 @@ Um eine Übersicht über die Artikel im Shop bereitzustellen, fügen wir innerha
 ### 5. **Änderungen speichern**  
 - Klicken Sie abschließend auf **Save**, um die Einstellungen zu übernehmen.  
 
-![](../../assets/Kapitel-23/ai_rag_23.jpeg)  
+![](../assets/Kapitel-23/ai_rag_23.jpeg)  
 
 ---
 
@@ -5008,7 +5008,7 @@ Nach den vorgenommenen Anpassungen sollte die **Login-Seite** wie im folgenden B
 3. **Nächster Schritt: Implementierung des InfoBots**  
    - Im nächsten Schritt werden wir den **InfoBot** einrichten, sodass Besucher noch detailliertere Informationen zu den Artikeln erhalten können.  
 
-![](../../assets/Kapitel-23/ai_rag_24.jpeg)  
+![](../assets/Kapitel-23/ai_rag_24.jpeg)  
 
 ---
 
@@ -5040,7 +5040,7 @@ In diesem Schritt wird eine **dynamische Aktion** erstellt, die es ermöglicht, 
    - Klicken Sie auf **Save**, um die Änderungen zu speichern.  
    - Führen Sie die Anwendung aus, um den AI-Assistenten zu testen.  
 
-![](../../assets/Kapitel-23/ai_rag_25.jpeg)  
+![](../assets/Kapitel-23/ai_rag_25.jpeg)  
 
 ---
 
@@ -5066,7 +5066,7 @@ Nach dem erfolgreichen Einrichten des AI-Assistenten können Besucher nun den **
    - Der InfoBot hat ausschließlich Zugriff auf **Produktinformationen**.  
    - Keine persönlichen oder kundenbezogenen Daten werden preisgegeben.  
 
-![](../../assets/Kapitel-23/ai_rag_26.jpeg)  
+![](../assets/Kapitel-23/ai_rag_26.jpeg)  
 
 ---
 
@@ -5102,7 +5102,7 @@ Um die Anwendung für eine **kundenspezifische Bestellauskunft** vorzubereiten, 
     from CUSTOMER_ORDER_INFO_VIEW
   ```
 
-![](../../assets/Kapitel-23/ai_rag_27.jpeg)  
+![](../assets/Kapitel-23/ai_rag_27.jpeg)  
 
 ---
 
@@ -5126,7 +5126,7 @@ Damit sich Kunden anmelden und ihre Bestellungen einsehen können, fügen wir ei
 4. **Speichern**:  
    - Klicken Sie auf **Save**, um die Änderungen zu sichern.  
 
-![](../../assets/Kapitel-23/ai_rag_28.jpeg)  
+![](../assets/Kapitel-23/ai_rag_28.jpeg)  
 
 ---
 
@@ -5161,7 +5161,7 @@ Nachdem wir den **Login-Button** erstellt haben, passen wir den **Login-Prozess*
 ### 4. **Speichern und Ausführen**  
    - Klicken Sie auf **Save** und anschließend auf **Run**, um die Änderungen zu testen.  
 
-![](../../assets/Kapitel-23/ai_rag_29.jpeg)  
+![](../assets/Kapitel-23/ai_rag_29.jpeg)  
 
 ---
 
@@ -5180,7 +5180,7 @@ Nach den vorgenommenen Anpassungen sollte die **Login-Seite** wie folgt aussehen
    - In diesem Beispiel wird **Frank** als Kunde ausgewählt.  
    - Klicken Sie auf **"Kunden Anmeldung"**, um sich mit dem gewählten Kundenkonto anzumelden.  
 
-![](../../assets/Kapitel-23/ai_rag_30.jpeg)  
+![](../assets/Kapitel-23/ai_rag_30.jpeg)  
 
 ---
 
@@ -5196,7 +5196,7 @@ Nach der Anmeldung sollte der **Name des angemeldeten Kunden** oben rechts in de
    - Falls der Kundenname nicht angezeigt wird, stellen Sie sicher, dass der **Login-Prozess** korrekt ausgeführt wurde.  
    - Bei Problemen prüfen Sie die **Session-Variablen** oder die **Authentifizierungseinstellungen**.  
 
-![](../../assets/Kapitel-23/ai_rag_31.jpeg)  
+![](../assets/Kapitel-23/ai_rag_31.jpeg)  
 
 ---
 
@@ -5226,7 +5226,7 @@ Nun erstellen wir auf der **Startseite (Seite 1)** eine **neue Region**, die die
 ### 4. **Speichern und Übernehmen**  
    - Klicken Sie abschließend auf **Save**, um die Änderungen zu sichern.  
 
-![](../../assets/Kapitel-23/ai_rag_32.jpeg)  
+![](../assets/Kapitel-23/ai_rag_32.jpeg)  
 
 --
 
@@ -5252,7 +5252,7 @@ Um dem Benutzer eine einfache Möglichkeit zu geben, **Bestellungen per KI zu er
 ### 4. **Speichern und Übernehmen**  
    - Klicken Sie auf **Save**, um die Änderungen zu speichern.  
 
-![](../../assets/Kapitel-23/ai_rag_33.jpeg)  
+![](../assets/Kapitel-23/ai_rag_33.jpeg)  
 
 
 ---
@@ -5276,7 +5276,7 @@ Nachdem wir den **Button "ASK_AI"** erstellt haben, richten wir nun eine **dynam
 ### 3. **Speichern und Übernehmen**  
    - Klicken Sie auf **Save** und führen Sie die Anwendung aus.  
 
-![](../../assets/Kapitel-23/ai_rag_34.jpeg)  
+![](../assets/Kapitel-23/ai_rag_34.jpeg)  
 
 
 ---
@@ -5301,7 +5301,7 @@ Nachdem alle Konfigurationen abgeschlossen wurden, sollte die Anwendung nun wie 
      - *"Wo wohne ich?"*  
    - Die Antworten basieren auf den RAG-Daten, die wir zuvor in der **AI-Configuration** definiert haben.  
 
-![](../../assets/Kapitel-23/ai_rag_35.jpeg)  
+![](../assets/Kapitel-23/ai_rag_35.jpeg)  
 
 
 
@@ -5383,7 +5383,7 @@ Dieser Befehl extrahiert gezielt JSON-Werte aus der `CTMR_JSON_DATA`-Spalte.
 2. Klicken Sie auf **Run**, um sie auszuführen.
 3. Danach können Sie die **Befehle 3 und 4** ausführen, um die Ergebnisse zu überprüfen.
 
-![](../../assets/Kapitel-23/json_1.jpeg)  
+![](../assets/Kapitel-23/json_1.jpeg)  
 
 ---
 
@@ -5396,7 +5396,7 @@ Dieser Befehl extrahiert gezielt JSON-Werte aus der `CTMR_JSON_DATA`-Spalte.
    ```
 2. Vergleichen Sie das Ergebnis mit der Darstellung im Bild.
 
-![](../../assets/Kapitel-23/json_2.jpeg) 
+![](../assets/Kapitel-23/json_2.jpeg) 
 
 ---
 
@@ -5412,7 +5412,7 @@ Dieser Befehl extrahiert gezielt JSON-Werte aus der `CTMR_JSON_DATA`-Spalte.
    ```
 2. Vergleichen Sie das Ergebnis mit der Darstellung im Bild.
 
-![](../../assets/Kapitel-23/json_3.jpeg) 
+![](../assets/Kapitel-23/json_3.jpeg) 
 
 ---
 
@@ -5423,7 +5423,7 @@ Dieser Befehl extrahiert gezielt JSON-Werte aus der `CTMR_JSON_DATA`-Spalte.
 3. Scrollen Sie nach unten zum Bereich **Data Sources**.  
 4. Klicken Sie auf **JSON Sources**, um eine neue JSON-Datenquelle zu erstellen.  
 
-![](../../assets/Kapitel-23/json_4.jpeg)  
+![](../assets/Kapitel-23/json_4.jpeg)  
 
 ---
 
@@ -5432,7 +5432,7 @@ Dieser Befehl extrahiert gezielt JSON-Werte aus der `CTMR_JSON_DATA`-Spalte.
 1. Der Bereich **JSON Sources** ist aktuell leer, da noch keine JSON-Datenquelle vorhanden ist.  
 2. Klicken Sie auf **Create**, um eine neue JSON-Datenquelle anzulegen.  
 
-![](../../assets/Kapitel-23/json_5.jpeg)  
+![](../assets/Kapitel-23/json_5.jpeg)  
 
 ---
 
@@ -5444,7 +5444,7 @@ Nachdem Sie auf **Create** geklickt haben, öffnet sich ein **Pop-up-Fenster** z
 2. Wählen Sie als **Table with JSON Columns** die Tabelle **CUSTOMERS** aus, die die JSON-Daten enthält.  
 3. Klicken Sie auf **Next**, um die Einrichtung fortzusetzen.  
 
-![](../../assets/Kapitel-23/json_6.jpeg)  
+![](../assets/Kapitel-23/json_6.jpeg)  
 
 ---
 
@@ -5455,7 +5455,7 @@ Im nächsten Schritt müssen Sie die JSON-Spalte definieren, die für die Datenq
 1. Wählen Sie im Dropdown-Menü unter **JSON Column 1** die Spalte **CTMR_JSON_DATA (Clob)** aus, die die JSON-Daten enthält.  
 2. Klicken Sie anschließend auf **Next**, um fortzufahren.  
 
-![](../../assets/Kapitel-23/json_7.jpeg)  
+![](../assets/Kapitel-23/json_7.jpeg)  
 
 
 ---
@@ -5467,7 +5467,7 @@ Oracle APEX erstellt automatisch ein **Datenprofil** basierend auf der JSON-Quel
 1. Setzen Sie ein Häkchen in der **Primary Key**-Spalte für **CTMR_ID**, um es als Primärschlüssel zu definieren.  
 2. Scrollen Sie nach unten, um die restlichen Spalten zu überprüfen.   
 
-![](../../assets/Kapitel-23/json_8.jpeg)  
+![](../assets/Kapitel-23/json_8.jpeg)  
 
 
 ---
@@ -5487,7 +5487,7 @@ Nachdem die Primärschlüssel-Spalte ausgewählt wurde, müssen weitere relevant
    - **customer_id**  
 3. Klicken Sie auf **Create**, um die JSON-Quelle abzuschließen.  
 
-![](../../assets/Kapitel-23/json_9.jpeg)  
+![](../assets/Kapitel-23/json_9.jpeg)  
 
 
 ---
@@ -5499,7 +5499,7 @@ Nachdem der JSON Source erfolgreich erstellt wurde, erscheint eine Bestätigungs
 1. Überprüfen Sie die grüne Bestätigungsmeldung **"JSON Source created."**, um sicherzustellen, dass die Erstellung erfolgreich war.  
 2. Der neu erstellte JSON Source **customer_json_table** sollte nun in der Tabelle erscheinen.  
 
-![](../../assets/Kapitel-23/json_10.jpeg)  
+![](../assets/Kapitel-23/json_10.jpeg)  
 
 
 ---
@@ -5513,7 +5513,7 @@ Um die JSON-Daten in einem Bericht anzuzeigen, muss eine neue Seite in der APEX-
 3. Wählen Sie **Classic Report** als Seitentyp aus.  
 4. Klicken Sie auf **Next**, um fortzufahren.  
 
-![](../../assets/Kapitel-23/json_11.jpeg)  
+![](../assets/Kapitel-23/json_11.jpeg)  
 
 
 ---
@@ -5529,7 +5529,7 @@ Nachdem die neue Seite erstellt wurde, müssen die Einstellungen für den **Clas
 5. **Icon**: Verwenden Sie das Symbol **fa-file-json-o**, um die Seite visuell zu kennzeichnen.  
 6. Klicken Sie auf **Create Page**, um die Seite zu erstellen.  
 
-![](../../assets/Kapitel-23/json_12.jpeg)  
+![](../assets/Kapitel-23/json_12.jpeg)  
 
 
 ---
@@ -5542,7 +5542,7 @@ Nachdem die Seite erstellt wurde, erscheint eine Bestätigungsmeldung. Jetzt kö
 2. Überprüfen Sie die Bestätigungsmeldung **"Classic Report page created."**, um sicherzugehen, dass die Seite erfolgreich erstellt wurde.  
 3. Klappen Sie den Bereich **Columns** auf, um die Spalten des Reports zu verwalten.  
 
-![](../../assets/Kapitel-23/json_13.jpeg)  
+![](../assets/Kapitel-23/json_13.jpeg)  
 
 
 ---
@@ -5565,7 +5565,7 @@ Nachdem die JSON-Report-Seite erstellt wurde, müssen die Spalten sortiert und n
    - Klicken Sie auf den **Speichern-Button**.  
    - Klicken Sie dann auf den **Ausführen-Button**, um die Änderungen zu überprüfen.  
 
-![](../../assets/Kapitel-23/json_14.jpeg)  
+![](../assets/Kapitel-23/json_14.jpeg)  
 
 
 ---
@@ -5589,7 +5589,7 @@ Nachdem alle Anpassungen vorgenommen wurden, sollte die JSON-Report-Seite nun ko
 3. **Finale Validierung**  
    - Überprüfen Sie, ob die Daten korrekt aus dem JSON-Source geladen werden und mit den vorherigen Schritten übereinstimmen.  
 
-![](../../assets/Kapitel-23/json_15.jpeg)  
+![](../assets/Kapitel-23/json_15.jpeg)  
 
 
 ---
