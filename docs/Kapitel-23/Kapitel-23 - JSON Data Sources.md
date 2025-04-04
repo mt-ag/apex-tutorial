@@ -1,6 +1,6 @@
 # <a name="oracle-apex-und-json"></a> 23. JSON-Daten in Oracle APEX nutzen
 
-## <a name="einleitung"></a>Einleitung  
+## <a name="einleitung-json"></a>Einleitung  
   
 JSON ist ein flexibles Datenformat, das häufig für API-Integrationen und strukturierte Daten verwendet wird. In **Oracle APEX** kann JSON direkt aus der Datenbank verarbeitet und in Reports angezeigt werden.  
 
@@ -285,7 +285,7 @@ Nachdem alle Anpassungen vorgenommen wurden, sollte die JSON-Report-Seite nun ko
 
 ---
 
-## <a name="abschluss"></a>Abschluss  
+## <a name="abschluss-json"></a>Abschluss  
 
 Herzlichen Glückwunsch! Sie haben erfolgreich eine **JSON-Datenquelle in Oracle APEX** integriert und einen **dynamischen JSON-Report** erstellt.  
 
