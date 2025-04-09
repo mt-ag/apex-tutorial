@@ -1,4 +1,4 @@
-# <a name="oracle-apex-und-dependencies"></a>Kapitel-24 - Database Object Dependencies
+# <a name="oracle-apex-und-dependencies"></a>Kapitel-23 - Database Object Dependencies
 
 ## <a name="einleitung-dependencies"></a>Einleitung  
 
