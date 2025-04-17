@@ -5637,7 +5637,7 @@ Im weiteren Verlauf dieses Kapitels erfahren Sie, wie Sie das neue Feature aktiv
 
 2. Klicken Sie im Anwendungs-Dashboard auf die Kachel **Utilities**, um zu den Hilfsfunktionen zu gelangen.
 
-![Schritt 1: Utilities öffnen](../../assets/Kapitel-23/object_dependencies_1.jpeg)
+![Schritt 1: Utilities öffnen](../assets/Kapitel-23/object_dependencies_1.jpeg) 
 
 > Über die Utilities gelangen Sie im nächsten Schritt zur neuen Funktion **Database Object Dependencies**, die mit APEX 24.2 eingeführt wurde.
 
@@ -5649,7 +5649,7 @@ Im weiteren Verlauf dieses Kapitels erfahren Sie, wie Sie das neue Feature aktiv
 
 2. Klicken Sie auf **Database Object Dependencies**, um die Übersicht der verwendeten Datenbankobjekte und deren Abhängigkeiten innerhalb der Applikation zu öffnen.
 
-   ![Schritt 2: Database Object Dependencies öffnen](../../assets/Kapitel-23/object_dependencies_2.jpeg)
+   ![Schritt 2: Database Object Dependencies öffnen](../assets/Kapitel-23/object_dependencies_2.jpeg)
 
 > In der folgenden Ansicht sehen Sie, welche Tabellen, Views, Packages, Funktionen und weitere Objekte in Ihrer APEX-Applikation referenziert werden.
 
@@ -5665,7 +5665,7 @@ Im weiteren Verlauf dieses Kapitels erfahren Sie, wie Sie das neue Feature aktiv
    - Systemabhängigkeiten (z. B. auf `SYS`, `SYSTEM`, `PUBLIC`)
    - Referenzen, die zu Fehlern führen (z. B. nicht mehr existierende Objekte)
 
-   ![Schritt 3: Anwendung scannen](../../assets/Kapitel-23/object_dependencies_3.jpeg)
+   ![Schritt 3: Anwendung scannen](../assets/Kapitel-23/object_dependencies_3.jpeg)
 
 > Nach dem Scan stehen Ihnen die vollständigen Ergebnisse in verschiedenen Ansichten zur Verfügung. Diese helfen Ihnen, Änderungen an der Datenbank besser zu verstehen und fundierte Entscheidungen bei der Weiterentwicklung Ihrer Applikation zu treffen.
 
@@ -5679,7 +5679,7 @@ Im weiteren Verlauf dieses Kapitels erfahren Sie, wie Sie das neue Feature aktiv
 
 3. Klicken Sie anschließend auf **Scan**, um den Analysevorgang zu starten.
 
-   ![Schritt 4: Scan-Optionen wählen](../../assets/Kapitel-23/object_dependencies_4.jpeg)
+   ![Schritt 4: Scan-Optionen wählen](../assets/Kapitel-23/object_dependencies_4.jpeg)
 
 > Nach Abschluss des Scans erhalten Sie eine detaillierte Übersicht aller Datenbankobjekte, die von der Anwendung verwendet werden – inklusive Tabellen, Views, Packages, Funktionen und etwaiger Fehler.
 
@@ -5695,7 +5695,7 @@ Nach Abschluss des Scans wird Ihnen eine strukturierte Übersicht aller referenz
 
 3. In der rechten Spalte wird der zugehörige **SQL-Code** dargestellt, aus dem die Referenz hervorgeht.
 
-   ![Schritt 5: Ergebnisse analysieren](../../assets/Kapitel-23/object_dependencies_5.jpeg)
+   ![Schritt 5: Ergebnisse analysieren](../assets/Kapitel-23/object_dependencies_5.jpeg)
 
 > So erkennen Sie auf einen Blick, wo genau ein bestimmtes Datenbankobjekt in Ihrer Anwendung verwendet wird – eine enorme Hilfe bei Refactoring, Debugging oder bei der Analyse von Seiteneffekten nach Änderungen an Datenbankstrukturen.
 
