@@ -1,6 +1,6 @@
-# APEX 24.1 Tutorial – Deutsch
+# APEX 24.1 Tutorial – Übersicht
 
-Basierend auf dem offiziellen [APEX-Tutorial-Repository](https://github.com/mt-ag/apex-tutorial/tree/main) der MT AG.
+Basierend auf dem offiziellen [APEX-Tutorial-Repository](https://github.com/mt-ag/apex-tutorial/tree/main) der Hyand und wurden für die Version **APEX 24.1** strukturiert.
 
 Jedes Kapitel behandelt ein bestimmtes Thema aus der Oracle APEX-Entwicklung. Die Dateien sind im Markdown-Format verfügbar und direkt auf GitHub einsehbar.
 
