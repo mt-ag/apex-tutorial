@@ -61,7 +61,7 @@ Dieses Tutorial bietet eine praxisnahe Einführung in Oracle APEX 24.2 – eine 
 ## 👥 Autor & Quelle
 
 Bereitgestellt von:  
-**[Hyand GmbH MT AG)](https://www.hyand.com)**  
+**[Hyand GmbH)](https://www.hyand.com)**  
 🔗 GitHub: [https://github.com/mt-ag/apex-tutorial](https://github.com/mt-ag/apex-tutorial)
 
 ---
