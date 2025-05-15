@@ -1,5 +1,5 @@
 # 📘 Oracle APEX 24.2 Tutorial  
-**by Hyand (ehemals MT AG)**  
+**by Hyand**  
 🔗 Quelle: [GitHub-Tutorial-Repository](https://github.com/mt-ag/apex-tutorial)
 
 Dieses Tutorial bietet eine praxisnahe Einführung in Oracle APEX 24.2 – eine moderne Plattform zur Erstellung datenbankgestützter Webanwendungen. Es richtet sich sowohl an Einsteiger als auch an erfahrene APEX-Entwickler, die ihre Kenntnisse vertiefen und neue Features der Version 24.2 kennenlernen möchten.
@@ -61,7 +61,7 @@ Dieses Tutorial bietet eine praxisnahe Einführung in Oracle APEX 24.2 – eine 
 ## 👥 Autor & Quelle
 
 Bereitgestellt von:  
-**[Hyand GmbH (ehemals MT AG)](https://www.hyand.com)**  
+**[Hyand GmbH MT AG)](https://www.hyand.com)**  
 🔗 GitHub: [https://github.com/mt-ag/apex-tutorial](https://github.com/mt-ag/apex-tutorial)
 
 ---
