@@ -33,7 +33,7 @@ Verwenden Sie das beigefügte SQL-Skript (**Skript.sql**), um die Daten wie im F
 
 ![](../../assets/Kapitel-01/SQL_Workshop_open_upload.jpg)
 
-- Wählen Sie das Skript **Skript.sql** aus, welches sich in dem Ordner **Kapitel-01** befindet. Laden Sie das Skript durch Klicken auf den Upload-Button hoch bzw. ziehen Sie es in das vorgesehene Feld.
+- Wählen Sie das Skript **Skript.sql** aus. Laden Sie das Skript durch Klicken auf den Upload-Button hoch bzw. ziehen Sie es in das vorgesehene Feld. (Das Skript zum ersten Schritt befindet sich im Ordner **Kapitel-01**, wenn Sie das Tutorial online im Browser durchführen.)
 
 ![](../../assets/Kapitel-01/SQL_Workshop_upload_Skript.jpg)
 

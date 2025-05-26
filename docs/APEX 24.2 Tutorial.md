@@ -240,7 +240,7 @@ Verwenden Sie das beigefügte SQL-Skript (**Skript.sql**), um die Daten wie im F
 
 ![](../assets/Kapitel-01/SQL_Workshop_open_upload.jpg)
 
-- Wählen Sie das Skript **Skript.sql** aus, welches sich in dem Ordner **Kapitel-01** befindet. Laden Sie das Skript durch Klicken auf den Upload-Button hoch bzw. ziehen Sie es in das vorgesehene Feld.
+- Wählen Sie das Skript **Skript.sql** aus. Laden Sie das Skript durch Klicken auf den Upload-Button hoch bzw. ziehen Sie es in das vorgesehene Feld. (Das Skript zum ersten Schritt befindet sich im Ordner **Kapitel-01**, wenn Sie das Tutorial online im Browser durchführen.)
 
 ![](../assets/Kapitel-01/SQL_Workshop_upload_Skript.jpg)
 
@@ -791,7 +791,7 @@ Die Felder der Spalte **State** im **Interactive Grid** können bislang über ei
   - TUTO_P0031_5_VW
     ```sql
     select STTS_ID,
-           STTS_ST
+           STTS_ST,
            STTS_STATE_NAME
       from STATES
     ```
@@ -1136,7 +1136,7 @@ Hier können SIe die angezeigten Sortierkriterien unter Display Value anpassen. 
   |Product Name | **PRDT_INFO_NAME** |
   |Product Description | **PRDT_INFO_DESCR** |
   |Product List Price | **PRDT_INFO_LIST_PRICE** |
-    |  |  | 
+  |  |  | 
 
 ![](../assets/Kapitel-08/Cards_06.jpg) 
 
@@ -1264,6 +1264,17 @@ In der Faceted Search Region befindet sich jetzt ein neues Element mit drei Chec
 
 - Setzen Sie unter **Source** die **Database Column** auf **PRDT_INFO_LIST_PRICE** und den **Data Type** für die Spalte **LIST_PRICE** auf ****NUMBER****.  
 
+  | | |  
+  |--|--|
+  | Display Value | Return Value  |
+  |---------------|----------------|
+  | <50           | 50             |
+  | 50 - 75       | 50\|75         |
+  | 75 - 100      | 75\|100        |
+  | 100 - 150     | 100\|150       |
+  | >=150         | 150            |
+  | | |
+
 - Speichern Sie und rufen Sie erneut die Seite auf. 
 
 ![](../assets/Kapitel-09/Faceted_10.jpg) 
@@ -1339,12 +1350,12 @@ Beim Klicken in die Suchleiste, erscheint der Filter *Product Name*. Wenn Sie au
   | | |  
   |--|--|
   | **Identification** |
-  | Name | *P91_CATEGORY* |
+  | Name | *P91_PRDT_INFO_NAME* |
   | Type | *Checkbox Group*|  
-  | **Label**| *Category* |
+  | **Label**| *Product Name* |
   | **List of Values** |  |
   | Type | *Distinct Values* |
-  | | |  
+  | | | 
 
 ![](../assets/Kapitel-10/Smart_07.jpg)  
 
@@ -1448,8 +1459,17 @@ Klicken Sie anschließend auf den **Edit Page 9999** Button in der **Breadcrumb 
 
 - Klicken Sie auf das **Icon** rechts über dem Feld, um den Code Editor zu starten. Geben Sie dort die folgenden CSS-Vorgaben ein:
  ```css
-.t-Login-region {
-    opacity: 0.9;
+.t-Login-region{
+   opacity: 0.9;
+}
+
+.apex-item-text, .t-Button{
+    border-radius: 20px;
+}
+
+.t-Login-region{
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
 }
  ```  
 
@@ -1704,6 +1724,8 @@ end;
 ![](../assets/Kapitel-13/Rest_13.jpg)  
 
 - Hiermit ist Ihr Module fertig definiert. Rufen Sie zur Kontrolle die URL, die Sie unter **Full URL** bei **departments/** sehen mit Ihrem Browser auf. Sie sollten nun die Inhalte der GET-Abfrage und damit die ID, den Namen und die Location der Departments sehen.  
+
+- Im Screenshot werden 2 angezeigt, aber es müssen 4 Stück eingefügt werden.
 
  ```json
 "items": [
@@ -1984,7 +2006,7 @@ Stellen Sie sicher, dass Sie nun auf die Anwendungsübersicht jener Anwendung na
 
 ![](../assets/Kapitel-15/Karten_05.jpg)  
 
-In der nächsten Übersicht, können Sie zwischen unterschiedlichen Anzeigemöglichkeiten wählen, wie die Orte Dargestellt werden sollen.  
+In der nächsten Übersicht, können Sie zwischen unterschiedlichen Anzeigemöglichkeiten wählen, wie die Orte dargestellt werden sollen.  
 - Da Sie dabei sind, eine Übersicht über Erdbeben zu erstellen, wählen Sie nun nicht **Points**, wodurch nur die Orte der Erdbeben markiert werden würden, sondern wählen Sie **Heat Map**, um den Ort und ein gewissen Eindruck des Ausmaßes später auf der Karte erkennen zu können. 
 
 - Nun müssen Sie nur noch von den dort angezeigten Auswahlmöglichkeiten das Feld **Geometry-Column** ändern. Dort wählen Sie die Spalte **Geometry** aus.  
@@ -2536,6 +2558,7 @@ Die **Dynamic Action** umfasst drei **True Actions**:
 
 ![](../assets/Kapitel-17/search_config_23.jpg)  
 
+- Anschließend speichern sie die seite 0.
 
 - Löschen Sie das Searchfeld **P81_SEARCH** auf der **Seite 81**.  
 
@@ -2733,6 +2756,21 @@ In diesem Fall setzt sich die Bezeichnung der View wie folgt zusammen:
   | **p_prdt_info_list_price** | *P102_PRDT_INFO_LIST_PRICE*| 
   | | |
 
+  | | |  
+  |--|--|
+  | Bereich                | Einstellung / Wert                        |
+  |------------------------|-------------------------------------------|
+  | **1. Page ID**         | *102*                                     |
+  | **2. Process Name**    | *Update Orders*                           |
+  | **3. Type**            | *Invoke API*                              |
+  | **4. Execution Chain** | *None*                                    |
+  | **5. Process Type**    | *PL/SQL Procedure or Function*            |
+  | **6. Procedure Name**  | *PR_UPDATE_ORDER_ITEMS*                   |
+  | **7. Success Message** | *Successfully updated!*                   |
+  | **8. Server Condition**| *When Button Pressed = SAVE*              |
+  | | |
+
+
 ![](../assets/Kapitel-18/invoke_api_14.jpg)
   
 - Erstellen Sie einen zweiten Prozess mit den folgenden Einstellungen:
@@ -2788,10 +2826,10 @@ Auf jeder Seite können Sie dann einen Bereich dieses Plug-In-Typs erstellen, ei
 | Available as Multiple | Checkbox: YES | 
 | | |
 
-Abschlißend drücken Sie auf **Create Plug-in** Button
+Abschließend drücken Sie auf **Create Plug-in** Button
 ![](../assets/Kapitel-19/3.jpg)
 
-4. Im nächsten Schritt fügen Sie folgenden code in **Partial**, **Report Body** und **Report Row** an den entsprechenden stellen gemäß Screenshot ein. Abschlißend drücken Sie auf **Create Plug-in** Button.
+4. Im nächsten Schritt fügen Sie folgenden code in **Partial**, **Report Body** und **Report Row** an den entsprechenden stellen gemäß Screenshot ein. Abschließend drücken Sie auf **Create Plug-in** Button.
 
 ![](../assets/Kapitel-19/4.jpg)
 
@@ -3066,7 +3104,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass die Sta
 
 ![](../assets/Kapitel-20/Working_Copy_01.jpg)
 
-- Geben Sie der Arbeitskopie den Namen **Working Copy Tutorial ** und fügen Sie eine Beschreibung hinzu.  
+- Geben Sie der Arbeitskopie den Namen **Apex Tutorial - Working Copy** und fügen Sie eine Beschreibung hinzu.  
 
 ![](../assets/Kapitel-20/Working_Copy_02.jpg)
 
@@ -3126,7 +3164,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass die Sta
 
 ![](../assets/Kapitel-20/Working_Copy_09.jpg)
 
-- Kehren Sie zurück auf die Üersichsseite in den App Builder. Im Menü **Tutorial Working Copy** können Sie unter dem Punkt **Compare Changes** einen Vergleich zwischen der Hauptversion und der Arbeitsversion durchführen.
+- Kehren Sie zurück auf die Übersichtsseite in den App Builder. Im Menü **Tutorial Working Copy** können Sie unter dem Punkt **Compare Changes** einen Vergleich zwischen der Hauptversion und der Arbeitsversion durchführen.
 
 ![](../assets/Kapitel-20/Working_Copy_10.jpg)
 
@@ -3225,7 +3263,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass die Sta
 
 # <a name="apex-workflow"></a>21. APEX Workflow
 
-Mit APEX werden Workflows direkt in APEX integriert. Mit **APEX Workflow** lassen sich Business-Prozesse mittels der eines grafischen Editors erstellen und ausführen. Nutzer, die Prozesse mittels  **Busines Process Model and Notation (BPMN 2.0)** abbilden wollen, finden mit der eng verwandten Erweiterung **Flows for APEX** von Hyand eine passende Erweiterung. Weitere Informationen dazu erhalten Sie unter dem Link [https://flowsforapex.org/](https://flowsforapex.org/). 
+Mit APEX werden Workflows direkt in APEX integriert. Mit **APEX Workflow** lassen sich Business-Prozesse mittels der eines grafischen Editors erstellen und ausführen. Nutzer, die Prozesse mittels  **Business Process Model and Notation (BPMN 2.0)** abbilden wollen, finden mit der eng verwandten Erweiterung **Flows for APEX** von Hyand eine passende Erweiterung. Weitere Informationen dazu erhalten Sie unter dem Link [https://flowsforapex.org/](https://flowsforapex.org/). 
 
 In dem folgenden Kapitel nutzen wir Workflows um eine Demoversion einer vereinfachten Reservierung eines Restauranttisches zu erstellen. Die Demo lehnt sich an den Blog-Beitrag **Simplify Business Process Management Using APEX Workflow** von Ananya Chatterjee an. [Link zum Blog](https://blogs.oracle.com/apex/post/simplify-business-process-management-using-apex-workflow-create-doctor-appointment-application)
 
@@ -3386,7 +3424,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass ein Res
 
 ![](../assets/Kapitel-21/APEX_Workflows_25.jpg)
 
-- Das Ergebnis der Funktion übergeben Sie im Parameter **Function Result**, und zwar in **Item** über die **Version Variable** **Availability**. 
+- Das Ergebnis der Funktion übergeben Sie im Parameter **Function Result**, und zwar in **Item** über die **Version Variable** ***Availability***. 
 
 ![](../assets/Kapitel-21/APEX_Workflows_26.jpg)
 
@@ -3641,8 +3679,8 @@ select to_char(systimestamp, 'DD.MM.YYYY HH24:MI') from dual
   | **Guest Email** | *P1_GUEST_EMAIL* |
   | **Guest Last Name** | *P1_GUEST_LAST_NAME* |
   | **Guest Name**| *P1_GUEST_NAME* |
-  | **Request Start Date** | *P1_END_DATE* |
-  | **Request End Date** | *P1_START_DATE* |
+  | **Request Start Date** | *P1_START_DATE* |
+  | **Request End Date** | *P1_END_DATE* |
   | | |
  
  ![](../assets/Kapitel-21/APEX_Workflows_65.jpg)
@@ -3802,7 +3840,7 @@ Um mit der Erstellung des AI-Dienstes zu beginnen, navigieren Sie zunächst zum 
 
 Nachdem Sie im Bereich **Workspace Utilities** sind:
 
-1. Klicken Sie auf **Generator AI**, um den AI-Dienst zu starten.
+1. Klicken Sie auf **Generative AI**, um den AI-Dienst zu starten.
 
 ![](../assets/Kapitel-22/ai_basic_02.jpg)
 
@@ -4025,8 +4063,8 @@ Erstellen Sie eine Region mit dem Namen **Email Reply**.
 
 Fügen Sie ein neues Item hinzu:
 
-- **Item Name**: `P50_MAIL`
-- **Label**: `MAIL`
+- **Item Name**: *P50_MAIL*
+- **Label**: *MAIL*
 
 ![](../assets/Kapitel-22/ai_basic_21.jpg)
 
@@ -4536,7 +4574,7 @@ Zusammenfassung:
 
 ---
 
-# <a name="oracle-apex-und-ai"></a> 23. Oracle APEX und AI - RAG Daten  
+# <a name="oracle-apex-und-ai"></a> 23.1 Oracle APEX und AI - RAG Daten  
 
 ## <a name="einleitung-ai"></a>Einleitung  
 
@@ -4901,7 +4939,7 @@ Nachdem beide **AI Configurations** erfolgreich erstellt wurden, erscheinen sie 
 
 1. Die erstellten **AI Configurations** für **Bestellungsauskunft für Kunden** und **Produktauskunft für Besucher** sind in der Liste sichtbar.  
 2. Jede Konfiguration enthält die zugehörige **RAG Source**, die zur Generierung der Antworten verwendet wird.  
-3. Klicken Sie auf **Application **, um zur Haupt-App zurückzukehren und dort weiterzuarbeiten.  
+3. Klicken Sie auf **Application**, um zur Haupt-App zurückzukehren und dort weiterzuarbeiten.  
 
 ![](../assets/Kapitel-23/ai_rag_19.jpeg)  
 
@@ -5315,7 +5353,7 @@ Nachdem alle Konfigurationen abgeschlossen wurden, sollte die Anwendung nun wie 
 
 ---
 
-# <a name="oracle-apex-und-json"></a> 23. JSON-Daten in Oracle APEX nutzen
+# <a name="oracle-apex-und-json"></a> 23.2 JSON-Daten in Oracle APEX nutzen
 
 ## <a name="einleitung-json"></a>Einleitung  
   
@@ -5612,7 +5650,7 @@ Vielen Dank fürs Mitmachen
  
 
 
-# <a name="oracle-apex-und-dependencies"></a>Kapitel-23 - Database Object Dependencies
+# <a name="oracle-apex-und-dependencies"></a>Kapitel-23.3 - Database Object Dependencies
 
 ## <a name="einleitung-dependencies"></a>Einleitung  
 

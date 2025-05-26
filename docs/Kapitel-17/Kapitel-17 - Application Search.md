@@ -170,7 +170,97 @@ Eine Suchkonfigurationsliste ist bereits verfügbar. Wählen Sie die Suchkonfigu
 
 - Geben Sie **shoe** in das Suchfeld ein. Das Suchergebnis wird direkt auf der **My Search Results** Seite angezeigt.  
 
-![](../../assets/Kapitel-17/search_config_17.jpg)  
+![](../assets/Kapitel-17/search_config_17.jpg)  
 
 
-## <a name="suchfeld-in-die-navigationsleiste-einbauen"></a>17.3 Suchfeld in die Navigationsleiste einbauen
+## <a name="suchfeld-in-die-navigationsleiste-einbauen"></a>17.3 Suchfeld in die Navigationsleiste einbauen  
+
+- Erstellen Sie auf der globalen Seite ein Item mit den folgenden Einstellungen:  
+
+  | | |  
+  |--|--|
+  | **Name** | *P0_SEARCH* | 
+  | **Type** | *Text Field*| 
+  | **Label** | *Search*| 
+  | **Position** | *After Logo*| 
+  | **Icon** | *fa-search*| 
+  | | |  
+  
+-  In **Template Options** wählen Sie **Stretch Form Item** und **Size Large** aus.  
+  
+![](../assets/Kapitel-17/search_config_18.jpg)  
+
+- Unter **Advanced** verhindern Sie mit **Ignore** bei **Warn on unsaved changes** Meldungen zum Datenverlust beim verlassen von Seiten.
+
+![](../assets/Kapitel-17/search_config_18b.jpg) 
+
+- Erstellen Sie eine **Dynamic Action** auf dem **P0_SEARCH** Item mit den folgenden Einstellungen:  
+
+  | | |  
+  |--|--|
+  | **Name** | *Redirect to Results* | 
+  | **Event** | *Key Press*| 
+  | **Client-side Condition** | *JavaScript expression*| 
+  | **JavaScript Expression** | *this.browserEvent.keyCode === 13*| 
+  | | |  
+
+![](../assets/Kapitel-17/search_config_19.jpg)  
+
+Die **Dynamic Action** umfasst drei **True Actions**:  
+
+![](../assets/Kapitel-17/search_config_20.jpg)  
+
+- Die erste Aktion ist vom Type *Execute JavaScript Code* mit den folgenden Einstellungen:  
+
+  | | |  
+  |--|--|
+  | **Name** | *Prevent Default Page Submit* | 
+  | **Action** | *Execute JavaScript Code*| 
+  | **Code** | *this.browserEvent.preventDefault();*| 
+  | | |  
+
+![](../assets/Kapitel-17/search_config_21.jpg)
+
+- Die zweite Aktion ist vom Type *Execute Server-side Code* mit den folgenden Einstellungen:
+
+  | | |  
+  |--|--|
+  | **Name** | *Submit Search Item* | 
+  | **Action** | *Execute Server-side Code*| 
+  | **Language** | *PL/SQL*| 
+  | **PL/SQL Code** | *null;*| 
+  | **Items to Submit** | *P0_SEARCH*| 
+  | | | 
+
+![](../assets/Kapitel-17/search_config_22.jpg)
+
+- Und die dritte Aktion ist wieder vom Type *Execute JavaScript Code* mit den folgenden Einstellungen:
+
+  | | |  
+  |--|--|
+  | **Name** | *Redirect to Results Page* | 
+  | **Action** | *Execute JavaScript Code*| 
+  | **Code** | *apex.navigation.redirect ( "f?p=&APP_ID.:81:&APP_SESSION.::NO:RP::" );*| 
+  | | |  
+
+![](../assets/Kapitel-17/search_config_23.jpg)  
+
+- Anschließend speichern sie die seite 0.
+
+- Löschen Sie das Searchfeld **P81_SEARCH** auf der **Seite 81**.  
+
+![](../assets/Kapitel-17/search_config_24.jpg)  
+
+- Unter **Body** klicken Sie auf **Search Results** Region, und dann auf **Attributes**.  
+
+- Geben Sie als **Search Page Item**: **P0_SEARCH** ein und klicken Sie anschließend auf **Save**.  
+
+![](../assets/Kapitel-17/search_config_25.jpg)  
+    
+
+<br>  
+
+Das Suchfeld taucht nun in der Navigationsleiste auf, ist auf jeder Seite verfügbar und leitet Sie auf die Suchergebnisseite weiter, wenn ein Suchwert eingegeben und die Eingabetaste gedrückt wird.  
+
+![](../assets/Kapitel-17/search_config_26.jpg)
+

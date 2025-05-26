@@ -70,7 +70,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass die Sta
 
 ![](../../assets/Kapitel-20/Working_Copy_09.jpg)
 
-- Kehren Sie zurück auf die Üersichsseite in den App Builder. Im Menü **Tutorial 24.1 Working Copy** können Sie unter dem Punkt **Compare Changes** einen Vergleich zwischen der Hauptversion und der Arbeitsversion durchführen.
+- Kehren Sie zurück auf die Übersichtsseite in den App Builder. Im Menü **Tutorial 24.1 Working Copy** können Sie unter dem Punkt **Compare Changes** einen Vergleich zwischen der Hauptversion und der Arbeitsversion durchführen.
 
 ![](../../assets/Kapitel-20/Working_Copy_10.jpg)
 

@@ -176,6 +176,20 @@ In diesem Fall setzt sich die Bezeichnung der View wie folgt zusammen:
   | **p_prdt_info_list_price** | *P102_PRDT_INFO_LIST_PRICE*| 
   | | |
 
+  | | |  
+  |--|--|
+  | Bereich                | Einstellung / Wert                        |
+  |------------------------|-------------------------------------------|
+  | **1. Page ID**         | *102*                                     |
+  | **2. Process Name**    | *Update Orders*                           |
+  | **3. Type**            | *Invoke API*                              |
+  | **4. Execution Chain** | *None*                                    |
+  | **5. Process Type**    | *PL/SQL Procedure or Function*            |
+  | **6. Procedure Name**  | *PR_UPDATE_ORDER_ITEMS*                   |
+  | **7. Success Message** | *Successfully updated!*                   |
+  | **8. Server Condition**| *When Button Pressed = SAVE*              |
+  | | |
+
 ![](../../assets/Kapitel-18/invoke_api_14.jpg)
   
 - Erstellen Sie einen zweiten Prozess mit den folgenden Einstellungen:

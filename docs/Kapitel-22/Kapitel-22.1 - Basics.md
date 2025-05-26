@@ -41,7 +41,7 @@ Um mit der Erstellung des AI-Dienstes zu beginnen, navigieren Sie zunächst zum 
 
 Nachdem Sie im Bereich **Workspace Utilities** sind:
 
-1. Klicken Sie auf **Generator AI**, um den AI-Dienst zu starten.
+1. Klicken Sie auf **Generative AI**, um den AI-Dienst zu starten.
 
 ![](../../assets/Kapitel-22/ai_basic_02.jpg)
 
@@ -264,8 +264,8 @@ Erstellen Sie eine Region mit dem Namen **Email Reply**.
 
 Fügen Sie ein neues Item hinzu:
 
-- **Item Name**: `P50_MAIL`
-- **Label**: `MAIL`
+- **Item Name**: *P50_MAIL*
+- **Label**: *MAIL*
 
 ![](../../assets/Kapitel-22/ai_basic_21.jpg)
 

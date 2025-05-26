@@ -1,6 +1,6 @@
 # <a name="apex-workflow"></a>21. APEX Workflow
 
-Seit APEX 23.2 werden Workflows direkt in APEX integriert. Mit **APEX Workflow** lassen sich Business-Prozesse mittels der eines grafischen Editors erstellen und ausführen. Nutzer, die Prozesse mittels  **Busines Process Model and Notation (BPMN 2.0)** abbilden wollen, finden mit der eng verwandten Erweiterung **Flows for APEX** von MT - IT Solutions eine passende Erweiterung. Weitere Informationen dazu erhalten Sie unter dem Link [https://flowsforapex.org/](https://flowsforapex.org/). 
+Seit APEX 23.2 werden Workflows direkt in APEX integriert. Mit **APEX Workflow** lassen sich Business-Prozesse mittels der eines grafischen Editors erstellen und ausführen. Nutzer, die Prozesse mittels  **Business Process Model and Notation (BPMN 2.0)** abbilden wollen, finden mit der eng verwandten Erweiterung **Flows for APEX** von MT - IT Solutions eine passende Erweiterung. Weitere Informationen dazu erhalten Sie unter dem Link [https://flowsforapex.org/](https://flowsforapex.org/). 
 
 In dem folgenden Kapitel nutzen wir Workflows um eine Demoversion einer vereinfachten Reservierung eines Restauranttisches zu erstellen. Die Demo lehnt sich an den Blog-Beitrag **Simplify Business Process Management Using APEX Workflow** von Ananya Chatterjee an. [Link zum Blog](https://blogs.oracle.com/apex/post/simplify-business-process-management-using-apex-workflow-create-doctor-appointment-application)
 
@@ -161,7 +161,7 @@ Als Ausgangspunkt für die Aufgabe in diesem Kapitel nehmen wir an, dass ein Res
 
 ![](../../assets/Kapitel-21/APEX_Workflows_25.jpg)
 
-- Das Ergebnis der Funktion übergeben Sie im Parameter **Function Result**, und zwar in **Item** über die **Version Variable** **Availability**. 
+- Das Ergebnis der Funktion übergeben Sie im Parameter **Function Result**, und zwar in **Item** über die **Version Variable** ***Availability***. 
 
 ![](../../assets/Kapitel-21/APEX_Workflows_26.jpg)
 
@@ -416,8 +416,8 @@ select to_char(systimestamp, 'DD.MM.YYYY HH24:MI') from dual
   | **Guest Email** | *P1_GUEST_EMAIL* |
   | **Guest Last Name** | *P1_GUEST_LAST_NAME* |
   | **Guest Name**| *P1_GUEST_NAME* |
-  | **Request Start Date** | *P1_END_DATE* |
-  | **Request End Date** | *P1_START_DATE* |
+  | **Request Start Date** | *P1_START_DATE* |
+  | **Request End Date** | *P1_END_DATE* |
   | | |
  
  ![](../../assets/Kapitel-21/APEX_Workflows_65.jpg)

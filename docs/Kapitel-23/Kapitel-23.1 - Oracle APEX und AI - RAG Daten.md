@@ -1,4 +1,4 @@
-# <a name="oracle-apex-und-ai"></a> 23. Oracle APEX und AI - RAG Daten  
+# <a name="oracle-apex-und-ai"></a> 23.1 Oracle APEX und AI - RAG Daten  
 
 ## <a name="einleitung-ai"></a>Einleitung  
 
@@ -363,7 +363,7 @@ Nachdem beide **AI Configurations** erfolgreich erstellt wurden, erscheinen sie 
 
 1. Die erstellten **AI Configurations** für **Bestellungsauskunft für Kunden** und **Produktauskunft für Besucher** sind in der Liste sichtbar.  
 2. Jede Konfiguration enthält die zugehörige **RAG Source**, die zur Generierung der Antworten verwendet wird.  
-3. Klicken Sie auf **Application **, um zur Haupt-App zurückzukehren und dort weiterzuarbeiten.  
+3. Klicken Sie auf **Application**, um zur Haupt-App zurückzukehren und dort weiterzuarbeiten.  
 
 ![](../../assets/Kapitel-23/ai_rag_19.jpeg)  
 

@@ -101,6 +101,8 @@ end;
 
 - Hiermit ist Ihr Module fertig definiert. Rufen Sie zur Kontrolle die URL, die Sie unter **Full URL** bei **departments/** sehen mit Ihrem Browser auf. Sie sollten nun die Inhalte der GET-Abfrage und damit die ID, den Namen und die Location der Departments sehen.  
 
+- Im Screenshot werden 2 angezeigt, aber es müssen 4 Stück eingefügt werden.
+
  ```json
 "items": [
     {

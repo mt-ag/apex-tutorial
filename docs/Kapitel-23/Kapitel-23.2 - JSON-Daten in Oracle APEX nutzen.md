@@ -1,4 +1,4 @@
-# <a name="oracle-apex-und-json"></a> 23. JSON-Daten in Oracle APEX nutzen
+# <a name="oracle-apex-und-json"></a> 23.2 JSON-Daten in Oracle APEX nutzen
 
 ## <a name="einleitung-json"></a>Einleitung  
   

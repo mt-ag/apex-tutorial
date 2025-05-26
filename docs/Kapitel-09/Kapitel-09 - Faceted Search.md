@@ -98,6 +98,18 @@ In der Faceted Search Region befindet sich jetzt ein neues Element mit drei Chec
 
 - Setzen Sie unter **Source** die **Database Column** auf **PRDT_INFO_LIST_PRICE** und den **Data Type** für die Spalte **LIST_PRICE** auf ****NUMBER****.  
 
+  | | |  
+  |--|--|
+  | Display Value | Return Value  |
+  |---------------|----------------|
+  | <50           | 50             |
+  | 50 - 75       | 50\|75         |
+  | 75 - 100      | 75\|100        |
+  | 100 - 150     | 100\|150       |
+  | >=150         | 150            |
+  | | |
+
+
 - Speichern Sie und rufen Sie erneut die Seite auf. 
 
 ![](../../assets/Kapitel-09/Faceted_10.jpg) 

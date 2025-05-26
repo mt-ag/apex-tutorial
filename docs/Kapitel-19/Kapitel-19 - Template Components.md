@@ -26,10 +26,10 @@ Auf jeder Seite können Sie dann einen Bereich dieses Plug-In-Typs erstellen, ei
 | Available as Multiple | Checkbox: YES | 
 | | |
 
-Abschlißend drücken Sie auf **Create Plug-in** Button
+Abschließend drücken Sie auf **Create Plug-in** Button
 ![](../../assets/Kapitel-19/3.jpg)
 
-4. Im nächsten Schritt fügen Sie folgenden code in **Partial**, **Report Body** und **Report Row** an den entsprechenden stellen gemäß Screenshot ein. Abschlißend drücken Sie auf **Create Plug-in** Button.
+4. Im nächsten Schritt fügen Sie folgenden code in **Partial**, **Report Body** und **Report Row** an den entsprechenden stellen gemäß Screenshot ein. Abschließend drücken Sie auf **Create Plug-in** Button.
 
 ![](../../assets/Kapitel-19/4.jpg)
 
